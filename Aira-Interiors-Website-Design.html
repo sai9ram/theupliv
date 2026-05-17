@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aira Interiors - Premium Interior Design</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FDCD22',secondary:'#D4AF37'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+color: #1f2937;
+background-color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Playfair Display', serif;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #15B8A6;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.active::after {
+width: 100%;
+}
+.service-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.portfolio-item:hover .portfolio-overlay {
+opacity: 1;
+}
+.portfolio-item:hover img {
+transform: scale(1.05);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #15B8A6;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+margin-right: 10px;
+}
+.custom-checkbox input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #2a2a2a;
+border: 1px solid #3a3a3a;
+border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #15B8A6;
+border-color: #15B8A6;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 7px;
+top: 3px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-gray-900">Aira <span class="text-primary">Interiors</span></a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#home" class="nav-link active text-gray-900 hover:text-primary transition-colors">Home</a>
+<a href="#about" class="nav-link text-gray-900 hover:text-primary transition-colors">About</a>
+<a href="#services" class="nav-link text-gray-900 hover:text-primary transition-colors">Services</a>
+<a href="#portfolio" class="nav-link text-gray-900 hover:text-primary transition-colors">Portfolio</a>
+<a href="#testimonials" class="nav-link text-gray-900 hover:text-primary transition-colors">Testimonials</a>
+<a href="#contact" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Contact Us</a>
+</div>
+<div class="md:hidden w-10 h-10 flex items-center justify-center">
+<button id="menu-toggle" class="text-gray-900 focus:outline-none">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white w-full py-4 px-6 shadow-lg">
+<div class="flex flex-col space-y-4">
+<a href="#home" class="text-gray-900 hover:text-primary py-2 transition-colors">Home</a>
+<a href="#about" class="text-gray-900 hover:text-primary py-2 transition-colors">About</a>
+<a href="#services" class="text-gray-900 hover:text-primary py-2 transition-colors">Services</a>
+<a href="#portfolio" class="text-gray-900 hover:text-primary py-2 transition-colors">Portfolio</a>
+<a href="#testimonials" class="text-gray-900 hover:text-primary py-2 transition-colors">Testimonials</a>
+<a href="#contact" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap inline-block w-fit">Contact Us</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="relative h-screen w-full flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20luxurious%20modern%20interior%20living%20room%20with%20high%20ceilings%2C%20large%20windows%2C%20elegant%20furniture%2C%20soft%20neutral%20color%20palette%20with%20gold%20accents.%20The%20space%20has%20a%20minimalist%20aesthetic%20with%20premium%20materials%20like%20marble%20and%20wood.%20Natural%20light%20floods%20in%20from%20the%20left%20side%2C%20creating%20a%20gradient%20effect%20with%20the%20right%20side%20showcasing%20the%20beautiful%20furniture%20arrangement&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-black bg-opacity-40"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Crafting Timeless Spaces</h1>
+<p class="text-xl text-white opacity-90 mb-8">Transform your environment into a masterpiece of design that reflects your unique style and personality.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#portfolio" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap text-center">Explore Designs</a>
+<a href="#contact" class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:text-gray-900 transition-all whitespace-nowrap text-center">Contact Us</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+<div class="w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-arrow-down-line ri-xl"></i>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=An%20elegant%20interior%20designer%20workspace%20with%20mood%20boards%2C%20material%20samples%2C%20and%20blueprints.%20The%20scene%20shows%20a%20sophisticated%20design%20studio%20with%20natural%20light%2C%20stylish%20furniture%2C%20and%20creative%20elements.%20The%20workspace%20has%20a%20professional%20yet%20artistic%20atmosphere%20with%20color%20palettes%20and%20fabric%20swatches%20arranged%20neatly&width=800&height=600&seq=2&orientation=landscape" alt="About Aira Interiors" class="w-full h-auto rounded-lg shadow-xl object-cover object-top">
+</div>
+<div class="lg:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+<div class="w-20 h-1 bg-primary mb-8"></div>
+<p class="text-gray-700 mb-6">Founded in 2010, Aira Interiors has established itself as a premier interior design firm specializing in creating spaces that blend functionality with unparalleled aesthetics. Our team of passionate designers brings together years of expertise and a keen eye for detail to transform ordinary spaces into extraordinary environments.</p>
+<p class="text-gray-700 mb-8">We believe that great design should not only be beautiful but should also enhance the way you live, work, and interact with your surroundings. Our client-centered approach ensures that each project is a true reflection of the individual's personality, lifestyle, and aspirations.</p>
+<div class="flex items-center mb-8">
+<img src="https://readdy.ai/api/search-image?query=An%20elegant%20signature%20in%20cursive%20handwriting%20on%20a%20light%20background%2C%20professional%20and%20sophisticated%2C%20representing%20the%20signature%20of%20an%20interior%20design%20company%20founder&width=200&height=100&seq=3&orientation=landscape" alt="Signature" class="h-16">
+<div class="ml-4">
+<p class="font-semibold">Eleanor Richards</p>
+<p class="text-gray-600 text-sm">Founder & Creative Director</p>
+</div>
+</div>
+<a href="#services" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap inline-block">Our Services</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Premium Services</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">We offer a comprehensive range of interior design services tailored to meet your specific needs and bring your vision to life.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="service-card bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-home-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Residential Design</h3>
+<p class="text-gray-700">Transform your home into a sanctuary that reflects your personal style and meets your functional needs with our bespoke residential design services.</p>
+</div>
+<!-- Service 2 -->
+<div class="service-card bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-building-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Commercial Design</h3>
+<p class="text-gray-700">Create inspiring workspaces that boost productivity and impress clients with our innovative commercial interior design solutions.</p>
+</div>
+<!-- Service 3 -->
+<div class="service-card bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-paint-brush-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Color Consultation</h3>
+<p class="text-gray-700">Discover the perfect color palette that enhances your space and creates the desired atmosphere with our expert color consultation.</p>
+</div>
+<!-- Service 4 -->
+<div class="service-card bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-layout-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Space Planning</h3>
+<p class="text-gray-700">Maximize functionality and flow with our strategic space planning services that optimize every square foot of your environment.</p>
+</div>
+<!-- Service 5 -->
+<div class="service-card bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-shopping-bag-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Furniture Selection</h3>
+<p class="text-gray-700">Find the perfect pieces that combine style, comfort, and quality with our curated furniture selection and procurement services.</p>
+</div>
+<!-- Service 6 -->
+<div class="service-card bg-white p-8 rounded-lg shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-lightbulb-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Lighting Design</h3>
+<p class="text-gray-700">Enhance the ambiance and functionality of your space with our expert lighting design that combines technical expertise with artistic vision.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Portfolio</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Explore our collection of meticulously crafted interiors that showcase our commitment to excellence and attention to detail.</p>
+</div>
+<div class="flex flex-wrap justify-center mb-10">
+<button class="filter-btn active bg-primary text-white mx-2 mb-4 px-6 py-2 !rounded-button">All</button>
+<button class="filter-btn bg-gray-200 text-gray-800 mx-2 mb-4 px-6 py-2 !rounded-button">Living Room</button>
+<button class="filter-btn bg-gray-200 text-gray-800 mx-2 mb-4 px-6 py-2 !rounded-button">Kitchen</button>
+<button class="filter-btn bg-gray-200 text-gray-800 mx-2 mb-4 px-6 py-2 !rounded-button">Bedroom</button>
+<button class="filter-btn bg-gray-200 text-gray-800 mx-2 mb-4 px-6 py-2 !rounded-button">Office</button>
+<button class="filter-btn bg-gray-200 text-gray-800 mx-2 mb-4 px-6 py-2 !rounded-button">Bathroom</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20modern%20living%20room%20with%20elegant%20furniture%2C%20neutral%20color%20palette%2C%20high%20ceilings%2C%20large%20windows%2C%20marble%20floors%2C%20and%20tasteful%20decor.%20The%20space%20features%20a%20sophisticated%20design%20with%20premium%20materials%20and%20perfect%20lighting.%20The%20composition%20shows%20the%20entire%20room%20with%20a%20beautiful%20arrangement%20of%20sofa%2C%20coffee%20table%2C%20and%20decorative%20elements&width=600&height=400&seq=4&orientation=landscape" alt="Luxury Living Room" class="w-full h-80 object-cover object-top transition-transform duration-500">
+<div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+<h3 class="text-white text-xl font-bold mb-2">Elegant Harmony</h3>
+<p class="text-white mb-4">Living Room</p>
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">View Project</a>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20luxury%20kitchen%20with%20marble%20countertops%2C%20high-end%20appliances%2C%20elegant%20cabinetry%2C%20and%20perfect%20lighting.%20The%20kitchen%20features%20a%20large%20island%2C%20minimalist%20design%2C%20and%20premium%20finishes.%20The%20space%20has%20a%20sophisticated%20atmosphere%20with%20a%20neutral%20color%20palette%20and%20tasteful%20decorative%20elements&width=600&height=400&seq=5&orientation=landscape" alt="Modern Kitchen" class="w-full h-80 object-cover object-top transition-transform duration-500">
+<div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+<h3 class="text-white text-xl font-bold mb-2">Culinary Haven</h3>
+<p class="text-white mb-4">Kitchen</p>
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">View Project</a>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=A%20luxurious%20master%20bedroom%20with%20a%20king-size%20bed%2C%20elegant%20headboard%2C%20premium%20bedding%2C%20and%20sophisticated%20decor.%20The%20room%20features%20soft%20lighting%2C%20a%20neutral%20color%20palette%20with%20subtle%20accents%2C%20large%20windows%2C%20and%20tasteful%20furniture.%20The%20space%20has%20a%20serene%20and%20refined%20atmosphere%20with%20attention%20to%20every%20detail&width=600&height=400&seq=6&orientation=landscape" alt="Master Bedroom" class="w-full h-80 object-cover object-top transition-transform duration-500">
+<div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+<h3 class="text-white text-xl font-bold mb-2">Serene Retreat</h3>
+<p class="text-white mb-4">Bedroom</p>
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">View Project</a>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20home%20office%20with%20elegant%20desk%2C%20comfortable%20ergonomic%20chair%2C%20built-in%20bookshelves%2C%20and%20tasteful%20decor.%20The%20space%20features%20perfect%20lighting%2C%20a%20neutral%20color%20palette%20with%20subtle%20accents%2C%20large%20windows%2C%20and%20premium%20materials.%20The%20office%20has%20a%20professional%20yet%20comfortable%20atmosphere%20with%20attention%20to%20functionality%20and%20aesthetics&width=600&height=400&seq=7&orientation=landscape" alt="Home Office" class="w-full h-80 object-cover object-top transition-transform duration-500">
+<div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+<h3 class="text-white text-xl font-bold mb-2">Productive Elegance</h3>
+<p class="text-white mb-4">Office</p>
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">View Project</a>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=A%20luxury%20bathroom%20with%20marble%20surfaces%2C%20freestanding%20bathtub%2C%20glass%20shower%20enclosure%2C%20and%20elegant%20fixtures.%20The%20space%20features%20perfect%20lighting%2C%20a%20neutral%20color%20palette%2C%20large%20mirror%2C%20and%20premium%20materials.%20The%20bathroom%20has%20a%20spa-like%20atmosphere%20with%20attention%20to%20every%20detail%20and%20a%20sense%20of%20tranquility&width=600&height=400&seq=8&orientation=landscape" alt="Luxury Bathroom" class="w-full h-80 object-cover object-top transition-transform duration-500">
+<div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+<h3 class="text-white text-xl font-bold mb-2">Spa Sanctuary</h3>
+<p class="text-white mb-4">Bathroom</p>
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">View Project</a>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg group">
+<img src="https://readdy.ai/api/search-image?query=An%20elegant%20dining%20room%20with%20a%20large%20table%2C%20sophisticated%20chairs%2C%20statement%20chandelier%2C%20and%20tasteful%20decor.%20The%20space%20features%20perfect%20lighting%2C%20a%20neutral%20color%20palette%20with%20subtle%20accents%2C%20large%20windows%2C%20and%20premium%20materials.%20The%20dining%20room%20has%20a%20refined%20atmosphere%20perfect%20for%20entertaining%20with%20attention%20to%20every%20detail&width=600&height=400&seq=9&orientation=landscape" alt="Dining Room" class="w-full h-80 object-cover object-top transition-transform duration-500">
+<div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+<h3 class="text-white text-xl font-bold mb-2">Refined Gathering</h3>
+<p class="text-white mb-4">Dining Room</p>
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">View Project</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="https://readdy.ai/home/8d785db2-5f07-4a48-9f4a-20e162257cc9/dd375c21-0b11-4500-8192-e3507f1e7845" data-readdy="true" class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap inline-block">View All Projects</a>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Hear what our clients have to say about their experience working with Aira Interiors.</p>
+</div>
+<div class="relative">
+<div class="testimonial-slider flex overflow-hidden">
+<!-- Testimonial 1 -->
+<div class="testimonial-slide min-w-full">
+<div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20sophisticated%20woman%20in%20her%2040s%20with%20shoulder-length%20brown%20hair%2C%20wearing%20business%20attire%2C%20neutral%20background%2C%20warm%20smile%2C%20confident%20expression&width=100&height=100&seq=10&orientation=squarish" alt="Client" class="w-16 h-16 rounded-full object-cover object-top">
+<div class="ml-4">
+<h4 class="font-bold">Victoria Reynolds</h4>
+<p class="text-gray-600 text-sm">Residential Client</p>
+</div>
+</div>
+<div class="text-primary text-4xl mb-4">"</div>
+<p class="text-gray-700 mb-6">Working with Aira Interiors was an absolute pleasure. They transformed our home into a space that perfectly reflects our style and meets all our functional needs. Their attention to detail and ability to understand our vision exceeded our expectations. We couldn't be happier with the results!</p>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-slide min-w-full">
+<div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20distinguished%20man%20in%20his%2050s%20with%20salt%20and%20pepper%20hair%2C%20wearing%20a%20suit%2C%20neutral%20background%2C%20confident%20smile%2C%20executive%20appearance&width=100&height=100&seq=11&orientation=squarish" alt="Client" class="w-16 h-16 rounded-full object-cover object-top">
+<div class="ml-4">
+<h4 class="font-bold">Jonathan Blackwell</h4>
+<p class="text-gray-600 text-sm">Commercial Client</p>
+</div>
+</div>
+<div class="text-primary text-4xl mb-4">"</div>
+<p class="text-gray-700 mb-6">Aira Interiors redesigned our corporate headquarters, and the results have been transformative. The team's ability to balance aesthetics with functionality created a space that not only impresses clients but has also significantly improved employee satisfaction and productivity. Their professionalism and expertise are unmatched.</p>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-slide min-w-full">
+<div class="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20stylish%20young%20woman%20in%20her%20early%2030s%20with%20blonde%20hair%2C%20wearing%20modern%20professional%20attire%2C%20neutral%20background%2C%20friendly%20smile%2C%20approachable%20expression&width=100&height=100&seq=12&orientation=squarish" alt="Client" class="w-16 h-16 rounded-full object-cover object-top">
+<div class="ml-4">
+<h4 class="font-bold">Sophia Martinez</h4>
+<p class="text-gray-600 text-sm">Residential Client</p>
+</div>
+</div>
+<div class="text-primary text-4xl mb-4">"</div>
+<p class="text-gray-700 mb-6">I was hesitant about hiring an interior designer, but Aira Interiors made the process so enjoyable and stress-free. They listened to my ideas and preferences, then elevated them beyond what I could have imagined. Their team was responsive, professional, and truly talented. My home now feels like a perfect reflection of my personality.</p>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<button class="testimonial-dot w-3 h-3 mx-2 rounded-full bg-gray-300" data-index="0"></button>
+<button class="testimonial-dot w-3 h-3 mx-2 rounded-full bg-gray-300" data-index="1"></button>
+<button class="testimonial-dot w-3 h-3 mx-2 rounded-full bg-gray-300" data-index="2"></button>
+</div>
+<button class="testimonial-prev absolute top-1/2 -translate-y-1/2 left-0 md:-left-12 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-800 focus:outline-none">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<button class="testimonial-next absolute top-1/2 -translate-y-1/2 right-0 md:-right-12 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-800 focus:outline-none">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Ready to transform your space? Contact us today to schedule a consultation and discuss your project.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="lg:w-1/2">
+<form class="bg-white p-8 rounded-lg shadow-lg">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:border-primary" placeholder="Your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:border-primary" placeholder="Your email">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:border-primary" placeholder="Your phone">
+</div>
+<div class="mb-6">
+<label for="service" class="block text-gray-700 mb-2">Service Interest</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:border-primary appearance-none pr-8">
+<option value="" selected disabled>Select a service</option>
+<option value="residential">Residential Design</option>
+<option value="commercial">Commercial Design</option>
+<option value="color">Color Consultation</option>
+<option value="space">Space Planning</option>
+<option value="furniture">Furniture Selection</option>
+<option value="lighting">Lighting Design</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-500"></i>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:border-primary" placeholder="Tell us about your project"></textarea>
+</div>
+<div class="mb-6 flex items-center">
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</label>
+<span class="text-gray-700">I agree to receive emails about Aira Interiors services</span>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-white p-8 rounded-lg shadow-lg h-full">
+<h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+<div class="mb-8">
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Our Location</h4>
+<p class="text-gray-700">123 Design Avenue, New York, NY 10001, United States</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Phone Number</h4>
+<p class="text-gray-700">+1 (212) 456-7890</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Email Address</h4>
+<p class="text-gray-700">info@airainteriors.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Working Hours</h4>
+<p class="text-gray-700">Monday - Friday: 9:00 AM - 6:00 PM</p>
+<p class="text-gray-700">Saturday: 10:00 AM - 4:00 PM</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h4 class="font-bold mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+<i class="ri-facebook-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+<i class="ri-pinterest-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+<i class="ri-linkedin-line"></i>
+</a>
+</div>
+</div>
+<div class="h-64 rounded overflow-hidden">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Map" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div>
+<a href="#" class="text-2xl font-['Playfair_Display'] font-bold text-white mb-6 inline-block">Aira <span class="text-primary">Interiors</span></a>
+<p class="text-gray-400 mb-6">We create beautiful, functional spaces that enhance the way you live, work, and interact with your surroundings.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
+<i class="ri-facebook-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
+<i class="ri-pinterest-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all">
+<i class="ri-linkedin-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Services</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-primary transition-colors">Portfolio</a></li>
+<li><a href="#testimonials" class="text-gray-400 hover:text-primary transition-colors">Testimonials</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Residential Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Commercial Design</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Color Consultation</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Space Planning</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Furniture Selection</a></li>
+<li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Lighting Design</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Newsletter</h4>
+<p class="text-gray-400 mb-6">Subscribe to our newsletter to receive updates and design inspiration.</p>
+<form>
+<div class="flex mb-4">
+<input type="email" placeholder="Your email address" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-l focus:outline-none focus:border-primary text-white">
+<button type="submit" class="bg-primary text-white px-4 py-2 rounded-r hover:bg-opacity-90 transition-all whitespace-nowrap">Subscribe</button>
+</div>
+<div class="flex items-center">
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</label>
+<span class="text-gray-400 text-sm">I agree to receive emails from Aira Interiors</span>
+</div>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Aira Interiors. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+navbar.classList.add('bg-white', 'shadow-md');
+navbar.classList.remove('bg-transparent');
+} else {
+navbar.classList.remove('bg-white', 'shadow-md');
+navbar.classList.add('bg-transparent');
+}
+});
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenu.classList.contains('hidden')) {
+menuToggle.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+} else {
+menuToggle.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Portfolio filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+// Remove active class from all buttons
+filterBtns.forEach(b => {
+b.classList.remove('active', 'bg-primary', 'text-white');
+b.classList.add('bg-gray-200', 'text-gray-800');
+});
+// Add active class to clicked button
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('bg-gray-200', 'text-gray-800');
+// Filter functionality would go here
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Testimonial slider
+const slider = document.querySelector('.testimonial-slider');
+const slides = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.testimonial-dot');
+const prevBtn = document.querySelector('.testimonial-prev');
+const nextBtn = document.querySelector('.testimonial-next');
+let currentIndex = 0;
+const slideWidth = 100; // percentage
+// Initialize dots
+dots[0].classList.add('bg-primary');
+function goToSlide(index) {
+if (index < 0) index = slides.length - 1;
+if (index >= slides.length) index = 0;
+slider.style.transform = `translateX(-${index * slideWidth}%)`;
+currentIndex = index;
+// Update dots
+dots.forEach((dot, i) => {
+if (i === currentIndex) {
+dot.classList.add('bg-primary');
+dot.classList.remove('bg-gray-300');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+}
+});
+}
+// Event listeners
+prevBtn.addEventListener('click', () => {
+goToSlide(currentIndex - 1);
+});
+nextBtn.addEventListener('click', () => {
+goToSlide(currentIndex + 1);
+});
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+goToSlide(index);
+});
+});
+// Auto slide
+let interval = setInterval(() => {
+goToSlide(currentIndex + 1);
+}, 5000);
+// Pause on hover
+slider.addEventListener('mouseenter', () => {
+clearInterval(interval);
+});
+slider.addEventListener('mouseleave', () => {
+interval = setInterval(() => {
+goToSlide(currentIndex + 1);
+}, 5000);
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scroll for navigation links
+const navLinks = document.querySelectorAll('a[href^="#"]');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+// Close mobile menu if open
+const mobileMenu = document.getElementById('mobile-menu');
+const menuToggle = document.getElementById('menu-toggle');
+if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+menuToggle.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+}
+// Smooth scroll to target
+window.scrollTo({
+top: targetElement.offsetTop - 80, // Adjust for navbar height
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>

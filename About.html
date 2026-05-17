@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - theUPLIV Digital Agency</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a1cc56',
+                        secondary: '#001233',
+                        tertiary: '#00091a'
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        html { overflow-x: hidden; }
+        .hero-bg { background: linear-gradient(120deg, #020713 0%, #405099 100%); }
+        
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-gradient-to-r from-secondary/50 to-secondary/50 backdrop-blur-md z-50 border-b border-gray-300">
+        <nav class="px-6 py-2">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="font-pacifico text-2xl text-secondary">
+                    <a href="home.html"> <img src="Logo.png" alt="Logo" class="w-18 h-16"></a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="service.html" class="text-gray-300 hover:text-primary transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-gray-300 hover:text-primary transition-colors">Portfolio</a>
+                    <a href="blog.html" class="text-gray-300 hover:text-primary transition-colors">Blog</a>
+                    <a href="About.html" class="block text-primary font-semibold">About</a>
+                    <a href="Careers.html" class="text-gray-300 hover:text-primary transition-colors">Careers</a>
+                    <a href="Templates.html" class="text-gray-300 hover:text-primary transition-colors">Templates</a>
+                    <a href="Contact.html" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block bg-primary text-black px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors">
+                        <a href="Contact.html">Contact Us</a>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="md:hidden text-white hover:text-primary transition-colors">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary/95 backdrop-blur-md mt-4 rounded-lg shadow-lg">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="home.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Home</a>
+                    <a href="service.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Services</a>
+                    <a href="portfolio.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Portfolio</a>
+                    <a href="blog.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Blog</a>
+                    <a href="About.html" class="block text-primary font-semibold py-2 border-b border-gray-600">About</a>
+                    <a href="Careers.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Careers</a>
+                    <a href="Templates.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Templates</a>
+                    <a href="Contact.html" class="block text-gray-300 hover:text-primary transition-colors py-2">Contact</a>
+                    <button class="w-full bg-primary text-black px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors mt-4">
+                      <a href="Contact.html">Contact Us</a>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-[60vh] flex items-center relative overflow-hidden pt-20" style="margin-bottom:50px 0;">
+           <div class="absolute inset-0 w-full h-full">
+                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/90 to-transparent"></div> 
+                <img src="BrandingBackground.png" alt="About Hero" class="w-full h-full object-cover" style="height:100vh;">
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center z-10" style="margin-top:20px;">
+                <div class="w-full px-6 py-20">
+                    <div class="max-w-7xl mx-auto items-center text-center">
+                        <div class="text-white">
+                            <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                                About <span class="text-primary">UPliv</span>
+                            </h1>
+                            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                                Discover our story, our values, and the passionate team driving digital innovation for our clients worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Are We -->
+        <section class="py-20 bg-white fade-in">
+            <h2 class="text-4xl font-bold text-secondary mb-6 flex justify-center">Who Are We?</h2>
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-secondary mb-6">UPLIV – The Trusted Digital Marketing Agency</h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Founded in June 2025, UPLIV is a full-service digital marketing agency based in Tirupati, dedicated to helping businesses grow their online presence. We focus on creating strategies that are clear, effective, and tailored to each client’s goals.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed"> With over 8 years of experience and 50+ successful projects delivered, our team specializes in web development, SEO, Google Ads, and social media marketing. From building user-friendly websites to running targeted ad campaigns, we aim to deliver measurable results — more website traffic, better conversions, and stronger brand visibility.</p>
+
+                       <h4 class="font-bold text-secondary mb-4">UPLIV is led by:</h4>
+
+                       <p class="text-lg text-gray-600 mb-6 leading-relaxed"><strong>Sairam Desetti</strong> – Founder & Web Development Expert</p>
+
+                       <p class="text-lg text-gray-600 mb-6 leading-relaxed"><strong>Ajay Ramisetty</strong> – CEO & Digital Marketing Specialist</p>
+
+                       <p class="text-lg text-gray-600 mb-6 leading-relaxed">Our approach is simple — we listen to our clients, understand their needs, and create digital solutions that bring real growth.</p>
+
+                       <h4 class="font-bold text-secondary mb-4">Why Choose UPLIV?</h4>
+                       <ul class="space-y-4">
+                        <li class="flex items-center text-lg"><i class="ri-check-line text-primary mr-3"></i> Full-service digital marketing agency</li>
+                        <li class="flex items-center text-lg"><i class="ri-check-line text-primary mr-3"></i> Focused on delivering results that matter</li>
+                        <li class="flex items-center text-lg"><i class="ri-check-line text-primary mr-3"></i> Creative, collaborative, and transparent</li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="BrandingBackground.png" alt="Who Are We" class="w-full h-auto rounded-2xl shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-20 bg-gray-50 fade-in">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">Why Choose Us?</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        We go beyond just delivering projects. We build partnerships, drive growth, and empower your business to thrive in the digital world.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-secondary p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                            <i class="ri-lightbulb-flash-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Innovative Solutions</h3>
+                        <p class="text-gray-300">We leverage the latest technologies and creative thinking to solve your toughest business challenges.</p>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                            <i class="ri-user-heart-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Client-Centric Approach</h3>
+                        <p class="text-gray-300">Your goals are our priority. We listen, adapt, and deliver solutions tailored to your unique needs.</p>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                            <i class="ri-award-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Proven Track Record</h3>
+                        <p class="text-gray-300">With numerous successful projects and happy clients, we have a reputation for excellence and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaders Behind Upliv -->
+        <section class="py-20 bg-white fade-in">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">Leaders Behind Upliv</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Meet the visionaries and experts guiding our agency to new heights.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Leader Card 1 -->
+                    <div class="group rounded-2xl shadow-xl text-center transition-all overflow-hidden relative">
+                        <div class="relative w-full flex items-center justify-center" style="height:320px; max-width:320px; margin:0 auto ;">
+                            <img src="Sairam.jfif" alt="Founder" class="w-full h-full object-cover transition-all duration-500 hover:opacity-20 rounded-2xl max-h-90 max-w-xs mx-auto">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/70 p-6 rounded-2xl">
+                                <h3 class="text-xl font-semibold text-primary mb-1">Sairam Desetti</h3>
+                                <div class="text-white font-semibold mb-2">Founder – UPLIV</div>
+                                <p class="text-gray-200 text-sm">8+ years of experience in web development and design, Leads our web & design division.</p>
+                            </div>
+                        </div>
+                         <h3 class="text-xl font-semibold text-primary mt-4">Sairam Desetti</h3>
+                                <div class="text-secondary font-semibold">Founder – UPLIV</div>
+                    </div>
+                    <!-- Leader Card 2 -->
+                    <div class="group shadow-xl rounded-2xl  text-center  transition-all overflow-hidden relative">
+                        <div class="relative w-full flex items-center justify-center" style="height:320px; max-width:320px; margin:0 auto;">
+                            <img src="Ajay1.jpg" alt="CEO" class="w-full h-full object-cover transition-all duration-500 hover:opacity-20 rounded-2xl max-h-80 max-w-xs mx-auto">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/70 p-6 rounded-2xl">
+                                <h3 class="text-xl font-semibold text-primary mb-1">Ajay Ramisetty</h3>
+                                <div class="text-white font-semibold mb-2">CEO – UPLIV</div>
+                                <p class="text-gray-200 text-sm">8+ years in Digital Marketing. Specializes in Meta & Google Ads, SEO. Leads our DM Division.</p>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mt-4">Ajay Ramisetty</h3>
+                                <div class="text-secondary font-semibold">CEO – UPLIV</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="py-20 bg-gray-50 fade-in">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">Our Achievements</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Proud moments and milestones that define our journey.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <i class="ri-trophy-line text-4xl text-primary mb-4"></i>
+                        <div class="text-3xl font-bold text-secondary mb-2">2025</div>
+                        <div class="text-primary font-semibold mb-2">Best Digital Agency Award</div>
+                        <p class="text-gray-600 text-sm">Recognized for outstanding innovation and client results.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <i class="ri-rocket-line text-4xl text-primary mb-4"></i>
+                        <div class="text-3xl font-bold text-secondary mb-2">100+</div>
+                        <div class="text-primary font-semibold mb-2">Projects Delivered</div>
+                        <p class="text-gray-600 text-sm">Successfully completed projects for clients across the globe.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <i class="ri-group-line text-4xl text-primary mb-4"></i>
+                        <div class="text-3xl font-bold text-secondary mb-2">50+</div>
+                        <div class="text-primary font-semibold mb-2">Team Members</div>
+                        <p class="text-gray-600 text-sm">A diverse, talented, and passionate team of experts.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <i class="ri-star-smile-line text-4xl text-primary mb-4"></i>
+                        <div class="text-3xl font-bold text-secondary mb-2">98%</div>
+                        <div class="text-primary font-semibold mb-2">Client Satisfaction</div>
+                        <p class="text-gray-600 text-sm">Our clients love working with us and recommend us to others.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission & Vision -->
+        <section class="py-20 bg-white fade-in">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-secondary mb-6">Our Mission</h2>
+                    <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                        To empower businesses to achieve their full potential through innovative digital solutions, creative storytelling, and a relentless focus on results.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-3"></i> Deliver measurable value for every client</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-3"></i> Foster a culture of creativity and growth</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-3"></i> Lead with integrity, passion, and purpose</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-secondary mb-6">Our Vision</h2>
+                    <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                        To be the most trusted digital partner for businesses worldwide, known for our innovation, creativity, and unwavering commitment to client success.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-3"></i> Inspire digital transformation globally</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-3"></i> Set new standards for excellence in our industry</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-3"></i> Make a positive impact on our clients and communities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-tertiary text-white py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <div class="font-pacifico text-2xl text-primary mb-4">
+                            <img src="Logo.png" alt="Logo" class="w-16 h-16">
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            Transforming businesses through innovative digital marketing solutions and creative excellence.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://facebook.com/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://youtube.com/@uplivdigitalmarketingagency?si=Jk_RkvD6YDBYOz9E" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/uplivagency" target="_blank"  class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://instagram.com/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="https://wa.me/9390886024" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                                <i class="ri-whatsapp-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2 text-gray-400">
+                         <li><a href="#" class="hover:text-primary transition-colors">Web Development</a></li>
+                         <li><a href="#" class="hover:text-primary transition-colors">UI/UX Design</a></li>
+                         <li><a href="#" class="hover:text-primary transition-colors">Social Media Management</a></li>
+                         <li><a href="#" class="hover:text-primary transition-colors">Social Media Marketing (Meta & Google Ads)</a></li>
+                         <li><a href="#" class="hover:text-primary transition-colors">SEO</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-primary transition-colors">About Us</a></li>
+                            <li><a href="portfolio.html" class="hover:text-primary transition-colors">Portfolio</a></li>
+                            <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+                            <li><a href="Careers.html" class="hover:text-primary transition-colors">Careers</a></li>
+                            <li><a href="Templates.html" class="hover:text-primary transition-colors">Templates</a></li>
+                            <li><a href="Contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                        <p class="text-gray-400 mb-4">Subscribe to get the latest updates and insights.</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="flex-1 p-3 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary">
+                            <button class="bg-primary px-4 py-3 rounded-r-lg hover:bg-primary/90 transition-colors text-black">
+                                <i class="ri-send-plane-2-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        © 2025 TheUPLIV. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-gray-400">
+                        <a href="privacy policy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="terms and services.html" class="hover:text-primary transition-colors">Terms & Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all transform hover:scale-110 opacity-0 invisible">
+                <a href="https://wa.me/9390886024" class="whatsapp-float" target="_blank">
+                    <i class="ri-whatsapp-line text-3xl"></i>
+                </a>
+            </button>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Back to top functionality
+                const backToTopBtn = document.getElementById('backToTop');
+
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'invisible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+                // Scroll animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    observer.observe(el);
+                });
+
+                // Mobile menu functionality
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

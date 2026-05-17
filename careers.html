@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - the UPLIV Digital Marketing Agency</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a1cc56',
+                        secondary: '#001233',
+                        tertiary: '#00091a'
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+   <style>
+        html, body { overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background: linear-gradient(120deg, #020713 0%, #405099 100%); }
+        .job-card {
+            transition: all 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-10px);
+        }
+        .modal {
+            transition: all 0.3s ease;
+        }
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-gradient-to-r from-secondary/50 to-secondary/50 backdrop-blur-md z-50 border-b border-gray-300">
+        <nav class="px-6 py-2">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="font-pacifico text-2xl text-secondary">
+                    <a href="home.html"> <img src="Logo.png" alt="Logo" class="w-16 h-16"></a>
+                </div>
+        <!-- Success Modal -->
+        <div id="successModal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 opacity-0 invisible" style="transition: all 0.5s cubic-bezier(.4,0,.2,1);">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md flex flex-col items-center justify-center relative animate-fade-in">
+                <button id="closeSuccessModal" class="absolute top-4 right-4 text-gray-500 hover:text-primary text-2xl">&times;</button>
+                <div class="text-center">
+                    <i class="ri-checkbox-circle-line text-5xl text-primary mb-4"></i>
+                    <h2 class="text-2xl font-bold text-secondary mb-2">Application Submitted!</h2>
+                    <p class="text-gray-600 mb-4">Thank you for applying. Our team will review your application and get back to you soon.</p>
+                    <button id="successOkBtn" class="bg-primary text-black px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">OK</button>
+                </div>
+            </div>
+        </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="service.html" class="text-gray-300 hover:text-primary transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-gray-300 hover:text-primary transition-colors">Portfolio</a>
+                    <a href="blog.html" class="text-gray-300 hover:text-primary transition-colors">Blog</a>
+                    <a href="About.html" class="text-gray-300 hover:text-primary transition-colors">About</a>
+                    <a href="Careers.html" class="block text-primary font-semibold py-2">Careers</a>
+                    <a href="Templates.html" class="text-gray-300 hover:text-primary transition-colors">Templates</a>
+                    <a href="Contact.html" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block bg-primary text-black px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors">
+                        <a href="Contact.html">Contact Us</a>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-white hover:text-primary transition-colors">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary/95 backdrop-blur-md mt-4 rounded-lg shadow-lg">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="home.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Home</a>
+                    <a href="service.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Services</a>
+                    <a href="portfolio.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Portfolio</a>
+                    <a href="blog.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Blog</a>
+                    <a href="About.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">About</a>
+                    <a href="Careers.html" class="block text-primary font-semibold py-2">Careers</a>
+                    <a href="Templates.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Templates</a>
+                    <a href="Contact.html" cclass="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Contact</a>
+                    <button class="w-full bg-primary text-black px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors mt-4">
+                       <a href="Contact.html">Contact Us</a>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-[80vh] flex items-center relative overflow-hidden pt-20">
+            <div class="absolute inset-0 w-full h-full">
+                <img src="careers.jpeg" alt="Careers Hero" class="w-full h-full object-cover" style="height:100vh;">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/90 to-transparent"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center z-10">
+                <div class="w-full px-6 py-20">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="items-center text-center">
+                            <div class="text-white">
+                                <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                                    Careers at <span class="text-primary">UPLIV</span>
+                                </h1>
+                                <p class="text-xl text-gray-100 mb-8 leading-relaxed">
+                                    Join our team of innovators, creators, and strategists. Explore exciting opportunities and grow your career with us!
+                                </p>
+                                <div class="flex justify-center gap-4">
+                                    <button class="bg-primary text-black px-8 py-4 !rounded-button hover:bg-primary/90 transition-all transform hover:scale-105 font-semibold" id="openApplicationModal">
+                                        Apply Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Cards Section -->
+        <section class="py-20 bg-white fade-in">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">Why Work With UPLIV?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        At UPLIV, we foster a culture of innovation, collaboration, and growth. Our team is our greatest asset, and we are committed to providing an environment where everyone can thrive.
+                        Explore our current openings and find the role that fits you best. Click "Apply Now" to submit your application.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Job Card 1 -->
+                    <div class="job-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Web Developer</h3>
+                            <p class="text-gray-600 mb-4">Build and maintain modern, responsive websites for our clients.</p>
+                             <ul style="list-style: none; padding: 0;">
+                               <li>📍 Tirupati</li>
+                               <li>🕒 Fresher / up to 6 months</li>
+                               <li>🛠️ Web Development, HTML, CSS, JavaScript</li>
+                            </ul><br>
+                            <button class="bg-primary text-black px-6 py-3 !rounded-button font-semibold apply-btn" data-role="Web Developer">Apply Now</button>
+                        </div>
+                    </div>
+                    <!-- Job Card 2 -->
+                    <div class="job-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">UI/UX Designer</h3>
+                            <p class="text-gray-600 mb-4">Design intuitive and beautiful user interfaces and experiences.</p>
+                             <ul style="list-style: none; padding: 0;">
+                               <li>📍 Tirupati</li>
+                               <li>🕒 Fresher / up to 6 months</li>
+                               <li>🛠️ Figma, Sketch, Adobe XD</li>
+                            </ul><br>
+                            <button class="bg-primary text-black px-6 py-3 !rounded-button font-semibold apply-btn" data-role="UI/UX Designer">Apply Now</button>
+                        </div>
+                    </div>
+                    <!-- Job Card 3 -->
+                    <div class="job-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Digital Marketing Specialist</h3>
+                            <p class="text-gray-600 mb-4">Drive growth through SEO, Google Ads, and social media campaigns.</p>
+                            <ul style="list-style: none; padding: 0;">
+                               <li>📍 Tirupati</li>
+                               <li>🕒 Fresher / up to 6 months</li>
+                               <li>🛠️ Meta Suite, Canva, Hootsuite</li>
+                            </ul><br>
+                            <button class="bg-primary text-black px-6 py-3 !rounded-button font-semibold apply-btn" data-role="Digital Marketing Specialist">Apply Now</button>
+                        </div>
+                    </div>
+                    <!-- Job Card 4 -->
+                    <div class="job-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Content Writer</h3>
+                            <p class="text-gray-600 mb-4">Create compelling content for web, social, and marketing campaigns.</p>
+                            <ul style="list-style: none; padding: 0;">
+                              <li>📍 Tirupati</li>
+                              <li>🕒 Fresher / up to 6 months</li>
+                              <li>🛠️ Grammarly, Notion, MS Word</li>
+                            </ul><br>
+                            <button class="bg-primary text-black px-6 py-3 !rounded-button font-semibold apply-btn" data-role="Content Writer">Apply Now</button>
+                        </div>
+                    </div>
+                    <!-- Job Card 5 -->
+                    <div class="job-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">Social Media Manager</h3>
+                            <p class="text-gray-600 mb-4">Manage and grow our clients' social media presence.</p>
+                            <ul style="list-style: none; padding: 0;">
+                               <li>📍 Tirupati</li>
+                               <li>🕒 Fresher / up to 6 months</li>
+                               <li>🛠️ Meta Suite, Canva, Hootsuite</li>
+                            </ul><br>
+                            <button class="bg-primary text-black px-6 py-3 !rounded-button font-semibold apply-btn" data-role="Social Media Manager">Apply Now</button>
+                        </div>
+                    </div>
+                    <!-- Job Card 6 -->
+                    <div class="job-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-secondary mb-2">SEO Executive</h3>
+                            <p class="text-gray-600 mb-4">Craft stunning visuals for digital and print media.</p>
+                            <ul style="list-style: none; padding: 0;">
+                               <li>📍 Tirupati</li>
+                               <li>🕒 Fresher / up to 6 months</li>
+                               <li>🛠️ GSC, Google Analytics, SEMRush</li>
+                            </ul><br>
+                            <button class="bg-primary text-black px-6 py-3 !rounded-button font-semibold apply-btn" data-role="Graphic Designer">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Modal -->
+        <div id="applicationModal" class="fixed inset-0 bg-black/60 flex items-center justify-center h-50 w-full z-50 opacity-0 invisible modal" style="justify-content: center; padding: 20px;">
+            <div class="bg-white rounded-2xl shadow-2xl p-4 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-lg xl:max-w-xl flex flex-col items-center justify-center relative" style="margin: 0 1rem;">
+                <button id="closeModal" class="absolute top-4 right-3 text-gray-500 hover:text-primary text-2xl">&times;</button>
+                <h2 class="text-xl font-bold text-secondary mb-2 " >Application Form</h2>
+                    <form id="jobApplyForm" action="https://formsubmit.co/info@theupliv.com" method="POST" id="applicationForm" enctype="multipart/form-data">
+                     <input type="hidden" name="_subject" id="formSubject" value="Job Application">
+                     <input type="hidden" name="_captcha" value="false">
+
+                     <input type="text" name="name" placeholder="Your Full Name" required style="width: 80%; padding: 10px; margin: 10px 30px; border: 1px solid #ccc; border-radius: 6px;">
+                     <input type="email" name="email" placeholder="Your Email" required style="width: 80%; padding: 10px; margin: 10px 30px; border: 1px solid #ccc; border-radius: 6px;">
+                     <input type="text" name="phone" placeholder="Phone Number" required style="width: 80%; padding: 10px; margin: 10px 30px; border: 1px solid #ccc; border-radius: 6px;">
+                     <textarea name="message" placeholder="Why should we hire you?" rows="4" required style="width: 80%; padding: 10px; margin: 10px 30px; border: 1px solid #ccc; border-radius: 6px;"></textarea>
+                     <label style="margin-bottom: 2px; display: block; padding-left: 30px;">Upload Resume (PDF/DOC):</label>
+
+                     <input type="file" name="attachment" id="resumeInput" accept=".pdf,.doc,.docx" required style="margin-bottom:2px; padding-left: 30px;">
+                     <div id="resumeDisplay" style="display:none; margin-bottom:20px; padding-left: 30px;"></div>
+                    <button type="submit" class="bg-primary text-black px-5 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors w-auto" style="margin:20px 30px;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- CTA Footer -->
+           <footer class="bg-secondary text-white py-12 mt-20">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                    <h2 class="text-3xl font-bold mb-4">👨‍💻 Don't see your dream job?</h2><br>
+                    <h2 class="text-3xl font-bold mb-4">Ready to join UPLIV?</h2>
+                    <p class="text-gray-400 mb-6">Drop your resume and become part of our creative team!</p>
+                    <button class="bg-primary px-8 py-4 rounded-lg text-black font-semibold hover:bg-primary/90 transition-colors" id="ctaDropResume">Drop Your Resume</button>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-tertiary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="font-pacifico text-2xl text-primary mb-4">
+                        <img src="Logo.png" alt="Logo" class="w-16 h-16">
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Transforming businesses through innovative digital marketing solutions and creative excellence.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://youtube.com/@uplivdigitalmarketingagency?si=Jk_RkvD6YDBYOz9E" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="https://instagram.com/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://wa.me/9390886024" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">Web Development</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Social Media Management</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Social Media Marketing (Meta & Google Ads)</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">SEO</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="About.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-primary transition-colors">Portfolio</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="Templates.html" class="hover:text-primary transition-colors">Templates</a></li>
+                        <li><a href="Contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 p-3 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary">
+                        <button class="bg-primary px-4 py-3 rounded-r-lg hover:bg-primary/90 transition-colors text-black">
+                           <i class="ri-send-plane-2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    © 2025 TheUPLIV. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-gray-400">
+                    <a href="privacy policy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="terms and services.html" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        
+        <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all transform hover:scale-110 opacity-0 invisible">
+            <a href="https://wa.me/9390886024" class="whatsapp-float" target="_blank">
+                <i class="ri-whatsapp-line text-3xl"></i>
+            </a>
+        </button>
+    </footer>
+
+    <script>
+        // Back to top functionality
+                const backToTopBtn = document.getElementById('backToTop');
+
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'invisible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+
+        // Fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+
+        // Mobile menu functionality
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+
+        // Modal logic
+        const applicationModal = document.getElementById('applicationModal');
+        const openApplicationModal = document.getElementById('openApplicationModal');
+        const closeModal = document.getElementById('closeModal');
+        const applyBtns = document.querySelectorAll('.apply-btn');
+        const ctaDropResume = document.getElementById('ctaDropResume');
+
+        function showModal(role = '') {
+            applicationModal.classList.add('show');
+            applicationModal.classList.remove('opacity-0', 'invisible');
+        }
+        function hideModal() {
+            applicationModal.classList.remove('show');
+            applicationModal.classList.add('opacity-0', 'invisible');
+        }
+        openApplicationModal.addEventListener('click', () => showModal());
+        closeModal.addEventListener('click', hideModal);
+        ctaDropResume.addEventListener('click', () => showModal());
+        applyBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                showModal(this.getAttribute('data-role'));
+
+            });
+                // Close modal when clicking outside the modal content
+                applicationModal.addEventListener('mousedown', function(event) {
+                    if (event.target === applicationModal) {
+                        hideModal();
+                    }
+                });
+
+                // Resume file display and remove logic
+                const resumeInput = document.getElementById('resumeInput');
+                const resumeDisplay = document.getElementById('resumeDisplay');
+                resumeInput.addEventListener('change', function() {
+                    if (resumeInput.files.length > 0) {
+                        const file = resumeInput.files[0];
+                        resumeDisplay.innerHTML = `<button type='button' class='bg-primary text-black px-4 py-2 rounded-lg font-semibold mr-2 flex items-center'>${file.name} <span id='removeResume' style='margin-left:8px;cursor:pointer;'>&times;</span></button>`;
+                        resumeDisplay.style.display = 'block';
+                        resumeInput.style.display = 'none';
+                        document.getElementById('removeResume').onclick = function() {
+                            resumeInput.value = '';
+                            resumeDisplay.style.display = 'none';
+                            resumeInput.style.display = 'block';
+                        };
+                    }
+                });
+
+                // Success Modal logic
+                const jobApplyForm = document.getElementById('jobApplyForm');
+                const successModal = document.getElementById('successModal');
+                const closeSuccessModal = document.getElementById('closeSuccessModal');
+                const successOkBtn = document.getElementById('successOkBtn');
+
+                function showSuccessModal() {
+                    successModal.classList.remove('opacity-0', 'invisible');
+                    successModal.classList.add('show');
+                }
+                function hideSuccessModal() {
+                    successModal.classList.add('opacity-0', 'invisible');
+                    successModal.classList.remove('show');
+                }
+                closeSuccessModal.addEventListener('click', hideSuccessModal);
+                successOkBtn.addEventListener('click', hideSuccessModal);
+                successModal.addEventListener('mousedown', function(event) {
+                    if (event.target === successModal) {
+                        hideSuccessModal();
+                    }
+                });
+
+                jobApplyForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    hideModal();
+                    showSuccessModal();
+                    // Optionally, submit the form via AJAX here if needed
+                });
+        });
+        // Show modal on page load
+        window.onload = function() {
+            setTimeout(function() {
+                showModal();
+            }, 60000); // 1 minute delay
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const applyButtons = document.querySelectorAll(".apply-btn");
+    const modal = document.getElementById("applicationModal");
+    const closeModal = document.getElementById("closeModal");
+    const formHeading = modal.querySelector("h2");
+    const subjectInput = document.getElementById("formSubject");
+
+    applyButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Get the job title from the button's data attribute
+            const jobTitle = this.getAttribute("data-role");
+
+            // Update the heading text
+            formHeading.textContent = `Application form for ${jobTitle}`;
+
+            // Update the hidden subject field (for email subject)
+            subjectInput.value = `Job Application - ${jobTitle}`;
+
+            // Show the modal
+            modal.classList.remove("opacity-0", "invisible");
+            modal.classList.add("opacity-100", "visible");
+        });
+    });
+
+    // Close modal
+    closeModal.addEventListener("click", function () {
+        modal.classList.add("opacity-0", "invisible");
+        modal.classList.remove("opacity-100", "visible");
+    });
+
+    // Close modal on outside click
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.classList.add("opacity-0", "invisible");
+            modal.classList.remove("opacity-100", "visible");
+        }
+    });
+});
+    </script>
+</body>
+</html>

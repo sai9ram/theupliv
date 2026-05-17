@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - the UPLIV Digital Marketing Agency</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a1cc56',
+                        secondary: '#001233',
+                        tertiary: '#00091a'
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'pacifico': ['Pacifico', 'serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body { overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg { background: linear-gradient(120deg, #020713 0%, #405099 100%); }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .case-study-modal {
+            transition: all 0.3s ease;
+        }
+        .case-study-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }   
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-gradient-to-r from-secondary/50 to-secondary/50 backdrop-blur-md z-50 border-b border-gray-300">
+        <nav class="px-6 py-2">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="font-pacifico text-2xl text-secondary">
+                    <a href="home.html"> <img src="Logo.png" alt="Logo" class="w-16 h-16"></a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-300 hover:text-primary transition-colors">Home</a>
+                    <a href="service.html" class="text-gray-300 hover:text-primary transition-colors">Services</a>
+                    <a href="portfolio.html" class="text-primary font-semibold">Portfolio</a>
+                    <a href="blog.html" class="text-gray-300 hover:text-primary transition-colors">Blog</a>
+                    <a href="About.html" class="text-gray-300 hover:text-primary transition-colors">About</a>
+                    <a href="Careers.html" class="text-gray-300 hover:text-primary transition-colors">Careers</a>
+                    <a href="Templates.html" class="text-gray-300 font-semibold transition-colors py-2">Templates</a>
+                    <a href="Contact.html" class="text-gray-300 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block bg-primary text-black px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors">
+                        <a href="Contact.html">Contact Us</a>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="md:hidden text-white hover:text-primary transition-colors">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary/95 backdrop-blur-md mt-4 rounded-lg shadow-lg">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="home.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Home</a>
+                    <a href="service.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Services</a>
+                    <a href="portfolio.html" class="block text-primary font-semibold py-2 border-b border-gray-600">Portfolio</a>
+                    <a href="blog.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Blog</a>
+                    <a href="About.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">About</a>
+                    <a href="Careers.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Careers</a>
+                    <a href="Templates.html" class="block text-gray-300 hover:text-primary transition-colors py-2 border-b border-gray-600">Templates</a>
+                    <a href="Contact.html" class="block text-gray-300 hover:text-primary transition-colors py-2">Contact</a>
+                    <button class="w-full bg-primary text-black px-6 py-3 !rounded-button hover:bg-primary/90 transition-colors mt-4">
+                       <a href="Contact.html">Contact Us</a>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-[90vh] flex items-center relative overflow-hidden pt-20">
+            <div class="absolute inset-0 w-full h-full">
+                <img src="portfolio.webp" alt="Portfolio Hero" class="w-full h-full object-cover" style="height:100vh;">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/90 to-transparent"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center z-10">
+                <div class="w-full px-6 py-20">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="items-center text-center">
+                            <div class="text-white">
+                                <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                                    Our <span class="text-primary">Portfolio</span>
+                                </h1>
+                                <p class="text-xl text-gray-100 mb-8 leading-relaxed">
+                                    Discover our latest work and see how we've helped businesses achieve their digital goals.<br> Each project tells a story of innovation, creativity, and measurable results.
+                                </p>
+                                <div class="flex justify-center gap-4">
+                                    <button class="bg-primary text-black px-8 py-4 !rounded-button hover:bg-primary/90 transition-all transform hover:scale-105 font-semibold">
+                                        <a href="contact.html">Start Your Project</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Overview -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">Featured Projects</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Explore our latest work and see how we've helped businesses achieve their digital goals. Each project represents our commitment to excellence and innovation.
+                    </p>
+                </div>
+                
+                <!-- Project Categories -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="category-filter bg-primary text-black px-6 py-3 !rounded-button hover:bg-primary/90 transition-all font-semibold" data-category="all">
+                        All Projects
+                    </button>
+                    <button class="category-filter bg-gray-200 text-gray-700 px-6 py-3 !rounded-button hover:bg-primary hover:text-black transition-all font-semibold" data-category="web">
+                        Web Development
+                    </button>
+                    <button class="category-filter bg-gray-200 text-gray-700 px-6 py-3 !rounded-button hover:bg-primary hover:text-black transition-all font-semibold" data-category="uiux">
+                        UI/UX Design 
+                    </button>
+                    <button class="category-filter bg-gray-200 text-gray-700 px-6 py-3 !rounded-button hover:bg-primary hover:text-black transition-all font-semibold" data-category="marketing">
+                        Social Media Marketing (Meta & Google Ads)
+                    </button>
+                    <button class="category-filter bg-gray-200 text-gray-700 px-6 py-3 !rounded-button hover:bg-primary hover:text-black transition-all font-semibold" data-category="management">
+                        Social Media Management
+                    </button>
+                    <button class="category-filter bg-gray-200 text-gray-700 px-6 py-3 !rounded-button hover:bg-primary hover:text-black transition-all font-semibold" data-category="seo">
+                        SEO
+                    </button>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                    <!-- Codetek Software Solutions -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="Codetek.png" alt="Codetek Software Solutions" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="codetek">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Codetek Software Solutions</h3>
+                            <p class="text-gray-600 mb-4">IT Startup Website | SEO Optimization | Paid Ads Campaigns</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">React</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Node.js</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vetarasoft IT Solutions  -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="uiux">
+                        <div class="relative overflow-hidden">
+                            <img src="Vetarasoft.png" alt="Vetarasoft" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="veterasoft">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Vetarasoft IT Solutions</h3>
+                            <p class="text-gray-600 mb-4">UI/UX Design | Web Development | Product Launch Strategy</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">React Native</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Firebase</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Krystalnest IT  Solutions -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="KrystalnestIT.png" alt="KrystalnestIT Solutions" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="krystalnest">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Krystalnest IT Solutions</h3>
+                            <p class="text-gray-600 mb-4">Branding | SEO Strategy | Digital Outreach Campaign</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">WordPress</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">PHP</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aira Interiors -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="uiux">
+                        <div class="relative overflow-hidden">
+                            <img src="Aira-overview-Casestudy.png" alt="Aira Interiors" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="aira">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Aira Interiors</h3>
+                            <p class="text-gray-600 mb-4">Interior Website | Visual Ads | Online Branding</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Logo Design</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Brand Strategy</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Visual Identity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tecktab IT Solutions -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="Tecktab.png" alt="Tecktab" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="tecktab">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Tecktab IT Solutions</h3>
+                            <p class="text-gray-600 mb-4">Paid Search Ads | Tech Website | Content Strategy</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Vue.js</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Laravel</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Affijavels -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="uiux">
+                        <div class="relative overflow-hidden">
+                            <img src="affj.png" alt="Affijavels" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="affijavels">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Affijavels</h3>
+                            <p class="text-gray-600 mb-4">Web Development</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Figma</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Javling Start Solutions -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="uiux">
+                        <div class="relative overflow-hidden">
+                            <img src="JS services.png" alt="Javling Start Solutions" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="js-services">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Javling Start Solutions</h3>
+                            <p class="text-gray-600 mb-4">Web Development</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Figma</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Web Technologies</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tirupati Taxiwala  -->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="tpttaxi.png" alt="Tirupati Taxiwala" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="tpttaxiwala">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Tirupati Taxiwala</h3>
+                            <p class="text-gray-600 mb-4">Web Development</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">WordPress</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- the Korean Studio  -->
+                     <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="kstudio.png" alt="koreanstudio" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="thekstudio">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">The koreanStudio</h3>
+                            <p class="text-gray-600 mb-4">Web Development</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">WordPress</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Gayathri Educatiional Society -->
+                     <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="gayathriedu.png" alt="Gayaythri" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="gayathri">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Gayathri Educational Society</h3>
+                            <p class="text-gray-600 mb-4">Web Development</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Figma</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- MSN Organic farms -->
+                     <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="web">
+                        <div class="relative overflow-hidden">
+                            <img src="msnfarms.png" alt="MsnFarms" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="msnfarms">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">MSN Agro Farms</h3>
+                            <p class="text-gray-600 mb-4">Web Development</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Figma</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Prototyping</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">UI/UX</span>
+                            </div>
+                        </div>
+                     </div>
+                      <!-- Sowmya Creations-->
+                      <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="marketing">
+                        <div class="relative overflow-hidden">
+                            <img src="sowmya.jfif" alt="sowmya" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="sowmya">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Sowmya Creations</h3>
+                            <p class="text-gray-600 mb-4">Social Media Marketing(Meta & Google Ads)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PS5 Homestay-->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="marketing">
+                        <div class="relative overflow-hidden">
+                            <img src="sowmya.jfif" alt="PS5 Homestay" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="ps5">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">PS5 Homestay</h3>
+                            <p class="text-gray-600 mb-4">Social Media Marketing(Meta & Google Ads)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- Vaish Photography-->
+                      <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="marketing">
+                        <div class="relative overflow-hidden">
+                            <img src="vaishp.jfif" alt="Vaish Photography" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="vaish">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Vaish Photography</h3>
+                            <p class="text-gray-600 mb-4">Social Media Marketing(Meta & Google Ads)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Keerthi Makeup Artist-->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="marketing">
+                        <div class="relative overflow-hidden">
+                            <img src="keerthimakeup.jfif" alt="Keerthi Makeup Artist" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="keerthi">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Keerthi Makeup Artist</h3>
+                            <p class="text-gray-600 mb-4">Social Media Marketing(Meta & Google Ads)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gopuram tours-->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="marketing">
+                        <div class="relative overflow-hidden">
+                            <img src="gopuramtours.jfif" alt="Gopuram Tours" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="gopuram">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Gopuram Tours</h3>
+                            <p class="text-gray-600 mb-4">Social Media Marketing(Meta & Google Ads)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aira Interiors-->
+                    <div class="project-card bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden" data-category="marketing">
+                        <div class="relative overflow-hidden">
+                            <img src="gopuramtours.jfif" alt="Aira Interiors" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-primary/80 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <button class="bg-white text-secondary px-6 py-3 !rounded-button font-semibold view-case-study" data-project="airai">
+                                    View Case Study
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Aira Interiors</h3>
+                            <p class="text-gray-600 mb-4">Social Media Marketing(Meta & Google Ads)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Meta Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Modals -->
+        <!-- Codetek Software Solutions Case Study -->
+        <div id="codetek-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 class="text-3xl font-bold text-secondary">Codetek Software Solutions</h2>
+                        <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <img src="Codetek.png" alt="Codetek Software" class="w-full h-auto rounded-xl"> <br>
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Our Approach & Solutions</h4>
+                            <p>
+                                We crafted a fully customized website for Codetek using modern UI/UX practices, ensuring mobile responsiveness and fast loading times. SEO best practices were implemented site-wide including keyword optimization, meta tags, and content alignment.
+                              </p><br>
+                              <p>
+                                Simultaneously, we launched Google Ads and Meta Ads campaigns targeting specific demographics. Regular monitoring and A/B testing allowed us to fine-tune the campaigns for better CTR and conversions.
+                              </p> <br>
+                              <div>
+                                <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                    <a href="https://www.codeteksoft.com/" target="_blank"> Visit Site</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                            <p class="text-gray-600 mb-4">Codetek Software Solutions, an ambitious IT startup, approached us to establish a strong online presence that reflects their innovative services. The goal was to build a high-performance website optimized for SEO and backed by a paid ads strategy that converts.</p>
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Objective</h4>
+                               <ul>
+                                 <li>Design and develop a modern, responsive website</li>
+                                 <li>Optimize structure and content for SEO</li>
+                                 <li>Run and manage high-ROI paid ad campaigns</li>
+                               </ul>
+
+                            <h4 class="text-xl font-semibold text-secondary mb-2">Results</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Website Launch</div>
+                                    <div class="text-sm text-gray-700">Responsive site delivered in 3 weeks</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">SEO Ranking</div>
+                                    <div class="text-sm text-gray-700">Top 5 keywords on Google’s 1st page in 60 days</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Ad Performance</div>
+                                    <div class="text-sm text-gray-700">Achieved 3.5x ROAS</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Leads Generated</div>
+                                    <div class="text-sm text-gray-700">600+ qualified leads in 90 days</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client Review -->
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                        <blockquote class="text-gray-600 mb-4 italic">
+                            "upliv helped us completely transform our digital presence. Their strategic approach and dedication were key to our success!"
+                        </blockquote>
+                        <div class="flex items-center">
+                            <img src="Codetek Software Logo.png" alt="Codetek" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">Sai ram Busarapu</div>
+                                <div class="text-gray-600">Managing Director, Codetek Software Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Veterasoft IT Solutions Case Study -->
+        <div id="veterasoft-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 class="text-3xl font-bold text-secondary">VeteraSoft IT Solutions</h2>
+                        <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <img src="Vetarasoft-overview-Casestudy.png" alt="VeteraSoft" class="w-full h-auto rounded-xl"> <br>
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Our Approach & Solutions</h2>
+                            <p>
+                          We designed and developed a fully customized website for Vetarasoft IT Solutions, focusing on modern UI/UX principles, seamless responsiveness across all devices, and optimized performance. The site structure and content were carefully aligned with SEO strategies, including metadata enhancements, keyword targeting, and user-focused content flow.
+                        </p><br>
+                        <p>
+                          In parallel, we devised and executed strategic launch campaigns across Google Ads and Meta platforms to promote Vetarasoft's digital solutions. Through continuous performance tracking and A/B testing, we maximized engagement, click-through rates, and launch conversion outcomes.
+                        </p><br>
+                        <div>
+                            <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                <a href="https://vetarasoft.com.my" target="_blank"> Visit Site</a>
+                            </button>
+                        </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                            <p class="text-gray-600 mb-4">Vetarasoft IT Solutions, a dynamic IT company, partnered with us to craft a powerful digital presence that reflects their expertise in UI/UX design, web development, and product launch strategy. The objective was to build a high-performance website with intuitive user experiences, optimized for visibility, and backed by strategic campaigns that drive engagement and conversion. </p>
+                            
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Objective</h4>
+                            <ul class="text-gray-600 mb-4 space-y-2">
+                                <li>Design and develop a modern, responsive website with intuitive UI/UX</li>
+                                <li>Craft compelling content and structure aligned with SEO best practices</li>
+                                <li>Plan and execute strategic product launch campaigns for maximum impact</li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Website Delivery</div>
+                                    <div class="text-sm text-gray-700">Launched a sleek, responsive platform within 3 weeks</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">SEO Growth</div>
+                                    <div class="text-sm text-gray-700">Secured top 5 positions for targeted industry keywords within 60 days</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Launch Campaign ROI</div>
+                                    <div class="text-sm text-gray-700">Achieved 3.5x return through product-focused ad campaigns</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Product Launch</div>
+                                    <div class="text-sm text-gray-700">Successfully executed a go-to-market strategy leading to strong early traction</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client Review -->
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                        <blockquote class="text-gray-600 mb-4 italic">
+                           "Their team delivered beyond expectations. A solid partner for scaling any digital business."
+                        </blockquote>
+                        <div class="flex items-center">
+                            <img src="Vetarasoft Technologiesm - Logo.jpeg" alt="VeteraSoft" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">Bhanu Kiran Gowda</div>
+                                <div class="text-gray-600">Founder, VeteraSoft Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Krystalnest IT Solutions Case Study -->
+        <div id="krystalnest-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 class="text-3xl font-bold text-secondary">Krystalnest IT Solutions</h2>
+                        <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <img src="KrystalnestIT.png" alt="Krystalnest" class="w-full h-auto rounded-xl"><br>
+                            <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                            <p>
+                                We collaborated with Krystalnest IT Solutions to establish a compelling digital identity by designing a fully customized website that aligned with their brand values. The site featured a clean, modern interface with consistent branding elements and mobile-first responsiveness to ensure a seamless user experience across devices.
+                              </p> <br>
+                              <p>
+                                In tandem, we implemented a robust SEO strategy that included technical optimizations, targeted keyword integration, and on-page enhancements to boost organic visibility. Additionally, we executed high-impact digital outreach campaigns across key channels, driving brand awareness, audience engagement, and sustained traffic growth.
+                              </p><br>
+                              <div>
+                                <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                    <a href="https://www.krystalnestitsolutionsprivatelimited.co.in/"target="_blank"> Visit Site</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                            <p class="text-gray-600 mb-4">Krystalnest IT Solutions, an emerging technology company, partnered with us to establish a compelling digital identity that showcases their expertise in branding, SEO strategy, and digital outreach campaigns. The goal was to develop a high-impact online presence through a visually consistent brand, search-optimized content, and targeted outreach efforts that elevate visibility and drive meaningful engagement.</p>
+                            
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Objective</h4>
+                            <ul class="text-gray-600 mb-4 space-y-2">
+                                <li>Develop a cohesive and modern brand identity across all digital touchpoints</li>
+                                <li>Implement a results-driven SEO strategy to boost search engine visibility</li>
+                                <li>Execute targeted digital outreach campaigns to expand reach and drive engagement</li> 
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Website Launch</div>
+                                    <div class="text-sm text-gray-700">Delivered a brand-aligned, responsive website within 3 weeks</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                                    <div class="text-sm text-gray-700">Achieved top 5 rankings for key service-related keywords in under 60 days</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                                    <div class="text-sm text-gray-700">Enhanced digital footprint through targeted outreach and content strategy</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Campaign Performance</div>
+                                    <div class="text-sm text-gray-700">Executed high-performing digital campaigns with 3.5x ROI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client Review -->
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                        <blockquote class="text-gray-600 mb-4 italic">
+                           "They exceeded our expectations on every front. Truly impressed with their technical expertise."
+                        <div class="flex items-center">
+                            <img src="KrystalnestIT Solutions Pvt Ltd- Logo.png" alt="KrystalnestIT" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">Vamsi Krishna Gowda</div>
+                                <div class="text-gray-600">Founder, Krystalnest IT Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Aira Interiors Case Study -->
+ <div id="aira-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Aira Interiors</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="Aira-overview-Casestudy.png" alt="Aira Interiors" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                            <p>
+                                We partnered with Aira Interiors to craft a stunning digital experience that reflects their creative vision in interior design. A fully customized website was developed to elegantly showcase their portfolio, emphasizing visual storytelling, modern aesthetics, and a responsive layout for an immersive user journey across all devices.
+                              </p> <br>
+                              <p>
+                                To enhance visibility and brand recall, we launched captivating visual ad campaigns across digital platforms, highlighting Aira’s signature design projects. Simultaneously, we established a consistent online branding strategy that aligned visual elements, tone, and messaging—strengthening their identity and increasing engagement with prospective clients.
+                              </p><br>
+                              <div>
+                                <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                    <a href="Aira-Interiors-Website-Design.html" target="_blank"> Visit Site</a>
+                                </button>
+                            </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4"> Aira Interiors, a creative interior design firm, collaborated with us to build a striking digital presence that reflects their aesthetic vision and professional expertise. The objective was to design a visually rich website tailored to showcase their interior portfolio, implement captivating visual ad campaigns, and establish a cohesive online branding strategy that attracts and engages design-conscious audiences.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Design and develop a visually captivating interior design website to highlight project portfolios</li>
+                        <li>Launch immersive visual ad campaigns to showcase design aesthetics and attract new clients</li>
+                        <li>Establish a consistent and elegant online brand presence across web and social platforms</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website Launch</div>
+                            <div class="text-sm text-gray-700">Delivered a visually captivating, responsive interior design website in just 3 weeks</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Visual Ad Performance</div>
+                            <div class="text-sm text-gray-700">Achieved a 3.5x return on investment through high-impact visual campaigns</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Online Branding</div>
+                            <div class="text-sm text-gray-700">Strengthened brand identity across digital platforms with cohesive visual storytelling</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Audience Engagement</div>
+                            <div class="text-sm text-gray-700"> Increased user interaction and inquiries through optimized design and content flow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    "Working with the UPliv Digital Marketing Agency  on our social media marketing has been an amazing experience. Their Meta Ads strategy really captured the right audience for us and helped bring in a steady flow of genuine inquiries. The way they handled the campaigns was professional, creative, and perfectly aligned with our brand. We’ve noticed a real difference in our online presence and customer engagement, and we’re truly grateful for their support in growing our interior design business."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="Aira.png" alt="Aira" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Aira</div>
+                        <div class="text-gray-600">Founder, Aira Interiors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+         <!-- Tecktab IT Solutiions Case study-->
+         <div id="tecktab-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 class="text-3xl font-bold text-secondary">Tecktab IT Solutions</h2>
+                        <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <img src="Tecktab.png" alt="Tecktab IT Solutiions" class="w-full h-auto rounded-xl"><br>
+                            <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach & Solutions </h3>
+                            <p>
+                                We collaborated with Tecktab IT Solutions to craft a powerful digital presence by designing a fully customized tech website that reflects their innovative approach and core values. The site boasts a sleek, modern interface, seamlessly integrating branding elements, and is optimized for mobile-first design to provide an exceptional user experience across all devices.
+                              </p><br>
+                              <p>
+                                Simultaneously, we implemented an effective paid search ad strategy to amplify Tecktab IT Solutions’ online visibility and drive high-quality traffic to their website. This was complemented by a tailored content strategy that addresses key industry topics, engages the target audience, and positions the brand as a thought leader. The comprehensive approach also included technical SEO enhancements, ensuring a robust foundation for long-term digital success.
+                              </p><br>
+                              <div>
+                                <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                    <a href="https://tecktab.com/" target="_blank"> Visit Site</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                            <p class="text-gray-600 mb-4">Tecktab IT Solutions, a forward-thinking technology firm, collaborated with us to elevate their online presence through a results-driven digital strategy. Our objective was to create a high-performance tech website supported by a compelling content strategy and data-backed paid search ad campaigns. The approach centered on building a streamlined user experience, delivering targeted messaging, and maximizing visibility across digital channels to drive qualified traffic and measurable growth.</p>
+                            
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                            <ul class="text-gray-600 mb-4 space-y-2">
+                                <li>Develop a cohesive and modern brand identity for Tecktab IT Solutions across all digital touchpoints</li>
+                                <li>Implement a results-driven SEO strategy to boost search engine visibility for Tecktab IT Solutions</li>
+                                <li>Execute targeted paid search ad campaigns to increase reach and drive engagement for Tecktab IT Solutions' tech website</li>
+                                <li>Create a data-driven content strategy for Tecktab IT Solutions, focusing on industry trends and client needs</li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Website Launch</div>
+                                    <div class="text-sm text-gray-700">Delivered a cutting-edge, mobile-optimized tech website for Tecktab IT Solutions, enhancing user experience and brand presence</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                                    <div class="text-sm text-gray-700">Secured top 5 rankings for tech-related keywords, driving targeted traffic and organic visibility in under 60 days</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                                    <div class="text-sm text-gray-700">Boosted Tecktab IT Solutions' digital footprint with a strategic content plan and outreach, establishing industry authority</div>
+                                </div>
+                                <div class="bg-primary/20 p-4 rounded-lg">
+                                    <div class="text-xl font-bold text-secondary">Campaign performance</div>
+                                    <div class="text-sm text-gray-700">Executed high-performing paid search ad campaigns for Tecktab IT Solutions, delivering a 3.5x ROI and increasing conversions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Client Review -->
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                        <blockquote class="text-gray-600 mb-4 italic">
+                            "Their support is unmatched. We experienced incredible project growth and clarity."
+                        </blockquote>
+                        <div class="flex items-center">
+                            <img src="Tecktab Software Logo.png" alt="Tecktab" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">SaiKumar</div>
+                                <div class="text-gray-600">Founder, Tecktab IT Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+ <!-- Affijavels Case Study -->
+ <div id="affijavels-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Affijavels</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="affj.png" alt="Affijavels" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                            <p>
+                               We developed a sleek, modern website showcasing service offerings—strategy, content, design, SEO, etc.Use clear client case studies, service breakdowns, and benefits-oriented messaging.
+                              </p> <br>
+                              <p>
+                                Optimize each service page using keywords like “digital marketing agency,” “search marketing services,” “web design agency”. Implement strong calls-to-action (e.g., “Request a quote,” “Contact us now”) and integrate lead capture forms strategically.
+                              </p><br>
+                              <div>
+                                <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                    <a href="https://affijavels.com/" target="_blank"> Visit Site</a>
+                                </button>
+                            </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Affijavels appears to be a digital marketing agency that specializes in offering a wide range of services like digital strategy, content creation, web/mobile design and development, search marketing, and broader marketing support.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Offer comprehensive digital marketing and branding solutions.</li>
+                        <li>Attract businesses seeking to enhance their online presence.</li>
+                        <li>Position themselves as a full-service agency capable of end-to-end digital execution.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website Launch</div>
+                            <div class="text-sm text-gray-700">A polished and professional agency website live within weeks.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                            <div class="text-sm text-gray-700">Improved rankings for queries such as “digital marketing agency near me,” “search marketing services,” and “web development services.”</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                            <div class="text-sm text-gray-700">Elevated brand perception, increased website inquiries, and a steady stream of leads through organic search and content marketing.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    “The website developed by the UPliv digital marketing agency beautifully captures our brand’s essence. From striking visuals to smooth navigation, every feature reflects careful craftsmanship. Their attention to detail and support throughout have strengthened our online presence, increasing customer inquiries and conversions.”
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="Affijavels.png" alt="Affijavels" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Affijavels</div>
+                        <div class="text-gray-600">Founder, Affijavels</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+ <!-- Javeling Start Solutions Case Study -->
+ <div id="js-services-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Javeling Start Solutions (JS Services)</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="JS services.png" alt="JS Services" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                            <p>
+                                <strong>Design & Implementation:</strong>We built a clean layout with focused sections like services, contact info, and about us, ensuring key details like the Tirupati address and contact number were visible and accessible.Using SEO-friendly practices, we optimized headings, meta tags, and page content for better search visibility
+                              </p> <br>
+                              <p>
+                                <strong>Responsive & Accessible:</strong>The site was made mobile-friendly and easy to load—even on local network speeds—so users across devices could access it without trouble.
+                              </p><br>
+                              <p>
+                                <strong>Client Training & Handover:</strong>We guided the team at JS Services Group on how to update content and featured contact forms relevant to their inquiries, ensuring smooth ongoing maintenance.
+                              </p><br>
+                              <div>
+                                <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                                    <a href="https://jsservicesgroup.in/" target="_blank"> Visit Site</a>
+                                </button>
+                            </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">In mid-2025, our digital marketing agency completed the web design and development project for Javeling Start Solutions, a unit of JS Services Group. The goal was to create a modern, user-friendly website that reflects their local presence and credibility as a professional IT solutions provider. Key elements included clear navigation, engaging visuals, and easy ways for visitors to get in touch—helping them connect better with clients.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Build a professional, mobile-friendly website.</li>
+                        <li>Optimize content and structure for local SEO.</li>
+                        <li>Improve online visibility and client engagement.</li>
+                        <li>Ensure smooth handover and training for client updates.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website Launch</div>
+                            <div class="text-sm text-gray-700">Fully responsive website delivered on time.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">User Experience</div>
+                            <div class="text-sm text-gray-700">Faster load times and smooth navigation reduced bounce rates.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Content Control</div>
+                            <div class="text-sm text-gray-700">Client now manages site updates independently.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    “We wanted a simple, professional website to represent our business, and the team delivered exactly that. The site is easy to use, looks great on all devices, and is already helping us reach more clients in Tirupati. The process was smooth, and they were always ready to guide us whenever we had questions.”
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="Javeling Start Solutions Logo & Brand Name.jpg" alt="JS service" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Hima Sagar</div>
+                        <div class="text-gray-600">Founder, Javeling Start Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tirupati taxiwala Case Study -->
+<div id="tpttaxiwala-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Tirupati Taxiwala</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="tpttaxi.png" alt="tpttaxiwala" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <p>
+                        We designed a user-friendly site with service sections: Temple Packages, Airport Taxi, etc.Integrate an online booking form or enquiry interface.
+                      </p> <br>
+                      <p>
+                        Optimize pages with location-specific keywords (e.g., “car hire in Tirupati,” “temple taxi packages”).Add testimonials and user reviews to build credibility and enrich local SEO.
+                      </p><br>
+                      <div>
+                        <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                            <a href="https://www.tirupatitaxiwala.com/" target="_blank"> Visit Site</a>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Tirupati Taxiwala offers reliable car hire and taxi services in Tirupati, including temple packages and airport transportation. Reviews reflect professionalism, reasonable pricing, and quality vehicles.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Promote taxi and tour services to pilgrims and travelers visiting Tirupati.</li>
+                        <li>Provide clear booking information and service differentiation.</li>
+                        <li>Enhance local online presence for search terms like “Tirupati taxi service” or “Tirupati airport cab.”</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website Launch</div>
+                            <div class="text-sm text-gray-700">Fully functional site with enquiry/book-now features live within a month.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                            <div class="text-sm text-gray-700">Higher rankings in local search for “Tirupati cab service,” “Tirupati taxi,” reducing reliance on aggregators.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                            <div class="text-sm text-gray-700">Increased brand awareness among travelers, driving direct booking and trust.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    “We’re delighted with the new website [Your Digital Marketing Agency] created for our taxi services. Booking is now a breeze for our customers, and the mobile-adapted design ensures ease of use on the go. Their team was attentive, creative, and delivered results on time—this site has become a valuable driver of business growth.”
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="tpt.jpg" alt="Tirupati Taxiwala" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Tirupati Taxiwala</div>
+                        <div class="text-gray-600">Founder & Owner, Tirupati Taxiwala</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- The Korean Studio Case Study -->
+ <div id="thekstudio-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">The koreanStudio</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="kstudio.png" alt="TheKoreanStudio" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <p>
+                        Design a visually engaging online store with intuitive navigation across categories (e.g., shirts, hoodies, jackets, jeans).Showcase featured and discounted items with dynamic “Sale” labels and clear calls-to-action like “Add to Cart” and “View Options.” 
+                      </p> <br>
+                      <p>
+                        Implement promotions like sign-up discounts (“10% off”), and threshold-based free shipping.Optimize product pages with keywords such as “Korean streetwear,” “K-fashion jackets,” “baggy jeans online.”Encourage customer engagement via wishlists, user reviews, and social media sharing. 
+                      </p><br>
+                      <div>
+                        <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                            <a href="https://thekoreanstudio.com/" target="_blank"> Visit Site</a>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">This site is an e-commerce fashion store offering Korean-inspired streetwear and trendy clothing items like formal shirts, hoodies, jackets, baggy and cargo jeans—all positioned under “Effortless Korean Inspired Street Fashion.” There are promotional messages like “Sign up & enjoy 10% off,” free shipping over 1000/- ₹, and clearly displayed product categories and listings with prices and discounts.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Sell fashionable Korean-style apparel online.</li>
+                        <li>Drive sales through user-friendly browsing, promotional offers, and variety.</li>
+                        <li>Attract fashion-conscious customers looking for trending streetwear.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website Launch</div>
+                            <div class="text-sm text-gray-700">A vibrant e-commerce store ready to sell within a short timeline.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                            <div class="text-sm text-gray-700">Better visibility for searches like “Korean fashion online,” “Korean hoodies,” “streetwear shop India.”</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                            <div class="text-sm text-gray-700">Stronger social buzz, increased traffic from fashion blogs or influencers, leading to boosted conversion rates and repeat purchases.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    “Partnering with The UPliv Digital Marketing Agency transformed our online store into an elegant, high-conversion platform. They expertly organized our product categories, optimized checkout flows, and infused the site with a modern fashion-forward aesthetic. Since launch, traffic and sales have noticeably increased, and our customers love the improved experience.”
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="TheKoreanStudio.jpeg" alt="The Korean Studio" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">The Korean Studio</div>
+                        <div class="text-gray-600">Founder, The Korean Studio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Gayathri Educational Society Case Study -->
+ <div id="gayathri-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Gayathri Educatiional Society</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="gayathriedu.png" alt="Gayathri Educational Society" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <p>
+                        Design a responsive site with a strong homepage showcasing key metrics.Detail program descriptions, success stories, government partners, and placement stats.
+                      </p> <br>
+                      <p>
+                        Optimize content for SEO terms like “skill development programs in Andhra Pradesh,” “DDUGKY training center.”Include blog updates, news, and success stories to keep content fresh.
+                      </p><br>
+                      <div>
+                        <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                            <a href="https://gayathrieducationalsociety.in/" target="_blank"> Visit Site</a>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Founded in 2001, Gayathri Educational Society is a non-profit based in Tirupati (Andhra Pradesh), offering education and skill development programs. Since 2015, it partners with government initiatives like DDUGKY, MANAS, Seekho aur Kamao, and more. The site highlights “22+ years of excellence,” “65,000+ students trained,” and a “75% placement rate”</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Communicate credibility and scale of impact.</li>
+                        <li>Attract prospective trainees and institutional partnerships.</li>
+                        <li>Showcase program offerings and outcomes clearly.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website Launch </div>
+                            <div class="text-sm text-gray-700">A polished, informative site live within weeks.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                            <div class="text-sm text-gray-700">Increased visibility for relevant queries (“skill development society Tirupati”), bringing more traffic and inquiries.</div>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                            <div class="text-sm text-gray-700">Enhanced reputation among donors, government bodies, and trainees, leading to more engagement and support.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    “The website developed by The UPliv Digital Marketing Agency truly captures our mission of empowering youth through education. It showcases our programs clearly, communicates our impact effectively, and offers easy navigation for trainees and partners alike. Their team understood our vision and delivered a compelling online presence that supports our growth and outreach.”
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="Gayathri.jpeg" alt="Gayathri Educational Society" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Gayathri Educational Society</div>
+                        <div class="text-gray-600"> Founder & Chairman, Gayathri Educational Society</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- MSN Agro Farms Case Study -->
+ <div id="msnfarms-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">MSN Agro Farms</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="msnfarms.png" alt="MSN Agro Farms" class="w-full h-auto rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <p>
+                        Build an attractive, plant-focused site showcasing product visuals and descriptions.Include an online store or enquiry/order form for plant orders.
+                      </p> <br>
+                      <p>
+                        Optimize for keywords like “organic lily plants delivery,” “herbal ginger plant supplier.”Add content about cultivation methods, benefits, and customer testimonials for SEO and trust.
+                      </p><br>
+                      <div>
+                        <button class="bg-secondary text-white px-6 py-3 !rounded-button font-semibold Visit-Site">
+                            <a href="https://msnagrofarms.com/" target="_blank"> Visit Site</a>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">MSN Agro Farms specializes in organic, chemical-free lily ginger plants, cultivated since 2019. The brand emphasizes herbal hair-care products, home-garden suitability, and doorstep delivery. </p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Promote organic lilies/ginger plants and related products.</li>
+                        <li>Educate customers on the benefits of chemical-free cultivation.</li>
+                        <li>Facilitate sales via the website or contact channels.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Website launch</div>
+                            <div class="text-sm text-gray-700">Launch within a month, showcasing products and ordering.</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">SEO Impact</div>
+                            <div class="text-sm text-gray-700">Improved organic ranking for “organic lily plants” or “ginger lily plant cost,” driving niche traffic.</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Brand Visibility</div>
+                            <div class="text-sm text-gray-700">Strengthened presence among gardening enthusiasts and herbal care consumers; increased inquiries and orders.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    “We received a beautifully crafted website from The UPliv Digital Marketing Agency that highlights our agricultural products with clarity and charm. The design is fresh, intuitive, and mobile-friendly—perfect for both info seekers and potential buyers. The launch has significantly increased inquiries and put our farm’s offerings in the spotlight.”
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="MSN Agro Farms Logo.png" alt="MSN Agro Farms" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">MSN Agro Farms</div>
+                        <div class="text-gray-600">Founder, Owner MSN Agro Farms</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sowmya Creations Case Study -->
+<div id="sowmya-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Sowmya Creations</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="sowmya.jfif" alt="Sowmya" class="w-full h-auto cursor-pointer preview-img rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <h4>We developed a dual-campaign strategy on Meta Ads:</h4>
+                    <p>
+                        <strong>Traffic Campaign:</strong> Designed to maximize reach and bring relevant audiences to Sowmya Creations’ Instagram profile. We optimized creatives, audience targeting, and placements to achieve maximum profile visits at the lowest possible cost.
+                      </p> <br>
+                      <p>
+                        <strong>Lead Campaign:</strong>Focused on generating meaningful customer conversations via Meta’s messaging objective. We created engaging ad copies and targeted high-intent audiences to ensure genuine leads and inquiries.<br>
+                        This combined approach allowed us to balance awareness + direct response, ensuring both visibility and sales-ready leads.
+                      </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Sowmya Creations, a growing business, partnered with us to strengthen their digital presence and generate both brand visibility and quality leads. The goal was to leverage Meta Ads by designing two types of campaigns: one focused on driving high-volume traffic to Instagram for awareness, and another designed to capture direct customer conversations for lead generation.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Drive large-scale traffic to Sowmya Creations’ Instagram profile to boost awareness.</li>
+                        <li>Generate quality leads through messaging campaigns that convert into potential customers.</li>
+                        <li>Optimize ad performance to deliver results within a controlled budget.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">🚀 Traffic Campaign – 07/07/2025</div>
+                            <div class="text-sm text-gray-600"><p>
+                                3,405 Instagram profile visits achieved<br>
+                                Reached 151,264 users with 201,247 impressions<br>                                
+                                Cost per result: only ₹1.01 (very efficient for traffic generation)<br>                                
+                                Total ad spend: ₹3,430.55
+                            </p></div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">🎯 Lead Campaign – 05/07/2025</div>
+                            <div class="text-sm text-gray-700">27 qualified leads generated via messaging conversations<br>
+                                Reached 3,090 users with 3,719 impressions<br>                                
+                                Cost per result: ₹14.19 per lead<br>                                
+                                Total ad spend: ₹383.01</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    "The UPliv Digital Marketing Agency has been instrumental in helping us grow our presence online. They designed campaigns that gave our brand the visibility we were looking for while also generating quality inquiries from interested customers. The mix of awareness and lead generation strategies worked perfectly, and we could see how effectively our audience was engaging with us. It was exactly the push our business needed."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="sowmya.png" alt="Sowmya Creations" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Sowmya Creations</div>
+                        <div class="text-gray-600">Owner, Sowmya Creations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PS5 Homestay Case Study -->
+<div id="ps5-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">PS5 Homestay</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img  src="ps5.jfif" alt="PS5 Homestay" class="w-full h-auto  cursor-pointer preview-img  rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <h4>We designed a dual-campaign strategy:</h4> <br>
+                    <p>
+                        <strong>Engagement Campaign:</strong> Focused on driving conversations through Meta’s messaging objective.<br>
+                        Built creatives highlighting comfort, convenience, and value to spark interest in potential guests.<br>
+                        Optimized audience targeting to capture travelers actively searching for accommodations.
+                      </p> <br>
+                      <p>
+                        <strong>Lead Campaign:</strong>Aimed at generating confirmed inquiries and call confirmations.Structured ad copy around trust, availability, and easy booking options.Narrow targeting to focus on high-intent users rather than broad awareness.<br>
+                        By running both campaigns simultaneously, we balanced awareness + lead generation, ensuring the homestay not only reached new audiences but also secured actionable customer interest.
+                      </p><br><br>
+                     <div> ✅ Total Investment: ₹1,779.66</div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">PS5 Homestay partnered with us to expand its reach and increase bookings by leveraging Meta Ads. Being in the travel and accommodation sector, the brand’s biggest challenge was connecting with the right audience—travelers who are actively seeking stays in Tirupati. The focus of this campaign was to create visibility, drive customer conversations, and generate high-intent leads that could be converted into confirmed bookings.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Increase engagement and messaging conversations with prospective guests.</li>
+                        <li>Drive direct, high-quality leads who are interested in booking stays.</li>
+                        <li>Optimize cost efficiency between engagement (volume) and lead generation (quality).</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Engagement Campaign:</div>
+                            <div class="text-sm text-gray-600">
+                                Generated 142 conversations with potential customers.<br>
+                                Reached 34,187 users with an average frequency of 1.26.<br>                                
+                                Cost per result: ₹11.68 per conversation, proving to be highly cost-efficient.<br>                                
+                                Ad spend: ₹1,779.66
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                   "Working with The UPliv Digital Marketing Agency has been a wonderful experience. They helped us expand our reach and attract the right kind of travelers looking for a comfortable stay in Tirupati. The campaigns not only created strong visibility for our homestay but also brought in direct conversations from customers, which quickly turned into bookings. It has made a real difference for our business."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="PS5.png" alt="PS5 Homestay" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">PS5 Homestay</div>
+                        <div class="text-gray-600">Owner, PS5 Homestay</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vaish Photography Case Study -->
+<div id="vaish-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Vaish Photography</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="vaishp.jfif" alt="Vaish photography" class="w-full h-auto  cursor-pointer preview-img rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <h4>We implemented a Lead Generation Campaign using Meta messaging ads:</h4>
+                    <p>
+                    Crafted ad copies showcasing premium photography quality and experience.Highlighted emotional storytelling and professional services to appeal to brides, grooms, and families.
+                      </p> <br>
+                      <p>
+                        Targeted audience segments included newly engaged couples, event planners, and wedding-related interest groups.Daily budget was optimized to maintain a steady flow of leads while keeping acquisition costs affordable.
+                      </p><br><br>
+                      <div> ✅ Total Investment: ₹1,779.66</div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Vaish Photography, a wedding and event photography brand, wanted to increase direct inquiries from couples and event organizers. Their challenge was to capture genuine leads who were planning weddings or special occasions and convert them into bookings.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Generate direct inquiries for wedding and event photography.</li>
+                        <li>Reach highly relevant audiences planning for weddings and family functions.</li>
+                        <li>Maintain a balance between cost-efficiency and lead quality.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Leads Campaign – 11/07/2025:</div>
+                            <div class="text-sm text-gray-600"><p>
+                                Delivered 108 conversations with prospective clients.<br>
+                                Reached 12,435 users with a frequency of 1.84.<br>                                
+                                Cost per result: ₹23.54 per conversation.<br>                                
+                                Daily budget: ₹300.<br>
+                                Total spend: ₹2,542.37
+                            </p></div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">🎯 Lead Campaign – 05/07/2025</div>
+                            <div class="text-sm text-gray-700">27 qualified leads generated via messaging conversations<br>
+                                Reached 3,090 users with 3,719 impressions<br>                                
+                                Cost per result: ₹14.19 per lead<br>                                
+                                ✅Total ad spend: ₹383.01</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    "I’m really glad I chose The UPliv to handle my marketing campaigns. They helped me reach couples and event organizers who were genuinely interested in photography services. The leads we received were not just random inquiries but serious prospects who wanted to book. Their support has made it so much easier to build meaningful connections with clients planning weddings and special events."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="vaish.png" alt="Vaish Photography" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Vaish Photography</div>
+                        <div class="text-gray-600">Owner, Vaish Photography</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Keerthi Makeup Artist Case Study -->
+ <div id="keerthi-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Keerthi Makeup Artist</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="keerthimakeup.jfif" alt="Keerthi Makeup Artist " class="w-full h-auto rounded-xl  cursor-pointer preview-img">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <h4>We executed multiple Lead Campaigns:</h4>
+                    <p>
+                        Creative Strategy: Highlighted bridal makeup transformations, client testimonials, and premium product usage (MAC, Huda Beauty, Forever52).Targeting: Brides-to-be, families planning weddings, and event organizers in Hyderabad.
+                      </p> <br>
+                      <p>
+                        Campaign Distribution: Staggered across July and August to maximize seasonal demand.Budget Optimization: Adjusted daily spends to ensure continuous visibility and lead flow.
+                      </p><br><br>
+                      <div>✅ Total Leads Generated: 132 conversations<br>
+                        ✅ Total Ad Spend: ₹4,237.28</div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Keerthi Makeup Artist, specializing in bridal services, partnered with us to scale her business during the peak wedding season. The key requirement was to generate direct bridal inquiries and maintain steady lead flow throughout July–August.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Generate consistent bridal leads via Meta Ads</li>
+                        <li>Capture the peak seasonal demand (muhurtham dates).</li>
+                        <li>Maintain cost efficiency while increasing the volume of conversations.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">05/08/2025 Campaign: </div>
+                            <div class="text-sm text-gray-700"> 47 conversations | Reach: 6,530 | Cost per result: ₹25.24 | Spend: ₹1,186.43</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">16/07/2025 Campaign:</div>
+                            <div class="text-sm text-gray-700">39 conversations | Reach: 5,841 | Cost per result: ₹34.77 | Spend: ₹1,355.93</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Hyderabad Campaign:</div>
+                            <div class="text-sm text-gray-700">44 conversations | Reach: 6,703 | Cost per result: ₹33.01 | Spend: ₹1,452.54</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">04/07/2025 Campaign:</div>
+                            <div class="text-sm text-gray-700">2 conversations | Reach: 1,675 | Cost per result: ₹121.19 | Spend: ₹242.38</div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    "Collaborating with The UPliv Digital Marketing Agency during the wedding season was a turning point for my business. Their campaigns helped me connect directly with brides looking for makeup services, and I started receiving steady inquiries throughout the season. The way they understood my requirements and targeted the right audience gave me the confidence to focus more on my work while my bookings kept growing."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="keerthi.png" alt="Keerthi" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Keerthi</div>
+                        <div class="text-gray-600">Owner, Keerthi's Makeup </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gopuram Tours Case Study -->
+<div id="gopuram-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Gopuram Tours</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="gopuramtours.jfif" alt="Gopuram Tours" class="w-full h-auto  cursor-pointer preview-img rounded-xl">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <h4>We launched a Lead Generation Campaign on Meta:</h4>
+                    <p>
+                        Ad creatives highlighted affordable pricing, convenience, and customization options.
+                      </p> <br>
+                      <p>
+                        Targeting focused on pilgrims, tourists, and families planning Tirupati visits.Campaign structure emphasized direct lead forms for easy data capture.
+                      </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Gopuram Tours & Travels engaged us to generate leads for Tirupati travel packages. Their aim was to capture inquiries from travelers looking for affordable and customizable packages, ensuring consistent bookings.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Generate qualified leads for tour packages.</li>
+                        <li>Achieve a low cost per lead to maximize ROI.</li>
+                        <li>Drive consistent customer inquiries for Tirupati-focused travel services</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Leads Campaign– 25/02/2025 to 06/03/2025:</div>
+                            <div class="text-sm text-gray-700"> Generated 51 confirmed Meta leads.</div>
+                            <div class="text-sm text-gray-700"> Reached 15,370 users with 19,478 impressions</div>
+                            <div class="text-sm text-gray-700"> Cost per lead: ₹25.44.</div>
+                            <div class="text-sm text-gray-700"> Total ad spend: ₹1,297.62</div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    "We approached The UPliv Digital Marketing Agency to help us generate leads for our Tirupati travel packages, and the results have been fantastic. Their campaigns brought us genuine inquiries from travelers who were actually interested in our services. The team really understood our need to offer affordable and customizable packages, and they helped us connect with the right audience. Thanks to their efforts, we’ve been able to maintain consistent bookings and grow our customer base."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="Gopuram.png" alt="Gopuram Tours" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Gopuram Tours</div>
+                        <div class="text-gray-600">Founder  , Gopuram Tours</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Aira Interiors Case Study-->
+<div id="airai-modal" class="case-study-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 invisible flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="text-3xl font-bold text-secondary">Aira Interiors</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <img src="airamark.jfif" alt="Aira Interiors" class="w-full h-auto rounded-xl cursor-pointer preview-img">
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Our Approach and Solutions</h3>
+                    <h4>We launched a Lead Generation Campaign on Meta:</h4>
+                    <p>
+                        Ad creatives highlighted affordable pricing, convenience, and customization options.
+                      </p> <br>
+                      <p>
+                        Targeting focused on pilgrims, tourists, and families planning Tirupati visits.Campaign structure emphasized direct lead forms for easy data capture.
+                      </p><br><br>
+                      <div>✅ Total Investment: ₹2,569.44</div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Project Overview</h3>
+                    <p class="text-gray-600 mb-4">Aira Interiors partnered with us to enhance its online presence and generate quality leads through Meta Ads. Being in the competitive interior design industry, the challenge was to target homeowners and property developers actively seeking modern and reliable interior design solutions. The campaign was focused on creating visibility, building trust, and converting audience interest into actionable leads.</p>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Objectives</h4>
+                    <ul class="text-gray-600 mb-4 space-y-2">
+                        <li>Generate high-quality leads for interior design projects.</li>
+                        <li>Reach a wide yet relevant audience with cost-efficient ads.</li>
+                        <li>Build brand credibility and engagement in the local market.</li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Results</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Leads Generated:</div>
+                            <div class="text-sm text-gray-700"> 101 Meta leads.</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Reach:</div>
+                            <div class="text-sm text-gray-700"> 15,370 users</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Impressions:</div>
+                            <div class="text-sm text-gray-700">19,478</div>
+                        </div>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <div class="text-xl font-bold text-secondary">Cost per Lead: </div>
+                            <div class="text-sm text-gray-700"> ₹25.44 (highly cost-efficient for the interior design sector)<br>
+                                Total Ad Spend: ₹2,569.44</div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+            <!-- Client Review -->
+            <div class="bg-gray-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold text-secondary mb-4">Client Testimonial</h4>
+                <blockquote class="text-gray-600 mb-4 italic">
+                    "Working with the UPliv Digital Marketing Agency  on our social media marketing has been an amazing experience. Their Meta Ads strategy really captured the right audience for us and helped bring in a steady flow of genuine inquiries. The way they handled the campaigns was professional, creative, and perfectly aligned with our brand. We’ve noticed a real difference in our online presence and customer engagement, and we’re truly grateful for their support in growing our interior design business."
+                </blockquote>
+                <div class="flex items-center">
+                    <img src="Aira.png" alt="Aira Interiors" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <div class="font-semibold text-secondary">Aira Interiors</div>
+                        <div class="text-gray-600">Founder, Aira Interiors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="imagePreviewModal" 
+     class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 invisible transition-opacity duration-300">
+  <span id="closePreview" 
+        class="absolute top-6 right-8 text-white text-3xl cursor-pointer">&times;</span>
+  <div class="overflow-hidden flex items-center justify-center max-h-[90vh] max-w-[90vw]">
+    <img id="previewImage" 
+         src="" 
+         alt="Preview" 
+         class="rounded-xl shadow-xl transform transition-transform duration-200" />
+  </div>
+</div>
+
+
+        <!-- Client Reviews Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-secondary mb-4">What Our Clients Say</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Don't just take our word for it. Here's what our clients have to say about working with us.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <blockquote class="text-gray-600 mb-6 italic">
+                            “We’re delighted with the new website UPliv Digital Marketing Agency created for our taxi services. Booking is now a breeze for our customers, and the mobile-adapted design ensures ease of use on the go. Their team was attentive, creative, and delivered results on time—this site has become a valuable driver of business growth.”
+                        </blockquote>
+                        <div class="flex items-center">
+                            <img src="TIRUPATI_TAXIWALA_High_Quality.png" alt="Tirupati Taxiwala" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">Tirupati Taxiwala</div>
+                                <div class="text-gray-600">Founder & Owner Tirupati Taxiwala</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <blockquote class="text-gray-600 mb-6 italic">
+                            “Partnering with The UPliv Digital Marketing Agency transformed our online store into an elegant, high-conversion platform. They expertly organized our product categories, optimized checkout flows, and infused the site with a modern fashion-forward aesthetic. Since launch, traffic and sales have noticeably increased, and our customers love the improved experience.”
+                        </blockquote>
+                        <div class="flex items-center">
+                            <img src="TheKoreanStudio.jpeg" alt="The koreanstudio" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">The Koreanstudio</div>
+                                <div class="text-gray-600">Founder, The Koreanstudio</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <blockquote class="text-gray-600 mb-6 italic">
+                           "Collaborating with The UPliv Digital Marketing Agency during the wedding season was a turning point for my business. Their campaigns helped me connect directly with brides looking for makeup services, and I started receiving steady inquiries throughout the season. The way they understood my requirements and targeted the right audience gave me the confidence to focus more on my work while my bookings kept growing."
+                        </blockquote>
+                        <div class="flex items-center">
+                            <img src="keerthi.png" alt="Keerthi" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <div class="font-semibold text-secondary">Keerthi</div>
+                                <div class="text-gray-600">Owner, Keerthi Makeup</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-secondary">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Let's create something amazing together. Our team is ready to bring your vision to life and deliver results that exceed your expectations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-primary text-black px-8 py-4 !rounded-button hover:bg-primary/90 transition-all transform hover:scale-105 font-semibold">
+                        Start Your Project
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 !rounded-button hover:bg-white hover:text-secondary transition-all font-semibold">
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-tertiary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="font-pacifico text-2xl text-primary mb-4">
+                        <img src="Logo.png" alt="Logo" class="w-16 h-16">
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Transforming businesses through innovative digital marketing solutions and creative excellence.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://youtube.com/@uplivdigitalmarketingagency?si=Jk_RkvD6YDBYOz9E" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="https://instagram.com/uplivagency" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://wa.me/9390886024" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">Web Development</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Social Media Management</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Social Media Marketing (Meta & Google Ads)</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">SEO</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="About.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Portfolio</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="careers.html" class="hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="Templates.html" class="hover:text-primary transition-colors">Templates</a></li>
+                        <li><a href="Contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest updates and insights.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 p-3 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary">
+                        <button class="bg-primary px-4 py-3 rounded-r-lg hover:bg-primary/90 transition-colors text-black">
+                           <i class="ri-send-plane-2-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    © 2025 TheUPLIV. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-gray-400">
+                    <a href="privacy policy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="terms of service.html" class="hover:text-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        
+        <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all transform hover:scale-110 opacity-0 invisible">
+            <a href="https://wa.me/9390886024" class="whatsapp-float" target="_blank">
+                <i class="ri-whatsapp-line text-3xl"></i>
+            </a>
+        </button>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top functionality
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Category filtering
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active filter button
+                    categoryFilters.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-black');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    this.classList.add('bg-primary', 'text-black');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease-in-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Case study modal functionality
+            const viewCaseStudyBtns = document.querySelectorAll('.view-case-study');
+            const caseStudyModals = document.querySelectorAll('.case-study-modal');
+            const closeModalBtns = document.querySelectorAll('.close-modal');
+
+            viewCaseStudyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(projectId + '-modal');
+                    if (modal) {
+                        modal.classList.add('show');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            closeModalBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modal = this.closest('.case-study-modal');
+                    modal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close modal when clicking outside
+            caseStudyModals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('show');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+           // image preview
+           const imagePreviewModal = document.getElementById("imagePreviewModal");
+           const previewImage = document.getElementById("previewImage");
+           const closePreview = document.getElementById("closePreview");
+
+          // Zoom state
+          let scale = 1, startX = 0, startY = 0, translateX = 0, translateY = 0, isDragging = false;
+
+           // Apply transform
+           function updateTransform() {
+           previewImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+          }
+
+           // Reset zoom
+          function resetZoom() {
+          scale = 1;
+          translateX = 0;
+          translateY = 0;
+          updateTransform();
+          }
+
+         // Attach preview functionality to all preview images
+          document.querySelectorAll(".preview-img").forEach(img => {
+           img.addEventListener("click", () => {
+            previewImage.src = img.src;
+            resetZoom();
+            imagePreviewModal.classList.remove("opacity-0", "invisible");
+            imagePreviewModal.classList.add("opacity-100", "visible");
+            document.body.style.overflow = "hidden"; // lock scroll
+          });
+       });
+
+  // Close modal
+  closePreview.addEventListener("click", () => {
+    imagePreviewModal.classList.add("opacity-0", "invisible");
+    imagePreviewModal.classList.remove("opacity-100", "visible");
+    document.body.style.overflow = "auto"; // unlock scroll
+  });
+
+  // Close on outside click
+  imagePreviewModal.addEventListener("click", (e) => {
+    if (e.target === imagePreviewModal) closePreview.click();
+  });
+
+  /* -------- Zoom & Pan Controls -------- */
+  // Mouse wheel zoom
+  previewImage.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    scale += e.deltaY * -0.001; 
+    scale = Math.min(Math.max(1, scale), 4); // limit zoom
+    updateTransform();
+  });
+
+  // Drag (desktop)
+  previewImage.addEventListener("mousedown", (e) => {
+    if (scale > 1) {
+      isDragging = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+    }
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      updateTransform();
+    }
+  });
+
+  window.addEventListener("mouseup", () => isDragging = false);
+
+  // Touch (mobile pinch zoom + drag)
+  let initialDistance = 0, initialScale = 1;
+
+  previewImage.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 2) {
+      initialDistance = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      initialScale = scale;
+    } else if (e.touches.length === 1 && scale > 1) {
+      startX = e.touches[0].clientX - translateX;
+      startY = e.touches[0].clientY - translateY;
+    }
+  });
+
+  previewImage.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 2) {
+      let newDistance = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      scale = Math.min(Math.max(1, initialScale * (newDistance / initialDistance)), 4);
+      updateTransform();
+    } else if (e.touches.length === 1 && scale > 1) {
+      translateX = e.touches[0].clientX - startX;
+      translateY = e.touches[0].clientY - startY;
+      updateTransform();
+    }
+  });
+
+  previewImage.addEventListener("touchend", () => {
+    if (scale <= 1) resetZoom();
+  });
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Add fadeIn animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
