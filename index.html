@@ -3194,57 +3194,38 @@
                     const color = card.getAttribute('data-color');
                     const icon = card.querySelector('.service-icon');
 
-                    // Make cards sticky and stack them perfectly with tiny cascade edges showing
+                    // Make cards sticky and stack them with a slight cascade offset
                     card.style.position = 'sticky';
-                    card.style.top = `calc(130px + ${i * 4}px)`;
-                    card.style.zIndex = i + 10;
+                    card.style.top = `calc(15vh + ${i * 15}px)`;
 
                     ScrollTrigger.create({
                         trigger: card,
                         start: "top 65%", // Trigger as the card scrolls up
                         onEnter: () => {
                             bgElement.style.backgroundColor = color;
-                            gsap.to(card, { opacity: 1, scale: 1, y: 0, filter: "none", duration: 0.7, ease: "power3.out", overwrite: "auto" });
+                            gsap.to(card, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power3.out", overwrite: "auto" });
                             gsap.fromTo(icon, { y: 25 }, { y: 0, duration: 0.9, ease: "back.out(1.5)" });
                             gsap.to(progressBar, { height: `${((i + 1) / cards.length) * 100}%`, duration: 0.3, ease: "none" });
 
-                            // Shrink all previous cards dynamically to create a gorgeous stacked 3D deck depth effect
-                            for (let j = 0; j < i; j++) {
-                                const depth = i - j;
-                                gsap.to(cards[j], {
-                                    scale: Math.max(0.82, 1 - depth * 0.04),
-                                    y: -depth * 12,
-                                    opacity: Math.max(0.35, 1 - depth * 0.15),
-                                    filter: `blur(${Math.min(3, depth * 1)}px)`,
-                                    duration: 0.5,
-                                    ease: "power2.out",
-                                    overwrite: "auto"
-                                });
+                            // Shrink previous card slightly to enhance depth
+                            if (i > 0) {
+                                gsap.to(cards[i - 1], { scale: 0.92, opacity: 0.6, duration: 0.5, ease: "power2.out", overwrite: "auto" });
                             }
                         },
                         onEnterBack: () => {
                             // Restore background and current card when scrolling back up
                             bgElement.style.backgroundColor = color;
-                            gsap.to(card, { opacity: 1, scale: 1, y: 0, filter: "none", duration: 0.7, ease: "power3.out", overwrite: "auto" });
+                            gsap.to(card, { opacity: 1, scale: 1, y: 0, duration: 0.7, ease: "power3.out", overwrite: "auto" });
                             gsap.to(progressBar, { height: `${((i + 1) / cards.length) * 100}%`, duration: 0.3, ease: "none" });
 
-                            // Update scales of all previous cards up to this index
-                            for (let j = 0; j <= i; j++) {
-                                const depth = i - j;
-                                gsap.to(cards[j], {
-                                    scale: Math.max(0.82, 1 - depth * 0.04),
-                                    y: -depth * 12,
-                                    opacity: Math.max(0.35, 1 - depth * 0.15),
-                                    filter: depth === 0 ? "none" : `blur(${Math.min(3, depth * 1)}px)`,
-                                    duration: 0.5,
-                                    ease: "power2.out",
-                                    overwrite: "auto"
-                                });
+                            // Restore scale of previous card
+                            if (i > 0) {
+                                gsap.to(cards[i - 1], { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", overwrite: "auto" });
                             }
                         },
                         onLeaveBack: () => {
                             // Animate card out when scrolling back up past its trigger
-                            gsap.to(card, { opacity: 0, scale: 0.8, y: 100, filter: "none", duration: 0.6, ease: "power2.inOut", overwrite: "auto" });
+                            gsap.to(card, { opacity: 0, scale: 0.8, y: 100, duration: 0.6, ease: "power2.inOut", overwrite: "auto" });
                         }
                     });
                 });
@@ -3319,19 +3300,15 @@
                     const innerDot = dot ? dot.querySelector('div') : null;
                     const hudInd = hudIndicators[idx];
 
-                    // Make cards sticky and stack them perfectly with tiny cascade edges showing
-                    card.style.position = 'sticky';
-                    card.style.top = `calc(130px + ${idx * 4}px)`;
-                    card.style.zIndex = idx + 10;
-
                     // Set initial states
-                    gsap.set(card, { opacity: 0, scale: 0.8, y: 100 });
+                    gsap.set(card, { opacity: 0.3, y: 40 });
 
                     ScrollTrigger.create({
                         trigger: card,
                         start: "top 65%",
+                        end: "bottom 45%",
                         onEnter: () => {
-                            gsap.to(card, { opacity: 1, scale: 1, y: 0, filter: "none", duration: 0.5, ease: "power2.out", overwrite: "auto" });
+                            gsap.to(card, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", overwrite: "auto" });
                             if (dot) {
                                 gsap.to(dot, { borderColor: "#14362a", scale: 1.2, duration: 0.3 });
                                 if (innerDot) gsap.to(innerDot, { backgroundColor: "#14362a", scale: 1.5, duration: 0.3 });
@@ -3340,23 +3317,16 @@
                                 gsap.to(hudInd, { opacity: 1, scale: 1.05, duration: 0.3 });
                                 gsap.to(hudInd.querySelector('span'), { backgroundColor: "#14362a", color: "#ffffff", borderColor: "#14362a", duration: 0.3 });
                             }
-
-                            // Shrink all previous cards dynamically to create a gorgeous stacked 3D deck depth effect
-                            for (let j = 0; j < idx; j++) {
-                                const depth = idx - j;
-                                gsap.to(workflowCards[j], {
-                                    scale: Math.max(0.82, 1 - depth * 0.04),
-                                    y: -depth * 12,
-                                    opacity: Math.max(0.35, 1 - depth * 0.15),
-                                    filter: `blur(${Math.min(3, depth * 1)}px)`,
-                                    duration: 0.5,
-                                    ease: "power2.out",
-                                    overwrite: "auto"
-                                });
+                        },
+                        onLeave: () => {
+                            gsap.to(card, { opacity: 0.3, duration: 0.5, overwrite: "auto" });
+                            if (hudInd) {
+                                gsap.to(hudInd, { opacity: 0.4, scale: 1, duration: 0.3 });
+                                gsap.to(hudInd.querySelector('span'), { backgroundColor: "#f9f9f9", color: "#14362a", borderColor: "rgba(20, 54, 42, 0.2)", duration: 0.3 });
                             }
                         },
                         onEnterBack: () => {
-                            gsap.to(card, { opacity: 1, scale: 1, y: 0, filter: "none", duration: 0.5, ease: "power2.out", overwrite: "auto" });
+                            gsap.to(card, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", overwrite: "auto" });
                             if (dot) {
                                 gsap.to(dot, { borderColor: "#14362a", scale: 1.2, duration: 0.3 });
                                 if (innerDot) gsap.to(innerDot, { backgroundColor: "#14362a", scale: 1.5, duration: 0.3 });
@@ -3365,23 +3335,9 @@
                                 gsap.to(hudInd, { opacity: 1, scale: 1.05, duration: 0.3 });
                                 gsap.to(hudInd.querySelector('span'), { backgroundColor: "#14362a", color: "#ffffff", borderColor: "#14362a", duration: 0.3 });
                             }
-
-                            // Update scales of all previous cards up to this index
-                            for (let j = 0; j <= idx; j++) {
-                                const depth = idx - j;
-                                gsap.to(workflowCards[j], {
-                                    scale: Math.max(0.82, 1 - depth * 0.04),
-                                    y: -depth * 12,
-                                    opacity: Math.max(0.35, 1 - depth * 0.15),
-                                    filter: depth === 0 ? "none" : `blur(${Math.min(3, depth * 1)}px)`,
-                                    duration: 0.5,
-                                    ease: "power2.out",
-                                    overwrite: "auto"
-                                });
-                            }
                         },
                         onLeaveBack: () => {
-                            gsap.to(card, { opacity: 0, scale: 0.8, y: 100, filter: "none", duration: 0.5, ease: "power2.out", overwrite: "auto" });
+                            gsap.to(card, { opacity: 0.3, y: 40, duration: 0.5, overwrite: "auto" });
                             if (dot) {
                                 gsap.to(dot, { borderColor: "rgba(238, 238, 238, 1)", scale: 1, duration: 0.3 });
                                 if (innerDot) gsap.to(innerDot, { backgroundColor: "rgba(20, 54, 42, 0.2)", scale: 1, duration: 0.3 });
