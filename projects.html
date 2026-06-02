@@ -15,13 +15,13 @@
             theme: {
                 extend: {
                     colors: {
-                        "secondary-fixed": "#b9eeda",
+                        "secondary-fixed": "#14362a",
                         "secondary": "#366758",
                         "primary": "#14362a",
                         "primary-fixed": "#c5ebd9",
                         "primary-fixed-dim": "#aacfbd",
-                        "on-primary": "#ffffff",
-                        "background": "#f9f9f9",
+                        "on-primary": "#14362a",
+                        "background": "#ffffff",
                     },
                     spacing: {
                         "margin-desktop": "64px",
@@ -39,23 +39,23 @@
     </script>
     <style>
         :root {
-            --accent: #c5ebd9;
-            --accent-dim: #aacfbd;
-            --deep: #14362a;
-            --deeper: #0a1f18;
-            --card-bg: rgba(20, 54, 42, 0.6);
+            --accent: #14362a;
+            --accent-dim: #366758;
+            --deep: #f3f7f5;
+            --deeper: #ffffff;
+            --card-bg: rgba(240, 245, 242, 0.8);
         }
         * { box-sizing: border-box; }
-        body { background: #060d09; color: #fff; }
+        body { background: #ffffff; color: #1f2937; }
 
         /* ── NAV ── */
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .nav-glass {
-            background: rgba(10, 31, 24, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+            border: 1px solid rgba(20,54,42,0.08);
+            box-shadow: 0 8px 32px rgba(20,54,42,0.05), inset 0 1px 0 rgba(255,255,255,0.8);
         }
 
         /* ── ANIMATIONS ── */
@@ -68,14 +68,6 @@
         }
         @keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
         @keyframes countUp { from{opacity:0;transform:scale(0.8)} to{opacity:1;transform:scale(1)} }
-        @keyframes shimmer {
-            0%{background-position:-200% center}
-            100%{background-position:200% center}
-        }
-        @keyframes marquee-footer {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
 
         .animate-float { animation: float 6s ease-in-out infinite; }
         .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
@@ -83,7 +75,7 @@
         .animate-fade-up { animation: fadeInUp 0.7s ease forwards; }
 
         .gradient-text {
-            background: linear-gradient(135deg, #c5ebd9, #9dd1be, #aacfbd, #c5ebd9);
+            background: linear-gradient(135deg, #14362a, #366758, #1c4f41, #14362a);
             background-size: 300% 300%;
             animation: gradient-x 4s ease infinite;
             -webkit-background-clip: text;
@@ -93,45 +85,45 @@
 
         /* ── HERO ── */
         .hero-bg {
-            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(20,54,42,0.6) 0%, transparent 70%),
-                        radial-gradient(ellipse 40% 50% at 80% 40%, rgba(197,235,217,0.08) 0%, transparent 60%),
-                        #060d09;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(197,235,217,0.2) 0%, transparent 70%),
+                        radial-gradient(ellipse 40% 50% at 80% 40%, rgba(197,235,217,0.1) 0%, transparent 60%),
+                        #ffffff;
         }
 
         /* ── GLASS CARDS ── */
         .glass-card {
-            background: linear-gradient(145deg, rgba(20,54,42,0.7) 0%, rgba(10,31,24,0.85) 100%);
+            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(197,235,217,0.12);
+            border: 1px solid rgba(20,54,42,0.08);
             transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
         }
         .glass-card:hover {
-            border-color: rgba(197,235,217,0.35);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(197,235,217,0.1);
+            border-color: rgba(20,54,42,0.2);
+            box-shadow: 0 20px 60px rgba(20,54,42,0.08), 0 0 40px rgba(197,235,217,0.15);
             transform: translateY(-6px);
         }
 
         /* ── CASE STUDY SCROLLYTELLING ── */
         .case-study-card {
-            background: linear-gradient(145deg, rgba(15,40,30,0.9) 0%, rgba(8,20,15,0.95) 100%);
-            border: 1px solid rgba(197,235,217,0.1);
-            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(240,245,242,0.98) 100%);
+            border: 1px solid rgba(20,54,42,0.06);
+            box-shadow: 0 4px 24px rgba(20,54,42,0.03);
             transition: all 0.4s ease;
         }
         .case-study-card.active {
-            border-color: rgba(197,235,217,0.4);
-            box-shadow: 0 0 40px rgba(197,235,217,0.12), 0 20px 60px rgba(0,0,0,0.4);
+            border-color: rgba(20,54,42,0.25);
+            box-shadow: 0 0 40px rgba(197,235,217,0.2), 0 20px 60px rgba(20,54,42,0.06);
         }
         .sticky-panel {
             position: sticky;
-            top: 100px;
+            top: 120px;
         }
 
         /* ── BENTO GRID ── */
         .bento-project {
-            background: linear-gradient(145deg, rgba(20,54,42,0.7) 0%, rgba(10,31,24,0.9) 100%);
-            border: 1px solid rgba(197,235,217,0.1);
+            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
+            border: 1px solid rgba(20,54,42,0.08);
             border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
@@ -140,22 +132,22 @@
         }
         .bento-project:hover {
             transform: translateY(-8px) scale(1.02);
-            border-color: rgba(197,235,217,0.4);
-            box-shadow: 0 0 50px rgba(197,235,217,0.15), 0 30px 60px rgba(0,0,0,0.5);
+            border-color: rgba(20,54,42,0.25);
+            box-shadow: 0 0 50px rgba(197,235,217,0.2), 0 30px 60px rgba(20,54,42,0.08);
         }
         .bento-project .overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10,31,24,0.95) 0%, transparent 60%);
+            background: linear-gradient(to top, rgba(243,247,245,0.98) 0%, transparent 60%);
             transition: opacity 0.3s;
         }
         .bento-project:hover .overlay { opacity: 0.7; }
         .bento-project .preview-tag {
             position: absolute;
             top: 12px; right: 12px;
-            background: rgba(197,235,217,0.15);
-            border: 1px solid rgba(197,235,217,0.3);
-            color: #c5ebd9;
+            background: rgba(20,54,42,0.05);
+            border: 1px solid rgba(20,54,42,0.15);
+            color: #14362a;
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 0.1em;
@@ -169,15 +161,15 @@
 
         /* ── MOCKUP SCREEN ── */
         .mockup-screen {
-            background: linear-gradient(135deg, #0f2820, #1a4030);
-            border: 1px solid rgba(197,235,217,0.15);
+            background: linear-gradient(135deg, #f0f5f2, #e6ede9);
+            border: 1px solid rgba(20,54,42,0.1);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+            box-shadow: 0 20px 60px rgba(20,54,42,0.06), inset 0 1px 0 rgba(255,255,255,0.8);
         }
         .mockup-topbar {
-            background: rgba(10,31,24,0.8);
-            border-bottom: 1px solid rgba(197,235,217,0.08);
+            background: rgba(240,245,242,0.9);
+            border-bottom: 1px solid rgba(20,54,42,0.06);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -187,8 +179,8 @@
 
         /* ── RESULTS KPI ── */
         .kpi-card {
-            background: linear-gradient(145deg, rgba(20,54,42,0.6) 0%, rgba(10,31,24,0.8) 100%);
-            border: 1px solid rgba(197,235,217,0.12);
+            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
+            border: 1px solid rgba(20,54,42,0.08);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
@@ -200,12 +192,12 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(197,235,217,0.06) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 0%, rgba(20,54,42,0.02) 0%, transparent 70%);
         }
         .kpi-card:hover {
-            border-color: rgba(197,235,217,0.3);
+            border-color: rgba(20,54,42,0.2);
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 20px rgba(197,235,217,0.08);
+            box-shadow: 0 16px 40px rgba(20,54,42,0.05), 0 0 20px rgba(197,235,217,0.1);
         }
 
         /* ── TECH BADGES ── */
@@ -214,22 +206,22 @@
             align-items: center;
             gap: 8px;
             padding: 10px 18px;
-            background: rgba(197,235,217,0.07);
-            border: 1px solid rgba(197,235,217,0.15);
+            background: rgba(20,54,42,0.04);
+            border: 1px solid rgba(20,54,42,0.08);
             border-radius: 100px;
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 600;
-            color: rgba(255,255,255,0.85);
+            color: #14362a;
             transition: all 0.25s ease;
             cursor: default;
         }
         .tech-badge:hover {
-            background: rgba(197,235,217,0.15);
-            border-color: rgba(197,235,217,0.4);
-            color: #c5ebd9;
+            background: rgba(20,54,42,0.08);
+            border-color: rgba(20,54,42,0.25);
+            color: #14362a;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(20,54,42,0.04);
         }
 
         /* ── PROCESS TIMELINE ── */
@@ -244,7 +236,7 @@
             top: 50px;
             bottom: -50px;
             width: 1px;
-            background: linear-gradient(to bottom, rgba(197,235,217,0.4), transparent);
+            background: linear-gradient(to bottom, rgba(20,54,42,0.15), transparent);
         }
         .process-step:last-child::before { display: none; }
         .process-dot {
@@ -254,14 +246,14 @@
             width: 22px;
             height: 22px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #c5ebd9, #366758);
-            box-shadow: 0 0 16px rgba(197,235,217,0.4);
+            background: linear-gradient(135deg, #14362a, #366758);
+            box-shadow: 0 0 16px rgba(20,54,42,0.15);
         }
 
         /* ── INDUSTRY CARDS ── */
         .industry-card {
-            background: linear-gradient(145deg, rgba(20,54,42,0.6) 0%, rgba(10,31,24,0.85) 100%);
-            border: 1px solid rgba(197,235,217,0.1);
+            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
+            border: 1px solid rgba(20,54,42,0.08);
             border-radius: 20px;
             padding: 1.75rem;
             cursor: pointer;
@@ -273,48 +265,48 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(197,235,217,0.05) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 0%, rgba(20,54,42,0.02) 0%, transparent 60%);
             opacity: 0;
             transition: opacity 0.3s;
         }
-        .industry-card:hover { border-color: rgba(197,235,217,0.35); transform: translateY(-4px); }
+        .industry-card:hover { border-color: rgba(20,54,42,0.2); transform: translateY(-4px); }
         .industry-card:hover::after { opacity: 1; }
         .industry-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
         .industry-card.open .industry-details { max-height: 300px; }
 
         /* ── TESTIMONIALS ── */
         .testimonial-card {
-            background: linear-gradient(145deg, rgba(20,54,42,0.65) 0%, rgba(10,31,24,0.9) 100%);
-            border: 1px solid rgba(197,235,217,0.1);
+            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
+            border: 1px solid rgba(20,54,42,0.08);
             border-radius: 24px;
             padding: 2rem;
             transition: all 0.35s ease;
         }
         .testimonial-card:hover {
-            border-color: rgba(197,235,217,0.3);
+            border-color: rgba(20,54,42,0.2);
             transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(20,54,42,0.05);
         }
 
         /* ── ACADEMY ── */
         .academy-flow-card {
-            background: linear-gradient(135deg, rgba(20,54,42,0.7), rgba(10,31,24,0.9));
-            border: 1px solid rgba(197,235,217,0.12);
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,247,245,0.95));
+            border: 1px solid rgba(20,54,42,0.08);
             border-radius: 20px;
             padding: 1.5rem;
             text-align: center;
             transition: all 0.3s ease;
         }
         .academy-flow-card:hover {
-            border-color: rgba(197,235,217,0.35);
+            border-color: rgba(20,54,42,0.2);
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 16px 40px rgba(20,54,42,0.04);
         }
 
         /* ── CTA SECTION ── */
         .cta-card {
-            background: linear-gradient(145deg, rgba(20,54,42,0.7) 0%, rgba(10,31,24,0.9) 100%);
-            border: 1px solid rgba(197,235,217,0.15);
+            background: linear-gradient(145deg, rgba(25,60,48,0.95) 0%, rgba(10,31,24,0.98) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 28px;
             padding: 3rem 2.5rem;
             text-align: center;
@@ -326,25 +318,22 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(197,235,217,0.08) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 0%, rgba(197,235,217,0.06) 0%, transparent 60%);
         }
         .cta-card:hover {
-            border-color: rgba(197,235,217,0.4);
+            border-color: rgba(197,235,217,0.3);
             transform: translateY(-6px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 40px rgba(197,235,217,0.1);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
         }
 
         /* ── FOOTER ── */
-        .footer-link { display:block; font-size:0.9rem; color:rgba(255,255,255,0.45); transition:color 0.2s, transform 0.2s; margin-bottom:0.75rem; }
+        .footer-link { display:block; font-size:0.9rem; color:rgba(255,255,255,0.55); transition:color 0.2s, transform 0.2s; margin-bottom:0.75rem; }
         .footer-link:hover { color:#c5ebd9; transform:translateX(4px); }
-        .footer-col-title { font-size:10px; letter-spacing:0.18em; font-weight:700; text-transform:uppercase; color:rgba(197,235,217,0.35); margin-bottom:1.25rem; }
+        .footer-col-title { font-size:10px; letter-spacing:0.18em; font-weight:700; text-transform:uppercase; color:rgba(197,235,217,0.4); margin-bottom:1.25rem; }
         .footer-social { width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid rgba(197,235,217,0.15);background:rgba(197,235,217,0.05);color:rgba(255,255,255,0.5);transition:all 0.25s; }
         .footer-social:hover { background:rgba(197,235,217,0.12);border-color:rgba(197,235,217,0.4);color:#c5ebd9;transform:translateY(-3px); }
-        @keyframes marquee-footer { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-        .footer-marquee-track { display:flex;gap:0;white-space:nowrap;animation:marquee-footer 22s linear infinite; }
-        .footer-marquee-track:hover { animation-play-state:paused; }
-        #site-footer { background:#040b07; position:relative;overflow:hidden; }
-        #site-footer::before { content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,235,217,0.35),transparent); }
+        #site-footer { background:#0a1f18; position:relative;overflow:hidden; }
+        #site-footer::before { content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,235,217,0.25),transparent); }
         .footer-copyright-bar { border-top:1px solid rgba(197,235,217,0.06);padding:1.25rem 0;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between; }
         .newsletter-input { width:100%;background:rgba(197,235,217,0.06);border:1px solid rgba(197,235,217,0.15);border-radius:12px;padding:0.75rem 1rem;color:#fff;font-size:0.875rem;outline:none;transition:border-color 0.2s; }
         .newsletter-input::placeholder { color:rgba(255,255,255,0.25); }
@@ -357,7 +346,7 @@
 
         /* GRAPH BARS */
         .graph-bar {
-            background: linear-gradient(to top, #c5ebd9, rgba(197,235,217,0.4));
+            background: linear-gradient(to top, #14362a, rgba(20,54,42,0.4));
             border-radius: 4px 4px 0 0;
             transform-origin: bottom;
             animation: barGrow 1.5s ease forwards;
@@ -371,15 +360,15 @@
             align-items: center;
             gap: 8px;
             padding: 6px 16px;
-            background: rgba(197,235,217,0.08);
-            border: 1px solid rgba(197,235,217,0.2);
+            background: rgba(20,54,42,0.04);
+            border: 1px solid rgba(20,54,42,0.1);
             border-radius: 100px;
             font-family: 'Inter', sans-serif;
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #c5ebd9;
+            color: #14362a;
         }
 
         /* SCROLL REVEAL */
@@ -398,22 +387,22 @@
         <a href="index.html" class="flex items-center gap-3 text-white shrink-0">
             <img src="Logo.png" alt="UPLIV" class="h-14 w-auto object-contain"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
-            <span style="display:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:900;color:#c5ebd9;">UPLIV</span>
+            <span style="display:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:900;color:#14362a;">UPLIV</span>
         </a>
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center gap-8">
-            <a class="font-body text-sm font-medium text-white/80 hover:text-[#c5ebd9] transition-colors" href="service.html">Services</a>
-            <a class="font-body text-sm font-medium text-[#c5ebd9]" href="projects.html">Projects</a>
-            <a class="font-body text-sm font-medium text-white/80 hover:text-[#c5ebd9] transition-colors" href="index.html#about">About</a>
-            <a class="font-body text-sm font-medium text-white/80 hover:text-[#c5ebd9] transition-colors" href="index.html#blog">Blog</a>
-            <a class="font-body text-sm font-medium text-white/80 hover:text-[#c5ebd9] transition-colors" href="index.html#academy">Academy</a>
+            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="service.html">Services</a>
+            <a class="font-body text-sm font-medium text-[#14362a]" href="projects.html">Projects</a>
+            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="index.html#about">About</a>
+            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="index.html#blog">Blog</a>
+            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="index.html#academy">Academy</a>
         </div>
         <!-- CTA -->
         <div class="flex items-center gap-4">
-            <a href="index.html#cta-section" class="hidden md:block px-5 py-2.5 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+            <a href="index.html#cta-section" class="hidden md:block px-5 py-2.5 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
                 Contact
             </a>
-            <button class="md:hidden text-white" id="mobile-menu-toggle">
+            <button class="md:hidden text-gray-800" id="mobile-menu-toggle">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
@@ -421,21 +410,21 @@
 </nav>
 
 <!-- Mobile Drawer -->
-<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-[#060d09]/98 backdrop-blur-xl md:hidden" id="mobile-menu">
+<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-white/98 backdrop-blur-xl md:hidden" id="mobile-menu">
     <div class="flex justify-end pt-4">
-        <button class="text-white" id="mobile-menu-close">
+        <button class="text-gray-800" id="mobile-menu-close">
             <span class="material-symbols-outlined text-3xl">close</span>
         </button>
     </div>
     <div class="flex flex-col gap-8 text-center text-2xl font-semibold">
-        <a class="text-white/80 hover:text-[#c5ebd9] py-2" href="service.html">Services</a>
-        <a class="text-[#c5ebd9] py-2" href="projects.html">Projects</a>
-        <a class="text-white/80 hover:text-[#c5ebd9] py-2" href="index.html#about">About</a>
-        <a class="text-white/80 hover:text-[#c5ebd9] py-2" href="index.html#blog">Blog</a>
-        <a class="text-white/80 hover:text-[#c5ebd9] py-2" href="index.html#academy">Academy</a>
+        <a class="text-gray-700 hover:text-[#14362a] py-2" href="service.html">Services</a>
+        <a class="text-[#14362a] py-2" href="projects.html">Projects</a>
+        <a class="text-gray-700 hover:text-[#14362a] py-2" href="index.html#about">About</a>
+        <a class="text-gray-700 hover:text-[#14362a] py-2" href="index.html#blog">Blog</a>
+        <a class="text-gray-700 hover:text-[#14362a] py-2" href="index.html#academy">Academy</a>
     </div>
     <div class="pb-8">
-        <a href="index.html#cta-section" class="block w-full py-4 text-center bg-[#c5ebd9] text-[#14362a] font-bold rounded-xl">
+        <a href="index.html#cta-section" class="block w-full py-4 text-center bg-[#14362a] text-white font-bold rounded-xl">
             Get Free Consultation
         </a>
     </div>
@@ -447,32 +436,27 @@
      1. HERO SECTION
 ══════════════════════════════════════════ -->
 <section class="hero-bg min-h-screen pt-36 pb-24 px-6 md:px-16 relative overflow-hidden flex items-center">
-    <!-- Glow Orbs -->
-    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#c5ebd9]/8 blur-[120px] pointer-events-none"></div>
-    <div class="absolute top-1/2 -right-24 w-80 h-80 rounded-full bg-[#366758]/20 blur-[100px] pointer-events-none"></div>
-    <div class="absolute bottom-0 left-1/3 w-64 h-64 rounded-full bg-[#c5ebd9]/5 blur-[80px] pointer-events-none"></div>
-
     <div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Left Content -->
         <div class="space-y-8">
             <div class="section-badge">
-                <span class="w-2 h-2 rounded-full bg-[#c5ebd9] animate-pulse-slow"></span>
+                <span class="w-2 h-2 rounded-full bg-[#14362a] animate-pulse-slow"></span>
                 Featured Projects &amp; Success Stories
             </div>
-            <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-[-0.03em] text-white">
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-[-0.03em] text-gray-900">
                 Real Businesses.<br/>
                 Real Challenges.<br/>
                 <span class="gradient-text">Real Results.</span>
             </h1>
-            <p class="font-body text-lg text-white/60 max-w-md leading-relaxed">
+            <p class="font-body text-lg text-gray-600 max-w-md leading-relaxed">
                 From Healthcare CRMs to E-Commerce platforms — explore how UPLIV transforms digital challenges into measurable business growth.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#case-studies" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-base rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-black/30">
+                <a href="#case-studies" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#14362a] text-white font-heading font-bold text-base rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-black/10">
                     Explore Our Work
                     <span class="material-symbols-outlined text-xl">arrow_downward</span>
                 </a>
-                <a href="index.html#cta-section" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 text-white font-heading font-bold text-base rounded-2xl hover:border-[#c5ebd9]/50 hover:bg-white/5 transition-all">
+                <a href="index.html#cta-section" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-300 text-gray-800 font-heading font-bold text-base rounded-2xl hover:border-[#14362a]/50 hover:bg-gray-50 transition-all">
                     Start Your Project
                 </a>
             </div>
@@ -480,20 +464,20 @@
             <!-- Stats Row -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
                 <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#c5ebd9] count-num" data-target="50" data-suffix="+">0</div>
-                    <div class="font-body text-xs text-white/40 mt-1 uppercase tracking-wider">Projects Delivered</div>
+                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="50" data-suffix="+">0</div>
+                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Projects Delivered</div>
                 </div>
                 <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#c5ebd9] count-num" data-target="20" data-suffix="+">0</div>
-                    <div class="font-body text-xs text-white/40 mt-1 uppercase tracking-wider">Industries Served</div>
+                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="20" data-suffix="+">0</div>
+                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Industries Served</div>
                 </div>
                 <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#c5ebd9] count-num" data-target="95" data-suffix="%">0</div>
-                    <div class="font-body text-xs text-white/40 mt-1 uppercase tracking-wider">Client Satisfaction</div>
+                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="95" data-suffix="%">0</div>
+                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Client Satisfaction</div>
                 </div>
                 <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#c5ebd9] count-num" data-target="4" data-suffix="+">0</div>
-                    <div class="font-body text-xs text-white/40 mt-1 uppercase tracking-wider">Years Experience</div>
+                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="4" data-suffix="+">0</div>
+                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Years Experience</div>
                 </div>
             </div>
         </div>
@@ -501,63 +485,63 @@
         <!-- Right: Animated Project Previews -->
         <div class="relative hidden lg:flex items-center justify-center">
             <!-- Main large screen mockup -->
-            <div class="mockup-screen w-full max-w-[420px] animate-float" style="animation-duration:7s;">
+            <div class="mockup-screen w-full max-w-[420px] animate-float bg-white" style="animation-duration:7s;">
                 <div class="mockup-topbar">
                     <div class="mockup-dot bg-red-400/70"></div>
                     <div class="mockup-dot bg-yellow-400/70"></div>
                     <div class="mockup-dot bg-green-400/70"></div>
-                    <div class="flex-1 bg-white/5 rounded h-4 mx-4"></div>
+                    <div class="flex-1 bg-gray-200 rounded h-4 mx-4"></div>
                 </div>
                 <div class="p-4 space-y-3">
                     <div class="flex gap-2">
-                        <div class="w-1/3 h-24 rounded-xl bg-gradient-to-br from-[#c5ebd9]/20 to-[#366758]/20 border border-[#c5ebd9]/10"></div>
+                        <div class="w-1/3 h-24 rounded-xl bg-gradient-to-br from-[#14362a]/10 to-[#366758]/5 border border-[#14362a]/5"></div>
                         <div class="flex-1 space-y-2">
-                            <div class="h-4 bg-white/10 rounded w-3/4"></div>
-                            <div class="h-3 bg-white/6 rounded w-full"></div>
-                            <div class="h-3 bg-white/6 rounded w-4/5"></div>
-                            <div class="h-8 bg-[#c5ebd9]/20 rounded-lg w-1/2 mt-2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                            <div class="h-3 bg-gray-100 rounded w-full"></div>
+                            <div class="h-3 bg-gray-100 rounded w-4/5"></div>
+                            <div class="h-8 bg-[#14362a]/10 rounded-lg w-1/2 mt-2"></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-2">
-                        <div class="h-14 rounded-xl bg-gradient-to-br from-[#c5ebd9]/15 to-transparent border border-[#c5ebd9]/8"></div>
-                        <div class="h-14 rounded-xl bg-gradient-to-br from-white/10 to-transparent border border-white/5"></div>
-                        <div class="h-14 rounded-xl bg-gradient-to-br from-[#366758]/30 to-transparent border border-[#366758]/20"></div>
+                        <div class="h-14 rounded-xl bg-gradient-to-br from-[#14362a]/10 to-transparent border border-gray-100"></div>
+                        <div class="h-14 rounded-xl bg-gradient-to-br from-gray-100 to-transparent border border-gray-50"></div>
+                        <div class="h-14 rounded-xl bg-gradient-to-br from-[#366758]/10 to-transparent border border-gray-100"></div>
                     </div>
-                    <div class="h-20 rounded-xl bg-gradient-to-r from-[#c5ebd9]/10 via-[#366758]/10 to-transparent border border-white/5 flex items-end p-3 gap-1">
-                        <div class="w-6 bg-[#c5ebd9]/60 rounded-t graph-bar" style="height:60%;animation-delay:0.2s;"></div>
-                        <div class="w-6 bg-[#c5ebd9]/60 rounded-t graph-bar" style="height:75%;animation-delay:0.4s;"></div>
-                        <div class="w-6 bg-[#c5ebd9]/60 rounded-t graph-bar" style="height:50%;animation-delay:0.6s;"></div>
-                        <div class="w-6 bg-[#c5ebd9]/80 rounded-t graph-bar" style="height:90%;animation-delay:0.8s;"></div>
-                        <div class="w-6 bg-[#c5ebd9] rounded-t graph-bar" style="height:100%;animation-delay:1s;"></div>
+                    <div class="h-20 rounded-xl bg-gradient-to-r from-gray-50 via-gray-100 to-transparent border border-gray-200 flex items-end p-3 gap-1">
+                        <div class="w-6 bg-[#14362a]/60 rounded-t graph-bar" style="height:60%;animation-delay:0.2s;"></div>
+                        <div class="w-6 bg-[#14362a]/60 rounded-t graph-bar" style="height:75%;animation-delay:0.4s;"></div>
+                        <div class="w-6 bg-[#14362a]/60 rounded-t graph-bar" style="height:50%;animation-delay:0.6s;"></div>
+                        <div class="w-6 bg-[#14362a]/80 rounded-t graph-bar" style="height:90%;animation-delay:0.8s;"></div>
+                        <div class="w-6 bg-[#14362a] rounded-t graph-bar" style="height:100%;animation-delay:1s;"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Floating mobile mockup -->
             <div class="absolute -right-6 bottom-12 w-28 animate-float" style="animation-delay:1.5s;animation-duration:5s;">
-                <div class="bg-[#0f2820] border border-[#c5ebd9]/20 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-2xl">
                     <div class="p-1.5 space-y-1.5">
-                        <div class="h-8 bg-gradient-to-r from-[#c5ebd9]/20 to-transparent rounded-lg"></div>
-                        <div class="h-4 bg-white/8 rounded"></div>
-                        <div class="h-4 bg-white/6 rounded w-3/4"></div>
-                        <div class="h-6 bg-[#c5ebd9]/25 rounded-lg"></div>
+                        <div class="h-8 bg-gradient-to-r from-[#14362a]/10 to-transparent rounded-lg"></div>
+                        <div class="h-4 bg-gray-200 rounded"></div>
+                        <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+                        <div class="h-6 bg-[#14362a]/10 rounded-lg"></div>
                         <div class="grid grid-cols-2 gap-1">
-                            <div class="h-10 bg-[#c5ebd9]/10 rounded-lg border border-[#c5ebd9]/10"></div>
-                            <div class="h-10 bg-white/5 rounded-lg border border-white/5"></div>
+                            <div class="h-10 bg-[#14362a]/5 rounded-lg border border-gray-100"></div>
+                            <div class="h-10 bg-gray-50 rounded-lg border border-gray-100"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Floating stat badge -->
-            <div class="absolute -left-8 top-16 glass-card rounded-2xl p-4 shadow-2xl">
+            <div class="absolute -left-8 top-16 glass-card rounded-2xl p-4 shadow-2xl bg-white">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-[#c5ebd9]/15 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-[#c5ebd9] text-xl" style="font-variation-settings:'FILL' 1;">trending_up</span>
+                    <div class="w-10 h-10 rounded-xl bg-[#14362a]/5 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#14362a] text-xl" style="font-variation-settings:'FILL' 1;">trending_up</span>
                     </div>
                     <div>
-                        <div class="font-heading font-black text-lg text-[#c5ebd9]">+142%</div>
-                        <div class="font-body text-[10px] text-white/40 uppercase tracking-wider">ROI Increase</div>
+                        <div class="font-heading font-black text-lg text-[#14362a]">+142%</div>
+                        <div class="font-body text-[10px] text-gray-500 uppercase tracking-wider">ROI Increase</div>
                     </div>
                 </div>
             </div>
@@ -566,58 +550,58 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     2. FEATURED CASE STUDIES
+     2. FEATURED CASE STUDIES (STICKY SCROLLYTELLING)
 ══════════════════════════════════════════ -->
-<section id="case-studies" class="py-28 px-6 md:px-16 relative" style="background:linear-gradient(to bottom, #060d09 0%, #0a1510 100%);">
+<section id="case-studies" class="py-28 px-6 md:px-16 relative bg-[#f9fbf9]">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-20 reveal">
             <div class="section-badge mb-6">Premium Case Studies</div>
-            <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight">
                 Featured <span class="gradient-text">Success Stories</span>
             </h2>
-            <p class="font-body text-lg text-white/50 mt-4 max-w-2xl mx-auto">Deep dive into the projects that transformed businesses and delivered measurable outcomes.</p>
+            <p class="font-body text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Deep dive into the projects that transformed businesses and delivered measurable outcomes.</p>
         </div>
 
         <!-- Case Study 1 -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 reveal">
             <!-- Left: Sticky Info Panel -->
-            <div class="sticky-panel space-y-6 self-start">
-                <div class="section-badge">Healthcare</div>
-                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-white">Healthcare CRM Platform</h3>
-                <p class="font-body text-white/55 leading-relaxed">A Tirupati-based multi-specialty clinic struggling with manual patient management, appointment chaos, and zero follow-up automation.</p>
+            <div class="sticky-panel space-y-6 self-start z-10">
+                <div class="section-badge bg-[#14362a]/5 text-[#14362a]">Healthcare</div>
+                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-gray-900">Healthcare CRM Platform</h3>
+                <p class="font-body text-gray-600 leading-relaxed">A Tirupati-based multi-specialty clinic struggling with manual patient management, appointment chaos, and zero follow-up automation.</p>
 
                 <div class="space-y-4">
                     <div class="case-study-card active rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-red-400"></span>
-                            <span class="font-heading text-xs font-bold text-white/50 uppercase tracking-wider">Challenge</span>
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span class="font-heading text-xs font-bold text-gray-500 uppercase tracking-wider">Challenge</span>
                         </div>
-                        <p class="font-body text-sm text-white/75">Manual patient management across departments with no centralized tracking, leading to appointment clashes and 30% no-show rate.</p>
+                        <p class="font-body text-sm text-gray-700">Manual patient management across departments with no centralized tracking, leading to appointment clashes and 30% no-show rate.</p>
                     </div>
                     <div class="case-study-card active rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-[#c5ebd9]"></span>
-                            <span class="font-heading text-xs font-bold text-white/50 uppercase tracking-wider">Solution</span>
+                            <span class="w-2 h-2 rounded-full bg-[#14362a]"></span>
+                            <span class="font-heading text-xs font-bold text-gray-500 uppercase tracking-wider">Solution</span>
                         </div>
-                        <p class="font-body text-sm text-white/75">Custom CRM with automated appointment booking, WhatsApp reminders, doctor scheduling, and analytics dashboard built on React + Node.js.</p>
+                        <p class="font-body text-sm text-gray-700">Custom CRM with automated appointment booking, WhatsApp reminders, doctor scheduling, and analytics dashboard built on React + Node.js.</p>
                     </div>
                     <div class="case-study-card active rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
-                            <span class="font-heading text-xs font-bold text-white/50 uppercase tracking-wider">Results</span>
+                            <span class="w-2 h-2 rounded-full bg-green-600"></span>
+                            <span class="font-heading text-xs font-bold text-gray-500 uppercase tracking-wider">Results</span>
                         </div>
                         <div class="space-y-2">
                             <div class="flex items-center gap-2">
-                                <span class="font-heading text-lg font-black text-[#c5ebd9]">+70%</span>
-                                <span class="font-body text-sm text-white/65">Operational Efficiency</span>
+                                <span class="font-heading text-lg font-black text-[#14362a]">+70%</span>
+                                <span class="font-body text-sm text-gray-600">Operational Efficiency</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="font-heading text-lg font-black text-[#c5ebd9]">-50%</span>
-                                <span class="font-body text-sm text-white/65">Manual Work Reduced</span>
+                                <span class="font-heading text-lg font-black text-[#14362a]">-50%</span>
+                                <span class="font-body text-sm text-gray-600">Manual Work Reduced</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="font-heading text-lg font-black text-[#c5ebd9]">+35%</span>
-                                <span class="font-body text-sm text-white/65">Patient Retention</span>
+                                <span class="font-heading text-lg font-black text-[#14362a]">+35%</span>
+                                <span class="font-body text-sm text-gray-600">Patient Retention</span>
                             </div>
                         </div>
                     </div>
@@ -633,62 +617,49 @@
 
             <!-- Right: Mockup -->
             <div class="space-y-4">
-                <div class="mockup-screen">
-                    <div class="mockup-topbar">
+                <div class="mockup-screen bg-white">
+                    <div class="mockup-topbar bg-gray-50">
                         <div class="mockup-dot bg-red-400/70"></div>
                         <div class="mockup-dot bg-yellow-400/70"></div>
                         <div class="mockup-dot bg-green-400/70"></div>
-                        <div class="flex-1 bg-white/5 rounded h-4 mx-4"></div>
-                        <span class="text-[#c5ebd9]/60 text-xs font-mono">HealthCRM v2.0</span>
+                        <div class="flex-1 bg-gray-200 rounded h-4 mx-4"></div>
+                        <span class="text-gray-500 text-xs font-mono">HealthCRM v2.0</span>
                     </div>
                     <div class="p-6 space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="font-heading text-sm font-bold text-white/80">Patient Dashboard</span>
-                            <span class="px-3 py-1 bg-green-400/20 text-green-400 text-xs font-bold rounded-full">Live</span>
+                            <span class="font-heading text-sm font-bold text-gray-800">Patient Dashboard</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Live</span>
                         </div>
                         <div class="grid grid-cols-3 gap-3">
-                            <div class="p-3 rounded-xl bg-[#c5ebd9]/10 border border-[#c5ebd9]/15 text-center">
-                                <div class="font-heading text-xl font-black text-[#c5ebd9]">248</div>
-                                <div class="text-[10px] text-white/40 mt-1">Today's Patients</div>
+                            <div class="p-3 rounded-xl bg-gray-50 border border-gray-100 text-center">
+                                <div class="font-heading text-xl font-black text-[#14362a]">248</div>
+                                <div class="text-[10px] text-gray-400 mt-1">Today's Patients</div>
                             </div>
-                            <div class="p-3 rounded-xl bg-white/5 border border-white/8 text-center">
-                                <div class="font-heading text-xl font-black text-white">96%</div>
-                                <div class="text-[10px] text-white/40 mt-1">Show Rate</div>
+                            <div class="p-3 rounded-xl bg-gray-50 border border-gray-100 text-center">
+                                <div class="font-heading text-xl font-black text-gray-800">96%</div>
+                                <div class="text-[10px] text-gray-400 mt-1">Show Rate</div>
                             </div>
-                            <div class="p-3 rounded-xl bg-green-400/10 border border-green-400/15 text-center">
-                                <div class="font-heading text-xl font-black text-green-400">12</div>
-                                <div class="text-[10px] text-white/40 mt-1">Doctors Active</div>
+                            <div class="p-3 rounded-xl bg-green-50 border border-green-100 text-center">
+                                <div class="font-heading text-xl font-black text-green-700">12</div>
+                                <div class="text-[10px] text-gray-400 mt-1">Doctors Active</div>
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white/4 border border-white/6">
-                                <div class="w-8 h-8 rounded-full bg-[#c5ebd9]/20 flex items-center justify-center text-[#c5ebd9] text-xs font-bold">RK</div>
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
+                                <div class="w-8 h-8 rounded-full bg-[#14362a]/10 flex items-center justify-center text-[#14362a] text-xs font-bold">RK</div>
                                 <div class="flex-1">
-                                    <div class="text-xs font-heading font-semibold text-white">Ravi Kumar</div>
-                                    <div class="text-[10px] text-white/40">Cardiology · 10:30 AM</div>
+                                    <div class="text-xs font-heading font-semibold text-gray-800">Ravi Kumar</div>
+                                    <div class="text-[10px] text-gray-400">Cardiology · 10:30 AM</div>
                                 </div>
-                                <span class="px-2 py-0.5 bg-[#c5ebd9]/15 text-[#c5ebd9] text-[10px] font-bold rounded-full">Confirmed</span>
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded-full">Confirmed</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded-xl bg-white/4 border border-white/6">
-                                <div class="w-8 h-8 rounded-full bg-purple-400/20 flex items-center justify-center text-purple-300 text-xs font-bold">SP</div>
+                            <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 text-xs font-bold">SP</div>
                                 <div class="flex-1">
-                                    <div class="text-xs font-heading font-semibold text-white">Sunitha Priya</div>
-                                    <div class="text-[10px] text-white/40">General · 11:00 AM</div>
+                                    <div class="text-xs font-heading font-semibold text-gray-800">Sunitha Priya</div>
+                                    <div class="text-[10px] text-gray-400">General · 11:00 AM</div>
                                 </div>
-                                <span class="px-2 py-0.5 bg-yellow-400/15 text-yellow-400 text-[10px] font-bold rounded-full">Pending</span>
-                            </div>
-                        </div>
-                        <!-- Mini chart -->
-                        <div class="p-3 rounded-xl bg-white/3 border border-white/5">
-                            <div class="text-[10px] text-white/40 mb-2 uppercase tracking-wider">Patient Trend — 7 Days</div>
-                            <div class="flex items-end gap-1 h-12">
-                                <div class="flex-1 bg-[#c5ebd9]/30 rounded-t" style="height:55%"></div>
-                                <div class="flex-1 bg-[#c5ebd9]/40 rounded-t" style="height:70%"></div>
-                                <div class="flex-1 bg-[#c5ebd9]/35 rounded-t" style="height:60%"></div>
-                                <div class="flex-1 bg-[#c5ebd9]/55 rounded-t" style="height:85%"></div>
-                                <div class="flex-1 bg-[#c5ebd9]/45 rounded-t" style="height:75%"></div>
-                                <div class="flex-1 bg-[#c5ebd9]/70 rounded-t" style="height:95%"></div>
-                                <div class="flex-1 bg-[#c5ebd9] rounded-t" style="height:100%"></div>
+                                <span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 text-[10px] font-bold rounded-full">Pending</span>
                             </div>
                         </div>
                     </div>
@@ -700,55 +671,31 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal">
             <!-- Right Mockup first on mobile -->
             <div class="order-2 lg:order-1 space-y-4">
-                <div class="mockup-screen">
-                    <div class="mockup-topbar">
+                <div class="mockup-screen bg-white">
+                    <div class="mockup-topbar bg-gray-50">
                         <div class="mockup-dot bg-red-400/70"></div>
                         <div class="mockup-dot bg-yellow-400/70"></div>
                         <div class="mockup-dot bg-green-400/70"></div>
-                        <div class="flex-1 bg-white/5 rounded h-4 mx-4"></div>
-                        <span class="text-[#c5ebd9]/60 text-xs font-mono">EduTrack LMS</span>
+                        <div class="flex-1 bg-gray-200 rounded h-4 mx-4"></div>
+                        <span class="text-gray-500 text-xs font-mono">EduTrack LMS</span>
                     </div>
                     <div class="p-6 space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="font-heading text-sm font-bold text-white/80">Learning Dashboard</span>
-                            <span class="px-3 py-1 bg-blue-400/20 text-blue-400 text-xs font-bold rounded-full">Active</span>
+                            <span class="font-heading text-sm font-bold text-gray-800">Learning Dashboard</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Active</span>
                         </div>
                         <div class="grid grid-cols-3 gap-3">
-                            <div class="p-3 rounded-xl bg-blue-400/10 border border-blue-400/15 text-center">
-                                <div class="font-heading text-xl font-black text-blue-400">1.2K</div>
-                                <div class="text-[10px] text-white/40 mt-1">Students</div>
+                            <div class="p-3 rounded-xl bg-blue-50 border border-blue-100 text-center">
+                                <div class="font-heading text-xl font-black text-blue-700">1.2K</div>
+                                <div class="text-[10px] text-gray-400 mt-1">Students</div>
                             </div>
-                            <div class="p-3 rounded-xl bg-[#c5ebd9]/10 border border-[#c5ebd9]/15 text-center">
-                                <div class="font-heading text-xl font-black text-[#c5ebd9]">94%</div>
-                                <div class="text-[10px] text-white/40 mt-1">Completion</div>
+                            <div class="p-3 rounded-xl bg-green-50 border border-green-100 text-center">
+                                <div class="font-heading text-xl font-black text-green-700">94%</div>
+                                <div class="text-[10px] text-gray-400 mt-1">Completion</div>
                             </div>
-                            <div class="p-3 rounded-xl bg-purple-400/10 border border-purple-400/15 text-center">
-                                <div class="font-heading text-xl font-black text-purple-400">48</div>
-                                <div class="text-[10px] text-white/40 mt-1">Courses</div>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="text-[10px] text-white/40 uppercase tracking-wider">Top Performing Courses</div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-white/70">Digital Marketing</span>
-                                <div class="flex-1 h-1.5 bg-white/8 rounded-full overflow-hidden">
-                                    <div class="h-full bg-[#c5ebd9] rounded-full" style="width:92%"></div>
-                                </div>
-                                <span class="text-xs text-[#c5ebd9]">92%</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-white/70">Web Development</span>
-                                <div class="flex-1 h-1.5 bg-white/8 rounded-full overflow-hidden">
-                                    <div class="h-full bg-blue-400 rounded-full" style="width:87%"></div>
-                                </div>
-                                <span class="text-xs text-blue-400">87%</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs text-white/70">Data Analytics</span>
-                                <div class="flex-1 h-1.5 bg-white/8 rounded-full overflow-hidden">
-                                    <div class="h-full bg-purple-400 rounded-full" style="width:78%"></div>
-                                </div>
-                                <span class="text-xs text-purple-400">78%</span>
+                            <div class="p-3 rounded-xl bg-purple-50 border border-purple-100 text-center">
+                                <div class="font-heading text-xl font-black text-purple-700">48</div>
+                                <div class="text-[10px] text-gray-400 mt-1">Courses</div>
                             </div>
                         </div>
                     </div>
@@ -756,43 +703,43 @@
             </div>
 
             <!-- Left Info -->
-            <div class="order-1 lg:order-2 sticky-panel space-y-6 self-start">
-                <div class="section-badge">Education</div>
-                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-white">Education LMS Platform</h3>
-                <p class="font-body text-white/55 leading-relaxed">A private coaching institute in Andhra Pradesh managing 1,000+ students manually across spreadsheets and WhatsApp groups.</p>
+            <div class="order-1 lg:order-2 sticky-panel space-y-6 self-start z-10">
+                <div class="section-badge bg-[#14362a]/5 text-[#14362a]">Education</div>
+                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-gray-900">Education LMS Platform</h3>
+                <p class="font-body text-gray-600 leading-relaxed">A private coaching institute in Andhra Pradesh managing 1,000+ students manually across spreadsheets and WhatsApp groups.</p>
 
                 <div class="space-y-4">
                     <div class="case-study-card active rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-red-400"></span>
-                            <span class="font-heading text-xs font-bold text-white/50 uppercase tracking-wider">Challenge</span>
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span class="font-heading text-xs font-bold text-gray-500 uppercase tracking-wider">Challenge</span>
                         </div>
-                        <p class="font-body text-sm text-white/75">Student management across multiple batches via spreadsheets with zero analytics on learning progress or engagement.</p>
+                        <p class="font-body text-sm text-gray-700">Student management across multiple batches via spreadsheets with zero analytics on learning progress or engagement.</p>
                     </div>
                     <div class="case-study-card active rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-[#c5ebd9]"></span>
-                            <span class="font-heading text-xs font-bold text-white/50 uppercase tracking-wider">Solution</span>
+                            <span class="w-2 h-2 rounded-full bg-[#14362a]"></span>
+                            <span class="font-heading text-xs font-bold text-gray-500 uppercase tracking-wider">Solution</span>
                         </div>
-                        <p class="font-body text-sm text-white/75">Custom LMS with video lessons, assignments, live session management, progress analytics, and automated performance reports.</p>
+                        <p class="font-body text-sm text-gray-700">Custom LMS with video lessons, assignments, live session management, progress analytics, and automated performance reports.</p>
                     </div>
                     <div class="case-study-card active rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
-                            <span class="font-heading text-xs font-bold text-white/50 uppercase tracking-wider">Results</span>
+                            <span class="w-2 h-2 rounded-full bg-green-600"></span>
+                            <span class="font-heading text-xs font-bold text-gray-500 uppercase tracking-wider">Results</span>
                         </div>
                         <div class="space-y-2">
                             <div class="flex items-center gap-2">
-                                <span class="font-heading text-lg font-black text-[#c5ebd9]">+1,200</span>
-                                <span class="font-body text-sm text-white/65">Students Managed</span>
+                                <span class="font-heading text-lg font-black text-[#14362a]">+1,200</span>
+                                <span class="font-body text-sm text-gray-600">Students Managed</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="font-heading text-lg font-black text-[#c5ebd9]">+60%</span>
-                                <span class="font-body text-sm text-white/65">Engagement Increase</span>
+                                <span class="font-heading text-lg font-black text-[#14362a]">+60%</span>
+                                <span class="font-body text-sm text-gray-600">Engagement Increase</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="font-heading text-lg font-black text-[#c5ebd9]">3x</span>
-                                <span class="font-body text-sm text-white/65">Batch Management Capacity</span>
+                                <span class="font-heading text-lg font-black text-[#14362a]">3x</span>
+                                <span class="font-body text-sm text-gray-600">Batch Capacity</span>
                             </div>
                         </div>
                     </div>
@@ -812,11 +759,11 @@
 <!-- ══════════════════════════════════════════
      3. PROJECTS BENTO GRID
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:#0a1510;">
+<section class="py-28 px-6 md:px-16 bg-white">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">Project Gallery</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Explore Our <span class="gradient-text">Project Portfolio</span>
             </h2>
         </div>
@@ -828,20 +775,20 @@
                 <div class="p-6 h-full flex flex-col justify-between relative z-10">
                     <div>
                         <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-red-400/20 border border-red-400/30 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-red-400 text-2xl">local_hospital</span>
+                        <div class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-red-600 text-2xl">local_hospital</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-2">Healthcare CRM</h3>
-                        <p class="font-body text-sm text-white/50">Patient management system with automated scheduling and analytics.</p>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Healthcare CRM</h3>
+                        <p class="font-body text-sm text-gray-500">Patient management system with automated scheduling and analytics.</p>
                     </div>
                     <div>
                         <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">React</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Node.js</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">React</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Node.js</span>
                         </div>
                         <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">+70%</span><div class="text-[10px] text-white/30">Efficiency</div></div>
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">-50%</span><div class="text-[10px] text-white/30">Manual Work</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">+70%</span><div class="text-[10px] text-gray-400">Efficiency</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">-50%</span><div class="text-[10px] text-gray-400">Manual Work</div></div>
                         </div>
                     </div>
                 </div>
@@ -853,20 +800,20 @@
                 <div class="p-6 h-full flex flex-col justify-between relative z-10">
                     <div>
                         <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-blue-400/20 border border-blue-400/30 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-blue-400 text-2xl">school</span>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-blue-600 text-2xl">school</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-2">Education LMS</h3>
-                        <p class="font-body text-sm text-white/50">Full learning management platform with live classes and progress tracking.</p>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Education LMS</h3>
+                        <p class="font-body text-sm text-gray-500">Full learning management platform with live classes and progress tracking.</p>
                     </div>
                     <div>
                         <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Next.js</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">AWS</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Next.js</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">AWS</span>
                         </div>
                         <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">1.2K+</span><div class="text-[10px] text-white/30">Students</div></div>
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">+60%</span><div class="text-[10px] text-white/30">Engagement</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">1.2K+</span><div class="text-[10px] text-gray-400">Students</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">+60%</span><div class="text-[10px] text-gray-400">Engagement</div></div>
                         </div>
                     </div>
                 </div>
@@ -878,34 +825,19 @@
                 <div class="p-6 h-full flex flex-col justify-between relative z-10">
                     <div>
                         <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-[#c5ebd9]/20 border border-[#c5ebd9]/30 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-[#c5ebd9] text-2xl">shopping_bag</span>
+                        <div class="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-[#14362a] text-2xl">shopping_bag</span>
                         </div>
-                        <h3 class="font-heading text-2xl font-bold text-white mb-3">E-Commerce Platform</h3>
-                        <p class="font-body text-sm text-white/50 leading-relaxed">Multi-vendor marketplace with real-time inventory, payment gateway, and AI-powered product recommendations for a Tirupati retailer.</p>
-                        <div class="mt-4 p-3 rounded-xl bg-white/4 border border-white/6 space-y-2">
-                            <div class="flex justify-between text-xs">
-                                <span class="text-white/40">Monthly Revenue</span>
-                                <span class="text-[#c5ebd9] font-bold">↑ 180%</span>
-                            </div>
-                            <div class="flex justify-between text-xs">
-                                <span class="text-white/40">Cart Conversion</span>
-                                <span class="text-[#c5ebd9] font-bold">4.8% → 11.2%</span>
-                            </div>
-                            <div class="flex justify-between text-xs">
-                                <span class="text-white/40">Page Speed</span>
-                                <span class="text-[#c5ebd9] font-bold">99 Lighthouse</span>
-                            </div>
-                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-gray-900 mb-3">E-Commerce Platform</h3>
+                        <p class="font-body text-sm text-gray-500 leading-relaxed">Multi-vendor marketplace with real-time inventory, payment gateway, and AI-powered product recommendations for a Tirupati retailer.</p>
                     </div>
                     <div>
                         <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Next.js</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Stripe</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Redis</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Next.js</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Stripe</span>
                         </div>
                         <div class="flex gap-4">
-                            <div><span class="font-heading text-2xl font-black text-[#c5ebd9]">₹50L+</span><div class="text-[10px] text-white/30">Revenue Generated</div></div>
+                            <div><span class="font-heading text-2xl font-black text-[#14362a]">₹50L+</span><div class="text-[10px] text-gray-400">Revenue Generated</div></div>
                         </div>
                     </div>
                 </div>
@@ -917,20 +849,19 @@
                 <div class="p-6 h-full flex flex-col justify-between relative z-10">
                     <div>
                         <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-orange-400/20 border border-orange-400/30 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-orange-400 text-2xl">apartment</span>
+                        <div class="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-orange-600 text-2xl">apartment</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-2">Real Estate Portal</h3>
-                        <p class="font-body text-sm text-white/50">Property listing platform with 3D tours, lead capture, and CRM integration.</p>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Real Estate Portal</h3>
+                        <p class="font-body text-sm text-gray-500">Property listing platform with 3D tours, lead capture, and CRM integration.</p>
                     </div>
                     <div>
                         <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">React</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Google Maps</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">React</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Google Maps</span>
                         </div>
                         <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">+3x</span><div class="text-[10px] text-white/30">Lead Quality</div></div>
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">+85%</span><div class="text-[10px] text-white/30">Inquiries</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">+3x</span><div class="text-[10px] text-gray-400">Lead Quality</div></div>
                         </div>
                     </div>
                 </div>
@@ -942,19 +873,19 @@
                 <div class="p-6 h-full flex flex-col justify-between relative z-10">
                     <div>
                         <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-yellow-400/20 border border-yellow-400/30 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-yellow-400 text-2xl">travel_explore</span>
+                        <div class="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-yellow-600 text-2xl">travel_explore</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-2">Tourism Booking Platform</h3>
-                        <p class="font-body text-sm text-white/50">Travel package booking with itinerary builder and payment integration.</p>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Tourism Booking Platform</h3>
+                        <p class="font-body text-sm text-gray-500">Travel package booking with itinerary builder and payment integration.</p>
                     </div>
                     <div>
                         <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">WordPress</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Razorpay</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">WordPress</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Razorpay</span>
                         </div>
                         <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">+200%</span><div class="text-[10px] text-white/30">Bookings</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">+200%</span><div class="text-[10px] text-gray-400">Bookings</div></div>
                         </div>
                     </div>
                 </div>
@@ -966,20 +897,19 @@
                 <div class="p-6 h-full flex flex-col justify-between relative z-10">
                     <div>
                         <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-400/20 border border-purple-400/30 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-purple-400 text-2xl">hotel</span>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-purple-600 text-2xl">hotel</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-white mb-2">Hotel Management System</h3>
-                        <p class="font-body text-sm text-white/50">Reservation system with room management, billing, and digital check-in.</p>
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Hotel Management</h3>
+                        <p class="font-body text-sm text-gray-500">Reservation system with room management, billing, and digital check-in.</p>
                     </div>
                     <div>
                         <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">React</span>
-                            <span class="px-2 py-1 bg-white/8 text-white/60 text-[10px] rounded-full font-mono">Node.js</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">React</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Node.js</span>
                         </div>
                         <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">+45%</span><div class="text-[10px] text-white/30">Revenue</div></div>
-                            <div><span class="font-heading text-lg font-black text-[#c5ebd9]">-60%</span><div class="text-[10px] text-white/30">Manual Ops</div></div>
+                            <div><span class="font-heading text-lg font-black text-[#14362a]">+45%</span><div class="text-[10px] text-gray-400">Revenue</div></div>
                         </div>
                     </div>
                 </div>
@@ -992,33 +922,33 @@
 <!-- ══════════════════════════════════════════
      4. RESULTS DASHBOARD SECTION
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16 relative" style="background:linear-gradient(to bottom, #0a1510, #060d09);">
+<section class="py-28 px-6 md:px-16 relative bg-[#f9fbf9]">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">Proven Impact</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Results That <span class="gradient-text">Matter</span>
             </h2>
-            <p class="font-body text-lg text-white/50 mt-4 max-w-xl mx-auto">Numbers that reflect real impact for our clients across every engagement.</p>
+            <p class="font-body text-lg text-gray-600 mt-4 max-w-xl mx-auto">Numbers that reflect real impact for our clients across every engagement.</p>
         </div>
 
         <!-- KPI Cards -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16 reveal">
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#c5ebd9] mb-2 count-num" data-target="50" data-suffix="L+">₹0</div>
-                <div class="font-body text-sm font-semibold text-white/60">Revenue Generated for Clients</div>
+                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="50" data-suffix="L+">₹0</div>
+                <div class="font-body text-sm font-semibold text-gray-600">Revenue Generated for Clients</div>
             </div>
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#c5ebd9] mb-2 count-num" data-target="200" data-suffix="K+">0</div>
-                <div class="font-body text-sm font-semibold text-white/60">Users Reached Across Platforms</div>
+                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="200" data-suffix="K+">0</div>
+                <div class="font-body text-sm font-semibold text-gray-600">Users Reached Across Platforms</div>
             </div>
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#c5ebd9] mb-2 count-num" data-target="120" data-suffix="+">0</div>
-                <div class="font-body text-sm font-semibold text-white/60">Campaigns Executed</div>
+                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="120" data-suffix="+">0</div>
+                <div class="font-body text-sm font-semibold text-gray-600">Campaigns Executed</div>
             </div>
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#c5ebd9] mb-2 count-num" data-target="95" data-suffix="%">0</div>
-                <div class="font-body text-sm font-semibold text-white/60">Client Retention Rate</div>
+                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="95" data-suffix="%">0</div>
+                <div class="font-body text-sm font-semibold text-gray-600">Client Retention Rate</div>
             </div>
         </div>
 
@@ -1026,49 +956,49 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
             <!-- Growth Chart -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="text-xs text-white/40 uppercase tracking-wider mb-1">Avg. Revenue Growth</div>
-                <div class="font-heading text-2xl font-black text-[#c5ebd9] mb-4">+180%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Avg. Revenue Growth</div>
+                <div class="font-heading text-2xl font-black text-[#14362a] mb-4">+180%</div>
                 <div class="flex items-end gap-2 h-24">
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:40%;animation-delay:0.1s;"></div>
-                        <span class="text-[9px] text-white/30">Q1</span>
+                        <span class="text-[9px] text-gray-400">Q1</span>
                     </div>
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:60%;animation-delay:0.3s;"></div>
-                        <span class="text-[9px] text-white/30">Q2</span>
+                        <span class="text-[9px] text-gray-400">Q2</span>
                     </div>
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:80%;animation-delay:0.5s;"></div>
-                        <span class="text-[9px] text-white/30">Q3</span>
+                        <span class="text-[9px] text-gray-400">Q3</span>
                     </div>
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:100%;animation-delay:0.7s;"></div>
-                        <span class="text-[9px] text-white/30">Q4</span>
+                        <span class="text-[9px] text-gray-400">Q4</span>
                     </div>
                 </div>
             </div>
 
             <!-- Conversion Improvement -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="text-xs text-white/40 uppercase tracking-wider mb-1">Avg. Conversion Rate</div>
-                <div class="font-heading text-2xl font-black text-[#c5ebd9] mb-4">2.1% → 7.8%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Avg. Conversion Rate</div>
+                <div class="font-heading text-2xl font-black text-[#14362a] mb-4">2.1% → 7.8%</div>
                 <div class="space-y-3">
                     <div>
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-white/40">Before UPLIV</span>
-                            <span class="text-white/60">2.1%</span>
+                            <span class="text-gray-400">Before UPLIV</span>
+                            <span class="text-gray-600">2.1%</span>
                         </div>
-                        <div class="h-2 bg-white/8 rounded-full overflow-hidden">
-                            <div class="h-full bg-white/30 rounded-full" style="width:21%"></div>
+                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gray-300 rounded-full" style="width:21%"></div>
                         </div>
                     </div>
                     <div>
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-white/40">After UPLIV</span>
-                            <span class="text-[#c5ebd9] font-bold">7.8%</span>
+                            <span class="text-gray-400">After UPLIV</span>
+                            <span class="text-[#14362a] font-bold">7.8%</span>
                         </div>
-                        <div class="h-2 bg-white/8 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#c5ebd9] rounded-full" style="width:78%"></div>
+                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#14362a] rounded-full" style="width:78%"></div>
                         </div>
                     </div>
                 </div>
@@ -1076,8 +1006,8 @@
 
             <!-- Traffic Growth -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="text-xs text-white/40 uppercase tracking-wider mb-1">Organic Traffic Growth</div>
-                <div class="font-heading text-2xl font-black text-[#c5ebd9] mb-4">+340% avg.</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Organic Traffic Growth</div>
+                <div class="font-heading text-2xl font-black text-[#14362a] mb-4">+340% avg.</div>
                 <div class="flex items-end gap-1.5 h-24">
                     <div class="flex-1 graph-bar rounded-t" style="height:20%;animation-delay:0.1s;"></div>
                     <div class="flex-1 graph-bar rounded-t" style="height:30%;animation-delay:0.2s;"></div>
@@ -1096,11 +1026,11 @@
 <!-- ══════════════════════════════════════════
      5. INDUSTRY EXPERTISE
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:#080f0c;">
+<section class="py-28 px-6 md:px-16 bg-white">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">Domain Expertise</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Industries We've <span class="gradient-text">Transformed</span>
             </h2>
         </div>
@@ -1111,22 +1041,22 @@
             <div class="industry-card" onclick="toggleIndustry(this)">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-red-400/15 border border-red-400/25 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-red-400">local_hospital</span>
+                        <div class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-red-600">local_hospital</span>
                         </div>
                         <div>
-                            <div class="font-heading text-base font-bold text-white">Healthcare</div>
-                            <div class="font-body text-xs text-white/40">12+ Projects</div>
+                            <div class="font-heading text-base font-bold text-gray-900">Healthcare</div>
+                            <div class="font-body text-xs text-gray-400">12+ Projects</div>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-white/30 transition-transform duration-300 chevron">expand_more</span>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
                 </div>
-                <div class="industry-details mt-4 pt-4 border-t border-white/8">
-                    <div class="space-y-2 text-sm">
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p class="text-white/65">CRM systems, Appointment portals, Patient analytics, Telemedicine platforms, Billing automation</p>
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#c5ebd9] font-semibold">+70% avg. operational efficiency</p>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-2">Services Delivered</div>
+                        <p>CRM systems, Appointment portals, Patient analytics, Telemedicine platforms, Billing automation</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold">+70% avg. operational efficiency</p>
                     </div>
                 </div>
             </div>
@@ -1135,22 +1065,22 @@
             <div class="industry-card" onclick="toggleIndustry(this)">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-400/15 border border-blue-400/25 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-blue-400">school</span>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-blue-600">school</span>
                         </div>
                         <div>
-                            <div class="font-heading text-base font-bold text-white">Education</div>
-                            <div class="font-body text-xs text-white/40">8+ Projects</div>
+                            <div class="font-heading text-base font-bold text-gray-900">Education</div>
+                            <div class="font-body text-xs text-gray-400">8+ Projects</div>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-white/30 transition-transform duration-300 chevron">expand_more</span>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
                 </div>
-                <div class="industry-details mt-4 pt-4 border-t border-white/8">
-                    <div class="space-y-2 text-sm">
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p class="text-white/65">LMS platforms, Student portals, Online admission systems, Analytics dashboards, Live class integrations</p>
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#c5ebd9] font-semibold">+60% avg. engagement increase</p>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-2">Services Delivered</div>
+                        <p>LMS platforms, Student portals, Online admission systems, Analytics dashboards, Live class integrations</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold">+60% avg. engagement increase</p>
                     </div>
                 </div>
             </div>
@@ -1159,94 +1089,22 @@
             <div class="industry-card" onclick="toggleIndustry(this)">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-[#c5ebd9]/15 border border-[#c5ebd9]/25 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-[#c5ebd9]">shopping_bag</span>
+                        <div class="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-[#14362a]">shopping_bag</span>
                         </div>
                         <div>
-                            <div class="font-heading text-base font-bold text-white">E-Commerce</div>
-                            <div class="font-body text-xs text-white/40">15+ Projects</div>
+                            <div class="font-heading text-base font-bold text-gray-900">E-Commerce</div>
+                            <div class="font-body text-xs text-gray-400">15+ Projects</div>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-white/30 transition-transform duration-300 chevron">expand_more</span>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
                 </div>
-                <div class="industry-details mt-4 pt-4 border-t border-white/8">
-                    <div class="space-y-2 text-sm">
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p class="text-white/65">Shopify & custom stores, Performance marketing, SEO optimization, Marketplace integrations, Conversion rate optimization</p>
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#c5ebd9] font-semibold">+180% avg. revenue growth</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Real Estate -->
-            <div class="industry-card" onclick="toggleIndustry(this)">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-orange-400/15 border border-orange-400/25 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-orange-400">apartment</span>
-                        </div>
-                        <div>
-                            <div class="font-heading text-base font-bold text-white">Real Estate</div>
-                            <div class="font-body text-xs text-white/40">7+ Projects</div>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-white/30 transition-transform duration-300 chevron">expand_more</span>
-                </div>
-                <div class="industry-details mt-4 pt-4 border-t border-white/8">
-                    <div class="space-y-2 text-sm">
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p class="text-white/65">Property portals, Lead generation campaigns, Google Ads, Chatbot automation, CRM integration</p>
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#c5ebd9] font-semibold">3x avg. lead quality improvement</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tourism -->
-            <div class="industry-card" onclick="toggleIndustry(this)">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-yellow-400/15 border border-yellow-400/25 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-yellow-400">travel_explore</span>
-                        </div>
-                        <div>
-                            <div class="font-heading text-base font-bold text-white">Travel & Tourism</div>
-                            <div class="font-body text-xs text-white/40">5+ Projects</div>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-white/30 transition-transform duration-300 chevron">expand_more</span>
-                </div>
-                <div class="industry-details mt-4 pt-4 border-t border-white/8">
-                    <div class="space-y-2 text-sm">
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p class="text-white/65">Booking platforms, Itinerary builders, SEO & local listings, Google My Business, Social media management</p>
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#c5ebd9] font-semibold">+200% avg. booking increase</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hospitality -->
-            <div class="industry-card" onclick="toggleIndustry(this)">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-400/15 border border-purple-400/25 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-purple-400">hotel</span>
-                        </div>
-                        <div>
-                            <div class="font-heading text-base font-bold text-white">Hospitality</div>
-                            <div class="font-body text-xs text-white/40">6+ Projects</div>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-white/30 transition-transform duration-300 chevron">expand_more</span>
-                </div>
-                <div class="industry-details mt-4 pt-4 border-t border-white/8">
-                    <div class="space-y-2 text-sm">
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p class="text-white/65">Hotel management software, Digital menus, Review automation, Direct booking pages, Instagram marketing</p>
-                        <div class="font-heading text-xs text-white/40 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#c5ebd9] font-semibold">+45% avg. direct revenue growth</p>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-2">Services Delivered</div>
+                        <p>Shopify & custom stores, Performance marketing, SEO optimization, Marketplace integrations, Conversion rate optimization</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold">+180% avg. revenue growth</p>
                     </div>
                 </div>
             </div>
@@ -1258,11 +1116,11 @@
 <!-- ══════════════════════════════════════════
      6. CLIENT TESTIMONIALS
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:linear-gradient(to bottom,#060d09,#0a1510);">
+<section class="py-28 px-6 md:px-16 bg-[#f9fbf9]">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">Client Voices</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 What Our Clients <span class="gradient-text">Say</span>
             </h2>
         </div>
@@ -1271,28 +1129,18 @@
             <!-- Testimonial 1 -->
             <div class="testimonial-card">
                 <div class="flex gap-1 mb-4">
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
                 </div>
-                <p class="font-body text-white/75 text-sm leading-relaxed mb-5">"UPLIV built our hospital's entire CRM from scratch. Appointment management went from chaos to clockwork. Our patient satisfaction scores jumped by 40% in just 3 months."</p>
+                <p class="font-body text-gray-700 text-sm leading-relaxed mb-5">"UPLIV built our hospital's entire CRM from scratch. Appointment management went from chaos to clockwork. Our patient satisfaction scores jumped by 40% in just 3 months."</p>
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-red-400/20 border border-red-400/30 flex items-center justify-center font-heading font-bold text-red-400 text-sm">DK</div>
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center font-heading font-bold text-red-600 text-sm">DK</div>
                     <div>
-                        <div class="font-heading text-sm font-bold text-white">Dr. Kiran Reddy</div>
-                        <div class="font-body text-xs text-white/40">Healthcare — Multi-specialty Clinic</div>
-                    </div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-white/8 grid grid-cols-2 gap-3">
-                    <div class="p-2 rounded-xl bg-white/5 text-center">
-                        <div class="font-heading text-base font-black text-[#c5ebd9]">+70%</div>
-                        <div class="text-[10px] text-white/35">Efficiency</div>
-                    </div>
-                    <div class="p-2 rounded-xl bg-white/5 text-center">
-                        <div class="font-heading text-base font-black text-[#c5ebd9]">+40%</div>
-                        <div class="text-[10px] text-white/35">Satisfaction</div>
+                        <div class="font-heading text-sm font-bold text-gray-800">Dr. Kiran Reddy</div>
+                        <div class="font-body text-xs text-gray-400">Healthcare — Multi-specialty Clinic</div>
                     </div>
                 </div>
             </div>
@@ -1300,28 +1148,18 @@
             <!-- Testimonial 2 -->
             <div class="testimonial-card">
                 <div class="flex gap-1 mb-4">
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
                 </div>
-                <p class="font-body text-white/75 text-sm leading-relaxed mb-5">"Our Google Ads ROAS went from 2.1x to 6.8x in 60 days. UPLIV's performance marketing team is exceptional — they understand our audience better than we do."</p>
+                <p class="font-body text-gray-700 text-sm leading-relaxed mb-5">"Our Google Ads ROAS went from 2.1x to 6.8x in 60 days. UPLIV's performance marketing team is exceptional — they understand our audience better than we do."</p>
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-[#c5ebd9]/20 border border-[#c5ebd9]/30 flex items-center justify-center font-heading font-bold text-[#c5ebd9] text-sm">SP</div>
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-heading font-bold text-[#14362a] text-sm">SP</div>
                     <div>
-                        <div class="font-heading text-sm font-bold text-white">Suresh Pavan</div>
-                        <div class="font-body text-xs text-white/40">E-Commerce — Retail Brand Owner</div>
-                    </div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-white/8 grid grid-cols-2 gap-3">
-                    <div class="p-2 rounded-xl bg-white/5 text-center">
-                        <div class="font-heading text-base font-black text-[#c5ebd9]">6.8x</div>
-                        <div class="text-[10px] text-white/35">ROAS</div>
-                    </div>
-                    <div class="p-2 rounded-xl bg-white/5 text-center">
-                        <div class="font-heading text-base font-black text-[#c5ebd9]">+180%</div>
-                        <div class="text-[10px] text-white/35">Revenue</div>
+                        <div class="font-heading text-sm font-bold text-gray-800">Suresh Pavan</div>
+                        <div class="font-body text-xs text-gray-400">E-Commerce — Retail Brand Owner</div>
                     </div>
                 </div>
             </div>
@@ -1329,28 +1167,18 @@
             <!-- Testimonial 3 -->
             <div class="testimonial-card">
                 <div class="flex gap-1 mb-4">
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-yellow-400 text-lg" style="font-variation-settings:'FILL' 1;">star_half</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-yellow-500 text-lg" style="font-variation-settings:'FILL' 1;">star_half</span>
                 </div>
-                <p class="font-body text-white/75 text-sm leading-relaxed mb-5">"Our student portal transformed how we run 15 batches. Parents love the transparency, teachers love the automation, and our institute grew 3x in enrollment this year."</p>
+                <p class="font-body text-gray-700 text-sm leading-relaxed mb-5">"Our student portal transformed how we run 15 batches. Parents love the transparency, teachers love the automation, and our institute grew 3x in enrollment this year."</p>
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-blue-400/20 border border-blue-400/30 flex items-center justify-center font-heading font-bold text-blue-400 text-sm">MV</div>
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-heading font-bold text-blue-600 text-sm">MV</div>
                     <div>
-                        <div class="font-heading text-sm font-bold text-white">Meena Valli</div>
-                        <div class="font-body text-xs text-white/40">Education — Coaching Director</div>
-                    </div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-white/8 grid grid-cols-2 gap-3">
-                    <div class="p-2 rounded-xl bg-white/5 text-center">
-                        <div class="font-heading text-base font-black text-[#c5ebd9]">3x</div>
-                        <div class="text-[10px] text-white/35">Enrollment</div>
-                    </div>
-                    <div class="p-2 rounded-xl bg-white/5 text-center">
-                        <div class="font-heading text-base font-black text-[#c5ebd9]">1.2K+</div>
-                        <div class="text-[10px] text-white/35">Students</div>
+                        <div class="font-heading text-sm font-bold text-gray-800">Meena Valli</div>
+                        <div class="font-body text-xs text-gray-400">Education — Coaching Director</div>
                     </div>
                 </div>
             </div>
@@ -1361,11 +1189,11 @@
 <!-- ══════════════════════════════════════════
      7. TECHNOLOGY STACK SECTION
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:#080f0c;">
+<section class="py-28 px-6 md:px-16 bg-white">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">Our Arsenal</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Technologies Behind <span class="gradient-text">Our Success</span>
             </h2>
         </div>
@@ -1373,62 +1201,54 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
             <!-- Development -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-[#c5ebd9]/15 border border-[#c5ebd9]/25 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-[#c5ebd9]">code</span>
+                <div class="w-10 h-10 rounded-xl bg-[#14362a]/10 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-[#14362a]">code</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-white/50 uppercase tracking-wider mb-4">Development</div>
+                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Development</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">React</span>
                     <span class="tech-badge text-xs">Next.js</span>
                     <span class="tech-badge text-xs">Node.js</span>
                     <span class="tech-badge text-xs">WordPress</span>
-                    <span class="tech-badge text-xs">MongoDB</span>
-                    <span class="tech-badge text-xs">PostgreSQL</span>
                 </div>
             </div>
 
             <!-- Marketing -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-orange-400/15 border border-orange-400/25 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-orange-400">campaign</span>
+                <div class="w-10 h-10 rounded-xl bg-orange-105 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-orange-600">campaign</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-white/50 uppercase tracking-wider mb-4">Marketing</div>
+                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Marketing</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">Google Ads</span>
                     <span class="tech-badge text-xs">Meta Ads</span>
                     <span class="tech-badge text-xs">SEO</span>
-                    <span class="tech-badge text-xs">Analytics</span>
-                    <span class="tech-badge text-xs">HubSpot</span>
                 </div>
             </div>
 
             <!-- AI & Automation -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-purple-400/15 border border-purple-400/25 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-purple-400">smart_toy</span>
+                <div class="w-10 h-10 rounded-xl bg-purple-105 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-purple-600">smart_toy</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-white/50 uppercase tracking-wider mb-4">AI & Automation</div>
+                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">AI & Automation</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">Chatbots</span>
-                    <span class="tech-badge text-xs">AI Agents</span>
                     <span class="tech-badge text-xs">Make.com</span>
                     <span class="tech-badge text-xs">Zapier</span>
-                    <span class="tech-badge text-xs">OpenAI API</span>
                 </div>
             </div>
 
             <!-- Design -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-pink-400/15 border border-pink-400/25 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-pink-400">palette</span>
+                <div class="w-10 h-10 rounded-xl bg-pink-105 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-pink-600">palette</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-white/50 uppercase tracking-wider mb-4">Design</div>
+                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Design</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">Figma</span>
-                    <span class="tech-badge text-xs">Adobe XD</span>
                     <span class="tech-badge text-xs">Illustrator</span>
                     <span class="tech-badge text-xs">Photoshop</span>
-                    <span class="tech-badge text-xs">ProtoPie</span>
                 </div>
             </div>
         </div>
@@ -1438,57 +1258,36 @@
 <!-- ══════════════════════════════════════════
      8. PROJECT DELIVERY PROCESS
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:linear-gradient(to bottom,#080f0c,#060d09);">
+<section class="py-28 px-6 md:px-16 bg-[#f9fbf9]">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">How We Deliver</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Our <span class="gradient-text">Project Process</span>
             </h2>
-            <p class="font-body text-lg text-white/50 mt-4 max-w-xl mx-auto">A proven 6-step framework that ensures on-time delivery with zero compromise on quality.</p>
+            <p class="font-body text-lg text-gray-600 mt-4 max-w-xl mx-auto">A proven 6-step framework that ensures on-time delivery with zero compromise on quality.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
             <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#c5ebd9]/15 border border-[#c5ebd9]/25 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-base">1</div>
+                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#14362a]/10 flex items-center justify-center font-heading font-black text-[#14362a] text-base">1</div>
                 <div>
-                    <div class="font-heading text-base font-bold text-white mb-1">Discovery</div>
-                    <p class="font-body text-sm text-white/50">Deep dive into your business, goals, audience, and competitive landscape.</p>
+                    <div class="font-heading text-base font-bold text-gray-900 mb-1">Discovery</div>
+                    <p class="font-body text-sm text-gray-500">Deep dive into your business, goals, audience, and competitive landscape.</p>
                 </div>
             </div>
             <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#c5ebd9]/15 border border-[#c5ebd9]/25 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-base">2</div>
+                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#14362a]/10 flex items-center justify-center font-heading font-black text-[#14362a] text-base">2</div>
                 <div>
-                    <div class="font-heading text-base font-bold text-white mb-1">Strategy</div>
-                    <p class="font-body text-sm text-white/50">Data-driven roadmap with clear KPIs, timelines, and resource planning.</p>
+                    <div class="font-heading text-base font-bold text-gray-900 mb-1">Strategy</div>
+                    <p class="font-body text-sm text-gray-500">Data-driven roadmap with clear KPIs, timelines, and resource planning.</p>
                 </div>
             </div>
             <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-blue-400/15 border border-blue-400/25 flex items-center justify-center font-heading font-black text-blue-400 text-base">3</div>
+                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#14362a]/10 flex items-center justify-center font-heading font-black text-[#14362a] text-base">3</div>
                 <div>
-                    <div class="font-heading text-base font-bold text-white mb-1">Design</div>
-                    <p class="font-body text-sm text-white/50">High-fidelity wireframes and prototypes that are reviewed and approved before build.</p>
-                </div>
-            </div>
-            <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-purple-400/15 border border-purple-400/25 flex items-center justify-center font-heading font-black text-purple-400 text-base">4</div>
-                <div>
-                    <div class="font-heading text-base font-bold text-white mb-1">Development</div>
-                    <p class="font-body text-sm text-white/50">Agile sprints with weekly check-ins, live staging, and constant client visibility.</p>
-                </div>
-            </div>
-            <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-orange-400/15 border border-orange-400/25 flex items-center justify-center font-heading font-black text-orange-400 text-base">5</div>
-                <div>
-                    <div class="font-heading text-base font-bold text-white mb-1">Testing</div>
-                    <p class="font-body text-sm text-white/50">Rigorous QA across devices, browsers, and edge cases before any deployment.</p>
-                </div>
-            </div>
-            <div class="glass-card rounded-2xl p-6 flex gap-4 border-[#c5ebd9]/25" style="border-color:rgba(197,235,217,0.25);">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-green-400/15 border border-green-400/25 flex items-center justify-center font-heading font-black text-green-400 text-base">6</div>
-                <div>
-                    <div class="font-heading text-base font-bold text-white mb-1">Launch & Support</div>
-                    <p class="font-body text-sm text-white/50">Seamless go-live with 30-day post-launch monitoring and dedicated support.</p>
+                    <div class="font-heading text-base font-bold text-gray-900 mb-1">Design</div>
+                    <p class="font-body text-sm text-gray-500">High-fidelity wireframes and prototypes that are reviewed and approved before build.</p>
                 </div>
             </div>
         </div>
@@ -1498,105 +1297,31 @@
 <!-- ══════════════════════════════════════════
      9. ACADEMY PROJECTS SHOWCASE
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:#0a1510;">
+<section class="py-28 px-6 md:px-16 bg-white">
     <div class="max-w-[1280px] mx-auto">
         <div class="text-center mb-16 reveal">
             <div class="section-badge mb-6">UPLIV Academy</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Projects Built Through <span class="gradient-text">UPLIV Academy</span>
             </h2>
-            <p class="font-body text-lg text-white/50 mt-4 max-w-2xl mx-auto">
-                A unique model where students work on real client projects under expert mentorship — creating exceptional professionals and excellent outcomes for clients.
-            </p>
         </div>
 
-        <!-- Flow Cards -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16 reveal">
-            <div class="academy-flow-card">
-                <div class="w-12 h-12 rounded-2xl bg-[#c5ebd9]/15 border border-[#c5ebd9]/25 flex items-center justify-center mx-auto mb-4">
-                    <span class="material-symbols-outlined text-[#c5ebd9]">groups</span>
-                </div>
-                <div class="font-heading text-sm font-bold text-white mb-2">Student Team</div>
-                <p class="font-body text-xs text-white/45">Curated student developers, designers & marketers from our Academy cohort.</p>
-            </div>
-            <div class="academy-flow-card">
-                <div class="w-12 h-12 rounded-2xl bg-blue-400/15 border border-blue-400/25 flex items-center justify-center mx-auto mb-4">
-                    <span class="material-symbols-outlined text-blue-400">support_agent</span>
-                </div>
-                <div class="font-heading text-sm font-bold text-white mb-2">Mentor Guidance</div>
-                <p class="font-body text-xs text-white/45">Senior UPLIV professionals guide, review, and ensure quality at every step.</p>
-            </div>
-            <div class="academy-flow-card">
-                <div class="w-12 h-12 rounded-2xl bg-orange-400/15 border border-orange-400/25 flex items-center justify-center mx-auto mb-4">
-                    <span class="material-symbols-outlined text-orange-400">business_center</span>
-                </div>
-                <div class="font-heading text-sm font-bold text-white mb-2">Real Client Work</div>
-                <p class="font-body text-xs text-white/45">Actual business problems solved — not simulated exercises or mock projects.</p>
-            </div>
-            <div class="academy-flow-card">
-                <div class="w-12 h-12 rounded-2xl bg-green-400/15 border border-green-400/25 flex items-center justify-center mx-auto mb-4">
-                    <span class="material-symbols-outlined text-green-400">verified</span>
-                </div>
-                <div class="font-heading text-sm font-bold text-white mb-2">Real Experience</div>
-                <p class="font-body text-xs text-white/45">Students graduate with a portfolio of live, production-grade projects.</p>
-            </div>
-        </div>
-
-        <!-- Academy Project Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
             <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="px-2 py-1 bg-[#c5ebd9]/15 text-[#c5ebd9] text-[10px] font-bold rounded-full uppercase tracking-wider">Academy Project</span>
-                </div>
-                <h4 class="font-heading text-lg font-bold text-white mb-2">Restaurant Digital Menu</h4>
-                <p class="font-body text-sm text-white/55 mb-4">QR-based digital menu with order tracking, built by a team of 3 Academy students under senior mentorship.</p>
-                <div class="flex items-center gap-3 pt-3 border-t border-white/8">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 rounded-full bg-[#c5ebd9]/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-[#c5ebd9]">AK</div>
-                        <div class="w-7 h-7 rounded-full bg-blue-400/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-blue-400">SR</div>
-                        <div class="w-7 h-7 rounded-full bg-purple-400/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-purple-400">PV</div>
-                    </div>
-                    <span class="text-xs text-white/40">3 Students · 4 Weeks</span>
-                </div>
+                <span class="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Academy Project</span>
+                <h4 class="font-heading text-lg font-bold text-gray-900 mt-3 mb-2">Restaurant Digital Menu</h4>
+                <p class="font-body text-sm text-gray-500 mb-4">QR-based digital menu with order tracking, built by a team of 3 Academy students under senior mentorship.</p>
             </div>
-
             <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="px-2 py-1 bg-[#c5ebd9]/15 text-[#c5ebd9] text-[10px] font-bold rounded-full uppercase tracking-wider">Academy Project</span>
-                </div>
-                <h4 class="font-heading text-lg font-bold text-white mb-2">Local Services Marketplace</h4>
-                <p class="font-body text-sm text-white/55 mb-4">Plumbers, electricians, and home service booking platform — designed, built and launched by Academy students.</p>
-                <div class="flex items-center gap-3 pt-3 border-t border-white/8">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 rounded-full bg-orange-400/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-orange-400">MR</div>
-                        <div class="w-7 h-7 rounded-full bg-green-400/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-green-400">LK</div>
-                    </div>
-                    <span class="text-xs text-white/40">2 Students · 6 Weeks</span>
-                </div>
+                <span class="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Academy Project</span>
+                <h4 class="font-heading text-lg font-bold text-gray-900 mt-3 mb-2">Local Services Marketplace</h4>
+                <p class="font-body text-sm text-gray-500 mb-4">Plumbers, electricians, and home service booking platform — designed, built and launched by Academy students.</p>
             </div>
-
             <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-2 mb-3">
-                    <span class="px-2 py-1 bg-[#c5ebd9]/15 text-[#c5ebd9] text-[10px] font-bold rounded-full uppercase tracking-wider">Academy Project</span>
-                </div>
-                <h4 class="font-heading text-lg font-bold text-white mb-2">Pilgrimage Tour Package Site</h4>
-                <p class="font-body text-sm text-white/55 mb-4">Full-stack booking website for Tirupati pilgrimage tours with payment integration. Live and serving 200+ monthly bookings.</p>
-                <div class="flex items-center gap-3 pt-3 border-t border-white/8">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 rounded-full bg-red-400/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-red-400">RS</div>
-                        <div class="w-7 h-7 rounded-full bg-yellow-400/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-yellow-400">GP</div>
-                        <div class="w-7 h-7 rounded-full bg-[#c5ebd9]/20 border-2 border-[#0a1510] flex items-center justify-center text-[10px] font-bold text-[#c5ebd9]">HN</div>
-                    </div>
-                    <span class="text-xs text-white/40">3 Students · 8 Weeks</span>
-                </div>
+                <span class="px-2 py-1 bg-green-50 text-green-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Academy Project</span>
+                <h4 class="font-heading text-lg font-bold text-gray-900 mt-3 mb-2">Pilgrimage Tour Package Site</h4>
+                <p class="font-body text-sm text-gray-500 mb-4">Full-stack booking website for Tirupati pilgrimage tours with payment integration.</p>
             </div>
-        </div>
-
-        <div class="mt-10 text-center">
-            <a href="index.html#academy" class="inline-flex items-center gap-2 px-8 py-4 border border-[#c5ebd9]/25 text-[#c5ebd9] font-heading font-bold text-sm rounded-2xl hover:border-[#c5ebd9]/50 hover:bg-[#c5ebd9]/8 transition-all">
-                Explore UPLIV Academy
-                <span class="material-symbols-outlined text-xl">arrow_forward</span>
-            </a>
         </div>
     </div>
 </section>
@@ -1604,53 +1329,22 @@
 <!-- ══════════════════════════════════════════
      10. FINAL CTA SECTION
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16" style="background:linear-gradient(to bottom,#060d09,#0a1510);">
+<section class="py-28 px-6 md:px-16 bg-[#f9fbf9]">
     <div class="max-w-[1280px] mx-auto">
-        <div class="text-center mb-16 reveal">
-            <div class="section-badge mb-6">Let's Work Together</div>
-            <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white tracking-tight">
-                Ready to Build<br/>
-                <span class="gradient-text">Something Great?</span>
-            </h2>
-        </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
-            <!-- Card 1: Agency -->
             <div class="cta-card">
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-[#c5ebd9]/15 border border-[#c5ebd9]/25 flex items-center justify-center mx-auto mb-6">
-                        <span class="material-symbols-outlined text-[#c5ebd9] text-3xl">rocket_launch</span>
-                    </div>
-                    <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-3">Have a Project in Mind?</h3>
-                    <p class="font-body text-white/55 mb-8 leading-relaxed">Build your next digital product with UPLIV — from strategy to launch. Let's turn your vision into a high-converting digital reality.</p>
-                    <a href="index.html#cta-section" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-base rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-black/30 w-full">
-                        Book Free Consultation
-                        <span class="material-symbols-outlined">calendar_month</span>
-                    </a>
-                    <div class="mt-6 flex justify-center gap-6 text-xs text-white/30">
-                        <span>✓ Response within 2 hours</span>
-                        <span>✓ Free audit included</span>
-                    </div>
-                </div>
+                <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-3">Have a Project in Mind?</h3>
+                <p class="font-body text-white/70 mb-8 leading-relaxed">Build your next digital product with UPLIV — from strategy to launch.</p>
+                <a href="index.html#cta-section" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-base rounded-2xl hover:scale-105 transition-transform w-full shadow-lg">
+                    Book Free Consultation
+                </a>
             </div>
-
-            <!-- Card 2: Academy -->
             <div class="cta-card">
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-blue-400/15 border border-blue-400/25 flex items-center justify-center mx-auto mb-6">
-                        <span class="material-symbols-outlined text-blue-400 text-3xl">school</span>
-                    </div>
-                    <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-3">Want Real Project Experience?</h3>
-                    <p class="font-body text-white/55 mb-8 leading-relaxed">Learn through real client work at UPLIV Academy — gain skills, build a portfolio, and become job-ready through mentorship-driven training.</p>
-                    <a href="index.html#academy" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-blue-400/40 text-blue-400 font-heading font-bold text-base rounded-2xl hover:bg-blue-400/10 hover:border-blue-400/60 transition-all w-full">
-                        Explore Academy
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
-                    <div class="mt-6 flex justify-center gap-6 text-xs text-white/30">
-                        <span>✓ Real client projects</span>
-                        <span>✓ Expert mentorship</span>
-                    </div>
-                </div>
+                <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-3">Want Real Project Experience?</h3>
+                <p class="font-body text-white/70 mb-8 leading-relaxed">Learn through real client work at UPLIV Academy — gain skills and become job-ready.</p>
+                <a href="index.html#academy" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/40 text-white font-heading font-bold text-base rounded-2xl hover:bg-white/10 transition-all w-full">
+                    Explore Academy
+                </a>
             </div>
         </div>
     </div>
@@ -1662,64 +1356,34 @@
      FOOTER
 ══════════════════════════════════════════ -->
 <footer id="site-footer">
-    <div style="position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(197,235,217,0.025) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;"></div>
     <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-16" style="padding-top:5rem;padding-bottom:3rem;">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-            <!-- Brand -->
-            <div class="col-span-2 md:col-span-1">
+            <div>
                 <img src="Logo.png" alt="UPLIV" style="height:44px;width:auto;object-fit:contain;margin-bottom:1rem;" onerror="this.style.display='none';"/>
-                <p style="font-size:0.875rem;color:rgba(255,255,255,0.35);line-height:1.7;">Premier performance marketing & web development agency serving Tirupati and Andhra Pradesh.</p>
-                <div style="display:flex;gap:0.625rem;margin-top:1.25rem;">
-                    <a href="#" class="footer-social" aria-label="Instagram">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                    </a>
-                    <a href="#" class="footer-social" aria-label="LinkedIn">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
-                </div>
+                <p style="font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;">Premier performance marketing & web development agency.</p>
             </div>
-
-            <!-- Services -->
             <div>
                 <div class="footer-col-title">Services</div>
                 <a href="service.html" class="footer-link">Web Development</a>
                 <a href="service.html" class="footer-link">Performance Marketing</a>
                 <a href="service.html" class="footer-link">SEO Services</a>
-                <a href="service.html" class="footer-link">UI/UX Design</a>
-                <a href="service.html" class="footer-link">Corporate Branding</a>
             </div>
-
-            <!-- Pages -->
             <div>
                 <div class="footer-col-title">Pages</div>
                 <a href="index.html" class="footer-link">Home</a>
                 <a href="projects.html" class="footer-link">Projects</a>
                 <a href="index.html#about" class="footer-link">About Us</a>
-                <a href="index.html#blog" class="footer-link">Blog</a>
-                <a href="index.html#academy" class="footer-link">Academy</a>
             </div>
-
-            <!-- Newsletter -->
             <div>
                 <div class="footer-col-title">Stay in the loop</div>
-                <p style="font-size:0.8rem;color:rgba(255,255,255,0.3);line-height:1.6;margin-bottom:1rem;">Get weekly digital growth tips & business insights.</p>
                 <input type="email" placeholder="your@email.com" class="newsletter-input" id="projects-footer-email"/>
                 <button class="newsletter-btn" onclick="(function(b,i){const v=i.value.trim();if(!v||!v.includes('@')){i.style.borderColor='rgba(239,68,68,0.5)';return;}b.textContent='✓ Subscribed!';b.style.background='rgba(34,197,94,0.15)';b.style.color='#4ade80';})(this,document.getElementById('projects-footer-email'))">Subscribe →</button>
-            </div>
-        </div>
-
-        <div class="footer-copyright-bar">
-            <p style="font-size:0.75rem;color:rgba(255,255,255,0.18);">© 2026 <span style="color:rgba(197,235,217,0.45);font-weight:600;">UPliv IT Solutions LLP</span>. All Rights Reserved.</p>
-            <div style="display:flex;gap:1.5rem;">
-                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.18);">Privacy Policy</a>
-                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.18);">Terms of Service</a>
             </div>
         </div>
     </div>
 </footer>
 
 <script>
-    // ── Mobile Menu ──
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const menuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1730,12 +1394,10 @@
         menuClose.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); });
     }
 
-    // ── Industry Accordion ──
     function toggleIndustry(card) {
         const details = card.querySelector('.industry-details');
         const chevron = card.querySelector('.chevron');
         const isOpen = card.classList.contains('open');
-        // Close all
         document.querySelectorAll('.industry-card.open').forEach(c => {
             c.classList.remove('open');
             c.querySelector('.chevron').style.transform = 'rotate(0deg)';
@@ -1746,7 +1408,6 @@
         }
     }
 
-    // ── Counter Animation ──
     function animateCounters(container) {
         container.querySelectorAll('.count-num[data-target]').forEach(el => {
             const target = parseInt(el.dataset.target);
@@ -1767,12 +1428,10 @@
         });
     }
 
-    // ── Scroll Reveal ──
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Trigger counters if this section has them
                 if (entry.target.querySelectorAll('.count-num[data-target]').length > 0) {
                     animateCounters(entry.target);
                 }
@@ -1782,22 +1441,7 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // ── Hero Counter (triggers on load) ──
-    setTimeout(() => {
-        animateCounters(document.querySelector('section'));
-    }, 500);
-
-    // ── Smooth scroll for anchor links ──
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
+    setTimeout(() => { animateCounters(document.querySelector('section')); }, 500);
 </script>
 </body>
 </html>
