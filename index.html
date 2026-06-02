@@ -151,23 +151,45 @@
                 </svg>
             </div>
 <!-- Desktop Navigation Links -->
-<div class="hidden md:flex items-center gap-10">
-    <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="service.html">Services</a>
-    <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#projects">Projects</a>
-    <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#about">About</a>
-    <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="https://upliv.in/academy">Blog/Academy</a>
-</div>
-<!-- Trailing Action -->
-<div class="flex items-center gap-6">
-<button class="hidden md:block px-6 py-2.5 bg-secondary-fixed text-primary font-body font-semibold text-sm rounded-lg hover:opacity-90 transition-opacity">
-                    Contact
-                </button>
-<button class="md:hidden text-on-primary/90">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="service.html">Services</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#projects">Projects</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#about">About</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#blog">Blog</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#academy">Academy</a>
+        </div>
+        <!-- Trailing Action -->
+        <div class="flex items-center gap-6">
+            <button class="hidden md:block px-6 py-2.5 bg-secondary-fixed text-primary font-body font-semibold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                Contact
+            </button>
+            <button class="md:hidden text-on-primary/90" id="mobile-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
 </nav>
+
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-primary/95 backdrop-blur-xl transition-all duration-300 md:hidden" id="mobile-menu">
+    <div class="flex justify-end pt-4">
+        <button class="text-on-primary" id="mobile-menu-close">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col gap-6 text-center text-2xl font-semibold">
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="service.html">Services</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#projects">Projects</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#about">About</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#blog">Blog</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#academy">Academy</a>
+    </div>
+    <div class="pb-8">
+        <button class="block w-full py-4 text-center bg-secondary-fixed text-primary font-bold rounded-xl shadow-lg">
+            Get Free Consultation
+        </button>
+    </div>
+</div>
 <main class="relative">
 <!-- Hero Section -->
 <section class="min-h-screen pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop relative flex items-center bg-primary overflow-hidden">
@@ -3162,6 +3184,25 @@
             }
         }, { threshold: 0.3 });
         obs.observe(ctaSection);
+    }
+
+    // Mobile Menu logic
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+    }
+
+    if (menuClose && mobileMenu) {
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
     }
 })();
 </script>
