@@ -1292,85 +1292,284 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- ══════════════════════════════════════════
      5. INDUSTRY EXPERTISE
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16 bg-white">
+<section class="py-28 px-6 md:px-16 bg-[#f4f7f5]/40 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#14362a]/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-[#366758]/5 rounded-full blur-3xl pointer-events-none"></div>
+
     <div class="max-w-[1280px] mx-auto">
-        <div class="text-center mb-16 reveal">
+        <div class="text-center mb-20 reveal">
             <div class="section-badge mb-6">Domain Expertise</div>
             <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Industries We've <span class="gradient-text">Transformed</span>
             </h2>
+            <p class="font-body text-gray-600 mt-4 max-w-2xl mx-auto">
+                We bridge the gap between technology and industry challenges, deploying tailored digital solutions that drive real business growth.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
 
-            <!-- Healthcare -->
-            <div class="industry-card" onclick="toggleIndustry(this)">
+            <!-- 1. Healthcare -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-red-600">local_hospital</span>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-50 flex items-center justify-center border border-rose-100 shadow-sm">
+                            <span class="material-symbols-outlined text-rose-600 text-2xl">local_hospital</span>
                         </div>
                         <div>
                             <div class="font-heading text-base font-bold text-gray-900">Healthcare</div>
-                            <div class="font-body text-xs text-gray-400">12+ Projects</div>
+                            <div class="font-body text-xs text-gray-400">12+ Projects Completed</div>
                         </div>
                     </div>
                     <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
                 </div>
                 <div class="industry-details mt-4 pt-4 border-t border-gray-100">
                     <div class="space-y-2 text-sm text-gray-600">
-                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p>CRM systems, Appointment portals, Patient analytics, Telemedicine platforms, Billing automation</p>
-                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#14362a] font-semibold">+70% avg. operational efficiency</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">CRM systems, Appointment portals, Patient analytics, WhatsApp follow-up automation, billing engines.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">+70% avg. operational efficiency</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Education -->
-            <div class="industry-card" onclick="toggleIndustry(this)">
+            <!-- 2. Education -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-blue-600">school</span>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center border border-blue-100 shadow-sm">
+                            <span class="material-symbols-outlined text-blue-600 text-2xl">school</span>
                         </div>
                         <div>
                             <div class="font-heading text-base font-bold text-gray-900">Education</div>
-                            <div class="font-body text-xs text-gray-400">8+ Projects</div>
+                            <div class="font-body text-xs text-gray-400">8+ Projects Completed</div>
                         </div>
                     </div>
                     <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
                 </div>
                 <div class="industry-details mt-4 pt-4 border-t border-gray-100">
                     <div class="space-y-2 text-sm text-gray-600">
-                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p>LMS platforms, Student portals, Online admission systems, Analytics dashboards, Live class integrations</p>
-                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#14362a] font-semibold">+60% avg. engagement increase</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Custom LMS platforms, online admission systems, interactive school/college portals, live class modules, parent portals.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">+60% student engagement increase</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Ecommerce -->
-            <div class="industry-card" onclick="toggleIndustry(this)">
+            <!-- 3. E-Commerce -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-[#14362a]">shopping_bag</span>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center border border-emerald-100 shadow-sm">
+                            <span class="material-symbols-outlined text-emerald-600 text-2xl">shopping_bag</span>
                         </div>
                         <div>
-                            <div class="font-heading text-base font-bold text-gray-900">E-Commerce</div>
-                            <div class="font-body text-xs text-gray-400">15+ Projects</div>
+                            <div class="font-heading text-base font-bold text-gray-900">E-Commerce & Retail</div>
+                            <div class="font-body text-xs text-gray-400">15+ Projects Completed</div>
                         </div>
                     </div>
                     <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
                 </div>
                 <div class="industry-details mt-4 pt-4 border-t border-gray-100">
                     <div class="space-y-2 text-sm text-gray-600">
-                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-2">Services Delivered</div>
-                        <p>Shopify & custom stores, Performance marketing, SEO optimization, Marketplace integrations, Conversion rate optimization</p>
-                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-2">Key Outcome</div>
-                        <p class="text-[#14362a] font-semibold">+180% avg. revenue growth</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Shopify & WooCommerce custom storefronts, performance marketing campaigns, SEO, payment gateway integrations, CRO.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">+180% average revenue growth</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Green Energy & Sustainability -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center border border-teal-100 shadow-sm">
+                            <span class="material-symbols-outlined text-teal-600 text-2xl">eco</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">Green Energy</div>
+                            <div class="font-body text-xs text-gray-400">4+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Corporate web interfaces, dynamic project showcase pages, solar calculation tools, lead capturing structures.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">3.5x increase in qualified sales leads</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Real Estate & Construction -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 flex items-center justify-center border border-amber-100 shadow-sm">
+                            <span class="material-symbols-outlined text-amber-600 text-2xl">home_work</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">Real Estate & Construction</div>
+                            <div class="font-body text-xs text-gray-400">6+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Interactive property catalogs, immersive bento layout galleries, estimator modules, architecture display portals.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">Sophisticated local branding, premium feel</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Travel & Tourism -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center border border-orange-100 shadow-sm">
+                            <span class="material-symbols-outlined text-orange-600 text-2xl">flight_takeoff</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">Travel & Tourism</div>
+                            <div class="font-body text-xs text-gray-400">9+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Holiday package bookings, custom itinerary planners, Google Map tracking API, local agent interfaces.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">+120% bookings growth via portal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Transportation & Logistics -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-50 flex items-center justify-center border border-cyan-100 shadow-sm">
+                            <span class="material-symbols-outlined text-cyan-600 text-2xl">local_taxi</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">Transportation & Logistics</div>
+                            <div class="font-body text-xs text-gray-400">5+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Instant cab request logs, price estimation engines, local fleet management widgets, driver routing guides.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">-40% drop-off rates on taxi booking steps</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Fintech & Digital Payments -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-violet-50 flex items-center justify-center border border-violet-100 shadow-sm">
+                            <span class="material-symbols-outlined text-violet-600 text-2xl">payments</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">FinTech & Finance</div>
+                            <div class="font-body text-xs text-gray-400">4+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Financial modeling tools, escrow tracking workflows, secure payment gateways, loan calculation panels.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">Secure transactions & automated audits</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Food & Hospitality -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center border border-red-100 shadow-sm">
+                            <span class="material-symbols-outlined text-red-500 text-2xl">restaurant</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">Food & Hospitality</div>
+                            <div class="font-body text-xs text-gray-400">7+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Dynamic restaurant menus, table booking flows, automated kitchen order alerts, customer loyalty logs.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">+50% repeat customer orders via portal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Media & Entertainment -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-fuchsia-50 flex items-center justify-center border border-fuchsia-100 shadow-sm">
+                            <span class="material-symbols-outlined text-fuchsia-600 text-2xl">theater_comedy</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">Media & Entertainment</div>
+                            <div class="font-body text-xs text-gray-400">5+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Digital media streaming interfaces, booking portals for local theatre/events, content publishing engines.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">Sub-second page load times for heavy media files</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. B2B & Consulting Services -->
+            <div class="industry-card bg-white" onclick="toggleIndustry(this)">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center border border-slate-200 shadow-sm">
+                            <span class="material-symbols-outlined text-slate-700 text-2xl">work</span>
+                        </div>
+                        <div>
+                            <div class="font-heading text-base font-bold text-gray-900">B2B & Consulting</div>
+                            <div class="font-body text-xs text-gray-400">8+ Projects Completed</div>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-400 transition-transform duration-300 chevron">expand_more</span>
+                </div>
+                <div class="industry-details mt-4 pt-4 border-t border-gray-100">
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mb-1">Services Delivered</div>
+                        <p class="font-body text-sm leading-relaxed">Lead generation funnels, portfolio catalogs, customer onboarding flows, B2B procurement systems.</p>
+                        <div class="font-heading text-xs text-gray-400 uppercase tracking-wider mt-3 mb-1">Key Outcome</div>
+                        <p class="text-[#14362a] font-semibold font-body text-sm">+95% user trust metrics & clean brand feel</p>
                     </div>
                 </div>
             </div>
