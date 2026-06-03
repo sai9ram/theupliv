@@ -15,12 +15,12 @@
             theme: {
                 extend: {
                     colors: {
-                        "secondary-fixed": "#14362a",
+                        "secondary-fixed": "#b9eeda",
                         "secondary": "#366758",
                         "primary": "#14362a",
                         "primary-fixed": "#c5ebd9",
                         "primary-fixed-dim": "#aacfbd",
-                        "on-primary": "#14362a",
+                        "on-primary": "#ffffff",
                         "background": "#ffffff",
                     },
                     spacing: {
@@ -51,11 +51,13 @@
         /* ── NAV ── */
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .nav-glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(20, 54, 42, 0.45);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(20,54,42,0.08);
-            box-shadow: 0 8px 32px rgba(20,54,42,0.05), inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         /* ── ANIMATIONS ── */
@@ -85,22 +87,20 @@
 
         /* ── HERO ── */
         .hero-bg {
-            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(197,235,217,0.2) 0%, transparent 70%),
-                        radial-gradient(ellipse 40% 50% at 80% 40%, rgba(197,235,217,0.1) 0%, transparent 60%),
-                        #ffffff;
+            background: linear-gradient(135deg, #14362a 0%, #000000 100%);
         }
 
         /* ── GLASS CARDS ── */
         .glass-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
+            background: linear-gradient(135deg, #14362a 0%, #000000 100%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(20,54,42,0.08);
+            border: 1px solid rgba(197,235,217,0.2);
             transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
         }
         .glass-card:hover {
-            border-color: rgba(20,54,42,0.2);
-            box-shadow: 0 20px 60px rgba(20,54,42,0.08), 0 0 40px rgba(197,235,217,0.15);
+            border-color: rgba(197,235,217,0.4);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(197,235,217,0.2);
             transform: translateY(-6px);
         }
 
@@ -159,6 +159,24 @@
         }
         .bento-project:hover .preview-tag { opacity: 1; }
 
+        .bento-project.active {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(20,54,42,0.22);
+            box-shadow: 0 30px 60px rgba(20,54,42,0.06), 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        #portfolio-showcase .p-6 { padding: 1.25rem; }
+        #portfolio-showcase .preview-tag, #portfolio-showcase .overlay { display: none; }
+        #portfolio-showcase .preview-empty { font-style: italic; }
+        #portfolio-showcase img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
         /* ── MOCKUP SCREEN ── */
         .mockup-screen {
             background: linear-gradient(135deg, #f0f5f2, #e6ede9);
@@ -179,8 +197,8 @@
 
         /* ── RESULTS KPI ── */
         .kpi-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(243,247,245,0.95) 100%);
-            border: 1px solid rgba(20,54,42,0.08);
+            background: linear-gradient(135deg, #14362a 0%, #000000 100%);
+            border: 1px solid rgba(197,235,217,0.2);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
@@ -192,12 +210,12 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(20,54,42,0.02) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 0%, rgba(197,235,217,0.05) 0%, transparent 70%);
         }
         .kpi-card:hover {
-            border-color: rgba(20,54,42,0.2);
+            border-color: rgba(197,235,217,0.4);
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(20,54,42,0.05), 0 0 20px rgba(197,235,217,0.1);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 20px rgba(197,235,217,0.15);
         }
 
         /* ── TECH BADGES ── */
@@ -332,8 +350,8 @@
         .footer-col-title { font-size:10px; letter-spacing:0.18em; font-weight:700; text-transform:uppercase; color:rgba(197,235,217,0.4); margin-bottom:1.25rem; }
         .footer-social { width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid rgba(197,235,217,0.15);background:rgba(197,235,217,0.05);color:rgba(255,255,255,0.5);transition:all 0.25s; }
         .footer-social:hover { background:rgba(197,235,217,0.12);border-color:rgba(197,235,217,0.4);color:#c5ebd9;transform:translateY(-3px); }
-        #site-footer { background:#0a1f18; position:relative;overflow:hidden; }
-        #site-footer::before { content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,235,217,0.25),transparent); }
+        #site-footer { background:#080f0c; position:relative; overflow:hidden; }
+        #site-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, rgba(197,235,217,0.4), transparent); }
         .footer-copyright-bar { border-top:1px solid rgba(197,235,217,0.06);padding:1.25rem 0;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between; }
         .newsletter-input { width:100%;background:rgba(197,235,217,0.06);border:1px solid rgba(197,235,217,0.15);border-radius:12px;padding:0.75rem 1rem;color:#fff;font-size:0.875rem;outline:none;transition:border-color 0.2s; }
         .newsletter-input::placeholder { color:rgba(255,255,255,0.25); }
@@ -346,7 +364,7 @@
 
         /* GRAPH BARS */
         .graph-bar {
-            background: linear-gradient(to top, #14362a, rgba(20,54,42,0.4));
+            background: linear-gradient(to top, #c5ebd9, rgba(197,235,217,0.5));
             border-radius: 4px 4px 0 0;
             transform-origin: bottom;
             animation: barGrow 1.5s ease forwards;
@@ -378,55 +396,70 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     TOP NAVIGATION
-══════════════════════════════════════════ -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center px-6 md:px-8 pt-4">
-    <div class="nav-glass flex w-full max-w-5xl justify-between items-center h-20 px-5 md:px-8 rounded-2xl">
-        <!-- Brand -->
-        <a href="index.html" class="flex items-center gap-3 text-white shrink-0">
-            <img src="Logo.png" alt="UPLIV" class="h-14 w-auto object-contain"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
-            <span style="display:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:900;color:#14362a;">UPLIV</span>
-        </a>
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-8">
-            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="service.html">Services</a>
-            <a class="font-body text-sm font-medium text-[#14362a]" href="projects.html">Projects</a>
-            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="index.html#about">About</a>
-            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="index.html#blog">Blog</a>
-            <a class="font-body text-sm font-medium text-gray-700 hover:text-[#14362a] transition-colors" href="index.html#academy">Academy</a>
+<!-- Top Navigation Bar (centered pill, not full width) -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center px-margin-mobile md:px-gutter pt-4">
+<div class="nav-glass flex w-full max-w-5xl justify-between items-center h-20 px-5 md:px-8 rounded-2xl transition-all duration-300 ease-in-out">
+<!-- Brand Identity -->
+<div class="flex items-center gap-3 text-on-primary shrink-0">
+                <img
+                    src="Logo.png"
+                    alt="UPLIV"
+                    class="h-14 w-auto object-contain max-h-full"
+                    loading="eager"
+                    onerror="this.style.display='none'; const fb=this.parentElement.querySelector('.logo-fallback'); if (fb) fb.style.display='block';"
+                />
+                <!-- Fallback logo if logo.png isn't available -->
+                <svg
+                    viewBox="0 0 160 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="logo-fallback hidden h-14 w-auto max-h-full"
+                    role="img"
+                    aria-label="UPLIV logo"
+                >
+                    <g fill="currentColor">
+                        <circle cx="20" cy="20" r="14"></circle>
+                    </g>
+                    <text x="44" y="25" fill="currentColor" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="22" font-weight="800">UPLIV</text>
+                </svg>
+            </div>
+<!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="service.html">Services</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="projects.html">Projects</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#about">About</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#blog">Blog</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="#academy">Academy</a>
         </div>
-        <!-- CTA -->
-        <div class="flex items-center gap-4">
-            <a href="index.html#cta-section" class="hidden md:block px-5 py-2.5 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+        <!-- Trailing Action -->
+        <div class="flex items-center gap-6">
+            <button class="hidden md:block px-6 py-2.5 bg-secondary-fixed text-primary font-body font-semibold text-sm rounded-lg hover:opacity-90 transition-opacity">
                 Contact
-            </a>
-            <button class="md:hidden text-gray-800" id="mobile-menu-toggle">
+            </button>
+            <button class="md:hidden text-on-primary/90" id="mobile-menu-toggle">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
 </nav>
 
-<!-- Mobile Drawer -->
-<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-white/98 backdrop-blur-xl md:hidden" id="mobile-menu">
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-primary/95 backdrop-blur-xl transition-all duration-300 md:hidden" id="mobile-menu">
     <div class="flex justify-end pt-4">
-        <button class="text-gray-800" id="mobile-menu-close">
+        <button class="text-on-primary" id="mobile-menu-close">
             <span class="material-symbols-outlined text-3xl">close</span>
         </button>
     </div>
-    <div class="flex flex-col gap-8 text-center text-2xl font-semibold">
-        <a class="text-gray-700 hover:text-[#14362a] py-2" href="service.html">Services</a>
-        <a class="text-[#14362a] py-2" href="projects.html">Projects</a>
-        <a class="text-gray-700 hover:text-[#14362a] py-2" href="index.html#about">About</a>
-        <a class="text-gray-700 hover:text-[#14362a] py-2" href="index.html#blog">Blog</a>
-        <a class="text-gray-700 hover:text-[#14362a] py-2" href="index.html#academy">Academy</a>
+    <div class="flex flex-col gap-6 text-center text-2xl font-semibold">
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="service.html">Services</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="projects.html">Projects</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#about">About</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#blog">Blog</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="#academy">Academy</a>
     </div>
     <div class="pb-8">
-        <a href="index.html#cta-section" class="block w-full py-4 text-center bg-[#14362a] text-white font-bold rounded-xl">
+        <button class="block w-full py-4 text-center bg-secondary-fixed text-primary font-bold rounded-xl shadow-lg">
             Get Free Consultation
-        </a>
+        </button>
     </div>
 </div>
 
@@ -439,45 +472,41 @@
     <div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Left Content -->
         <div class="space-y-8">
-            <div class="section-badge">
-                <span class="w-2 h-2 rounded-full bg-[#14362a] animate-pulse-slow"></span>
-                Featured Projects &amp; Success Stories
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-on-primary/10 border border-on-primary/20 mb-6">
+                <span class="w-2 h-2 rounded-full bg-primary-fixed mr-3"></span>
+                <span class="font-body text-xs font-semibold text-on-primary/80 tracking-[0.08em] uppercase">Featured Projects &amp; Success Stories</span>
             </div>
-            <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-[-0.03em] text-gray-900">
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-[-0.03em] text-on-primary">
                 Real Businesses.<br/>
                 Real Challenges.<br/>
                 <span class="gradient-text">Real Results.</span>
             </h1>
-            <p class="font-body text-lg text-gray-600 max-w-md leading-relaxed">
+            <p class="font-body text-lg text-on-primary/80 max-w-md leading-relaxed">
                 From Healthcare CRMs to E-Commerce platforms — explore how UPLIV transforms digital challenges into measurable business growth.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#case-studies" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#14362a] text-white font-heading font-bold text-base rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-black/10">
+                <button class="px-8 py-4 bg-primary-fixed text-primary font-body font-bold text-lg rounded-xl hover:scale-105 transition-transform duration-200 shadow-lg shadow-black/20 flex items-center justify-center gap-2">
                     Explore Our Work
-                    <span class="material-symbols-outlined text-xl">arrow_downward</span>
-                </a>
-                <a href="index.html#cta-section" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-300 text-gray-800 font-heading font-bold text-base rounded-2xl hover:border-[#14362a]/50 hover:bg-gray-50 transition-all">
-                    Start Your Project
-                </a>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+                <button class="px-8 py-4 bg-transparent border border-on-primary/30 text-on-primary font-body font-bold text-lg rounded-xl hover:bg-on-primary/10 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2">
+                    View Our Projects
+                </button>
             </div>
 
             <!-- Stats Row -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-                <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="50" data-suffix="+">0</div>
-                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Projects Delivered</div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body text-sm text-on-primary/70">Trusted by Businesses Across AP</span>
                 </div>
-                <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="20" data-suffix="+">0</div>
-                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Industries Served</div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body text-sm text-on-primary/70">50+ Projects Delivered</span>
                 </div>
-                <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="95" data-suffix="%">0</div>
-                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Client Satisfaction</div>
-                </div>
-                <div class="text-center">
-                    <div class="font-heading text-3xl font-black text-[#14362a] count-num" data-target="4" data-suffix="+">0</div>
-                    <div class="font-body text-xs text-gray-500 mt-1 uppercase tracking-wider">Years Experience</div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body text-sm text-on-primary/70">95% Client Satisfaction</span>
                 </div>
             </div>
         </div>
@@ -768,166 +797,373 @@
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+        <!-- Sticky Stacked Scrollytelling Cards Layout -->
+        <div class="relative space-y-24 max-w-4xl mx-auto">
 
-            <!-- Healthcare -->
-            <div class="bento-project" style="min-height:280px;">
-                <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                    <div>
-                        <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-red-600 text-2xl">local_hospital</span>
+            <!-- Card 1: The UPLIV -->
+            <div class="sticky top-28 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full uppercase tracking-wider">Education</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Healthcare CRM</h3>
-                        <p class="font-body text-sm text-gray-500">Patient management system with automated scheduling and analytics.</p>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">The UPLIV</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            A modern digital education and career empowerment platform. Designed to facilitate structured workflows, mentor support, and real portfolio-driven skill courses.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">React</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Tailwind CSS</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">LMS</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.theupliv.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">React</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Node.js</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">+70%</span><div class="text-[10px] text-gray-400">Efficiency</div></div>
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">-50%</span><div class="text-[10px] text-gray-400">Manual Work</div></div>
-                        </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.theupliv.com?w=900" alt="The UPLIV Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=The+Upliv+Platform';"/>
                     </div>
                 </div>
-                <div class="overlay"></div>
             </div>
 
-            <!-- Education -->
-            <div class="bento-project" style="min-height:280px;">
-                <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                    <div>
-                        <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-blue-600 text-2xl">school</span>
+            <!-- Card 2: GNVSP Coconut -->
+            <div class="sticky top-32 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-bold rounded-full uppercase tracking-wider">Agriculture</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Education LMS</h3>
-                        <p class="font-body text-sm text-gray-500">Full learning management platform with live classes and progress tracking.</p>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">GNVSP Coconut</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            Empowering direct agricultural procurement and business operations. Modernizing the supply chain process between coconut growers and commercial buyers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Commerce</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">B2B Portal</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.gnvsp.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Next.js</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">AWS</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">1.2K+</span><div class="text-[10px] text-gray-400">Students</div></div>
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">+60%</span><div class="text-[10px] text-gray-400">Engagement</div></div>
-                        </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.gnvsp.com?w=900" alt="GNVSP Coconut Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=GNVSP+Platform';"/>
                     </div>
                 </div>
-                <div class="overlay"></div>
             </div>
 
-            <!-- E-Commerce (larger) -->
-            <div class="bento-project md:row-span-2" style="min-height:280px;">
-                <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                    <div>
-                        <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-[#14362a] text-2xl">shopping_bag</span>
+            <!-- Card 3: QMatrix Soft -->
+            <div class="sticky top-36 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full uppercase tracking-wider">IT Services</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
                         </div>
-                        <h3 class="font-heading text-2xl font-bold text-gray-900 mb-3">E-Commerce Platform</h3>
-                        <p class="font-body text-sm text-gray-500 leading-relaxed">Multi-vendor marketplace with real-time inventory, payment gateway, and AI-powered product recommendations for a Tirupati retailer.</p>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">QMatrix Soft</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            A showcase website for high-end IT services, software architectures, custom development integrations, and premium client case studies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">IT Solutions</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Tailwind</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.qmatrixsoft.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Next.js</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Stripe</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <div><span class="font-heading text-2xl font-black text-[#14362a]">₹50L+</span><div class="text-[10px] text-gray-400">Revenue Generated</div></div>
-                        </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.qmatrixsoft.com?w=900" alt="QMatrix Soft Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=QMatrix+Soft';"/>
                     </div>
                 </div>
-                <div class="overlay"></div>
             </div>
 
-            <!-- Real Estate -->
-            <div class="bento-project" style="min-height:280px;">
-                <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                    <div>
-                        <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-orange-600 text-2xl">apartment</span>
+            <!-- Card 4: Vaibhavam Photography -->
+            <div class="sticky top-40 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-bold rounded-full uppercase tracking-wider">Photography</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Real Estate Portal</h3>
-                        <p class="font-body text-sm text-gray-500">Property listing platform with 3D tours, lead capture, and CRM integration.</p>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">Vaibhavam</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            A highly visual gallery-focused website highlighting professional event photography, pre-wedding showcases, and cinematographic events.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Portfolio</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Masonry Layout</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.vaibhavambyvarun.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">React</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Google Maps</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">+3x</span><div class="text-[10px] text-gray-400">Lead Quality</div></div>
-                        </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.vaibhavambyvarun.in?w=900" alt="Vaibhavam Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=Vaibhavam+Photography';"/>
                     </div>
                 </div>
-                <div class="overlay"></div>
             </div>
 
-            <!-- Tourism -->
-            <div class="bento-project" style="min-height:280px;">
-                <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                    <div>
-                        <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-yellow-600 text-2xl">travel_explore</span>
+            <!-- Card 5: KLG Associates -->
+            <div class="sticky top-44 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-slate-50 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider">Consulting</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Tourism Booking Platform</h3>
-                        <p class="font-body text-sm text-gray-500">Travel package booking with itinerary builder and payment integration.</p>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">KLG Associates</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            Audit, taxation, and financial compliance services. Redesigned to highlight corporate standards and advisory expertise.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Finance</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Consultancy</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://klg-associates.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">WordPress</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Razorpay</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">+200%</span><div class="text-[10px] text-gray-400">Bookings</div></div>
-                        </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://klg-associates.vercel.app?w=900" alt="KLG Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=KLG+Associates+Web';"/>
                     </div>
                 </div>
-                <div class="overlay"></div>
             </div>
 
-            <!-- Hospitality -->
-            <div class="bento-project" style="min-height:280px;">
-                <div class="p-6 h-full flex flex-col justify-between relative z-10">
-                    <div>
-                        <div class="preview-tag">View Project</div>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-purple-600 text-2xl">hotel</span>
+            <!-- Card 6: Aakar Constructions -->
+            <div class="sticky top-48 bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-orange-50 text-orange-700 text-xs font-bold rounded-full uppercase tracking-wider">Construction</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-2">Hotel Management</h3>
-                        <p class="font-body text-sm text-gray-500">Reservation system with room management, billing, and digital check-in.</p>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">Aakar Constructions</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            A premier construction brand platform. Featuring project portfolios, visual catalogs, and high-conversion client estimation leads.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Architecture</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Calculators</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.aakarconstruction.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-3">
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">React</span>
-                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-[10px] rounded-full font-mono">Node.js</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <div><span class="font-heading text-lg font-black text-[#14362a]">+45%</span><div class="text-[10px] text-gray-400">Revenue</div></div>
-                        </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.aakarconstruction.in?w=900" alt="Aakar Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=Aakar+Constructions';"/>
                     </div>
                 </div>
-                <div class="overlay"></div>
             </div>
+
+            <!-- Card 7: Prasanth Home Care -->
+            <div class="sticky top-[200px] bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-red-50 text-red-700 text-xs font-bold rounded-full uppercase tracking-wider">Healthcare</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">Prasanth Home Care</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            Connecting elderly care patients with certified nursing professionals. Featuring structured appointment guides and quick support response leads.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Nursing</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Support Booking</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.prasantholdagehomecare.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.prasantholdagehomecare.com?w=900" alt="Prasanth Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=Prasanth+Old+Age+Care';"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: Isha Travels -->
+            <div class="sticky top-[220px] bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-yellow-50 text-yellow-700 text-xs font-bold rounded-full uppercase tracking-wider">Travel</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">Isha Travels</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            Interactive travel and vacation itinerary builder. Enables clients to browse tour packages and complete reservations instantly.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Travel Packages</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Booking</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.ishaatravels.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.ishaatravels.com?w=900" alt="Isha Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=Isha+Travels+Portal';"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9: Tata AIA Insurance -->
+            <div class="sticky top-[240px] bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-bold rounded-full uppercase tracking-wider">Insurance</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">Tata AIA Suresh Partner</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            Authorized Tata AIA Life Insurance agent platform. Highlighting policy calculators, plans, and customized user consulting forms.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Insurance</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Consulting</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.sureshtalicpartner.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.sureshtalicpartner.com?w=900" alt="Tata Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=Tata+AIA+Suresh';"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10: Vijaya Gold -->
+            <div class="sticky top-[260px] bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full uppercase tracking-wider">Jewellery</span>
+                            <span class="text-xs text-gray-400">Live Production</span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-black text-gray-900">Vijaya Gold</h3>
+                        <p class="font-body text-base text-gray-600 leading-relaxed">
+                            Redesigned visual jewellery catalog. Enables clients to browse gold, silver, and diamond designs with direct booking paths.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Catalog</span>
+                            <span class="px-3 py-1.5 bg-gray-50 border border-gray-100 rounded-full text-xs text-gray-700 font-semibold font-mono">Retail Product</span>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.vijayagold.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-[#14362a] text-white font-heading font-bold text-sm rounded-xl hover:opacity-90 transition-opacity">
+                                Visit Live Website
+                                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+                        <img src="https://s.wordpress.com/mshots/v1/https://www.vijayagold.com?w=900" alt="Vijaya Screenshot" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560.png?text=Vijaya+Gold+Web';"/>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const list = document.querySelectorAll('#portfolio-list .bento-project');
+    const showcase = document.getElementById('portfolio-showcase');
+    if(!list.length || !showcase) return;
+
+    function makeScreenshotSrc(title){
+        return `https://via.placeholder.com/900x560.png?text=${encodeURIComponent(title)}`;
+    }
+
+    function setShowcase(el){
+        showcase.innerHTML = '';
+        const title = el.querySelector('h3') ? el.querySelector('h3').innerText.trim() : '';
+        const desc = el.querySelector('.font-body') ? el.querySelector('.font-body').innerText.trim() : '';
+        const domain = el.querySelector('p.font-body.text-xs') ? el.querySelector('p.font-body.text-xs').innerText.trim() : '';
+        const screenshot = el.dataset.screenshot || makeScreenshotSrc(title || 'Project');
+
+        const img = document.createElement('img');
+        img.src = screenshot;
+        img.alt = title;
+        img.loading = 'lazy';
+
+        const info = document.createElement('div');
+        info.className = 'px-0';
+
+        const h = document.createElement('h3');
+        h.className = 'font-heading text-lg font-bold text-gray-900 mb-1';
+        h.innerText = title;
+
+        const p = document.createElement('p');
+        p.className = 'font-body text-sm text-gray-600 mb-2';
+        p.innerText = desc;
+
+        const d = document.createElement('div');
+        d.className = 'text-xs text-gray-500';
+        d.innerText = domain;
+
+        info.appendChild(h);
+        if(desc) info.appendChild(p);
+        if(domain) info.appendChild(d);
+
+        showcase.appendChild(img);
+        showcase.appendChild(info);
+    }
+
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                setShowcase(entry.target);
+                document.querySelectorAll('#portfolio-list .bento-project').forEach(a=>a.classList.remove('active'));
+                entry.target.classList.add('active');
+            }
+        });
+    },{threshold:0.55});
+
+    list.forEach(el=>observer.observe(el));
+    if(list[0]) setShowcase(list[0]);
+});
+</script>
+
 <!-- ══════════════════════════════════════════
-     4. RESULTS DASHBOARD SECTION
+         4. RESULTS DASHBOARD SECTION
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16 relative bg-[#f9fbf9]">
-    <div class="max-w-[1280px] mx-auto">
+<section class="py-28 px-6 md:px-16 relative bg-white rounded-3xl overflow-hidden">
+    <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16 reveal">
-            <div class="section-badge mb-6">Proven Impact</div>
+            <div class="section-badge mb-6" style="background: #14362a; border-color: rgba(20,54,42,0.12); color: #ffffff;">Proven Impact</div>
             <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-                Results That <span class="gradient-text">Matter</span>
+                Results That <span class="gradient-text text-primary-fixed">Matter</span>
             </h2>
             <p class="font-body text-lg text-gray-600 mt-4 max-w-xl mx-auto">Numbers that reflect real impact for our clients across every engagement.</p>
         </div>
@@ -935,20 +1171,20 @@
         <!-- KPI Cards -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16 reveal">
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="50" data-suffix="L+">₹0</div>
-                <div class="font-body text-sm font-semibold text-gray-600">Revenue Generated for Clients</div>
+                <div class="font-heading text-4xl font-black text-primary-fixed mb-2 count-num" data-target="50" data-suffix="L+">₹0</div>
+                <div class="font-body text-sm font-semibold text-on-primary/80">Revenue Generated for Clients</div>
             </div>
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="200" data-suffix="K+">0</div>
-                <div class="font-body text-sm font-semibold text-gray-600">Users Reached Across Platforms</div>
+                <div class="font-heading text-4xl font-black text-primary-fixed mb-2 count-num" data-target="200" data-suffix="K+">0</div>
+                <div class="font-body text-sm font-semibold text-on-primary/80">Users Reached Across Platforms</div>
             </div>
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="120" data-suffix="+">0</div>
-                <div class="font-body text-sm font-semibold text-gray-600">Campaigns Executed</div>
+                <div class="font-heading text-4xl font-black text-primary-fixed mb-2 count-num" data-target="120" data-suffix="+">0</div>
+                <div class="font-body text-sm font-semibold text-on-primary/80">Campaigns Executed</div>
             </div>
             <div class="kpi-card">
-                <div class="font-heading text-4xl font-black text-[#14362a] mb-2 count-num" data-target="95" data-suffix="%">0</div>
-                <div class="font-body text-sm font-semibold text-gray-600">Client Retention Rate</div>
+                <div class="font-heading text-4xl font-black text-primary-fixed mb-2 count-num" data-target="95" data-suffix="%">0</div>
+                <div class="font-body text-sm font-semibold text-on-primary/80">Client Retention Rate</div>
             </div>
         </div>
 
@@ -956,49 +1192,49 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
             <!-- Growth Chart -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Avg. Revenue Growth</div>
-                <div class="font-heading text-2xl font-black text-[#14362a] mb-4">+180%</div>
+                <div class="text-xs text-on-primary/70 uppercase tracking-wider mb-1">Avg. Revenue Growth</div>
+                <div class="font-heading text-2xl font-black text-primary-fixed mb-4">+180%</div>
                 <div class="flex items-end gap-2 h-24">
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:40%;animation-delay:0.1s;"></div>
-                        <span class="text-[9px] text-gray-400">Q1</span>
+                        <span class="text-[9px] text-on-primary/60">Q1</span>
                     </div>
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:60%;animation-delay:0.3s;"></div>
-                        <span class="text-[9px] text-gray-400">Q2</span>
+                        <span class="text-[9px] text-on-primary/60">Q2</span>
                     </div>
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:80%;animation-delay:0.5s;"></div>
-                        <span class="text-[9px] text-gray-400">Q3</span>
+                        <span class="text-[9px] text-on-primary/60">Q3</span>
                     </div>
                     <div class="flex-1 flex flex-col items-center gap-1">
                         <div class="w-full graph-bar rounded-t" style="height:100%;animation-delay:0.7s;"></div>
-                        <span class="text-[9px] text-gray-400">Q4</span>
+                        <span class="text-[9px] text-on-primary/60">Q4</span>
                     </div>
                 </div>
             </div>
 
             <!-- Conversion Improvement -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Avg. Conversion Rate</div>
-                <div class="font-heading text-2xl font-black text-[#14362a] mb-4">2.1% → 7.8%</div>
+                <div class="text-xs text-on-primary/70 uppercase tracking-wider mb-1">Avg. Conversion Rate</div>
+                <div class="font-heading text-2xl font-black text-primary-fixed mb-4">2.1% → 7.8%</div>
                 <div class="space-y-3">
                     <div>
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-gray-400">Before UPLIV</span>
-                            <span class="text-gray-600">2.1%</span>
+                            <span class="text-on-primary/60">Before UPLIV</span>
+                            <span class="text-on-primary/80">2.1%</span>
                         </div>
-                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-gray-300 rounded-full" style="width:21%"></div>
+                        <div class="h-2 bg-on-primary/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-on-primary/50 rounded-full" style="width:21%"></div>
                         </div>
                     </div>
                     <div>
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-gray-400">After UPLIV</span>
-                            <span class="text-[#14362a] font-bold">7.8%</span>
+                            <span class="text-on-primary/60">After UPLIV</span>
+                            <span class="text-primary-fixed font-bold">7.8%</span>
                         </div>
-                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#14362a] rounded-full" style="width:78%"></div>
+                        <div class="h-2 bg-on-primary/20 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary-fixed rounded-full" style="width:78%"></div>
                         </div>
                     </div>
                 </div>
@@ -1006,8 +1242,8 @@
 
             <!-- Traffic Growth -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Organic Traffic Growth</div>
-                <div class="font-heading text-2xl font-black text-[#14362a] mb-4">+340% avg.</div>
+                <div class="text-xs text-on-primary/70 uppercase tracking-wider mb-1">Organic Traffic Growth</div>
+                <div class="font-heading text-2xl font-black text-primary-fixed mb-4">+340% avg.</div>
                 <div class="flex items-end gap-1.5 h-24">
                     <div class="flex-1 graph-bar rounded-t" style="height:20%;animation-delay:0.1s;"></div>
                     <div class="flex-1 graph-bar rounded-t" style="height:30%;animation-delay:0.2s;"></div>
@@ -1356,28 +1592,90 @@
      FOOTER
 ══════════════════════════════════════════ -->
 <footer id="site-footer">
-    <div class="relative z-10 max-w-[1280px] mx-auto px-6 md:px-16" style="padding-top:5rem;padding-bottom:3rem;">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
-            <div>
-                <img src="Logo.png" alt="UPLIV" style="height:44px;width:auto;object-fit:contain;margin-bottom:1rem;" onerror="this.style.display='none';"/>
-                <p style="font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;">Premier performance marketing & web development agency.</p>
+    <!-- Subtle mesh bg -->
+    <div style="position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(197,235,217,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:300px;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(20,54,42,0.25),transparent);z-index:0;pointer-events:none;"></div>
+
+    <!-- Main footer grid -->
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" style="padding-top:5rem;padding-bottom:3rem;">
+        <div style="display:grid;grid-template-columns:1fr;gap:2.5rem;" class="md:grid-cols-4-custom">
+            <!-- Brand column -->
+            <div style="grid-column:1/-1;" class="md-brand-col">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;">
+                    <!-- Brand -->
+                    <div>
+                        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+                            <img src="Logo.png" alt="UPLIV" style="height:48px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div style="display:none;align-items:center;gap:0.5rem;">
+                                <div style="width:32px;height:32px;background:linear-gradient(135deg,#c5ebd9,#366758);border-radius:8px;"></div>
+                                <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">UPLIV</span>
+                            </div>
+                        </div>
+                        <p style="font-size:0.875rem;color:rgba(255,255,255,0.4);line-height:1.7;max-width:280px;">
+                            Premier performance marketing & web development agency serving Tirupati, Chittoor, and all of Andhra Pradesh.
+                        </p>
+                        <div style="display:flex;gap:0.625rem;margin-top:1.5rem;">
+                            <a href="#" class="footer-social" aria-label="Instagram">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            </a>
+                            <a href="#" class="footer-social" aria-label="LinkedIn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="#" class="footer-social" aria-label="Facebook">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                            <a href="#" class="footer-social" aria-label="Twitter/X">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div>
+                        <div class="footer-col-title">Services</div>
+                        <a href="service.html" class="footer-link">Web Development</a>
+                        <a href="service.html" class="footer-link">Performance Marketing</a>
+                        <a href="service.html" class="footer-link">SEO Services</a>
+                        <a href="service.html" class="footer-link">Social Media Management</a>
+                        <a href="service.html" class="footer-link">UI/UX Design</a>
+                    </div>
+
+                    <!-- Company -->
+                    <div>
+                        <div class="footer-col-title">Company</div>
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="projects.html" class="footer-link">Case Studies</a>
+                        <a href="#testimonials" class="footer-link">Testimonials</a>
+                        <a href="#industries" class="footer-link">Industries</a>
+                        <a href="#faq" class="footer-link">FAQ</a>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div>
+                        <div class="footer-col-title">Stay in the loop</div>
+                        <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:1rem;">Get weekly digital growth tips & local business insights.</p>
+                        <input type="email" placeholder="your@email.com" class="newsletter-input" id="footer-email-input" />
+                        <button class="newsletter-btn" onclick="(function(b,i){const v=i.value.trim();if(!v||!v.includes('@')){i.style.borderColor='rgba(239,68,68,0.5)';return;}b.textContent='✓ Subscribed!';b.style.background='rgba(34,197,94,0.15)';b.style.color='#4ade80';})(this,document.getElementById('footer-email-input'))">
+                            Subscribe →
+                        </button>
+                        <!-- Contact line -->
+                        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem;">
+                            <a href="mailto:hello@upliv.in" class="footer-link" style="font-size:0.8rem;margin-bottom:0;">✉ hello@upliv.in</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <div class="footer-col-title">Services</div>
-                <a href="service.html" class="footer-link">Web Development</a>
-                <a href="service.html" class="footer-link">Performance Marketing</a>
-                <a href="service.html" class="footer-link">SEO Services</a>
-            </div>
-            <div>
-                <div class="footer-col-title">Pages</div>
-                <a href="index.html" class="footer-link">Home</a>
-                <a href="projects.html" class="footer-link">Projects</a>
-                <a href="index.html#about" class="footer-link">About Us</a>
-            </div>
-            <div>
-                <div class="footer-col-title">Stay in the loop</div>
-                <input type="email" placeholder="your@email.com" class="newsletter-input" id="projects-footer-email"/>
-                <button class="newsletter-btn" onclick="(function(b,i){const v=i.value.trim();if(!v||!v.includes('@')){i.style.borderColor='rgba(239,68,68,0.5)';return;}b.textContent='✓ Subscribed!';b.style.background='rgba(34,197,94,0.15)';b.style.color='#4ade80';})(this,document.getElementById('projects-footer-email'))">Subscribe →</button>
+        </div>
+
+        <!-- Bottom copyright bar -->
+        <div class="footer-copyright-bar">
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">
+                © 2026 <span style="color:rgba(197,235,217,0.5);font-weight:600;">UPliv IT Solutions LLP</span>. All Rights Reserved. Proudly serving Tirupati & beyond.
+            </p>
+            <div style="display:flex;gap:1.5rem;">
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;" onmouseover="this.style.color='rgba(197,235,217,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Privacy Policy</a>
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;" onmouseover="this.style.color='rgba(197,235,217,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Terms of Service</a>
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;" onmouseover="this.style.color='rgba(197,235,217,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Sitemap</a>
             </div>
         </div>
     </div>
