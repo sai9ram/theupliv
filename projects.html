@@ -241,6 +241,16 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(20,54,42,0.04);
         }
+        .glass-card .tech-badge {
+            color: #c5ebd9;
+            background: rgba(197, 235, 217, 0.08);
+            border-color: rgba(197, 235, 217, 0.15);
+        }
+        .glass-card .tech-badge:hover {
+            color: #ffffff;
+            background: rgba(197, 235, 217, 0.18);
+            border-color: rgba(197, 235, 217, 0.35);
+        }
 
         /* ── PROCESS TIMELINE ── */
         .process-step {
@@ -1666,10 +1676,10 @@ document.addEventListener('DOMContentLoaded', function(){
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
             <!-- Development -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-[#14362a]/10 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-[#14362a]">code</span>
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-[#c5ebd9]">code</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Development</div>
+                <div class="font-heading text-sm font-bold text-white/90 uppercase tracking-wider mb-4">Development</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">React</span>
                     <span class="tech-badge text-xs">Next.js</span>
@@ -1680,10 +1690,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
             <!-- Marketing -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-orange-105 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-orange-600">campaign</span>
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-orange-300">campaign</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Marketing</div>
+                <div class="font-heading text-sm font-bold text-white/90 uppercase tracking-wider mb-4">Marketing</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">Google Ads</span>
                     <span class="tech-badge text-xs">Meta Ads</span>
@@ -1693,10 +1703,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
             <!-- AI & Automation -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-purple-105 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-purple-600">smart_toy</span>
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-purple-300">smart_toy</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">AI & Automation</div>
+                <div class="font-heading text-sm font-bold text-white/90 uppercase tracking-wider mb-4">AI & Automation</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">Chatbots</span>
                     <span class="tech-badge text-xs">Make.com</span>
@@ -1706,10 +1716,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
             <!-- Design -->
             <div class="glass-card rounded-2xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-pink-105 flex items-center justify-center mb-4">
-                    <span class="material-symbols-outlined text-pink-600">palette</span>
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-pink-300">palette</span>
                 </div>
-                <div class="font-heading text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Design</div>
+                <div class="font-heading text-sm font-bold text-white/90 uppercase tracking-wider mb-4">Design</div>
                 <div class="flex flex-wrap gap-2">
                     <span class="tech-badge text-xs">Figma</span>
                     <span class="tech-badge text-xs">Illustrator</span>
