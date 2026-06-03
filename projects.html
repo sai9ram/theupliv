@@ -1733,38 +1733,96 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- ══════════════════════════════════════════
      8. PROJECT DELIVERY PROCESS
 ══════════════════════════════════════════ -->
-<section class="py-28 px-6 md:px-16 bg-[#f9fbf9]">
+<section class="py-28 px-6 md:px-16 bg-[#060d09] text-white relative overflow-hidden">
+    <!-- Glow effects -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#14362a]/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#366758]/20 rounded-full blur-3xl pointer-events-none"></div>
+
     <div class="max-w-[1280px] mx-auto">
-        <div class="text-center mb-16 reveal">
-            <div class="section-badge mb-6">How We Deliver</div>
-            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+        <div class="text-center mb-20 reveal">
+            <div class="section-badge border-white/20 text-[#c5ebd9] mb-6 bg-white/5">How We Deliver</div>
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                 Our <span class="gradient-text">Project Process</span>
             </h2>
-            <p class="font-body text-lg text-gray-600 mt-4 max-w-xl mx-auto">A proven 6-step framework that ensures on-time delivery with zero compromise on quality.</p>
+            <p class="font-body text-lg text-white/70 mt-4 max-w-xl mx-auto">
+                A proven 6-step framework designed to deliver premium outcomes from concept to deployment.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
-            <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#14362a]/10 flex items-center justify-center font-heading font-black text-[#14362a] text-base">1</div>
-                <div>
-                    <div class="font-heading text-base font-bold text-gray-900 mb-1">Discovery</div>
-                    <p class="font-body text-sm text-gray-500">Deep dive into your business, goals, audience, and competitive landscape.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+            
+            <!-- Step 1 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 relative group overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-500">01</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-lg border border-white/10">1</div>
+                    <h3 class="font-heading text-xl font-bold text-white">Discovery</h3>
                 </div>
+                <p class="font-body text-sm text-white/75 leading-relaxed relative z-10">
+                    We deep dive into your business model, customer workflows, target market pain points, and current tech setups to align perfectly.
+                </p>
             </div>
-            <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#14362a]/10 flex items-center justify-center font-heading font-black text-[#14362a] text-base">2</div>
-                <div>
-                    <div class="font-heading text-base font-bold text-gray-900 mb-1">Strategy</div>
-                    <p class="font-body text-sm text-gray-500">Data-driven roadmap with clear KPIs, timelines, and resource planning.</p>
+
+            <!-- Step 2 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 relative group overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-500">02</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-lg border border-white/10">2</div>
+                    <h3 class="font-heading text-xl font-bold text-white">Strategy</h3>
                 </div>
+                <p class="font-body text-sm text-white/75 leading-relaxed relative z-10">
+                    We map out a comprehensive technical strategy, database schemas, API flows, detailed project stages, and launch roadmap.
+                </p>
             </div>
-            <div class="glass-card rounded-2xl p-6 flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#14362a]/10 flex items-center justify-center font-heading font-black text-[#14362a] text-base">3</div>
-                <div>
-                    <div class="font-heading text-base font-bold text-gray-900 mb-1">Design</div>
-                    <p class="font-body text-sm text-gray-500">High-fidelity wireframes and prototypes that are reviewed and approved before build.</p>
+
+            <!-- Step 3 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 relative group overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-500">03</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-lg border border-white/10">3</div>
+                    <h3 class="font-heading text-xl font-bold text-white">Design</h3>
                 </div>
+                <p class="font-body text-sm text-white/75 leading-relaxed relative z-10">
+                    Creating premium, pixel-perfect user interfaces, high-fidelity prototypes, interactive scrollytelling steps, and layout systems.
+                </p>
             </div>
+
+            <!-- Step 4 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 relative group overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-500">04</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-lg border border-white/10">4</div>
+                    <h3 class="font-heading text-xl font-bold text-white">Development</h3>
+                </div>
+                <p class="font-body text-sm text-white/75 leading-relaxed relative z-10">
+                    Our team develops lightweight, SEO-friendly code using React, Next.js, and modern tools while keeping animations buttery smooth.
+                </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 relative group overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-500">05</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-lg border border-white/10">5</div>
+                    <h3 class="font-heading text-xl font-bold text-white">Quality Assurance</h3>
+                </div>
+                <p class="font-body text-sm text-white/75 leading-relaxed relative z-10">
+                    Rigorous testing across screen resolutions, mobile devices, operating systems, and page performance criteria to reach a high performance score.
+                </p>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 relative group overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-9xl font-black text-white/5 select-none pointer-events-none group-hover:scale-110 transition-transform duration-500">06</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center font-heading font-black text-[#c5ebd9] text-lg border border-white/10">6</div>
+                    <h3 class="font-heading text-xl font-bold text-white">Launch & Optimize</h3>
+                </div>
+                <p class="font-body text-sm text-white/75 leading-relaxed relative z-10">
+                    Smooth production rollout to live servers, analytics integration, performance tracking, and direct monitoring of visitor engagement.
+                </p>
+            </div>
+
         </div>
     </div>
 </section>
