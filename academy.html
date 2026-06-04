@@ -719,7 +719,7 @@
                          data-label="Client Discussions"
                          data-title="Understand project requirements and business goals"
                          data-desc="You'll learn how clients communicate their vision, what questions professionals ask, and how requirements get translated into actual deliverables."
-                         style="margin-bottom: 2rem;">
+                         style="position: sticky; top: 12rem; z-index: 10; margin-bottom: 35vh;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);">
@@ -750,7 +750,7 @@
                          data-label="Industry Workflows"
                          data-title="Learn how teams collaborate and deliver results"
                          data-desc="Experience real Scrum cycles, sprint reviews, pull requests, and cross-team communication — the kind of workflow that every employer expects."
-                         style="margin-bottom: 2rem;">
+                         style="position: sticky; top: 12rem; z-index: 20; margin-bottom: 35vh;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.2);">
@@ -777,7 +777,7 @@
                          data-label="Strategic Planning"
                          data-title="Observe decision-making and execution processes"
                          data-desc="Watch how senior professionals plan campaigns, allocate budgets, and make strategic calls — skills that can't be learned from textbooks alone."
-                         style="margin-bottom: 2rem;">
+                         style="position: sticky; top: 12rem; z-index: 30; margin-bottom: 35vh;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.2);">
@@ -808,7 +808,7 @@
                          data-label="Professional Communication"
                          data-title="Develop workplace collaboration skills"
                          data-desc="Practice writing professional emails, presenting work to seniors, and communicating progress — the soft skills that determine career growth."
-                         style="margin-bottom: 2rem;">
+                         style="position: sticky; top: 12rem; z-index: 40; margin-bottom: 35vh;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
@@ -834,7 +834,7 @@
                          data-label="Business Problem Solving"
                          data-title="Understand how companies tackle real challenges"
                          data-desc="See how businesses identify problems, evaluate options, and choose solutions — developing your analytical thinking alongside technical skills."
-                         style="margin-bottom: 2rem;">
+                         style="position: sticky; top: 12rem; z-index: 50; margin-bottom: 50vh;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(197,235,217,0.08); border: 1px solid rgba(197,235,217,0.15);">
@@ -1737,20 +1737,17 @@
         let lastActiveIdx = -1;
         function updateActiveCard() {
             let activeIdx = 0;
-            let minDiff = Infinity;
-            // Align active detection to the vertical center of the screen
-            const triggerLine = window.innerHeight / 2; 
+            // The cards stick at top: 12rem, which is 192px
+            const stickPoint = 192; 
             
-            approachCards.forEach((card, idx) => {
-                const rect = card.getBoundingClientRect();
-                // Compare distance from card middle to trigger line
-                const cardMiddle = rect.top + (rect.height / 2);
-                const diff = Math.abs(cardMiddle - triggerLine);
-                if (diff < minDiff) {
-                    minDiff = diff;
+            // Go backwards from top card (highest index) to find the first card that has hit the sticky point
+            for (let idx = approachCards.length - 1; idx >= 0; idx--) {
+                const rect = approachCards[idx].getBoundingClientRect();
+                if (rect.top <= stickPoint + 10) {
                     activeIdx = idx;
+                    break;
                 }
-            });
+            }
 
             if (activeIdx !== lastActiveIdx) {
                 lastActiveIdx = activeIdx;
