@@ -667,25 +667,14 @@
          SECTION 3: OUR APPROACH (Sticky Scrollytelling)
     ══════════════════════════════════════════ -->
     <section id="our-approach" class="bg-[#060d09] relative overflow-hidden">
-        <!-- Section header (above sticky zone) -->
-        <div class="py-20 px-6 md:px-16 text-center relative z-10">
-            <div class="section-badge mb-5 mx-auto w-fit reveal">Our Approach</div>
-            <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight mb-5 reveal">
-                Learn How Businesses <span class="gradient-text">Actually Work</span>
-            </h2>
-            <p class="font-body text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed reveal">
-                We believe meaningful learning happens when students understand real business environments. Our students gain exposure to every layer of a professional agency.
-            </p>
-        </div>
-
-        <!-- Sticky scrollytelling zone with full section scroll depth -->
-        <div class="approach-scroll-zone relative max-w-[1280px] mx-auto px-6 md:px-16" style="height: 350vh;">
-            <div class="sticky top-28 lg:top-36 flex flex-col lg:flex-row gap-16 items-center lg:items-start w-full" style="height: calc(100vh - 12rem); overflow: visible;">
-
-                <!-- LEFT: Sticky Text Panel -->
-                <div class="w-full lg:w-[42%] flex flex-col justify-center h-full">
+        <!-- Premium Dynamic Scrollytelling Rework -->
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 pb-32">
+            <!-- Scroll trigger markers to define the scroll height zones -->
+            <div class="flex flex-col lg:flex-row gap-16 items-start relative">
+                
+                <!-- LEFT SIDE: Pinned Content Panel -->
+                <div class="w-full lg:w-[45%] lg:sticky lg:top-[30vh] z-10">
                     <div class="space-y-6">
-                        <!-- Active card title (updated dynamically by JS) -->
                         <div id="approach-active-label" class="section-badge w-fit transition-all duration-300">Client Discussions</div>
                         <h3 id="approach-active-title" class="font-heading text-2xl md:text-4xl font-extrabold text-white leading-tight transition-all duration-300">
                             Understand project requirements and business goals
@@ -694,176 +683,28 @@
                             You'll learn how clients communicate their vision, what questions professionals ask, and how requirements get translated into actual deliverables.
                         </p>
 
-                        <!-- Progress dots -->
-                        <div class="flex gap-2 pt-2">
-                            <span class="approach-dot w-8 h-1.5 rounded-full bg-[#c5ebd9] transition-all duration-300" data-index="0"></span>
-                            <span class="approach-dot w-2 h-1.5 rounded-full bg-white/15 transition-all duration-300" data-index="1"></span>
-                            <span class="approach-dot w-2 h-1.5 rounded-full bg-white/15 transition-all duration-300" data-index="2"></span>
-                            <span class="approach-dot w-2 h-1.5 rounded-full bg-white/15 transition-all duration-300" data-index="3"></span>
-                            <span class="approach-dot w-2 h-1.5 rounded-full bg-white/15 transition-all duration-300" data-index="4"></span>
+                        <!-- Dot indicators linked to scroll progress -->
+                        <div class="flex gap-2.5 pt-4">
+                            <span class="approach-dot w-8 h-1.5 rounded-full bg-[#c5ebd9] transition-all duration-400" data-index="0"></span>
+                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-white/15 transition-all duration-400" data-index="1"></span>
+                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-white/15 transition-all duration-400" data-index="2"></span>
+                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-white/15 transition-all duration-400" data-index="3"></span>
+                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-white/15 transition-all duration-400" data-index="4"></span>
                         </div>
 
-                        <!-- Static CTA -->
-                        <a href="index.html#cta-section" class="inline-flex items-center gap-2 mt-4 px-7 py-3.5 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-sm rounded-2xl hover:scale-105 hover:shadow-xl transition-all shadow-lg w-fit">
+                        <a href="index.html#cta-section" class="inline-flex items-center gap-2 mt-6 px-7 py-3.5 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-sm rounded-2xl hover:scale-105 hover:shadow-xl transition-all shadow-lg">
                             Book Free Demo
                             <span class="material-symbols-outlined text-base">arrow_forward</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- RIGHT: Experience Cards Stack Container -->
-                <div class="w-full lg:w-[58%] relative flex items-center justify-center h-full" style="perspective: 1000px;">
-                    <div class="relative w-full h-[400px] md:h-[360px] flex items-center justify-center">
-
-                        <!-- Card 1: Client Discussions -->
-                        <div class="approach-card glass-card rounded-2xl p-8 absolute w-full transition-all duration-500 ease-out" data-index="0"
-                             data-label="Client Discussions"
-                             data-title="Understand project requirements and business goals"
-                             data-desc="You'll learn how clients communicate their vision, what questions professionals ask, and how requirements get translated into actual deliverables."
-                             style="opacity: 1; transform: translateZ(0px) translateY(0px); pointer-events: auto; z-index: 10;">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-[#c5ebd9] rounded-l-2xl"></div>
-                            <div class="flex items-start gap-5">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);">
-                                    <span class="material-symbols-outlined text-blue-400 text-2xl">forum</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <span class="font-body text-[10px] font-bold uppercase tracking-widest text-white/30">01</span>
-                                        <h4 class="font-heading text-xl font-extrabold text-white">Client Discussions</h4>
-                                    </div>
-                                    <p class="font-body text-sm text-white/60 leading-relaxed mb-5">Understand project requirements and business goals by observing real client briefings from day one.</p>
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <div class="p-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                            <p class="font-body text-[10px] text-white/40 uppercase tracking-wider mb-1">You Learn</p>
-                                            <p class="font-heading text-xs font-bold text-white">How to ask the right questions</p>
-                                        </div>
-                                        <div class="p-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                            <p class="font-body text-[10px] text-white/40 uppercase tracking-wider mb-1">You Gain</p>
-                                            <p class="font-heading text-xs font-bold text-white">Client communication confidence</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Card 2: Industry Workflows -->
-                        <div class="approach-card glass-card rounded-2xl p-8 absolute w-full transition-all duration-500 ease-out" data-index="1"
-                             data-label="Industry Workflows"
-                             data-title="Learn how teams collaborate and deliver results"
-                             data-desc="Experience real Scrum cycles, sprint reviews, pull requests, and cross-team communication — the kind of workflow that every employer expects."
-                             style="opacity: 0; transform: translateZ(-30px) translateY(20px); pointer-events: none; z-index: 5;">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-[#c5ebd9] rounded-l-2xl"></div>
-                            <div class="flex items-start gap-5">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.2);">
-                                    <span class="material-symbols-outlined text-purple-400 text-2xl">account_tree</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <span class="font-body text-[10px] font-bold uppercase tracking-widest text-white/30">02</span>
-                                        <h4 class="font-heading text-xl font-extrabold text-white">Industry Workflows</h4>
-                                    </div>
-                                    <p class="font-body text-sm text-white/60 leading-relaxed mb-5">Learn how teams collaborate using Git, Jira, Slack, and Figma in an actual agency environment.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">GitHub PRs</span>
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">Jira Sprints</span>
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">Daily Standups</span>
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">Figma Handoffs</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3: Strategic Planning -->
-                        <div class="approach-card glass-card rounded-2xl p-8 absolute w-full transition-all duration-500 ease-out" data-index="2"
-                             data-label="Strategic Planning"
-                             data-title="Observe decision-making and execution processes"
-                             data-desc="Watch how senior professionals plan campaigns, allocate budgets, and make strategic calls — skills that can't be learned from textbooks alone."
-                             style="opacity: 0; transform: translateZ(-30px) translateY(20px); pointer-events: none; z-index: 5;">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-[#c5ebd9] rounded-l-2xl"></div>
-                            <div class="flex items-start gap-5">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.2);">
-                                    <span class="material-symbols-outlined text-orange-400 text-2xl">analytics</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <span class="font-body text-[10px] font-bold uppercase tracking-widest text-white/30">03</span>
-                                        <h4 class="font-heading text-xl font-extrabold text-white">Strategic Planning</h4>
-                                    </div>
-                                    <p class="font-body text-sm text-white/60 leading-relaxed mb-5">Observe how campaigns and projects are scoped, estimated, prioritised, and executed from kickoff to delivery.</p>
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <div class="p-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                            <p class="font-body text-[10px] text-white/40 uppercase tracking-wider mb-1">You Learn</p>
-                                            <p class="font-heading text-xs font-bold text-white">Scoping &amp; estimation</p>
-                                        </div>
-                                        <div class="p-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                            <p class="font-body text-[10px] text-white/40 uppercase tracking-wider mb-1">You Gain</p>
-                                            <p class="font-heading text-xs font-bold text-white">Strategic business thinking</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 4: Professional Communication -->
-                        <div class="approach-card glass-card rounded-2xl p-8 absolute w-full transition-all duration-500 ease-out" data-index="3"
-                             data-label="Professional Communication"
-                             data-title="Develop workplace collaboration skills"
-                             data-desc="Practice writing professional emails, presenting work to seniors, and communicating progress — the soft skills that determine career growth."
-                             style="opacity: 0; transform: translateZ(-30px) translateY(20px); pointer-events: none; z-index: 5;">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-[#c5ebd9] rounded-l-2xl"></div>
-                            <div class="flex items-start gap-5">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
-                                    <span class="material-symbols-outlined text-green-400 text-2xl">chat_bubble</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <span class="font-body text-[10px] font-bold uppercase tracking-widest text-white/30">04</span>
-                                        <h4 class="font-heading text-xl font-extrabold text-white">Professional Communication</h4>
-                                    </div>
-                                    <p class="font-body text-sm text-white/60 leading-relaxed mb-5">Learn to present work confidently, respond to feedback professionally, and communicate project status clearly.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">Work Reports</span>
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">Client Emails</span>
-                                        <span class="px-3 py-1 text-[10px] font-mono rounded-lg" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);">Presentations</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 5: Business Problem Solving -->
-                        <div class="approach-card glass-card rounded-2xl p-8 absolute w-full transition-all duration-500 ease-out" data-index="4"
-                             data-label="Business Problem Solving"
-                             data-title="Understand how companies tackle real challenges"
-                             data-desc="See how businesses identify problems, evaluate options, and choose solutions — developing your analytical thinking alongside technical skills."
-                             style="opacity: 0; transform: translateZ(-30px) translateY(20px); pointer-events: none; z-index: 5;">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-[#c5ebd9] rounded-l-2xl"></div>
-                            <div class="flex items-start gap-5">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(197,235,217,0.08); border: 1px solid rgba(197,235,217,0.15);">
-                                    <span class="material-symbols-outlined text-[#c5ebd9] text-2xl">lightbulb</span>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-3">
-                                        <span class="font-body text-[10px] font-bold uppercase tracking-widest text-white/30">05</span>
-                                        <h4 class="font-heading text-xl font-extrabold text-white">Business Problem Solving</h4>
-                                    </div>
-                                    <p class="font-body text-sm text-white/60 leading-relaxed mb-5">Understand how companies frame challenges, develop strategies, and measure outcomes in real business scenarios.</p>
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <div class="p-3 rounded-xl" style="background: rgba(197,235,217,0.04); border: 1px solid rgba(197,235,217,0.08);">
-                                            <p class="font-body text-[10px] text-white/40 uppercase tracking-wider mb-1">You Learn</p>
-                                            <p class="font-heading text-xs font-bold text-white">Root cause analysis</p>
-                                        </div>
-                                        <div class="p-3 rounded-xl" style="background: rgba(197,235,217,0.04); border: 1px solid rgba(197,235,217,0.08);">
-                                            <p class="font-body text-[10px] text-white/40 uppercase tracking-wider mb-1">You Gain</p>
-                                            <p class="font-heading text-xs font-bold text-white">Analytical mindset</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -1710,89 +1551,172 @@
         }
     }, { passive: true });
 
-    // Scrollytelling — Our Approach section
-    const approachCards = document.querySelectorAll('.approach-card');
-    const approachLabel = document.getElementById('approach-active-label');
-    const approachTitle = document.getElementById('approach-active-title');
-    const approachDesc  = document.getElementById('approach-active-desc');
-    const approachDots  = document.querySelectorAll('.approach-dot');
+    // Scrollytelling — Our Approach section (Redesigned Single Experience Card Swap)
+    const approachTriggers = document.querySelectorAll('.approach-scroll-trigger');
+    const approachLabel    = document.getElementById('approach-active-label');
+    const approachTitle    = document.getElementById('approach-active-title');
+    const approachDesc     = document.getElementById('approach-active-desc');
+    const approachDots     = document.querySelectorAll('.approach-dot');
 
-    function activateApproachCard(index) {
-        approachCards.forEach((card, i) => {
-            if (i === index) {
-                // Active Card styling
-                card.style.opacity = '1';
-                card.style.transform = 'translateZ(0px) translateY(0px) rotateX(0deg)';
-                card.style.pointerEvents = 'auto';
-                card.style.zIndex = '20';
-                card.style.borderColor = 'rgba(197, 235, 217, 0.3)';
-                card.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(197, 235, 217, 0.1)';
-            } else if (i < index) {
-                // Past Cards (stacked off behind/above)
-                card.style.opacity = '0';
-                card.style.transform = 'translateZ(-50px) translateY(-60px) rotateX(10deg)';
-                card.style.pointerEvents = 'none';
-                card.style.zIndex = '5';
-                card.style.borderColor = '';
-                card.style.boxShadow = '';
-            } else {
-                // Future Cards (stacked below waiting)
-                card.style.opacity = '0';
-                card.style.transform = 'translateZ(-30px) translateY(60px) rotateX(-10deg)';
-                card.style.pointerEvents = 'none';
-                card.style.zIndex = '5';
-                card.style.borderColor = '';
-                card.style.boxShadow = '';
+    // Experience Card Inner Elements (Right Side Panel)
+    const cardEl       = document.getElementById('approach-experience-card');
+    const cardIconContainer = document.getElementById('approach-card-icon-container');
+    const cardIcon     = document.getElementById('approach-card-icon');
+    const cardNumber   = document.getElementById('approach-card-number');
+    const cardTitle    = document.getElementById('approach-card-title');
+    const cardText     = document.getElementById('approach-card-text');
+    const cardDetail1  = document.getElementById('approach-detail-1');
+    const cardDetail2  = document.getElementById('approach-detail-2');
+
+    // Approach Card Content Data Array
+    const approachData = [
+        {
+            num: "01",
+            label: "Client Discussions",
+            title: "Understand project requirements and business goals",
+            desc: "You'll learn how clients communicate their vision, what questions professionals ask, and how requirements get translated into actual deliverables.",
+            cardText: "Understand project requirements and business goals by observing real client briefings from day one.",
+            icon: "forum",
+            iconBg: "rgba(59,130,246,0.1)",
+            iconBorder: "1px solid rgba(59,130,246,0.2)",
+            iconColor: "text-blue-400",
+            det1: "How to ask the right questions",
+            det2: "Client communication confidence"
+        },
+        {
+            num: "02",
+            label: "Industry Workflows",
+            title: "Learn how teams collaborate and deliver results",
+            desc: "Experience real Scrum cycles, sprint reviews, pull requests, and cross-team communication — the kind of workflow that every employer expects.",
+            cardText: "Learn how teams collaborate using Git, Jira, Slack, and Figma in an actual agency environment.",
+            icon: "account_tree",
+            iconBg: "rgba(168,85,247,0.1)",
+            iconBorder: "1px solid rgba(168,85,247,0.2)",
+            iconColor: "text-purple-400",
+            det1: "Git branching & standups",
+            det2: "Figma design handoffs"
+        },
+        {
+            num: "03",
+            label: "Strategic Planning",
+            title: "Observe decision-making and execution processes",
+            desc: "Watch how senior professionals plan campaigns, allocate budgets, and make strategic calls — skills that can't be learned from textbooks alone.",
+            cardText: "Observe how campaigns and projects are scoped, estimated, prioritized, and executed from kickoff to delivery.",
+            icon: "analytics",
+            iconBg: "rgba(251,146,60,0.1)",
+            iconBorder: "1px solid rgba(251,146,60,0.2)",
+            iconColor: "text-orange-400",
+            det1: "Scoping & estimations",
+            det2: "Strategic business thinking"
+        },
+        {
+            num: "04",
+            label: "Professional Communication",
+            title: "Develop workplace collaboration skills",
+            desc: "Practice writing professional emails, presenting work to seniors, and communicating progress — the soft skills that determine career growth.",
+            cardText: "Learn to present work confidently, respond to feedback professionally, and communicate project status clearly.",
+            icon: "chat_bubble",
+            iconBg: "rgba(34,197,94,0.1)",
+            iconBorder: "1px solid rgba(34,197,94,0.2)",
+            iconColor: "text-green-400",
+            det1: "Client email etiquette",
+            det2: "Work reports & presentations"
+        },
+        {
+            num: "05",
+            label: "Business Problem Solving",
+            title: "Understand how companies tackle real challenges",
+            desc: "See how businesses identify problems, evaluate options, and choose solutions — developing your analytical thinking alongside technical skills.",
+            cardText: "Understand how companies frame challenges, develop strategies, and measure outcomes in real business scenarios.",
+            icon: "lightbulb",
+            iconBg: "rgba(197,235,217,0.08)",
+            iconBorder: "1px solid rgba(197,235,217,0.15)",
+            iconColor: "text-[#c5ebd9]",
+            det1: "Root cause analysis",
+            det2: "Analytical mindset"
+        }
+    ];
+
+    let lastActiveIdx = -1;
+
+    function updateApproachView() {
+        if (!approachTriggers.length) return;
+        
+        let activeIdx = 0;
+        let minDistance = Infinity;
+        const targetLine = window.innerHeight * 0.45; // detection line at 45% screen height
+
+        approachTriggers.forEach((trigger, idx) => {
+            const rect = trigger.getBoundingClientRect();
+            // Calculate how close the trigger boundary is to the target detection line
+            const triggerMiddle = rect.top + (rect.height / 2);
+            const dist = Math.abs(triggerMiddle - targetLine);
+            if (dist < minDistance) {
+                minDistance = dist;
+                activeIdx = idx;
             }
         });
-        approachDots.forEach((dot, i) => {
-            dot.style.width = i === index ? '2rem' : '0.5rem';
-            dot.style.background = i === index ? '#c5ebd9' : 'rgba(255,255,255,0.15)';
-        });
+
+        if (activeIdx !== lastActiveIdx) {
+            lastActiveIdx = activeIdx;
+            const data = approachData[activeIdx];
+
+            // Animate Left Panel Texts Out
+            approachLabel.style.opacity = '0';
+            approachLabel.style.transform = 'translateY(-10px)';
+            approachTitle.style.opacity = '0';
+            approachTitle.style.transform = 'translateY(-10px)';
+            approachDesc.style.opacity  = '0';
+            approachDesc.style.transform = 'translateY(-10px)';
+
+            // Animate Right Card inner block elements Out
+            cardEl.style.opacity = '0.7';
+            cardEl.style.transform = 'translateY(8px)';
+
+            setTimeout(() => {
+                // Set Left Panel Content
+                approachLabel.textContent = data.label;
+                approachTitle.textContent = data.title;
+                approachDesc.textContent  = data.desc;
+
+                // Set Right Experience Card Content
+                cardNumber.textContent = data.num;
+                cardTitle.textContent  = data.label;
+                cardText.textContent   = data.cardText;
+                cardDetail1.textContent = data.det1;
+                cardDetail2.textContent = data.det2;
+                
+                // Morph Icon
+                cardIcon.textContent = data.icon;
+                cardIcon.className = `material-symbols-outlined text-3xl transition-all duration-300 ${data.iconColor}`;
+                cardIconContainer.style.background = data.iconBg;
+                cardIconContainer.style.border = data.iconBorder;
+
+                // Animate Left Panel Texts In
+                approachLabel.style.opacity = '1';
+                approachLabel.style.transform = 'translateY(0)';
+                approachTitle.style.opacity = '1';
+                approachTitle.style.transform = 'translateY(0)';
+                approachDesc.style.opacity  = '1';
+                approachDesc.style.transform = 'translateY(0)';
+
+                // Animate Right Card In
+                cardEl.style.opacity = '1';
+                cardEl.style.transform = 'translateY(0)';
+            }, 200);
+
+            // Update Progress Dots
+            approachDots.forEach((dot, i) => {
+                dot.style.width = i === activeIdx ? '2rem' : '0.625rem';
+                dot.style.background = i === activeIdx ? '#c5ebd9' : 'rgba(255,255,255,0.15)';
+            });
+        }
     }
 
-    if (approachCards.length && approachLabel) {
-        let lastActiveIdx = -1;
-        const scrollZone = document.querySelector('.approach-scroll-zone');
-
-        function updateActiveCard() {
-            if (!scrollZone) return;
-            const rect = scrollZone.getBoundingClientRect();
-            
-            // Calculate scroll progress percentage through the 350vh scroll zone
-            const totalScrollable = rect.height - window.innerHeight;
-            const scrolled = -rect.top;
-            
-            // Constrain progress percentage from 0 to 1
-            let progress = Math.max(0, Math.min(1, scrolled / totalScrollable));
-            
-            // Map progress to card index (0 to 4)
-            let activeIdx = Math.floor(progress * approachCards.length);
-            if (activeIdx >= approachCards.length) activeIdx = approachCards.length - 1;
-
-            if (activeIdx !== lastActiveIdx) {
-                lastActiveIdx = activeIdx;
-                const card = approachCards[activeIdx];
-                
-                approachLabel.style.opacity = '0';
-                approachTitle.style.opacity = '0';
-                approachDesc.style.opacity  = '0';
-                
-                setTimeout(() => {
-                    approachLabel.textContent  = card.dataset.label;
-                    approachTitle.textContent  = card.dataset.title;
-                    approachDesc.textContent   = card.dataset.desc;
-                    approachLabel.style.opacity = '1';
-                    approachTitle.style.opacity = '1';
-                    approachDesc.style.opacity  = '1';
-                }, 150);
-                
-                activateApproachCard(activeIdx);
-            }
-        }
-        window.addEventListener('scroll', updateActiveCard, { passive: true });
-        window.addEventListener('resize', updateActiveCard);
-        updateActiveCard();
+    if (approachTriggers.length && approachLabel) {
+        window.addEventListener('scroll', updateApproachView, { passive: true });
+        window.addEventListener('resize', updateApproachView);
+        updateApproachView();
     }
 
     // FAQ accordion
