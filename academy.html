@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>UPLIV Academy — Learn Through Real Client Projects</title>
+    <meta name="description" content="Gain practical industry exposure at UPLIV Academy. Work on live client projects, attend client meetings, and get mentored by industry professionals in Tirupati, Chittoor, and beyond."/>
+    <link rel="icon" type="image/png" href="Logo.png"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#b9eeda",
+                        "secondary": "#366758",
+                        "primary": "#14362a",
+                        "primary-fixed": "#c5ebd9",
+                        "primary-fixed-dim": "#aacfbd",
+                        "on-primary": "#ffffff",
+                        "background": "#ffffff",
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "margin-mobile": "24px",
+                    },
+                    fontFamily: {
+                        "heading": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --accent: #14362a;
+            --accent-mid: #366758;
+            --mint: #c5ebd9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: #060d09; color: #1f2937; font-family: 'Inter', sans-serif; }
+
+        /* ── NAV ── */
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .nav-glass {
+            background: rgba(20, 54, 42, 0.45);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+        @keyframes pulse-slow { 0%,100%{opacity:0.4} 50%{opacity:1} }
+        @keyframes gradient-x {
+            0%,100%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+        }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+        @keyframes slideInLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes slideInRight { from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-up { animation: fadeInUp 0.7s ease forwards; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #c5ebd9, #6ee7b7, #34d399, #c5ebd9);
+            background-size: 300% 300%;
+            animation: gradient-x 4s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── HERO ── */
+        .hero-bg {
+            background: linear-gradient(135deg, #14362a 0%, #060d09 60%, #0a1a11 100%);
+        }
+
+        /* ── GLASS CARDS ── */
+        .glass-card {
+            background: rgba(20, 54, 42, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.35s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(197, 235, 217, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(197,235,217,0.1);
+        }
+
+        /* Light glass card for white bg sections */
+        .light-glass {
+            background: #ffffff;
+            border: 1px solid rgba(20, 54, 42, 0.1);
+            box-shadow: 0 4px 24px rgba(20, 54, 42, 0.08);
+            transition: all 0.3s ease;
+        }
+        .light-glass:hover {
+            border-color: rgba(20, 54, 42, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(20, 54, 42, 0.15);
+        }
+
+        /* SECTION BADGE */
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #c5ebd9;
+        }
+        .section-badge-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(20, 54, 42, 0.08);
+            border: 1px solid rgba(20, 54, 42, 0.15);
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #14362a;
+        }
+
+        /* REVEAL ANIMATION */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+        /* PROGRAM CARD */
+        .program-card {
+            background: rgba(20, 54, 42, 0.25);
+            border: 1px solid rgba(197, 235, 217, 0.08);
+            border-radius: 20px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .program-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(197,235,217,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .program-card:hover {
+            border-color: rgba(197, 235, 217, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(197,235,217,0.1);
+        }
+        .program-card.featured {
+            border-color: rgba(197, 235, 217, 0.35);
+            background: rgba(20, 54, 42, 0.5);
+        }
+
+        /* TIMELINE */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(197,235,217,0.05), rgba(197,235,217,0.4), rgba(197,235,217,0.05));
+            transform: translateX(-50%);
+        }
+
+        /* FOOTER */
+        .footer-link { display:block; font-size:0.9rem; color:rgba(255,255,255,0.55); transition:color 0.2s, transform 0.2s; margin-bottom:0.75rem; }
+        .footer-link:hover { color:#c5ebd9; transform:translateX(4px); }
+        .footer-col-title { font-size:10px; letter-spacing:0.18em; font-weight:700; text-transform:uppercase; color:rgba(197,235,217,0.4); margin-bottom:1.25rem; }
+        .footer-social { width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid rgba(197,235,217,0.15);background:rgba(197,235,217,0.05);color:rgba(255,255,255,0.5);transition:all 0.25s; }
+        .footer-social:hover { background:rgba(197,235,217,0.12);border-color:rgba(197,235,217,0.4);color:#c5ebd9;transform:translateY(-3px); }
+        #site-footer { background:#080f0c; position:relative; overflow:hidden; }
+        #site-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, rgba(197,235,217,0.4), transparent); }
+        .footer-copyright-bar { border-top:1px solid rgba(197,235,217,0.06);padding:1.25rem 0;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between; }
+        .newsletter-input { width:100%;background:rgba(197,235,217,0.06);border:1px solid rgba(197,235,217,0.15);border-radius:12px;padding:0.75rem 1rem;color:#fff;font-size:0.875rem;outline:none;transition:border-color 0.2s; }
+        .newsletter-input::placeholder { color:rgba(255,255,255,0.25); }
+        .newsletter-input:focus { border-color:rgba(197,235,217,0.4); }
+        .newsletter-btn { margin-top:0.625rem;width:100%;padding:0.75rem;background:rgba(197,235,217,0.1);border:1px solid rgba(197,235,217,0.25);border-radius:12px;color:#c5ebd9;font-weight:700;font-size:0.875rem;cursor:pointer;transition:all 0.25s; }
+        .newsletter-btn:hover { background:rgba(197,235,217,0.18);border-color:rgba(197,235,217,0.5);transform:translateY(-2px); }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(197,235,217,0.1); }
+        .faq-question { width:100%; display:flex; align-items:center; justify-content:space-between; padding: 1.25rem 0; font-family:'Plus Jakarta Sans',sans-serif; font-size:1rem; font-weight:700; color:#fff; cursor:pointer; background:none; border:none; text-align:left; gap:1rem; }
+        .faq-answer { max-height:0; overflow:hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+        .faq-answer.open { max-height:200px; }
+        .faq-answer p { padding-bottom: 1.25rem; color:rgba(255,255,255,0.65); font-size:0.9rem; line-height:1.75; }
+        .faq-icon { flex-shrink:0; width:28px;height:28px;border-radius:50%;border:1px solid rgba(197,235,217,0.25); display:flex;align-items:center;justify-content:center;color:#c5ebd9;font-size:1rem;transition:transform 0.3s; }
+        .faq-icon.open { transform: rotate(45deg); }
+
+        /* STAT NUMBER */
+        .stat-number {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c5ebd9, #6ee7b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* COMPARISON TABLE */
+        .compare-table { width:100%; border-collapse: separate; border-spacing: 0; }
+        .compare-table th { padding: 1rem 1.25rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+        .compare-table td { padding: 1rem 1.25rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-col-upliv { background: rgba(20,54,42,0.5); border-left: 1px solid rgba(197,235,217,0.2); border-right: 1px solid rgba(197,235,217,0.2); }
+        .compare-col-others { background: rgba(255,255,255,0.02); }
+        .compare-row-label { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+        .check-yes { color: #4ade80; font-size: 1.1rem; }
+        .check-no { color: rgba(255,255,255,0.2); font-size: 1.1rem; }
+
+        /* STICKY BOTTOM BAR */
+        .sticky-cta-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(8, 15, 12, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-top: 1px solid rgba(197, 235, 217, 0.12);
+            padding: 1rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .sticky-cta-bar.visible { transform: translateY(0); }
+
+        /* STEP NUMBER */
+        .step-num {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(197,235,217,0.15), rgba(197,235,217,0.05));
+            border: 1px solid rgba(197,235,217,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #c5ebd9;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-[#060d09]">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center px-6 md:px-8 pt-4">
+    <div class="nav-glass flex w-full max-w-5xl justify-between items-center h-20 px-5 md:px-8 rounded-2xl transition-all duration-300 ease-in-out">
+        <!-- Brand Identity -->
+        <div class="flex items-center gap-3 text-on-primary shrink-0">
+            <img src="Logo.png" alt="UPLIV" class="h-14 w-auto object-contain max-h-full" loading="eager"
+                onerror="this.style.display='none'; const fb=this.parentElement.querySelector('.logo-fallback'); if (fb) fb.style.display='block';"/>
+            <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg" class="logo-fallback hidden h-14 w-auto max-h-full" role="img" aria-label="UPLIV logo">
+                <g fill="currentColor"><circle cx="20" cy="20" r="14"></circle></g>
+                <text x="44" y="25" fill="currentColor" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="22" font-weight="800">UPLIV</text>
+            </svg>
+        </div>
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="service.html">Services</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="projects.html">Projects</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="index.html#about">About</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="index.html#blog">Blog</a>
+            <a class="font-body text-base font-medium text-[#c5ebd9] border-b border-[#c5ebd9]/40 transition-colors" href="academy.html">Academy</a>
+        </div>
+        <!-- Trailing Action -->
+        <div class="flex items-center gap-6">
+            <a href="index.html#cta-section" class="hidden md:block px-6 py-2.5 bg-secondary-fixed text-primary font-body font-semibold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                Contact
+            </a>
+            <button class="md:hidden text-on-primary/90" id="mobile-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-primary/95 backdrop-blur-xl transition-all duration-300 md:hidden" id="mobile-menu">
+    <div class="flex justify-end pt-4">
+        <button class="text-on-primary" id="mobile-menu-close">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col gap-6 text-center text-2xl font-semibold">
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="service.html">Services</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="projects.html">Projects</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="index.html#about">About</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="index.html#blog">Blog</a>
+        <a class="text-[#c5ebd9] py-2" href="academy.html">Academy</a>
+    </div>
+    <div class="pb-8">
+        <a href="index.html#cta-section" class="block w-full py-4 text-center bg-secondary-fixed text-primary font-bold rounded-xl shadow-lg">
+            Book Free Counseling
+        </a>
+    </div>
+</div>
+
+<main>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1: HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero-bg min-h-screen pt-36 pb-20 px-6 md:px-16 relative overflow-hidden flex flex-col justify-center">
+        <!-- Background glows -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#14362a]/45 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#366758]/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 bg-[#0a2019]/50 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+
+            <!-- LEFT SIDE -->
+            <div class="space-y-8 text-white animate-fade-up">
+                <div class="section-badge">✦ Client-Driven Learning</div>
+
+                <h1 class="font-heading text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight">
+                    Learn Through <span class="gradient-text">Real Client Experience</span>, Not Just Classroom Training
+                </h1>
+
+                <p class="font-body text-base md:text-lg text-white/75 leading-relaxed max-w-xl">
+                    Gain practical industry exposure by closely working around client projects, business workflows, professional discussions, and mentorship-driven learning.
+                </p>
+                <p class="font-body text-base text-white/65 leading-relaxed max-w-xl">
+                    Build confidence, strengthen your resume, and develop skills that employers actually value.
+                </p>
+
+                <!-- Trust Points (Locations) -->
+                <div class="space-y-3">
+                    <div class="font-heading text-xs font-bold text-[#c5ebd9] uppercase tracking-wider">Trusted by Students Across</div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-body text-sm font-medium text-white/80">📍 Tirupati</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-body text-sm font-medium text-white/80">📍 Chittoor</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-body text-sm font-medium text-white/80">📍 Puttur</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-body text-sm font-medium text-white/80">📍 Srikalahasti</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 font-body text-sm font-medium text-white/80">📍 Kadapa</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="index.html#cta-section" id="hero-cta-counseling" class="px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-body font-bold text-base rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-200 shadow-lg flex items-center justify-center gap-2 text-center">
+                        Book Free Career Counseling
+                        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                    </a>
+                    <a href="index.html#cta-section" id="hero-cta-demo" class="px-8 py-4 bg-transparent border border-white/20 hover:border-white/40 text-white font-body font-bold text-base rounded-2xl hover:bg-white/5 hover:scale-105 transition-all duration-200 flex items-center justify-center text-center">
+                        Attend a Free Demo Session
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE (Mockup Dashboard) -->
+            <div class="space-y-5 lg:pl-6">
+
+                <!-- Student Experience Dashboard -->
+                <div class="glass-card rounded-2xl p-5 shadow-2xl animate-float" style="animation-duration: 7s;">
+                    <div class="flex items-center justify-between mb-4 border-b border-white/5 pb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#c5ebd9] text-[#14362a] flex items-center justify-center font-heading font-black text-sm">JD</div>
+                            <div>
+                                <h4 class="font-heading text-sm font-bold text-white">Student Dashboard</h4>
+                                <p class="font-body text-[10px] text-white/50">Active Batch · Tirupati Centre</p>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 bg-green-500/10 text-green-400 text-[10px] font-bold rounded-full uppercase tracking-wider border border-green-500/20">Live Project Phase</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-white/5 border border-white/10 rounded-xl">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-heading text-xs text-white/70">Current Project Assignment</span>
+                                <span class="text-[10px] text-[#c5ebd9] font-mono">v1.2.0</span>
+                            </div>
+                            <p class="font-body text-sm font-bold text-white">TerraSol Green Website Redesign</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-2.5 bg-white/5 border border-white/10 rounded-lg">
+                                <span class="block text-[9px] text-white/50 uppercase tracking-wider mb-1">Assigned Task</span>
+                                <span class="font-body text-xs font-bold text-white">Sticky scroll integration</span>
+                            </div>
+                            <div class="p-2.5 bg-white/5 border border-white/10 rounded-lg">
+                                <span class="block text-[9px] text-white/50 uppercase tracking-wider mb-1">Next Sync</span>
+                                <span class="font-body text-xs font-bold text-[#c5ebd9]">Tomorrow, 10:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-[#c5ebd9] to-[#6ee7b7] rounded-full" style="width:68%"></div>
+                            </div>
+                            <span class="text-[10px] text-white/50 font-mono">68% complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Meeting + Corporate Workflow cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card rounded-2xl p-4 shadow-xl">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/15 flex items-center justify-center mb-3 text-orange-400">
+                            <span class="material-symbols-outlined text-lg">videocam</span>
+                        </div>
+                        <h4 class="font-heading text-sm font-bold text-white mb-1">Client Sync Call</h4>
+                        <p class="font-body text-[11px] text-white/55 mb-3 leading-relaxed">Observe live project reviews with global clients.</p>
+                        <div class="flex items-center gap-2 p-2 bg-white/5 rounded-lg border border-white/5">
+                            <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+                            <span class="font-body text-[10px] font-bold text-white/75">CEO Reviewing Layout</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-4 shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-8 h-8 rounded-lg bg-[#c5ebd9]/10 flex items-center justify-center mb-3 text-[#c5ebd9]">
+                                <span class="material-symbols-outlined text-lg">work</span>
+                            </div>
+                            <h4 class="font-heading text-sm font-bold text-white mb-1">Corporate Workflows</h4>
+                            <p class="font-body text-[11px] text-white/55 leading-relaxed">Git, Scrum, PRs, estimation logs.</p>
+                        </div>
+                        <div class="pt-3 flex gap-1.5 flex-wrap">
+                            <span class="text-[9px] font-mono px-2 py-0.5 bg-white/5 rounded border border-white/10 text-white/50">GitHub PRs</span>
+                            <span class="text-[9px] font-mono px-2 py-0.5 bg-white/5 rounded border border-white/10 text-white/50">Jira Boards</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="max-w-5xl mx-auto w-full mt-20 pt-8 border-t border-white/10 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
+                    <span class="w-6 h-6 rounded-full bg-[#c5ebd9]/10 flex items-center justify-center text-[#c5ebd9] text-xs font-bold shrink-0">✓</span>
+                    <span class="font-heading text-sm font-bold text-white">Client Exposure</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
+                    <span class="w-6 h-6 rounded-full bg-[#c5ebd9]/10 flex items-center justify-center text-[#c5ebd9] text-xs font-bold shrink-0">✓</span>
+                    <span class="font-heading text-sm font-bold text-white">Industry Mentorship</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
+                    <span class="w-6 h-6 rounded-full bg-[#c5ebd9]/10 flex items-center justify-center text-[#c5ebd9] text-xs font-bold shrink-0">✓</span>
+                    <span class="font-heading text-sm font-bold text-white">Career-Focused Learning</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-3 justify-center md:justify-start">
+                    <span class="w-6 h-6 rounded-full bg-[#c5ebd9]/10 flex items-center justify-center text-[#c5ebd9] text-xs font-bold shrink-0">✓</span>
+                    <span class="font-heading text-sm font-bold text-white">Practical Skill Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 2: IMPACT STATS
+    ══════════════════════════════════════════ -->
+    <section class="py-20 px-6 md:px-16 bg-[#060d09] relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#14362a]/10 via-transparent to-[#14362a]/10 pointer-events-none"></div>
+        <div class="max-w-[1280px] mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <div class="stat-number">120+</div>
+                    <p class="font-body text-sm text-white/50 mt-1">Students Trained</p>
+                </div>
+                <div class="reveal" style="transition-delay:0.1s">
+                    <div class="stat-number">40+</div>
+                    <p class="font-body text-sm text-white/50 mt-1">Live Projects Worked On</p>
+                </div>
+                <div class="reveal" style="transition-delay:0.2s">
+                    <div class="stat-number">95%</div>
+                    <p class="font-body text-sm text-white/50 mt-1">Student Satisfaction</p>
+                </div>
+                <div class="reveal" style="transition-delay:0.3s">
+                    <div class="stat-number">8+</div>
+                    <p class="font-body text-sm text-white/50 mt-1">Industry Domains Covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3: WHAT YOU'LL EXPERIENCE
+    ══════════════════════════════════════════ -->
+    <section id="experience" class="py-24 px-6 md:px-16 bg-[#060d09]">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge mb-5">The UPLIV Difference</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                    What You'll Actually <span class="gradient-text">Experience</span>
+                </h2>
+                <p class="font-body text-white/60 text-base max-w-2xl mx-auto leading-relaxed">
+                    Unlike other training programs, UPLIV Academy embeds you into the real workflow of a live digital agency.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card rounded-2xl p-7 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-5">
+                        <span class="material-symbols-outlined text-2xl">monitor</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Live Client Project Exposure</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed">Work alongside professionals on real, paying client projects — from concept to final delivery. No dummy tasks.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card rounded-2xl p-7 reveal" style="transition-delay:0.1s">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-5">
+                        <span class="material-symbols-outlined text-2xl">groups</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Client Meeting Observations</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed">Sit in on discovery calls, feedback sessions, and approval meetings. Understand how professionals handle client communication.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card rounded-2xl p-7 reveal" style="transition-delay:0.2s">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 mb-5">
+                        <span class="material-symbols-outlined text-2xl">developer_board</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Corporate Tool Mastery</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed">Use Figma, GitHub, Jira, Notion, Meta Ads Manager, and Google Analytics the way agencies actually do.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card rounded-2xl p-7 reveal" style="transition-delay:0.1s">
+                    <div class="w-12 h-12 rounded-xl bg-[#c5ebd9]/10 flex items-center justify-center text-[#c5ebd9] mb-5">
+                        <span class="material-symbols-outlined text-2xl">psychology</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Mentorship by Practitioners</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed">Your mentors are working professionals — not retired faculty. Get guidance that's current, practical, and career-relevant.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="glass-card rounded-2xl p-7 reveal" style="transition-delay:0.2s">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-400 mb-5">
+                        <span class="material-symbols-outlined text-2xl">description</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">Resume-Ready Portfolio</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed">Graduate with real case studies, a live portfolio, and documented project contributions that stand out to employers.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="glass-card rounded-2xl p-7 reveal" style="transition-delay:0.3s">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-red-400 mb-5">
+                        <span class="material-symbols-outlined text-2xl">verified</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-white mb-2">UPLIV Certification</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed">Receive an industry-endorsed certificate recognized by UPLIV's client network. More than a credential — proof of real work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 4: PROGRAMS / TRACKS
+    ══════════════════════════════════════════ -->
+    <section id="programs" class="py-24 px-6 md:px-16" style="background: linear-gradient(180deg, #060d09 0%, #0a1a11 100%);">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge mb-5">Choose Your Path</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                    Academy <span class="gradient-text">Programs</span>
+                </h2>
+                <p class="font-body text-white/55 text-base max-w-2xl mx-auto">
+                    All programs combine structured skill-building with live project immersion. Pick the track that fits your ambition.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+                <!-- Program 1 -->
+                <div class="program-card p-8 reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-[10px] font-bold text-blue-300 uppercase tracking-wider mb-6">Web Development</div>
+                    <h3 class="font-heading text-2xl font-extrabold text-white mb-3">Frontend & UI Engineering</h3>
+                    <p class="font-body text-sm text-white/55 leading-relaxed mb-6">Build production-grade websites and web apps. Learn HTML, CSS, JavaScript, React, Figma-to-code workflows, and client delivery processes.</p>
+                    <ul class="space-y-2.5 mb-8">
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> 3-Month Intensive Program</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> 2 Live Client Projects</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Portfolio + Certificate</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Placement Support</li>
+                    </ul>
+                    <a href="index.html#cta-section" class="block text-center py-3 px-6 border border-white/15 rounded-xl text-white font-body font-semibold text-sm hover:border-[#c5ebd9]/40 hover:bg-white/5 transition-all">
+                        Apply Now →
+                    </a>
+                </div>
+
+                <!-- Program 2 (Featured) -->
+                <div class="program-card featured p-8 reveal" style="transition-delay:0.1s; position:relative; overflow:hidden;">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-[#c5ebd9] text-[#14362a] text-[9px] font-black rounded-full uppercase tracking-widest">Most Popular</div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#c5ebd9]/10 border border-[#c5ebd9]/25 rounded-full text-[10px] font-bold text-[#c5ebd9] uppercase tracking-wider mb-6">Digital Marketing</div>
+                    <h3 class="font-heading text-2xl font-extrabold text-white mb-3">Performance Marketing Pro</h3>
+                    <p class="font-body text-sm text-white/60 leading-relaxed mb-6">Run real ad campaigns across Meta & Google. Learn audience targeting, creative strategy, analytics, and client reporting from live campaigns.</p>
+                    <ul class="space-y-2.5 mb-8">
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> 3-Month Intensive Program</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Manage ₹50k+ Ad Budgets</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Real Client Campaigns</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Job Referral Network</li>
+                    </ul>
+                    <a href="index.html#cta-section" class="block text-center py-3 px-6 bg-[#c5ebd9] text-[#14362a] rounded-xl font-body font-bold text-sm hover:opacity-90 hover:scale-105 transition-all shadow-lg">
+                        Apply Now →
+                    </a>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card p-8 reveal" style="transition-delay:0.2s">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-[10px] font-bold text-purple-300 uppercase tracking-wider mb-6">Design & Branding</div>
+                    <h3 class="font-heading text-2xl font-extrabold text-white mb-3">UI/UX & Brand Design</h3>
+                    <p class="font-body text-sm text-white/55 leading-relaxed mb-6">Design high-fidelity wireframes and brand identities used by real clients. Master Figma, design systems, color theory, and UX research.</p>
+                    <ul class="space-y-2.5 mb-8">
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> 3-Month Intensive Program</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Figma Mastery</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Live Brand Projects</li>
+                        <li class="flex items-start gap-2.5 font-body text-sm text-white/70"><span class="text-[#c5ebd9] mt-0.5 shrink-0">✓</span> Design Portfolio Build</li>
+                    </ul>
+                    <a href="index.html#cta-section" class="block text-center py-3 px-6 border border-white/15 rounded-xl text-white font-body font-semibold text-sm hover:border-[#c5ebd9]/40 hover:bg-white/5 transition-all">
+                        Apply Now →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 5: STUDENT JOURNEY TIMELINE
+    ══════════════════════════════════════════ -->
+    <section id="journey" class="py-24 px-6 md:px-16 bg-[#060d09]">
+        <div class="max-w-[900px] mx-auto">
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge mb-5">Your Learning Path</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                    Your <span class="gradient-text">Academy Journey</span>
+                </h2>
+                <p class="font-body text-white/55 text-base max-w-2xl mx-auto">
+                    A structured 12-week path from beginner to industry-ready professional.
+                </p>
+            </div>
+
+            <div class="relative space-y-8">
+                <!-- Vertical line -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#c5ebd9]/30 to-transparent md:-translate-x-px pointer-events-none"></div>
+
+                <!-- Step 1 -->
+                <div class="relative flex gap-6 md:gap-0 md:items-center reveal">
+                    <div class="md:hidden shrink-0 step-num z-10">01</div>
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <div class="glass-card rounded-2xl p-6 md:ml-auto">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">Week 1–2</span>
+                            <h3 class="font-heading text-lg font-bold text-white mb-1">Foundation & Orientation</h3>
+                            <p class="font-body text-sm text-white/60 leading-relaxed">Understand the agency workflow, meet your team, set up your tools, and get your first project briefing.</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 step-num z-10">01</div>
+                    <div class="hidden md:block w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative flex gap-6 md:gap-0 md:items-center reveal" style="transition-delay:0.1s">
+                    <div class="md:hidden shrink-0 step-num z-10">02</div>
+                    <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 step-num z-10">02</div>
+                    <div class="flex-1 md:w-1/2 md:pl-12">
+                        <div class="glass-card rounded-2xl p-6">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">Week 3–5</span>
+                            <h3 class="font-heading text-lg font-bold text-white mb-1">Core Skills Training</h3>
+                            <p class="font-body text-sm text-white/60 leading-relaxed">Intensive hands-on modules in your chosen track — learning by doing using real agency assets and templates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex gap-6 md:gap-0 md:items-center reveal" style="transition-delay:0.2s">
+                    <div class="md:hidden shrink-0 step-num z-10">03</div>
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <div class="glass-card rounded-2xl p-6 md:ml-auto">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">Week 6–8</span>
+                            <h3 class="font-heading text-lg font-bold text-white mb-1">First Live Project Assignment</h3>
+                            <p class="font-body text-sm text-white/60 leading-relaxed">You're assigned to a real client project. Attend client briefings, receive tasks from senior team members, and deliver your first piece of work.</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 step-num z-10">03</div>
+                    <div class="hidden md:block w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative flex gap-6 md:gap-0 md:items-center reveal" style="transition-delay:0.1s">
+                    <div class="md:hidden shrink-0 step-num z-10">04</div>
+                    <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 step-num z-10">04</div>
+                    <div class="flex-1 md:w-1/2 md:pl-12">
+                        <div class="glass-card rounded-2xl p-6">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">Week 9–11</span>
+                            <h3 class="font-heading text-lg font-bold text-white mb-1">Advanced Project & Portfolio Build</h3>
+                            <p class="font-body text-sm text-white/60 leading-relaxed">Lead a project task independently, present work in a client review, and document your contribution for your portfolio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative flex gap-6 md:gap-0 md:items-center reveal" style="transition-delay:0.2s">
+                    <div class="md:hidden shrink-0 step-num z-10">05</div>
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <div class="glass-card rounded-2xl p-6 md:ml-auto">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">Week 12</span>
+                            <h3 class="font-heading text-lg font-bold text-white mb-1">Graduation & Career Launch</h3>
+                            <p class="font-body text-sm text-white/60 leading-relaxed">Present your completed portfolio, receive your UPLIV certificate, and get connected to our hiring partner network for job referrals.</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 step-num z-10">05</div>
+                    <div class="hidden md:block w-1/2 md:pl-12"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 5b: UPLIV vs OTHERS COMPARISON
+    ══════════════════════════════════════════ -->
+    <section class="py-24 px-6 md:px-16 bg-[#060d09]">
+        <div class="max-w-[900px] mx-auto">
+            <div class="text-center mb-14 reveal">
+                <div class="section-badge mb-5">Why Choose UPLIV</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white mb-4">
+                    UPLIV Academy <span class="gradient-text">vs</span> Traditional Training
+                </h2>
+                <p class="font-body text-white/55 text-base max-w-xl mx-auto">See exactly what sets us apart from conventional institutes and online course platforms.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden reveal">
+                <div class="overflow-x-auto">
+                    <table class="compare-table w-full">
+                        <thead>
+                            <tr>
+                                <th class="text-left text-white/30" style="width:40%">Feature</th>
+                                <th class="text-center compare-col-upliv text-[#c5ebd9]" style="width:30%">
+                                    <span class="inline-flex items-center gap-2">✦ UPLIV Academy</span>
+                                </th>
+                                <th class="text-center compare-col-others text-white/30" style="width:30%">Others / Online Courses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="compare-row-label">Live Client Project Exposure</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center"><span class="check-no">✗</span></td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Trained by Working Professionals</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center"><span class="check-no">✗</span></td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Real Client Meeting Observation</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center"><span class="check-no">✗</span></td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Portfolio with Actual Deliverables</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center text-white/35 text-sm">Assignments Only</td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Corporate Tool Training (Jira, Git, Figma)</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center"><span class="check-no">✗</span></td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Placement Support &amp; Referrals</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center text-white/35 text-sm">Rarely</td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Industry-Backed Certificate</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center text-white/35 text-sm">Generic</td>
+                            </tr>
+                            <tr>
+                                <td class="compare-row-label">Location — Tirupati / AP</td>
+                                <td class="compare-col-upliv text-center"><span class="check-yes">✓</span></td>
+                                <td class="compare-col-others text-center"><span class="check-no">✗</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 6: STUDENT OUTCOMES / TESTIMONIALS
+    ══════════════════════════════════════════ -->
+    <section id="testimonials" class="py-24 px-6 md:px-16" style="background: linear-gradient(180deg, #060d09 0%, #0a1a11 100%);">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge mb-5">Student Voices</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                    What Our Students <span class="gradient-text">Achieved</span>
+                </h2>
+                <p class="font-body text-white/55 text-base max-w-xl mx-auto">Real outcomes from real students who went through the UPLIV Academy experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="glass-card rounded-2xl p-7 reveal flex flex-col gap-4">
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400 text-sm">★★★★★</span>
+                    </div>
+                    <p class="font-body text-sm text-white/70 leading-relaxed italic flex-1">
+                        "I joined with zero professional experience. Within 3 months I was building pages for an actual restaurant client. The client meeting exposure alone changed how I think about work."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#c5ebd9] to-[#366758] flex items-center justify-center text-[#14362a] font-heading font-black text-sm shrink-0">KP</div>
+                        <div>
+                            <p class="font-heading text-sm font-bold text-white">Karthik P.</p>
+                            <p class="font-body text-[11px] text-white/40">Web Dev Track · Now at a Hyderabad Startup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card rounded-2xl p-7 reveal flex flex-col gap-4" style="transition-delay:0.1s">
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400 text-sm">★★★★★</span>
+                    </div>
+                    <p class="font-body text-sm text-white/70 leading-relaxed italic flex-1">
+                        "The mentors don't teach you old stuff from textbooks. They show you what's actually working right now in campaigns. I handled a ₹40,000 ad budget under supervision — that's unheard of in any college."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center text-white font-heading font-black text-sm shrink-0">SR</div>
+                        <div>
+                            <p class="font-heading text-sm font-bold text-white">Sowmya R.</p>
+                            <p class="font-body text-[11px] text-white/40">Performance Marketing · Freelancing Full-Time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card rounded-2xl p-7 reveal flex flex-col gap-4" style="transition-delay:0.2s">
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400 text-sm">★★★★★</span>
+                    </div>
+                    <p class="font-body text-sm text-white/70 leading-relaxed italic flex-1">
+                        "I came from a commerce background. UPLIV Academy's design track gave me the confidence to call myself a designer. I already have two freelance clients from Tirupati."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-300 to-purple-600 flex items-center justify-center text-white font-heading font-black text-sm shrink-0">AM</div>
+                        <div>
+                            <p class="font-heading text-sm font-bold text-white">Anitha M.</p>
+                            <p class="font-body text-[11px] text-white/40">UI/UX Design Track · Tirupati</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 7: FAQ
+    ══════════════════════════════════════════ -->
+    <section id="faq" class="py-24 px-6 md:px-16 bg-[#060d09]">
+        <div class="max-w-[800px] mx-auto">
+            <div class="text-center mb-14 reveal">
+                <div class="section-badge mb-5">FAQs</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white mb-4">
+                    Common <span class="gradient-text">Questions</span>
+                </h2>
+            </div>
+
+            <div class="space-y-0 reveal">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" id="faq-q1">
+                        Do I need prior experience to join UPLIV Academy?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No prior experience is required. Our programs are designed for freshers, college students, and career-changers. You'll build skills from the ground up in a structured, guided environment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" id="faq-q2">
+                        What makes UPLIV Academy different from other institutes?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most institutes teach theory in isolation. UPLIV Academy runs inside a live agency — so you get trained by practitioners using real client projects, real budgets, and real feedback. This is job exposure, not just job preparation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" id="faq-q3">
+                        Where are the classes held?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Classes are held at our Tirupati centre. We also accept students from Chittoor, Puttur, Srikalahasti, and Kadapa. Online hybrid sessions are available for certain modules.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" id="faq-q4">
+                        What is the duration and fee structure?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each program is 3 months (12 weeks) long. For exact fee details and available installment plans, please book a free career counseling session and we'll walk you through everything.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" id="faq-q5">
+                        Will I get a job after completing the program?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide active placement support, industry referrals, and job-ready portfolio preparation. While we cannot guarantee placements, our structured exposure significantly increases your employability compared to traditional training.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)" id="faq-q6">
+                        Can I attend a demo session before enrolling?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer free demo sessions every week. Book your slot through the contact form and experience our teaching method before making any commitment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 8: CTA BANNER
+    ══════════════════════════════════════════ -->
+    <section class="py-24 px-6 md:px-16" style="background: linear-gradient(135deg, #0a1a11 0%, #14362a 50%, #0a1a11 100%);">
+        <div class="max-w-[900px] mx-auto text-center reveal">
+            <div class="section-badge mb-8 mx-auto w-fit">Limited Seats Per Batch</div>
+            <h2 class="font-heading text-3xl md:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Your Career Starts With<br><span class="gradient-text">One Conversation</span>
+            </h2>
+            <p class="font-body text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+                Book a free career counseling session and discover which program is the right fit for your goals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="index.html#cta-section" id="cta-counseling-bottom" class="px-10 py-4 bg-[#c5ebd9] text-[#14362a] font-heading font-bold text-base rounded-2xl hover:scale-105 hover:shadow-2xl transition-all duration-200 shadow-lg flex items-center justify-center gap-2">
+                    Book Free Career Counseling
+                    <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                </a>
+                <a href="index.html#cta-section" id="cta-demo-bottom" class="px-10 py-4 bg-transparent border border-white/25 hover:border-white/50 text-white font-heading font-bold text-base rounded-2xl hover:bg-white/5 transition-all duration-200 flex items-center justify-center">
+                    Attend a Free Demo Session
+                </a>
+            </div>
+            <p class="font-body text-xs text-white/30 mt-8">No commitment required · Sessions available Monday – Saturday · Tirupati Centre</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="site-footer" class="py-20 px-6 md:px-16 text-white">
+    <div class="max-w-[1280px] mx-auto">
+        <div style="margin-bottom:4rem;">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Branding column -->
+                <div style="display:flex;flex-direction:column;gap:1.25rem;">
+                    <div class="flex items-center gap-3 text-on-primary">
+                        <img src="Logo.png" alt="UPLIV" class="h-14 w-auto object-contain max-h-full" loading="eager"
+                            onerror="this.style.display='none'; const fb=this.parentElement.querySelector('.logo-fallback'); if (fb) fb.style.display='block';"/>
+                        <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg" class="logo-fallback hidden h-14 w-auto max-h-full" role="img" aria-label="UPLIV logo">
+                            <g fill="currentColor"><circle cx="20" cy="20" r="14"></circle></g>
+                            <text x="44" y="25" fill="currentColor" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="22" font-weight="800">UPLIV</text>
+                        </svg>
+                    </div>
+                    <p style="font-size:0.875rem;color:rgba(255,255,255,0.4);line-height:1.7;max-width:280px;">
+                        Premier performance marketing &amp; web development agency serving Tirupati, Chittoor, and all of Andhra Pradesh.
+                    </p>
+                    <div style="display:flex;gap:0.625rem;margin-top:1.5rem;">
+                        <a href="#" class="footer-social" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="footer-social" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="footer-social" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="footer-social" aria-label="Twitter/X">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Academy Links -->
+                <div>
+                    <div class="footer-col-title">Academy</div>
+                    <a href="#programs" class="footer-link">Web Development Track</a>
+                    <a href="#programs" class="footer-link">Performance Marketing Track</a>
+                    <a href="#programs" class="footer-link">UI/UX Design Track</a>
+                    <a href="#faq" class="footer-link">FAQ</a>
+                    <a href="index.html#cta-section" class="footer-link">Book Free Demo</a>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <div class="footer-col-title">Company</div>
+                    <a href="index.html#about" class="footer-link">About Us</a>
+                    <a href="projects.html" class="footer-link">Case Studies</a>
+                    <a href="service.html" class="footer-link">Services</a>
+                    <a href="index.html#testimonials" class="footer-link">Testimonials</a>
+                    <a href="index.html#faq" class="footer-link">FAQ</a>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <div class="footer-col-title">Stay in the loop</div>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:1rem;">Get weekly digital growth tips &amp; local business insights.</p>
+                    <input type="email" placeholder="your@email.com" class="newsletter-input" id="footer-email-input" />
+                    <button class="newsletter-btn" onclick="(function(b,i){const v=i.value.trim();if(!v||!v.includes('@')){i.style.borderColor='rgba(239,68,68,0.5)';return;}b.textContent='✓ Subscribed!';b.style.background='rgba(34,197,94,0.15)';b.style.color='#4ade80';})(this,document.getElementById('footer-email-input'))">
+                        Subscribe →
+                    </button>
+                    <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem;">
+                        <a href="mailto:hello@upliv.in" class="footer-link" style="font-size:0.8rem;margin-bottom:0;">✉ hello@upliv.in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom copyright bar -->
+        <div class="footer-copyright-bar">
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">
+                © 2026 <span style="color:rgba(197,235,217,0.5);font-weight:600;">UPliv IT Solutions LLP</span>. All Rights Reserved. Proudly serving Tirupati &amp; beyond.
+            </p>
+            <div style="display:flex;gap:1.5rem;">
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;" onmouseover="this.style.color='rgba(197,235,217,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Privacy Policy</a>
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;" onmouseover="this.style.color='rgba(197,235,217,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Terms of Service</a>
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;" onmouseover="this.style.color='rgba(197,235,217,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     STICKY BOTTOM CTA BAR
+══════════════════════════════════════════ -->
+<div class="sticky-cta-bar" id="sticky-cta">
+    <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+            <p class="font-heading text-sm font-bold text-white">Ready to learn through real experience?</p>
+            <p class="font-body text-xs text-white/45 mt-0.5">Limited seats per batch · Tirupati Centre</p>
+        </div>
+        <div class="flex gap-3 shrink-0">
+            <a href="index.html#cta-section" id="sticky-cta-demo" class="px-5 py-2.5 border border-white/20 text-white font-body font-semibold text-sm rounded-xl hover:border-white/40 hover:bg-white/5 transition-all">
+                Free Demo
+            </a>
+            <a href="index.html#cta-section" id="sticky-cta-book" class="px-6 py-2.5 bg-[#c5ebd9] text-[#14362a] font-body font-bold text-sm rounded-xl hover:opacity-90 transition-all shadow-lg flex items-center gap-1.5">
+                Book Free Counseling
+                <span class="material-symbols-outlined text-base" style="font-size:16px">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => { mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); });
+    }
+    if (menuClose && mobileMenu) {
+        menuClose.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); });
+    }
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+    // Sticky CTA bar — show after scrolling past hero
+    const stickyCta = document.getElementById('sticky-cta');
+    let stickyShown = false;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > window.innerHeight * 0.7 && !stickyShown) {
+            stickyShown = true;
+            stickyCta.classList.add('visible');
+        } else if (window.scrollY < window.innerHeight * 0.5 && stickyShown) {
+            stickyShown = false;
+            stickyCta.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+        // Open clicked if it was closed
+        if (!isOpen) {
+            answer.classList.add('open');
+            icon.classList.add('open');
+        }
+    }
+</script>
+</body>
+</html>
