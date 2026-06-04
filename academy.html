@@ -715,11 +715,11 @@
                 <div class="w-full lg:w-[58%]" style="position:relative;">
 
                     <!-- Card 1: Client Discussions -->
-                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden" data-index="0"
+                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden transition-all duration-300" data-index="0"
                          data-label="Client Discussions"
                          data-title="Understand project requirements and business goals"
                          data-desc="You'll learn how clients communicate their vision, what questions professionals ask, and how requirements get translated into actual deliverables."
-                         style="position:sticky; top:15rem; z-index:1; margin-bottom:40vh;">
+                         style="margin-bottom: 2rem;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);">
@@ -746,11 +746,11 @@
                     </div>
 
                     <!-- Card 2: Industry Workflows -->
-                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden" data-index="1"
+                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden transition-all duration-300" data-index="1"
                          data-label="Industry Workflows"
                          data-title="Learn how teams collaborate and deliver results"
                          data-desc="Experience real Scrum cycles, sprint reviews, pull requests, and cross-team communication — the kind of workflow that every employer expects."
-                         style="position:sticky; top:15rem; z-index:2; margin-bottom:40vh;">
+                         style="margin-bottom: 2rem;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.2);">
@@ -773,11 +773,11 @@
                     </div>
 
                     <!-- Card 3: Strategic Planning -->
-                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden" data-index="2"
+                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden transition-all duration-300" data-index="2"
                          data-label="Strategic Planning"
                          data-title="Observe decision-making and execution processes"
                          data-desc="Watch how senior professionals plan campaigns, allocate budgets, and make strategic calls — skills that can't be learned from textbooks alone."
-                         style="position:sticky; top:15rem; z-index:3; margin-bottom:40vh;">
+                         style="margin-bottom: 2rem;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.2);">
@@ -804,11 +804,11 @@
                     </div>
 
                     <!-- Card 4: Professional Communication -->
-                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden" data-index="3"
+                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden transition-all duration-300" data-index="3"
                          data-label="Professional Communication"
                          data-title="Develop workplace collaboration skills"
                          data-desc="Practice writing professional emails, presenting work to seniors, and communicating progress — the soft skills that determine career growth."
-                         style="position:sticky; top:15rem; z-index:4; margin-bottom:40vh;">
+                         style="margin-bottom: 2rem;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
@@ -830,11 +830,11 @@
                     </div>
 
                     <!-- Card 5: Business Problem Solving -->
-                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden" data-index="4"
+                    <div class="approach-card glass-card rounded-2xl p-8 relative overflow-hidden transition-all duration-300" data-index="4"
                          data-label="Business Problem Solving"
                          data-title="Understand how companies tackle real challenges"
                          data-desc="See how businesses identify problems, evaluate options, and choose solutions — developing your analytical thinking alongside technical skills."
-                         style="position:sticky; top:15rem; z-index:5; margin-bottom:40vh;">
+                         style="margin-bottom: 2rem;">
                         <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c5ebd9] to-[#366758] rounded-l-2xl approach-card-accent opacity-0 transition-opacity duration-400"></div>
                         <div class="flex items-start gap-5">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style="background: rgba(197,235,217,0.08); border: 1px solid rgba(197,235,217,0.15);">
@@ -1738,13 +1738,14 @@
         function updateActiveCard() {
             let activeIdx = 0;
             let minDiff = Infinity;
-            // The cards stick at top: 15rem, which is roughly 240px from the top of the viewport
-            const stickPoint = 240; 
+            // Align active detection to the vertical center of the screen
+            const triggerLine = window.innerHeight / 2; 
             
             approachCards.forEach((card, idx) => {
                 const rect = card.getBoundingClientRect();
-                // We want to see which card's top is closest to the sticky position point
-                const diff = Math.abs(rect.top - stickPoint);
+                // Compare distance from card middle to trigger line
+                const cardMiddle = rect.top + (rect.height / 2);
+                const diff = Math.abs(cardMiddle - triggerLine);
                 if (diff < minDiff) {
                     minDiff = diff;
                     activeIdx = idx;
