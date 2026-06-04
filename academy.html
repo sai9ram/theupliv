@@ -1734,28 +1734,45 @@
     }
 
     if (approachCards.length && approachLabel) {
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const card  = entry.target;
-                    const idx   = parseInt(card.dataset.index);
-                    approachLabel.style.opacity = '0';
-                    approachTitle.style.opacity = '0';
-                    approachDesc.style.opacity  = '0';
-                    setTimeout(() => {
-                        approachLabel.textContent  = card.dataset.label;
-                        approachTitle.textContent  = card.dataset.title;
-                        approachDesc.textContent   = card.dataset.desc;
-                        approachLabel.style.opacity = '1';
-                        approachTitle.style.opacity = '1';
-                        approachDesc.style.opacity  = '1';
-                    }, 180);
-                    activateApproachCard(idx);
+        let lastActiveIdx = -1;
+        function updateActiveCard() {
+            let activeIdx = 0;
+            let minDiff = Infinity;
+            // The cards stick at top: 15rem, which is roughly 240px from the top of the viewport
+            const stickPoint = 240; 
+            
+            approachCards.forEach((card, idx) => {
+                const rect = card.getBoundingClientRect();
+                // We want to see which card's top is closest to the sticky position point
+                const diff = Math.abs(rect.top - stickPoint);
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    activeIdx = idx;
                 }
             });
-        }, { threshold: 0.3 });
-        approachCards.forEach(card => cardObserver.observe(card));
-        activateApproachCard(0);
+
+            if (activeIdx !== lastActiveIdx) {
+                lastActiveIdx = activeIdx;
+                const card = approachCards[activeIdx];
+                
+                approachLabel.style.opacity = '0';
+                approachTitle.style.opacity = '0';
+                approachDesc.style.opacity  = '0';
+                
+                setTimeout(() => {
+                    approachLabel.textContent  = card.dataset.label;
+                    approachTitle.textContent  = card.dataset.title;
+                    approachDesc.textContent   = card.dataset.desc;
+                    approachLabel.style.opacity = '1';
+                    approachTitle.style.opacity = '1';
+                    approachDesc.style.opacity  = '1';
+                }, 180);
+                activateApproachCard(activeIdx);
+            }
+        }
+        window.addEventListener('scroll', updateActiveCard, { passive: true });
+        window.addEventListener('resize', updateActiveCard);
+        updateActiveCard();
     }
 
     // FAQ accordion
