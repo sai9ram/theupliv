@@ -763,7 +763,7 @@
                     <!-- DESKTOP: Sticky stage holds all 5 cards absolutely stacked -->
                     <!-- The proxy below creates the scroll travel space -->
                     <div id="approach-stage" class="hidden lg:block"
-                         style="position:sticky;top:120px;height:540px;z-index:10;">
+                         style="position:sticky;top:120px;height:540px;z-index:10;overflow:hidden;border-radius:22px;">
 
                         <!-- CARD 1 green — initially fully visible -->
                         <div class="approach-card" data-card="0"
@@ -1797,13 +1797,10 @@
 
     function getApproachProgress() {
         if (!approachScene || !approachProxy) return 0;
-        // scene top relative to page
-        const sceneTop = approachScene.getBoundingClientRect().top + window.scrollY;
-        // animation starts when stage pins (top:120px from viewport)
+        const sceneTop    = approachScene.getBoundingClientRect().top + window.scrollY;
         const scrollStart = sceneTop - 120;
         const scrollEnd   = scrollStart + approachProxy.offsetHeight;
-        const p = (window.scrollY - scrollStart) / (scrollEnd - scrollStart);
-        return Math.max(0, Math.min(1, p));
+        return Math.max(0, Math.min(1, (window.scrollY - scrollStart) / (scrollEnd - scrollStart)));
     }
 
     function animateApproachCards() {
@@ -1816,44 +1813,45 @@
 
         approachCards.forEach((card, i) => {
             if (i < activeIdx) {
-                // Buried — scale and fade based on depth
-                const depth   = activeIdx - i;
-                const scale   = Math.max(0.85, 1 - depth * 0.04);
-                const opacity = Math.max(0.25, 1 - depth * 0.22);
-                card.style.opacity     = String(opacity);
-                card.style.transform   = `scale(${scale}) translateY(${depth * -10}px)`;
-                card.style.borderColor = 'rgba(255,255,255,0.06)';
+                // BURIED: fully opaque, just scaled down — hidden behind active card
+                const depth = activeIdx - i;
+                const scale = Math.max(0.88, 1 - depth * 0.04);
+                card.style.opacity     = '1';
+                card.style.transform   = `scale(${scale})`;
+                card.style.borderColor = stackAccents[i].border;
                 card.style.boxShadow   = 'none';
-                card.style.zIndex      = String(50 - depth * 10);
+                card.style.zIndex      = String(40 - depth * 10);
+
             } else if (i === activeIdx) {
-                // Active — slightly scale out as next card nears
-                const scaleOut = 1 - sub * 0.04;
-                card.style.opacity     = String(Math.max(0.3, 1 - sub * 0.5));
-                card.style.transform   = `scale(${scaleOut}) translateY(${-sub * 10}px)`;
+                // ACTIVE: fully opaque, scales very slightly as next card arrives
+                const scale = 1 - sub * 0.04;
+                card.style.opacity     = '1';
+                card.style.transform   = `scale(${scale})`;
                 card.style.borderColor = stackAccents[i].border;
                 card.style.boxShadow   = `0 0 60px 0 ${stackAccents[i].glow}`;
                 card.style.zIndex      = '50';
+
             } else if (i === activeIdx + 1) {
-                // Incoming — slide up and fade in
-                card.style.opacity     = String(sub);
-                card.style.transform   = `translateY(${(1 - sub) * 55}px) scale(${0.97 + sub * 0.03})`;
+                // INCOMING: fully opaque, slides up from 100% below (clipped by overflow:hidden on stage)
+                card.style.opacity     = '1';
+                card.style.transform   = `translateY(${(1 - sub) * 100}%)`;
                 card.style.borderColor = stackAccents[i].border;
                 card.style.boxShadow   = `0 0 60px 0 ${stackAccents[i].glow}`;
                 card.style.zIndex      = '55';
+
             } else {
-                // Not yet reached — hidden below
-                card.style.opacity     = '0';
-                card.style.transform   = 'translateY(60px) scale(0.97)';
-                card.style.borderColor = 'rgba(255,255,255,0.07)';
+                // NOT YET REACHED: hidden below the stage boundary
+                card.style.opacity     = '1';
+                card.style.transform   = 'translateY(100%)';
+                card.style.borderColor = stackAccents[i].border;
                 card.style.boxShadow   = 'none';
                 card.style.zIndex      = String(50 - (i - activeIdx) * 5);
             }
         });
 
-        // Left nav highlight
-        const navActive = activeIdx;
+        // Left nav
         approachNavItems.forEach((item, i) => {
-            if (i === navActive) {
+            if (i === activeIdx) {
                 item.classList.add('active');
                 item.style.background  = 'rgba(255,255,255,0.05)';
                 item.style.borderColor = 'rgba(197,235,217,0.25)';
