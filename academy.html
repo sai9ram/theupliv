@@ -757,206 +757,160 @@
                     </div>
                 </div>
 
-                <!-- RIGHT: Scrollable Cards Stack -->
-                <!-- RIGHT: Stacking Cards (each card sticky inside tall wrapper) -->
-                <div class="w-full lg:w-[62%]" id="approach-cards-stack">
+                <!-- RIGHT: Scroll-driven stacking cards -->
+                <div class="w-full lg:w-[62%] relative" id="approach-scene">
 
-                    <!-- Slot 1 -->
-                    <div class="approach-card-slot" style="min-height: 85vh; padding-bottom: 0;">
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="0"
-                         style="position: sticky; top: 120px; z-index: 10; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
-                        <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #c5ebd9;"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl" style="background: rgba(197,235,217,0.1); border: 1px solid rgba(197,235,217,0.2);">💬</div>
-                                <span class="font-mono text-6xl font-black tracking-tight" style="color: rgba(255,255,255,0.06);">01</span>
-                            </div>
-                            <p class="font-body text-xs font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">Client Discussions</p>
-                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
-                                Understand project requirements and business goals.
-                            </h3>
-                            <p class="font-body text-white/55 text-base leading-relaxed mb-7">
-                                Observe real client briefings from day one — learning how businesses identify needs, set expectations, and communicate with stakeholders before any project begins.
-                            </p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#c5ebd9] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Requirement Gathering</span>
+                    <!-- DESKTOP: Sticky stage holds all 5 cards absolutely stacked -->
+                    <!-- The proxy below creates the scroll travel space -->
+                    <div id="approach-stage" class="hidden lg:block"
+                         style="position:sticky;top:120px;height:540px;z-index:10;">
+
+                        <!-- CARD 1 green — initially fully visible -->
+                        <div class="approach-card" data-card="0"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:1px solid rgba(197,235,217,0.4);background:rgba(197,235,217,0.03);
+                                    box-shadow:0 0 60px 0 rgba(197,235,217,0.08);
+                                    z-index:50;opacity:1;transform:scale(1) translateY(0);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#c5ebd9;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(197,235,217,0.1);border:1px solid rgba(197,235,217,0.2);">💬</div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">01</span>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#c5ebd9] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Business Communication</span>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#c5ebd9]" style="font-size:11px;margin-bottom:6px;">Client Discussions</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Understand project requirements and business goals.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">Observe real client briefings from day one — learning how businesses identify needs, set expectations, and communicate before any project begins.</p>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#c5ebd9] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Client Relationship</span>
-                                </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#c5ebd9] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Project Understanding</span>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Requirement Gathering</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Business Communication</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Client Relationship</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Project Understanding</span></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div><!-- /slot 1 -->
 
-                    <!-- Slot 2 -->
-                    <div class="approach-card-slot" style="min-height: 85vh;">
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="1"
-                         style="position: sticky; top: 120px; z-index: 20; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
-                        <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #818cf8;"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl" style="background: rgba(129,140,248,0.1); border: 1px solid rgba(129,140,248,0.2);">⚙️</div>
-                                <span class="font-mono text-6xl font-black tracking-tight" style="color: rgba(255,255,255,0.06);">02</span>
-                            </div>
-                            <p class="font-body text-xs font-bold uppercase tracking-widest text-[#818cf8] mb-2">Industry Workflows</p>
-                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
-                                Learn how teams collaborate and deliver results.
-                            </h3>
-                            <p class="font-body text-white/55 text-base leading-relaxed mb-7">
-                                Gain hands-on exposure to how professional departments manage tasks, use agile processes, and coordinate across teams to deliver quality outcomes on time.
-                            </p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#818cf8] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Team Collaboration</span>
+                        <!-- CARD 2 purple — hidden below, slides up -->
+                        <div class="approach-card" data-card="1"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:1px solid rgba(129,140,248,0.1);background:rgba(255,255,255,0.02);
+                                    z-index:40;opacity:0;transform:translateY(60px) scale(0.97);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#818cf8;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.2);">⚙️</div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">02</span>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#818cf8] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Agile Workflows</span>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#818cf8]" style="font-size:11px;margin-bottom:6px;">Industry Workflows</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Learn how teams collaborate and deliver results.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">Exposure to how professional departments manage tasks, use agile processes, and coordinate across teams to deliver quality outcomes on time.</p>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#818cf8] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Project Coordination</span>
-                                </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#818cf8] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Task Management</span>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Team Collaboration</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Agile Workflows</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Project Coordination</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Task Management</span></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div><!-- /slot 2 -->
 
-                    <!-- Slot 3 -->
-                    <div class="approach-card-slot" style="min-height: 85vh;">
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="2"
-                         style="position: sticky; top: 120px; z-index: 30; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
-                        <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #f59e0b;"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2);">📊</div>
-                                <span class="font-mono text-6xl font-black tracking-tight" style="color: rgba(255,255,255,0.06);">03</span>
-                            </div>
-                            <p class="font-body text-xs font-bold uppercase tracking-widest text-[#f59e0b] mb-2">Strategic Planning</p>
-                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
-                                Observe decision-making and execution processes.
-                            </h3>
-                            <p class="font-body text-white/55 text-base leading-relaxed mb-7">
-                                Understand how businesses allocate resources, set goals, and create strategies that translate into real business growth and competitive advantage.
-                            </p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f59e0b] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Business Thinking</span>
+                        <!-- CARD 3 amber -->
+                        <div class="approach-card" data-card="2"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:1px solid rgba(245,158,11,0.1);background:rgba(255,255,255,0.02);
+                                    z-index:30;opacity:0;transform:translateY(60px) scale(0.97);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#f59e0b;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);">📊</div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">03</span>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f59e0b] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Planning Frameworks</span>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#f59e0b]" style="font-size:11px;margin-bottom:6px;">Strategic Planning</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Observe decision-making and execution processes.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">Understand how businesses allocate resources, set goals, and create strategies that translate into real business growth and competitive advantage.</p>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f59e0b] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Goal Setting</span>
-                                </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f59e0b] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Execution Strategy</span>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Business Thinking</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Planning Frameworks</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Goal Setting</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Execution Strategy</span></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div><!-- /slot 3 -->
 
-                    <!-- Slot 4 -->
-                    <div class="approach-card-slot" style="min-height: 85vh;">
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="3"
-                         style="position: sticky; top: 120px; z-index: 40; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
-                        <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #34d399;"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl" style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2);">🤝</div>
-                                <span class="font-mono text-6xl font-black tracking-tight" style="color: rgba(255,255,255,0.06);">04</span>
-                            </div>
-                            <p class="font-body text-xs font-bold uppercase tracking-widest text-[#34d399] mb-2">Professional Communication</p>
-                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
-                                Develop workplace collaboration skills.
-                            </h3>
-                            <p class="font-body text-white/55 text-base leading-relaxed mb-7">
-                                Build the soft skills that employers actually look for — from effective emails and presentations to navigating team dynamics and professional etiquette.
-                            </p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#34d399] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Team Communication</span>
+                        <!-- CARD 4 teal -->
+                        <div class="approach-card" data-card="3"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:1px solid rgba(52,211,153,0.1);background:rgba(255,255,255,0.02);
+                                    z-index:20;opacity:0;transform:translateY(60px) scale(0.97);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#34d399;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);">🤝</div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">04</span>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#34d399] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Client Interaction</span>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#34d399]" style="font-size:11px;margin-bottom:6px;">Professional Communication</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Develop workplace collaboration skills.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">Build the soft skills employers look for — from effective emails and presentations to navigating team dynamics and professional etiquette.</p>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#34d399] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Presentation Skills</span>
-                                </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#34d399] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Workplace Etiquette</span>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Team Communication</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Client Interaction</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Presentation Skills</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Workplace Etiquette</span></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div><!-- /slot 4 -->
 
-                    <!-- Slot 5 -->
-                    <div class="approach-card-slot" style="min-height: 85vh;">
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="4"
-                         style="position: sticky; top: 120px; z-index: 50; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
-                        <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #f87171;"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl" style="background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.2);">🚀</div>
-                                <span class="font-mono text-6xl font-black tracking-tight" style="color: rgba(255,255,255,0.06);">05</span>
-                            </div>
-                            <p class="font-body text-xs font-bold uppercase tracking-widest text-[#f87171] mb-2">Business Problem Solving</p>
-                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight">
-                                Understand how companies tackle real challenges.
-                            </h3>
-                            <p class="font-body text-white/55 text-base leading-relaxed mb-7">
-                                Develop critical thinking by watching and participating in how real businesses identify problems, evaluate solutions, and execute strategies to achieve measurable results.
-                            </p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f87171] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Critical Thinking</span>
+                        <!-- CARD 5 red -->
+                        <div class="approach-card" data-card="4"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:1px solid rgba(248,113,113,0.1);background:rgba(255,255,255,0.02);
+                                    z-index:10;opacity:0;transform:translateY(60px) scale(0.97);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#f87171;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.2);">🚀</div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">05</span>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f87171] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Analytical Skills</span>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#f87171]" style="font-size:11px;margin-bottom:6px;">Business Problem Solving</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Understand how companies tackle real challenges.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">Develop critical thinking by watching how real businesses identify problems, evaluate solutions, and execute strategies to achieve measurable results.</p>
                                 </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f87171] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Decision Making</span>
-                                </div>
-                                <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
-                                    <span class="text-[#f87171] text-sm">✓</span>
-                                    <span class="font-heading text-xs font-bold text-white/80">Solution Development</span>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Critical Thinking</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Analytical Skills</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Decision Making</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Solution Development</span></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div><!-- /slot 5 -->
 
-                </div>
+                    </div><!-- /approach-stage -->
+
+                    <!-- Scroll proxy: 5 cards x 80vh — keeps stage sticky while scrolling (desktop only) -->
+                    <div id="approach-proxy" class="hidden lg:block" style="height:400vh;"></div>
+
+                    <!-- MOBILE: simple stacked cards -->
+                    <div class="lg:hidden space-y-5 pb-10">
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(197,235,217,0.04);border-color:rgba(197,235,217,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">💬 Client Discussions</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Understand project requirements and business goals.</h3><p class="font-body text-white/55 text-sm leading-relaxed">Observe real client briefings from day one — how businesses identify needs and communicate before projects begin.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(129,140,248,0.04);border-color:rgba(129,140,248,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#818cf8] mb-2">⚙️ Industry Workflows</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Learn how teams collaborate and deliver results.</h3><p class="font-body text-white/55 text-sm leading-relaxed">How departments manage tasks and deliver quality outcomes using agile processes.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(245,158,11,0.04);border-color:rgba(245,158,11,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#f59e0b] mb-2">📊 Strategic Planning</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Observe decision-making and execution processes.</h3><p class="font-body text-white/55 text-sm leading-relaxed">How businesses allocate resources and create strategies for growth.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(52,211,153,0.04);border-color:rgba(52,211,153,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#34d399] mb-2">🤝 Professional Communication</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Develop workplace collaboration skills.</h3><p class="font-body text-white/55 text-sm leading-relaxed">From presentations to navigating team dynamics and workplace etiquette.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(248,113,113,0.04);border-color:rgba(248,113,113,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#f87171] mb-2">🚀 Business Problem Solving</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Understand how companies tackle real challenges.</h3><p class="font-body text-white/55 text-sm leading-relaxed">Critical thinking by watching how businesses identify problems and execute solutions.</p></div>
+                    </div>
+
+                </div><!-- /approach-scene -->
                 <!-- end cards stack -->
             </div>
         </div>
@@ -1825,66 +1779,81 @@
         }
     }, { passive: true });
 
-    // ── Section 3: Our Approach — Stacking Card Scroll Effect ──
+    // ── Section 3: Our Approach — Scroll-proxy stacking animation ──
     const approachCards    = document.querySelectorAll('.approach-card');
-    const approachSlots    = document.querySelectorAll('.approach-card-slot');
     const approachNavItems = document.querySelectorAll('.approach-nav-item');
     const approachProgressBar = document.getElementById('approach-progress-bar');
+    const approachScene    = document.getElementById('approach-scene');
+    const approachProxy    = document.getElementById('approach-proxy');
 
-    const accentColors = [
-        { border: 'rgba(197,235,217,0.4)', glow: '#c5ebd918' },
-        { border: 'rgba(129,140,248,0.4)', glow: '#818cf818' },
-        { border: 'rgba(245,158,11,0.4)',  glow: '#f59e0b18' },
-        { border: 'rgba(52,211,153,0.4)',  glow: '#34d39918' },
-        { border: 'rgba(248,113,113,0.4)', glow: '#f8717118' }
+    const N = approachCards.length;
+    const stackAccents = [
+        { border:'rgba(197,235,217,0.45)', glow:'rgba(197,235,217,0.12)' },
+        { border:'rgba(129,140,248,0.45)', glow:'rgba(129,140,248,0.12)' },
+        { border:'rgba(245,158,11,0.45)',  glow:'rgba(245,158,11,0.12)'  },
+        { border:'rgba(52,211,153,0.45)',  glow:'rgba(52,211,153,0.12)'  },
+        { border:'rgba(248,113,113,0.45)', glow:'rgba(248,113,113,0.12)' }
     ];
 
-    // Scale values for cards buried under active card
-    const buriedScales = [1, 0.97, 0.94, 0.91, 0.88];
+    function getApproachProgress() {
+        if (!approachScene || !approachProxy) return 0;
+        // scene top relative to page
+        const sceneTop = approachScene.getBoundingClientRect().top + window.scrollY;
+        // animation starts when stage pins (top:120px from viewport)
+        const scrollStart = sceneTop - 120;
+        const scrollEnd   = scrollStart + approachProxy.offsetHeight;
+        const p = (window.scrollY - scrollStart) / (scrollEnd - scrollStart);
+        return Math.max(0, Math.min(1, p));
+    }
 
-    function updateStackingCards() {
-        if (!approachCards.length) return;
+    function animateApproachCards() {
+        if (!approachCards.length || !approachProxy) return;
 
-        // Find which slot's card is currently the "top" (most recently scrolled into)
-        // A card is "active" (top of stack) when its slot's top <= viewport center
-        let activeIdx = 0;
-        const triggerY = window.innerHeight * 0.5;
+        const progress  = getApproachProgress();
+        const rawIdx    = progress * N;
+        const activeIdx = Math.min(Math.floor(rawIdx), N - 1);
+        const sub       = rawIdx - activeIdx; // 0–1 within this card's zone
 
-        approachSlots.forEach((slot, i) => {
-            const rect = slot.getBoundingClientRect();
-            if (rect.top <= triggerY) activeIdx = i;
-        });
-
-        // Apply stacking transforms to all cards
         approachCards.forEach((card, i) => {
-            const buriedDepth = activeIdx - i; // how many cards deep is this card?
-
-            if (i > activeIdx) {
-                // Cards below: not yet scrolled to — normal state
-                card.style.transform   = 'scale(1) translateY(0)';
-                card.style.opacity     = '1';
+            if (i < activeIdx) {
+                // Buried — scale and fade based on depth
+                const depth   = activeIdx - i;
+                const scale   = Math.max(0.85, 1 - depth * 0.04);
+                const opacity = Math.max(0.25, 1 - depth * 0.22);
+                card.style.opacity     = String(opacity);
+                card.style.transform   = `scale(${scale}) translateY(${depth * -10}px)`;
+                card.style.borderColor = 'rgba(255,255,255,0.06)';
+                card.style.boxShadow   = 'none';
+                card.style.zIndex      = String(50 - depth * 10);
+            } else if (i === activeIdx) {
+                // Active — slightly scale out as next card nears
+                const scaleOut = 1 - sub * 0.04;
+                card.style.opacity     = String(Math.max(0.3, 1 - sub * 0.5));
+                card.style.transform   = `scale(${scaleOut}) translateY(${-sub * 10}px)`;
+                card.style.borderColor = stackAccents[i].border;
+                card.style.boxShadow   = `0 0 60px 0 ${stackAccents[i].glow}`;
+                card.style.zIndex      = '50';
+            } else if (i === activeIdx + 1) {
+                // Incoming — slide up and fade in
+                card.style.opacity     = String(sub);
+                card.style.transform   = `translateY(${(1 - sub) * 55}px) scale(${0.97 + sub * 0.03})`;
+                card.style.borderColor = stackAccents[i].border;
+                card.style.boxShadow   = `0 0 60px 0 ${stackAccents[i].glow}`;
+                card.style.zIndex      = '55';
+            } else {
+                // Not yet reached — hidden below
+                card.style.opacity     = '0';
+                card.style.transform   = 'translateY(60px) scale(0.97)';
                 card.style.borderColor = 'rgba(255,255,255,0.07)';
                 card.style.boxShadow   = 'none';
-            } else if (i === activeIdx) {
-                // Active top card: full size, glowing
-                card.style.transform   = 'scale(1) translateY(0)';
-                card.style.opacity     = '1';
-                card.style.borderColor = accentColors[i].border;
-                card.style.boxShadow   = `0 0 60px 0 ${accentColors[i].glow}`;
-            } else {
-                // Buried cards: scale down progressively, slight fade
-                const scale   = Math.max(0.85, 1 - buriedDepth * 0.03);
-                const opacity = Math.max(0.35, 1 - buriedDepth * 0.18);
-                card.style.transform   = `scale(${scale}) translateY(${buriedDepth * -6}px)`;
-                card.style.opacity     = String(opacity);
-                card.style.borderColor = 'rgba(255,255,255,0.05)';
-                card.style.boxShadow   = 'none';
+                card.style.zIndex      = String(50 - (i - activeIdx) * 5);
             }
         });
 
-        // Update left nav
+        // Left nav highlight
+        const navActive = activeIdx;
         approachNavItems.forEach((item, i) => {
-            if (i === activeIdx) {
+            if (i === navActive) {
                 item.classList.add('active');
                 item.style.background  = 'rgba(255,255,255,0.05)';
                 item.style.borderColor = 'rgba(197,235,217,0.25)';
@@ -1895,16 +1864,16 @@
             }
         });
 
-        // Update progress bar
+        // Progress bar
         if (approachProgressBar) {
-            approachProgressBar.style.width = ((activeIdx + 1) / approachCards.length * 100) + '%';
+            approachProgressBar.style.width = ((activeIdx + 1) / N * 100) + '%';
         }
     }
 
-    if (approachCards.length) {
-        window.addEventListener('scroll', updateStackingCards, { passive: true });
-        window.addEventListener('resize', updateStackingCards);
-        updateStackingCards();
+    if (approachCards.length && approachProxy) {
+        window.addEventListener('scroll', animateApproachCards, { passive: true });
+        window.addEventListener('resize', animateApproachCards);
+        animateApproachCards();
     }
 
     // FAQ accordion
