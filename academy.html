@@ -758,11 +758,13 @@
                 </div>
 
                 <!-- RIGHT: Scrollable Cards Stack -->
-                <div class="w-full lg:w-[62%] space-y-8 pb-32" id="approach-cards-stack">
+                <!-- RIGHT: Stacking Cards (each card sticky inside tall wrapper) -->
+                <div class="w-full lg:w-[62%]" id="approach-cards-stack">
 
-                    <!-- Card 1 -->
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden transition-all duration-500" data-card="0"
-                         style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
+                    <!-- Slot 1 -->
+                    <div class="approach-card-slot" style="min-height: 85vh; padding-bottom: 0;">
+                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="0"
+                         style="position: sticky; top: 120px; z-index: 10; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
                         <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #c5ebd9;"></div>
                         <div class="relative z-10">
                             <div class="flex items-center justify-between mb-7">
@@ -796,10 +798,12 @@
                             </div>
                         </div>
                     </div>
+                    </div><!-- /slot 1 -->
 
-                    <!-- Card 2 -->
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden transition-all duration-500" data-card="1"
-                         style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
+                    <!-- Slot 2 -->
+                    <div class="approach-card-slot" style="min-height: 85vh;">
+                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="1"
+                         style="position: sticky; top: 120px; z-index: 20; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
                         <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #818cf8;"></div>
                         <div class="relative z-10">
                             <div class="flex items-center justify-between mb-7">
@@ -833,10 +837,12 @@
                             </div>
                         </div>
                     </div>
+                    </div><!-- /slot 2 -->
 
-                    <!-- Card 3 -->
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden transition-all duration-500" data-card="2"
-                         style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
+                    <!-- Slot 3 -->
+                    <div class="approach-card-slot" style="min-height: 85vh;">
+                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="2"
+                         style="position: sticky; top: 120px; z-index: 30; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
                         <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #f59e0b;"></div>
                         <div class="relative z-10">
                             <div class="flex items-center justify-between mb-7">
@@ -870,10 +876,12 @@
                             </div>
                         </div>
                     </div>
+                    </div><!-- /slot 3 -->
 
-                    <!-- Card 4 -->
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden transition-all duration-500" data-card="3"
-                         style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
+                    <!-- Slot 4 -->
+                    <div class="approach-card-slot" style="min-height: 85vh;">
+                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="3"
+                         style="position: sticky; top: 120px; z-index: 40; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
                         <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #34d399;"></div>
                         <div class="relative z-10">
                             <div class="flex items-center justify-between mb-7">
@@ -907,10 +915,12 @@
                             </div>
                         </div>
                     </div>
+                    </div><!-- /slot 4 -->
 
-                    <!-- Card 5 -->
-                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden transition-all duration-500" data-card="4"
-                         style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
+                    <!-- Slot 5 -->
+                    <div class="approach-card-slot" style="min-height: 85vh;">
+                    <div class="approach-card rounded-[20px] p-8 md:p-10 border relative overflow-hidden" data-card="4"
+                         style="position: sticky; top: 120px; z-index: 50; transition: transform 0.5s ease, opacity 0.5s ease; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07);">
                         <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none" style="background: #f87171;"></div>
                         <div class="relative z-10">
                             <div class="flex items-center justify-between mb-7">
@@ -944,6 +954,7 @@
                             </div>
                         </div>
                     </div>
+                    </div><!-- /slot 5 -->
 
                 </div>
                 <!-- end cards stack -->
@@ -1814,61 +1825,69 @@
         }
     }, { passive: true });
 
-    // ── Section 3: Our Approach — Scroll-based card highlighting ──
-    const approachCards   = document.querySelectorAll('.approach-card');
+    // ── Section 3: Our Approach — Stacking Card Scroll Effect ──
+    const approachCards    = document.querySelectorAll('.approach-card');
+    const approachSlots    = document.querySelectorAll('.approach-card-slot');
     const approachNavItems = document.querySelectorAll('.approach-nav-item');
     const approachProgressBar = document.getElementById('approach-progress-bar');
 
-    const accentColors = {
-        0: { border: 'rgba(197,235,217,0.35)', bg: 'rgba(197,235,217,0.04)', glow: '#c5ebd9' },
-        1: { border: 'rgba(129,140,248,0.35)', bg: 'rgba(129,140,248,0.04)', glow: '#818cf8' },
-        2: { border: 'rgba(245,158,11,0.35)',  bg: 'rgba(245,158,11,0.04)',  glow: '#f59e0b' },
-        3: { border: 'rgba(52,211,153,0.35)',  bg: 'rgba(52,211,153,0.04)',  glow: '#34d399' },
-        4: { border: 'rgba(248,113,113,0.35)', bg: 'rgba(248,113,113,0.04)', glow: '#f87171' }
-    };
+    const accentColors = [
+        { border: 'rgba(197,235,217,0.4)', glow: '#c5ebd918' },
+        { border: 'rgba(129,140,248,0.4)', glow: '#818cf818' },
+        { border: 'rgba(245,158,11,0.4)',  glow: '#f59e0b18' },
+        { border: 'rgba(52,211,153,0.4)',  glow: '#34d39918' },
+        { border: 'rgba(248,113,113,0.4)', glow: '#f8717118' }
+    ];
 
-    let lastApproachActive = -1;
+    // Scale values for cards buried under active card
+    const buriedScales = [1, 0.97, 0.94, 0.91, 0.88];
 
-    function updateApproachCards() {
+    function updateStackingCards() {
         if (!approachCards.length) return;
 
-        // Find which card's top is nearest the 40% mark of viewport
+        // Find which slot's card is currently the "top" (most recently scrolled into)
+        // A card is "active" (top of stack) when its slot's top <= viewport center
         let activeIdx = 0;
-        let minDist = Infinity;
-        const targetY = window.innerHeight * 0.4;
+        const triggerY = window.innerHeight * 0.5;
 
-        approachCards.forEach((card, i) => {
-            const rect = card.getBoundingClientRect();
-            const mid  = rect.top + rect.height * 0.5;
-            const dist = Math.abs(mid - targetY);
-            if (dist < minDist) { minDist = dist; activeIdx = i; }
+        approachSlots.forEach((slot, i) => {
+            const rect = slot.getBoundingClientRect();
+            if (rect.top <= triggerY) activeIdx = i;
         });
 
-        if (activeIdx === lastApproachActive) return;
-        lastApproachActive = activeIdx;
-
-        // Style each card: active = bright border + slight glow; others = dim
+        // Apply stacking transforms to all cards
         approachCards.forEach((card, i) => {
-            const colors = accentColors[i];
-            if (i === activeIdx) {
-                card.style.borderColor    = colors.border;
-                card.style.background     = colors.bg;
-                card.style.transform      = 'scale(1.01)';
-                card.style.boxShadow      = `0 0 40px 0 ${colors.glow}18`;
+            const buriedDepth = activeIdx - i; // how many cards deep is this card?
+
+            if (i > activeIdx) {
+                // Cards below: not yet scrolled to — normal state
+                card.style.transform   = 'scale(1) translateY(0)';
+                card.style.opacity     = '1';
+                card.style.borderColor = 'rgba(255,255,255,0.07)';
+                card.style.boxShadow   = 'none';
+            } else if (i === activeIdx) {
+                // Active top card: full size, glowing
+                card.style.transform   = 'scale(1) translateY(0)';
+                card.style.opacity     = '1';
+                card.style.borderColor = accentColors[i].border;
+                card.style.boxShadow   = `0 0 60px 0 ${accentColors[i].glow}`;
             } else {
-                card.style.borderColor    = 'rgba(255,255,255,0.07)';
-                card.style.background     = 'rgba(255,255,255,0.03)';
-                card.style.transform      = 'scale(1)';
-                card.style.boxShadow      = 'none';
+                // Buried cards: scale down progressively, slight fade
+                const scale   = Math.max(0.85, 1 - buriedDepth * 0.03);
+                const opacity = Math.max(0.35, 1 - buriedDepth * 0.18);
+                card.style.transform   = `scale(${scale}) translateY(${buriedDepth * -6}px)`;
+                card.style.opacity     = String(opacity);
+                card.style.borderColor = 'rgba(255,255,255,0.05)';
+                card.style.boxShadow   = 'none';
             }
         });
 
-        // Update left nav highlights
+        // Update left nav
         approachNavItems.forEach((item, i) => {
             if (i === activeIdx) {
                 item.classList.add('active');
-                item.style.background   = 'rgba(255,255,255,0.04)';
-                item.style.borderColor  = 'rgba(197,235,217,0.2)';
+                item.style.background  = 'rgba(255,255,255,0.05)';
+                item.style.borderColor = 'rgba(197,235,217,0.25)';
             } else {
                 item.classList.remove('active');
                 item.style.background  = 'transparent';
@@ -1878,15 +1897,14 @@
 
         // Update progress bar
         if (approachProgressBar) {
-            const pct = ((activeIdx + 1) / approachCards.length) * 100;
-            approachProgressBar.style.width = pct + '%';
+            approachProgressBar.style.width = ((activeIdx + 1) / approachCards.length * 100) + '%';
         }
     }
 
     if (approachCards.length) {
-        window.addEventListener('scroll', updateApproachCards, { passive: true });
-        window.addEventListener('resize', updateApproachCards);
-        updateApproachCards();
+        window.addEventListener('scroll', updateStackingCards, { passive: true });
+        window.addEventListener('resize', updateStackingCards);
+        updateStackingCards();
     }
 
     // FAQ accordion
