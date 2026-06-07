@@ -768,8 +768,8 @@
                         <!-- CARD 1 green — initially fully visible -->
                         <div class="approach-card" data-card="0"
                              style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
-                                    border:1px solid rgba(197,235,217,0.4);background:rgba(197,235,217,0.03);
-                                    box-shadow:0 0 60px 0 rgba(197,235,217,0.08);
+                                    border:2px solid rgba(197,235,217,0.55);background:#0c1e15;
+                                    box-shadow:0 8px 40px 0 rgba(197,235,217,0.12);
                                     z-index:50;opacity:1;transform:scale(1) translateY(0);
                                     transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
                             <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#c5ebd9;pointer-events:none;"></div>
@@ -795,7 +795,7 @@
                         <!-- CARD 2 purple — hidden below, slides up -->
                         <div class="approach-card" data-card="1"
                              style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
-                                    border:1px solid rgba(129,140,248,0.1);background:rgba(255,255,255,0.02);
+                                    border:2px solid rgba(129,140,248,0.5);background:#0e0e1e;
                                     z-index:40;opacity:0;transform:translateY(60px) scale(0.97);
                                     transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
                             <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#818cf8;pointer-events:none;"></div>
@@ -821,7 +821,7 @@
                         <!-- CARD 3 amber -->
                         <div class="approach-card" data-card="2"
                              style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
-                                    border:1px solid rgba(245,158,11,0.1);background:rgba(255,255,255,0.02);
+                                    border:2px solid rgba(245,158,11,0.5);background:#1a1400;
                                     z-index:30;opacity:0;transform:translateY(60px) scale(0.97);
                                     transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
                             <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#f59e0b;pointer-events:none;"></div>
@@ -847,7 +847,7 @@
                         <!-- CARD 4 teal -->
                         <div class="approach-card" data-card="3"
                              style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
-                                    border:1px solid rgba(52,211,153,0.1);background:rgba(255,255,255,0.02);
+                                    border:2px solid rgba(52,211,153,0.5);background:#091a12;
                                     z-index:20;opacity:0;transform:translateY(60px) scale(0.97);
                                     transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
                             <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#34d399;pointer-events:none;"></div>
@@ -873,7 +873,7 @@
                         <!-- CARD 5 red -->
                         <div class="approach-card" data-card="4"
                              style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
-                                    border:1px solid rgba(248,113,113,0.1);background:rgba(255,255,255,0.02);
+                                    border:2px solid rgba(248,113,113,0.5);background:#1a0909;
                                     z-index:10;opacity:0;transform:translateY(60px) scale(0.97);
                                     transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
                             <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#f87171;pointer-events:none;"></div>
@@ -1788,11 +1788,11 @@
 
     const N = approachCards.length;
     const stackAccents = [
-        { border:'rgba(197,235,217,0.45)', glow:'rgba(197,235,217,0.12)' },
-        { border:'rgba(129,140,248,0.45)', glow:'rgba(129,140,248,0.12)' },
-        { border:'rgba(245,158,11,0.45)',  glow:'rgba(245,158,11,0.12)'  },
-        { border:'rgba(52,211,153,0.45)',  glow:'rgba(52,211,153,0.12)'  },
-        { border:'rgba(248,113,113,0.45)', glow:'rgba(248,113,113,0.12)' }
+        { border:'rgba(197,235,217,0.8)', glow:'rgba(197,235,217,0.18)' },
+        { border:'rgba(129,140,248,0.8)', glow:'rgba(129,140,248,0.18)' },
+        { border:'rgba(245,158,11,0.8)',  glow:'rgba(245,158,11,0.18)'  },
+        { border:'rgba(52,211,153,0.8)',  glow:'rgba(52,211,153,0.18)'  },
+        { border:'rgba(248,113,113,0.8)', glow:'rgba(248,113,113,0.18)' }
     ];
 
     function getApproachProgress() {
