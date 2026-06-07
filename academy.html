@@ -701,77 +701,101 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-         SECTION 3: OUR APPROACH (Sticky Scrollytelling)
+         SECTION 3: OUR APPROACH (Sticky Scrollytelling - Dark Rework)
     ══════════════════════════════════════════ -->
-    <section id="our-approach" class="bg-white relative overflow-hidden py-24">
-            <!-- Premium Dynamic Scrollytelling Rework -->
-        <div class="max-w-[1280px] mx-auto px-6 md:px-16 pb-32">
-            <!-- Scroll trigger markers to define the scroll height zones -->
-            <div class="flex flex-col lg:flex-row gap-16 items-start relative min-h-[260vh]">
+    <section id="our-approach" class="relative overflow-hidden py-28" style="background: #0A0A0A; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <!-- Subtle grid overlay -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-start relative min-h-[300vh]">
                 
-                <!-- LEFT SIDE: Pinned Content Panel -->
-                <div class="w-full lg:w-[45%] lg:sticky lg:top-[30vh] z-10">
-                    <div class="space-y-6">
-                        <div id="approach-active-label" class="section-badge w-fit transition-all duration-300">OUR APPROACH</div>
-                        <h3 id="approach-active-title" class="font-heading text-3xl md:text-5xl font-extrabold text-[#14362a] leading-tight transition-all duration-300">
-                            Learn How Businesses Actually Work
-                        </h3>
-                        <p id="approach-active-desc" class="font-body text-[#14362a]/60 text-lg leading-relaxed transition-all duration-300">
-                            We believe meaningful learning happens when students understand real business environments.
-                        </p>
-                        <p class="font-heading text-sm font-bold text-[#14362a] uppercase tracking-wider">
-                            Our students gain exposure to:
-                        </p>
-
-                        <!-- Dot indicators linked to scroll progress -->
-                        <div class="flex gap-2.5 pt-4">
-                            <span class="approach-dot w-8 h-1.5 rounded-full bg-[#14362a] transition-all duration-400" data-index="0"></span>
-                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-[#14362a]/20 transition-all duration-400" data-index="1"></span>
-                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-[#14362a]/20 transition-all duration-400" data-index="2"></span>
-                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-[#14362a]/20 transition-all duration-400" data-index="3"></span>
-                            <span class="approach-dot w-2.5 h-1.5 rounded-full bg-[#14362a]/20 transition-all duration-400" data-index="4"></span>
+                <!-- LEFT SIDE (40%): Sticky Content Panel -->
+                <div class="w-full lg:w-[40%] lg:sticky lg:top-[120px] z-10 py-6">
+                    <div class="space-y-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#c5ebd9]"></span>
+                            <span class="font-body text-xs font-bold text-white/70 uppercase tracking-widest">OUR APPROACH</span>
+                        </div>
+                        
+                        <h2 class="font-heading text-4xl md:text-5xl lg:text-[64px] font-extrabold text-white leading-tight tracking-tight">
+                            Learn How Real Businesses Operate
+                        </h2>
+                        
+                        <div class="space-y-4 font-body text-white/60 text-lg leading-relaxed">
+                            <p>
+                                We bridge the gap between classroom learning and industry expectations by exposing students to real business environments, client interactions, workflows, and decision-making processes.
+                            </p>
+                            <p>
+                                Gain practical insights that help you become job-ready, build confidence, and understand how successful companies deliver results.
+                            </p>
                         </div>
 
-                        <a href="index.html#cta-section" class="inline-flex items-center gap-2 mt-6 px-7 py-3.5 bg-[#14362a] text-white font-heading font-bold text-sm rounded-2xl hover:scale-105 hover:shadow-xl transition-all shadow-lg">
-                            Book Free Demo
-                            <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </a>
+                        <!-- Progress Indicator Index Stack -->
+                        <div class="space-y-3 pt-6 border-t border-white/5" id="approach-progress-indicators">
+                            <div class="progress-indicator-item flex items-center gap-4 py-2 border-l-2 border-white/10 pl-4 transition-all duration-300" data-idx="0">
+                                <span class="font-mono text-sm text-white/30">01</span>
+                                <span class="font-heading text-sm font-bold text-white/40 transition-colors duration-300">Client Discussions</span>
+                            </div>
+                            <div class="progress-indicator-item flex items-center gap-4 py-2 border-l-2 border-white/10 pl-4 transition-all duration-300" data-idx="1">
+                                <span class="font-mono text-sm text-white/30">02</span>
+                                <span class="font-heading text-sm font-bold text-white/40 transition-colors duration-300">Industry Workflows</span>
+                            </div>
+                            <div class="progress-indicator-item flex items-center gap-4 py-2 border-l-2 border-white/10 pl-4 transition-all duration-300" data-idx="2">
+                                <span class="font-mono text-sm text-white/30">03</span>
+                                <span class="font-heading text-sm font-bold text-white/40 transition-colors duration-300">Strategic Planning</span>
+                            </div>
+                            <div class="progress-indicator-item flex items-center gap-4 py-2 border-l-2 border-white/10 pl-4 transition-all duration-300" data-idx="3">
+                                <span class="font-mono text-sm text-white/30">04</span>
+                                <span class="font-heading text-sm font-bold text-white/40 transition-colors duration-300">Professional Communication</span>
+                            </div>
+                            <div class="progress-indicator-item flex items-center gap-4 py-2 border-l-2 border-white/10 pl-4 transition-all duration-300" data-idx="4">
+                                <span class="font-mono text-sm text-white/30">05</span>
+                                <span class="font-heading text-sm font-bold text-white/40 transition-colors duration-300">Business Problem Solving</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- RIGHT SIDE: Experience Card (Sticky) -->
-                <div class="w-full lg:w-[50%] lg:sticky lg:top-[25vh] z-10 flex flex-col items-center justify-center">
-                    <div id="approach-experience-card" class="light-glass-card rounded-3xl p-8 md:p-10 w-full transition-all duration-500 ease-out shadow-xl border border-[#14362a]/10 relative overflow-hidden" style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px);">
-                        <!-- Side accent line -->
-                        <div class="absolute top-0 left-0 w-1.5 h-full bg-[#366758] rounded-l-3xl"></div>
+                <!-- RIGHT SIDE (60%): Animated Experience Card (Sticky) -->
+                <div class="w-full lg:w-[60%] lg:sticky lg:top-[150px] z-10 flex flex-col items-center lg:items-end justify-center min-h-[70vh]">
+                    <div id="approach-experience-card" class="rounded-[24px] p-8 md:p-12 transition-all duration-500 ease-out border relative overflow-hidden" 
+                         style="width: 100%; max-width: 650px; min-height: 500px; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
                         
-                        <div class="flex items-start gap-6">
-                            <!-- Icon Container -->
-                            <div id="approach-card-icon-container" class="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-all duration-300" style="background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15);">
-                                <span id="approach-card-icon" class="material-symbols-outlined text-blue-600 text-3xl transition-all duration-300">forum</span>
-                            </div>
-                            
-                            <div class="flex-1 space-y-4">
-                                <!-- Card Header -->
-                                <div class="flex items-center justify-between">
-                                    <span id="approach-card-title" class="font-heading text-xs font-bold uppercase tracking-widest text-[#366758]">Client Discussions</span>
-                                    <span id="approach-card-number" class="font-mono text-3xl font-black text-[#14362a]/15">01</span>
+                        <!-- Premium gradient blur blob -->
+                        <div class="absolute -top-12 -right-12 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none" style="background: radial-gradient(circle, rgba(197,235,217,0.3) 0%, transparent 70%);"></div>
+                        
+                        <div class="flex flex-col h-full justify-between space-y-8 relative z-10">
+                            <!-- Card Top row: icon + serial -->
+                            <div class="flex items-center justify-between">
+                                <div id="approach-card-icon-container" class="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 shrink-0">
+                                    <span id="approach-card-icon" class="text-3xl filter drop-shadow-md">💬</span>
                                 </div>
-                                
-                                <!-- Card Body Text -->
-                                <p id="approach-card-text" class="font-body text-[#14362a]/80 text-base leading-relaxed">
+                                <span id="approach-card-number" class="font-mono text-5xl font-black text-white/10 tracking-tight">01</span>
+                            </div>
+
+                            <!-- Card Body Title & Text -->
+                            <div class="space-y-4">
+                                <span id="approach-card-tag" class="text-xs font-black uppercase tracking-widest text-[#c5ebd9]">Client Discussions</span>
+                                <h3 id="approach-card-title" class="font-heading text-3xl font-extrabold text-white leading-tight">
+                                    Client Discussions
+                                </h3>
+                                <p id="approach-card-text" class="font-body text-white/70 text-lg leading-relaxed">
                                     Understand project requirements and business goals by observing real client briefings from day one.
                                 </p>
-                                
-                                <!-- Card Details list -->
-                                <div class="pt-4 border-t border-[#14362a]/5 space-y-2.5">
-                                    <div class="flex items-center gap-3">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-[#366758]"></span>
-                                        <p id="approach-detail-1" class="font-heading text-sm font-bold text-[#14362a]/95">How to ask the right questions</p>
+                            </div>
+
+                            <!-- Outcomes chips list -->
+                            <div class="space-y-4">
+                                <p class="font-heading text-xs font-black uppercase tracking-wider text-white/40">Key Learning Outcomes</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="approach-outcomes-container">
+                                    <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5">
+                                        <span class="text-[#c5ebd9] text-sm shrink-0">✓</span>
+                                        <p class="font-heading text-sm font-bold text-white/90">Requirement Gathering</p>
                                     </div>
-                                    <div class="flex items-center gap-3">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-[#366758]"></span>
-                                        <p id="approach-detail-2" class="font-heading text-sm font-bold text-[#14362a]/95">Client communication confidence</p>
+                                    <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5">
+                                        <span class="text-[#c5ebd9] text-sm shrink-0">✓</span>
+                                        <p class="font-heading text-sm font-bold text-white/90">Business Communication</p>
                                     </div>
                                 </div>
                             </div>
@@ -789,6 +813,25 @@
                 </div>
 
             </div>
+
+            <!-- Conversion-Focused Bottom CTA (Appears below the final scroll triggers zone) -->
+            <div class="mt-32 border-t border-white/10 pt-20 text-center reveal">
+                <h3 class="font-heading text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight tracking-tight">
+                    Ready to Experience Real Industry Exposure?
+                </h3>
+                <p class="font-body text-white/60 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Work alongside experienced professionals, participate in client projects, and gain practical business knowledge that strengthens your resume and career opportunities.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="service.html" class="px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-heading font-extrabold text-base rounded-2xl hover:scale-105 hover:shadow-xl hover:shadow-[#c5ebd9]/10 transition-all w-full sm:w-auto">
+                        Explore Programs
+                    </a>
+                    <a href="index.html#cta-section" class="px-8 py-4 bg-transparent border border-white/20 text-white font-heading font-extrabold text-base rounded-2xl hover:bg-white/5 transition-all w-full sm:w-auto">
+                        Book Free Career Consultation
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1648,75 +1691,44 @@
     const cardNumber   = document.getElementById('approach-card-number');
     const cardTitle    = document.getElementById('approach-card-title');
     const cardText     = document.getElementById('approach-card-text');
-    const cardDetail1  = document.getElementById('approach-detail-1');
-    const cardDetail2  = document.getElementById('approach-detail-2');
+    const outcomesContainer = document.getElementById('approach-outcomes-container');
 
     // Approach Card Content Data Array
     const approachData = [
         {
             num: "01",
             label: "Client Discussions",
-            title: "Understand project requirements and business goals",
-            desc: "You'll learn how clients communicate their vision, what questions professionals ask, and how requirements get translated into actual deliverables.",
-            cardText: "Understand project requirements and business goals by observing real client briefings from day one.",
-            icon: "forum",
-            iconBg: "rgba(59,130,246,0.08)",
-            iconBorder: "1px solid rgba(59,130,246,0.2)",
-            iconColor: "text-blue-600",
-            det1: "How to ask the right questions",
-            det2: "Client communication confidence"
+            desc: "Understand how businesses gather requirements, identify goals, and communicate expectations before starting projects.",
+            icon: "💬",
+            outcomes: ["Requirement Gathering", "Business Communication", "Client Relationship Building", "Project Understanding"]
         },
         {
             num: "02",
             label: "Industry Workflows",
-            title: "Learn how teams collaborate and deliver results",
-            desc: "Experience real Scrum cycles, sprint reviews, pull requests, and cross-team communication — the kind of workflow that every employer expects.",
-            cardText: "Learn how teams collaborate using Git, Jira, Slack, and Figma in an actual agency environment.",
-            icon: "account_tree",
-            iconBg: "rgba(168,85,247,0.08)",
-            iconBorder: "1px solid rgba(168,85,247,0.2)",
-            iconColor: "text-purple-600",
-            det1: "Git branching & standups",
-            det2: "Figma design handoffs"
+            desc: "Learn how departments collaborate, manage tasks, and execute projects using professional processes.",
+            icon: "⚙️",
+            outcomes: ["Team Collaboration", "Agile Workflows", "Project Coordination", "Task Management"]
         },
         {
             num: "03",
             label: "Strategic Planning",
-            title: "Observe decision-making and execution processes",
-            desc: "Watch how senior professionals plan campaigns, allocate budgets, and make strategic calls — skills that can't be learned from textbooks alone.",
-            cardText: "Observe how campaigns and projects are scoped, estimated, prioritized, and executed from kickoff to delivery.",
-            icon: "analytics",
-            iconBg: "rgba(251,146,60,0.08)",
-            iconBorder: "1px solid rgba(251,146,60,0.2)",
-            iconColor: "text-orange-600",
-            det1: "Scoping & estimations",
-            det2: "Strategic business thinking"
+            desc: "Observe how organizations make business decisions, allocate resources, and create execution strategies.",
+            icon: "📊",
+            outcomes: ["Business Thinking", "Planning Frameworks", "Goal Setting", "Execution Strategy"]
         },
         {
             num: "04",
             label: "Professional Communication",
-            title: "Develop workplace collaboration skills",
-            desc: "Practice writing professional emails, presenting work to seniors, and communicating progress — the soft skills that determine career growth.",
-            cardText: "Learn to present work confidently, respond to feedback professionally, and communicate project status clearly.",
-            icon: "chat_bubble",
-            iconBg: "rgba(34,197,94,0.08)",
-            iconBorder: "1px solid rgba(34,197,94,0.2)",
-            iconColor: "text-green-600",
-            det1: "Client email etiquette",
-            det2: "Work reports & presentations"
+            desc: "Build workplace communication skills by observing and participating in professional interactions.",
+            icon: "🤝",
+            outcomes: ["Team Communication", "Client Interaction", "Presentation Skills", "Workplace Etiquette"]
         },
         {
             num: "05",
             label: "Business Problem Solving",
-            title: "Understand how companies tackle real challenges",
-            desc: "See how businesses identify problems, evaluate options, and choose solutions — developing your analytical thinking alongside technical skills.",
-            cardText: "Understand how companies frame challenges, develop strategies, and measure outcomes in real business scenarios.",
-            icon: "lightbulb",
-            iconBg: "rgba(20,54,42,0.08)",
-            iconBorder: "1px solid rgba(20,54,42,0.15)",
-            iconColor: "text-[#14362a]",
-            det1: "Root cause analysis",
-            det2: "Analytical mindset"
+            desc: "Understand how companies identify challenges, evaluate solutions, and implement strategies to achieve business objectives.",
+            icon: "🚀",
+            outcomes: ["Critical Thinking", "Analytical Skills", "Decision Making", "Solution Development"]
         }
     ];
 
@@ -1731,7 +1743,6 @@
 
         approachTriggers.forEach((trigger, idx) => {
             const rect = trigger.getBoundingClientRect();
-            // Calculate how close the trigger boundary is to the target detection line
             const triggerMiddle = rect.top + (rect.height / 2);
             const dist = Math.abs(triggerMiddle - targetLine);
             if (dist < minDistance) {
@@ -1744,33 +1755,45 @@
             lastActiveIdx = activeIdx;
             const data = approachData[activeIdx];
 
-            // Animate Right Card inner block elements Out
-            cardEl.style.opacity = '0.7';
-            cardEl.style.transform = 'translateY(8px)';
+            // Animate Right Card inner block elements Out (Previous Card state)
+            cardEl.style.opacity = '0.3';
+            cardEl.style.transform = 'scale(0.9) translateY(12px)';
 
             setTimeout(() => {
                 // Set Right Experience Card Content
                 cardNumber.textContent = data.num;
                 cardTitle.textContent  = data.label;
-                cardText.textContent   = data.cardText;
-                cardDetail1.textContent = data.det1;
-                cardDetail2.textContent = data.det2;
+                cardText.textContent   = data.desc;
+                cardIcon.textContent   = data.icon;
                 
-                // Morph Icon
-                cardIcon.textContent = data.icon;
-                cardIcon.className = `material-symbols-outlined text-3xl transition-all duration-300 ${data.iconColor}`;
-                cardIconContainer.style.background = data.iconBg;
-                cardIconContainer.style.border = data.iconBorder;
+                // Clear and rebuild key learning outcomes
+                outcomesContainer.innerHTML = '';
+                data.outcomes.forEach(outcome => {
+                    const block = document.createElement('div');
+                    block.className = 'flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5';
+                    block.innerHTML = `
+                        <span class="text-[#c5ebd9] text-sm shrink-0">✓</span>
+                        <p class="font-heading text-sm font-bold text-white/90">${outcome}</p>
+                    `;
+                    outcomesContainer.appendChild(block);
+                });
 
-                // Animate Right Card In
+                // Animate Right Card In (Current Card active state)
                 cardEl.style.opacity = '1';
-                cardEl.style.transform = 'translateY(0)';
-            }, 200);
+                cardEl.style.transform = 'scale(1) translateY(0)';
+            }, 180);
 
-            // Update Progress Dots
-            approachDots.forEach((dot, i) => {
-                dot.style.width = i === activeIdx ? '2rem' : '0.625rem';
-                dot.style.background = i === activeIdx ? '#14362a' : 'rgba(20, 54, 42, 0.15)';
+            // Update Progress Indicator Menu Items highlights
+            const items = document.querySelectorAll('.progress-indicator-item');
+            items.forEach((item, i) => {
+                const title = item.querySelector('span:nth-child(2)');
+                if (i === activeIdx) {
+                    item.style.borderColor = '#c5ebd9';
+                    if (title) title.className = 'font-heading text-sm font-bold text-[#c5ebd9] transition-colors duration-300';
+                } else {
+                    item.style.borderColor = 'rgba(255,255,255,0.1)';
+                    if (title) title.className = 'font-heading text-sm font-bold text-white/40 transition-colors duration-300';
+                }
             });
         }
     }
