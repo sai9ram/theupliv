@@ -366,8 +366,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center 20%;
             transition: transform 0.6s ease;
+        }
+        .founder-card-photo img.founder-photo-ajay {
+            object-position: center 15%;
         }
         .founder-card:hover .founder-card-photo img {
             transform: scale(1.05);
@@ -804,8 +807,7 @@
                         <img
                             src="Desetti Sairam.jpg"
                             alt="Desetti Sairam — Founder &amp; Managing Director, UPLIV"
-                            loading="lazy"
-                            onerror="this.onerror=null; this.src='Hero Section.jpg';"
+                            loading="eager"
                         />
                     </div>
                     <div class="founder-card-header">
@@ -850,8 +852,8 @@
                         <img
                             src="Ramisetty Ajay.jpg"
                             alt="Ramisetty Ajay — Co-Founder &amp; Growth Strategist, UPLIV"
-                            loading="lazy"
-                            onerror="this.onerror=null; this.src='Performance_Marketing_Image._202606012059.jpeg';"
+                            class="founder-photo-ajay"
+                            loading="eager"
                         />
                     </div>
                     <div class="founder-card-header">
