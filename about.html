@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About UPLIV | Digital Solutions for Real Business Growth</title>
+    <meta name="description" content="UPLIV helps businesses grow through Website Development, Digital Marketing, AI Automation, Branding, and Business Growth Strategies. Serving startups, enterprises, and institutions across Andhra Pradesh."/>
+    <link rel="icon" type="image/png" href="Logo.png"/>
+    <link rel="canonical" href="https://www.theupliv.com/about"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-glass {
+            background: rgba(20, 54, 42, 0.45);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes gradient-x {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-delayed { animation: float-delayed 7s ease-in-out infinite 1.5s; }
+        .animate-float-slow { animation: float 8s ease-in-out infinite 0.8s; }
+        .animate-fade-up { animation: fadeInUp 0.7s ease forwards; }
+        .hero-bg {
+            background: linear-gradient(135deg, #14362a 0%, #060d09 60%, #0a1a11 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #c5ebd9, #6ee7b7, #34d399, #c5ebd9);
+            background-size: 300% 300%;
+            animation: gradient-x 4s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(197, 235, 217, 0.08);
+            border: 1px solid rgba(197, 235, 217, 0.2);
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #c5ebd9;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .experience-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(20, 54, 42, 0.1);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(197, 235, 217, 0.3);
+        }
+        #site-footer {
+            background: #080f0c;
+            position: relative;
+            overflow: hidden;
+        }
+        #site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 235, 217, 0.4), transparent);
+        }
+        .footer-col-title {
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: rgba(197, 235, 217, 0.4);
+            margin-bottom: 1.25rem;
+        }
+        .footer-link {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            transition: color 0.2s, transform 0.2s;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        .footer-link:hover { color: #c5ebd9; transform: translateX(4px); }
+        .footer-social {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 235, 217, 0.15);
+            background: rgba(197, 235, 217, 0.05);
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.25s;
+        }
+        .footer-social:hover {
+            background: rgba(197, 235, 217, 0.12);
+            border-color: rgba(197, 235, 217, 0.4);
+            color: #c5ebd9;
+            transform: translateY(-3px);
+        }
+        .newsletter-input {
+            width: 100%;
+            background: rgba(197, 235, 217, 0.06);
+            border: 1px solid rgba(197, 235, 217, 0.15);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .newsletter-input::placeholder { color: rgba(255, 255, 255, 0.25); }
+        .newsletter-input:focus { border-color: rgba(197, 235, 217, 0.4); }
+        .newsletter-btn {
+            margin-top: 0.625rem;
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(197, 235, 217, 0.1);
+            border: 1px solid rgba(197, 235, 217, 0.25);
+            border-radius: 12px;
+            color: #c5ebd9;
+            font-weight: 700;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .newsletter-btn:hover {
+            background: rgba(197, 235, 217, 0.18);
+            border-color: rgba(197, 235, 217, 0.5);
+            transform: translateY(-2px);
+        }
+        .footer-copyright-bar {
+            border-top: 1px solid rgba(197, 235, 217, 0.06);
+            padding: 1.25rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#b9eeda",
+                        "secondary": "#366758",
+                        "primary": "#14362a",
+                        "primary-fixed": "#c5ebd9",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#414844",
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "margin-mobile": "24px",
+                    },
+                    fontFamily: {
+                        "heading": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center px-margin-mobile md:px-gutter pt-4">
+    <div class="nav-glass flex w-full max-w-5xl justify-between items-center h-20 px-5 md:px-8 rounded-2xl transition-all duration-300 ease-in-out">
+        <a href="index.html" class="flex items-center gap-3 text-on-primary shrink-0">
+            <img src="Logo.png" alt="UPLIV" class="h-14 w-auto object-contain max-h-full" loading="eager"
+                onerror="this.style.display='none'; const fb=this.parentElement.querySelector('.logo-fallback'); if (fb) fb.style.display='block';"/>
+            <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg" class="logo-fallback hidden h-14 w-auto max-h-full" role="img" aria-label="UPLIV logo">
+                <g fill="currentColor"><circle cx="20" cy="20" r="14"></circle></g>
+                <text x="44" y="25" fill="currentColor" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="22" font-weight="800">UPLIV</text>
+            </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="service.html">Services</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="projects.html">Projects</a>
+            <a class="font-body text-base font-medium text-[#c5ebd9] border-b border-[#c5ebd9]/40 transition-colors" href="about.html">About</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="index.html#blog">Blog</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="academy.html">Academy</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html#cta-section" class="hidden md:block px-6 py-2.5 bg-secondary-fixed text-primary font-body font-semibold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                Contact
+            </a>
+            <button class="md:hidden text-on-primary/90" id="mobile-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-primary/95 backdrop-blur-xl transition-all duration-300 md:hidden" id="mobile-menu">
+    <div class="flex justify-end pt-4">
+        <button class="text-on-primary" id="mobile-menu-close">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col gap-8 text-center text-2xl font-semibold">
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="service.html">Services</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="projects.html">Projects</a>
+        <a class="text-[#c5ebd9] py-2" href="about.html">About</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="index.html#blog">Blog</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="academy.html">Academy</a>
+    </div>
+    <div class="pb-8">
+        <a href="index.html#cta-section" class="block w-full py-4 text-center bg-secondary-fixed text-primary font-bold rounded-xl shadow-lg">
+            Book Free Consultation
+        </a>
+    </div>
+</div>
+
+<main>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1: HERO — Split Layout
+    ══════════════════════════════════════════ -->
+    <section class="hero-bg min-h-screen pt-36 pb-20 px-6 md:px-16 relative overflow-hidden flex flex-col justify-center">
+        <!-- Background glows -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#14362a]/45 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#366758]/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 bg-[#0a2019]/50 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+
+            <!-- LEFT: About UPLIV, Headline, Mission, CTA -->
+            <div class="space-y-8 text-white animate-fade-up">
+                <div class="section-badge">✦ About UPLIV</div>
+
+                <h1 class="font-heading text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight">
+                    Building Digital Solutions That Drive <span class="gradient-text">Real Business Growth</span>
+                </h1>
+
+                <div class="space-y-4">
+                    <p class="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
+                        UPLIV helps businesses grow through Website Development, Digital Marketing, AI Automation, Branding, and Business Growth Strategies.
+                    </p>
+                    <p class="font-body text-base text-white/65 leading-relaxed max-w-xl">
+                        We work closely with startups, local businesses, educational institutions, healthcare organizations, and enterprises to build scalable digital solutions that create measurable results.
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="index.html#cta-section" class="px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-body font-bold text-base rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-200 shadow-lg flex items-center justify-center gap-2 text-center">
+                        Book Free Consultation
+                        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+                    </a>
+                    <a href="service.html" class="px-8 py-4 bg-transparent border border-white/20 hover:border-white/40 text-white font-body font-bold text-base rounded-2xl hover:bg-white/5 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 text-center">
+                        Explore Our Services
+                        <span class="material-symbols-outlined text-xl">grid_view</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: Founders Image + Floating Experience Cards -->
+            <div class="relative lg:pl-6 flex items-center justify-center min-h-[420px] lg:min-h-[520px]">
+                <!-- Founders Image -->
+                <div class="relative w-full max-w-md mx-auto rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl aspect-[4/5]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#14362a]/50 to-transparent z-10 mix-blend-multiply pointer-events-none"></div>
+                    <img src="About us Section.png" alt="UPLIV Founders" class="w-full h-full object-cover"/>
+                </div>
+
+                <!-- Floating Experience Card 1 — Top Left -->
+                <div class="experience-card absolute -top-4 -left-2 sm:-left-8 lg:-left-10 p-4 sm:p-5 rounded-2xl z-20 animate-float hidden sm:flex items-center gap-3 sm:gap-4 max-w-[200px] sm:max-w-none">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-primary text-white rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                        <span class="material-symbols-outlined text-[26px] sm:text-[28px]">workspace_premium</span>
+                    </div>
+                    <div>
+                        <div class="text-primary font-heading font-extrabold text-xl sm:text-2xl leading-none">5+ Years</div>
+                        <div class="text-on-surface-variant font-body text-[10px] sm:text-xs font-semibold uppercase tracking-wider mt-1">Digital Experience</div>
+                    </div>
+                </div>
+
+                <!-- Floating Experience Card 2 — Bottom Right -->
+                <div class="experience-card absolute -bottom-6 -right-2 sm:-right-8 lg:-right-10 p-4 sm:p-5 rounded-2xl z-20 animate-float-delayed hidden sm:flex items-center gap-3 sm:gap-4">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#c5ebd9] text-primary rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                        <span class="material-symbols-outlined text-[26px] sm:text-[28px]">rocket_launch</span>
+                    </div>
+                    <div>
+                        <div class="text-primary font-heading font-extrabold text-xl sm:text-2xl leading-none">100+</div>
+                        <div class="text-on-surface-variant font-body text-[10px] sm:text-xs font-semibold uppercase tracking-wider mt-1">Projects Delivered</div>
+                    </div>
+                </div>
+
+                <!-- Floating Experience Card 3 — Top Right -->
+                <div class="experience-card absolute top-8 -right-2 sm:-right-6 p-4 rounded-2xl z-20 animate-float-slow hidden md:flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[22px]">groups</span>
+                    </div>
+                    <div>
+                        <div class="text-primary font-heading font-bold text-lg leading-none">50+</div>
+                        <div class="text-on-surface-variant font-body text-[10px] font-semibold uppercase tracking-wider mt-0.5">Happy Clients</div>
+                    </div>
+                </div>
+
+                <!-- Floating Experience Card 4 — Bottom Left -->
+                <div class="experience-card absolute bottom-16 -left-2 sm:-left-6 p-4 rounded-2xl z-20 hidden md:flex items-center gap-3" style="animation: float 9s ease-in-out infinite 2s;">
+                    <div class="w-10 h-10 bg-primary/10 text-primary rounded-lg flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[22px]">domain</span>
+                    </div>
+                    <div>
+                        <div class="text-primary font-heading font-bold text-lg leading-none">12+</div>
+                        <div class="text-on-surface-variant font-body text-[10px] font-semibold uppercase tracking-wider mt-0.5">Industries Served</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="site-footer">
+    <div style="position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(197,235,217,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:300px;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(20,54,42,0.25),transparent);z-index:0;pointer-events:none;"></div>
+
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" style="padding-top:5rem;padding-bottom:3rem;">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+                    <img src="Logo.png" alt="UPLIV" style="height:48px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+                    <div style="display:none;align-items:center;gap:0.5rem;">
+                        <div style="width:32px;height:32px;background:linear-gradient(135deg,#c5ebd9,#366758);border-radius:8px;"></div>
+                        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">UPLIV</span>
+                    </div>
+                </div>
+                <p style="font-size:0.875rem;color:rgba(255,255,255,0.4);line-height:1.7;max-width:280px;">
+                    Premier performance marketing &amp; web development agency serving Tirupati, Chittoor, and all of Andhra Pradesh.
+                </p>
+                <div style="display:flex;gap:0.625rem;margin-top:1.5rem;">
+                    <a href="#" class="footer-social" aria-label="Instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="footer-social" aria-label="LinkedIn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="footer-social" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Services</div>
+                <a href="service.html" class="footer-link">Web Development</a>
+                <a href="service.html" class="footer-link">Performance Marketing</a>
+                <a href="service.html" class="footer-link">SEO Services</a>
+                <a href="service.html" class="footer-link">Social Media Management</a>
+                <a href="service.html" class="footer-link">UI/UX Design</a>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Company</div>
+                <a href="about.html" class="footer-link">About Us</a>
+                <a href="projects.html" class="footer-link">Case Studies</a>
+                <a href="index.html#testimonials" class="footer-link">Testimonials</a>
+                <a href="index.html#faq" class="footer-link">FAQ</a>
+                <a href="academy.html" class="footer-link">Academy</a>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Stay in the loop</div>
+                <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:1rem;">Get weekly digital growth tips &amp; local business insights.</p>
+                <input type="email" placeholder="your@email.com" class="newsletter-input" id="footer-email-input"/>
+                <button class="newsletter-btn" onclick="(function(b,i){const v=i.value.trim();if(!v||!v.includes('@')){i.style.borderColor='rgba(239,68,68,0.5)';return;}b.textContent='✓ Subscribed!';b.style.background='rgba(34,197,94,0.15)';b.style.color='#4ade80';})(this,document.getElementById('footer-email-input'))">
+                    Subscribe →
+                </button>
+                <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem;">
+                    <a href="mailto:hello@upliv.in" class="footer-link" style="font-size:0.8rem;margin-bottom:0;">✉ hello@upliv.in</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright-bar">
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">
+                © 2026 <span style="color:rgba(197,235,217,0.5);font-weight:600;">UPliv IT Solutions LLP</span>. All Rights Reserved. Proudly serving Tirupati &amp; beyond.
+            </p>
+            <div style="display:flex;gap:1.5rem;">
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);">Privacy Policy</a>
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+    }
+
+    if (menuClose && mobileMenu) {
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+    }
+</script>
+</body>
+</html>
