@@ -355,52 +355,53 @@
         .founder-card-photo {
             position: relative;
             width: 100%;
-            height: 280px;
+            height: 300px;
             overflow: hidden;
             background: linear-gradient(135deg, #14362a, #366758);
+            flex-shrink: 0;
         }
         @media (min-width: 768px) {
-            .founder-card-photo { height: 320px; }
+            .founder-card-photo { height: 340px; }
         }
         .founder-card-photo img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 20%;
+            z-index: 0;
             transition: transform 0.6s ease;
         }
         .founder-card-photo img.founder-photo-ajay {
-            object-position: center 15%;
+            object-position: center 12%;
         }
         .founder-card:hover .founder-card-photo img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
         .founder-card-photo::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(6, 13, 9, 0.92) 0%, rgba(6, 13, 9, 0.35) 45%, transparent 100%);
+            z-index: 1;
+            background: linear-gradient(
+                to top,
+                rgba(6, 13, 9, 0.97) 0%,
+                rgba(6, 13, 9, 0.75) 28%,
+                rgba(6, 13, 9, 0.2) 55%,
+                transparent 100%
+            );
             pointer-events: none;
-        }
-        .founder-card-header {
-            position: relative;
-            margin-top: -4.5rem;
-            padding: 0 2rem 1.5rem;
-            z-index: 2;
-        }
-        .founder-card-photo--with-overlay {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
         }
         .founder-card-header--on-photo {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            margin-top: 0;
-            padding: 2rem 2rem 1.75rem;
-            z-index: 3;
+            z-index: 2;
+            padding: 2.5rem 2rem 1.5rem;
+            background: linear-gradient(to top, rgba(6, 13, 9, 0.9) 0%, rgba(6, 13, 9, 0.4) 60%, transparent 100%);
+            pointer-events: none;
         }
         .founder-name {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -817,9 +818,9 @@
 
                 <!-- Desetti Sairam -->
                 <article class="founder-card reveal">
-                    <div class="founder-card-photo founder-card-photo--with-overlay">
+                    <div class="founder-card-photo">
                         <img
-                            src="Desetti Sairam.jpg"
+                            src="Desetti%20Sairam.jpg"
                             alt="Desetti Sairam — Founder &amp; Managing Director, UPLIV"
                             loading="eager"
                         />
@@ -862,9 +863,9 @@
 
                 <!-- Ramisetty Ajay -->
                 <article class="founder-card reveal">
-                    <div class="founder-card-photo founder-card-photo--with-overlay">
+                    <div class="founder-card-photo">
                         <img
-                            src="Ramisetty Ajay.jpg"
+                            src="Ramisetty%20Ajay.jpg"
                             alt="Ramisetty Ajay — Co-Founder &amp; Growth Strategist, UPLIV"
                             class="founder-photo-ajay"
                             loading="eager"
