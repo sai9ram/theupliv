@@ -388,6 +388,20 @@
             padding: 0 2rem 1.5rem;
             z-index: 2;
         }
+        .founder-card-photo--with-overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .founder-card-header--on-photo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: 0;
+            padding: 2rem 2rem 1.75rem;
+            z-index: 3;
+        }
         .founder-name {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 1.5rem;
@@ -803,16 +817,16 @@
 
                 <!-- Desetti Sairam -->
                 <article class="founder-card reveal">
-                    <div class="founder-card-photo">
+                    <div class="founder-card-photo founder-card-photo--with-overlay">
                         <img
                             src="Desetti Sairam.jpg"
                             alt="Desetti Sairam — Founder &amp; Managing Director, UPLIV"
                             loading="eager"
                         />
-                    </div>
-                    <div class="founder-card-header">
-                        <h3 class="founder-name">Desetti Sairam</h3>
-                        <p class="founder-role">Founder &amp; Managing Director</p>
+                        <div class="founder-card-header founder-card-header--on-photo">
+                            <h3 class="founder-name">Desetti Sairam</h3>
+                            <p class="founder-role">Founder &amp; Managing Director</p>
+                        </div>
                     </div>
                     <div class="founder-card-body">
                         <div>
@@ -848,17 +862,17 @@
 
                 <!-- Ramisetty Ajay -->
                 <article class="founder-card reveal">
-                    <div class="founder-card-photo">
+                    <div class="founder-card-photo founder-card-photo--with-overlay">
                         <img
                             src="Ramisetty Ajay.jpg"
                             alt="Ramisetty Ajay — Co-Founder &amp; Growth Strategist, UPLIV"
                             class="founder-photo-ajay"
                             loading="eager"
                         />
-                    </div>
-                    <div class="founder-card-header">
-                        <h3 class="founder-name">Ramisetty Ajay</h3>
-                        <p class="founder-role">Co-Founder &amp; Growth Strategist</p>
+                        <div class="founder-card-header founder-card-header--on-photo">
+                            <h3 class="founder-name">Ramisetty Ajay</h3>
+                            <p class="founder-role">Co-Founder &amp; Growth Strategist</p>
+                        </div>
                     </div>
                     <div class="founder-card-body">
                         <div>
