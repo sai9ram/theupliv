@@ -678,6 +678,79 @@
             color: #14362a;
             font-weight: 700;
         }
+        /* ── INDUSTRIES WE SERVE ── */
+        .industries-bg {
+            background: #060d09;
+            position: relative;
+        }
+        .industries-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(197, 235, 217, 0.02) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .industry-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 235, 217, 0.08);
+            border-radius: 1.25rem;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+        }
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.25rem;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(110, 231, 183, 0.2), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .industry-card:hover::before {
+            opacity: 1;
+        }
+        .industry-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(110, 231, 183, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(110, 231, 183, 0.05);
+        }
+        .industry-icon {
+            font-size: 2.25rem;
+            color: #6ee7b7;
+            margin-bottom: 1rem;
+            transition: transform 0.4s ease;
+        }
+        .industry-card:hover .industry-icon {
+            transform: scale(1.15) rotate(3deg);
+        }
+        .industry-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        .industry-card:hover .industry-title {
+            color: #6ee7b7;
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -1344,6 +1417,93 @@
                         </p>
                     </div>
 
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 6: INDUSTRIES WE SERVE — Glassmorphic Cards
+    ══════════════════════════════════════════ -->
+    <section id="industries" class="industries-bg py-24 md:py-32 px-6 md:px-16 relative overflow-hidden">
+        <!-- Background glows -->
+        <div class="absolute -top-40 right-10 w-96 h-96 bg-[#366758]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 left-10 w-[500px] h-[500px] bg-[#c5ebd9]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20 reveal">
+                <div class="section-badge mb-6">✦ Industries</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                    Trusted Across <span class="gradient-text">Multiple Industries</span>
+                </h2>
+                <p class="font-body text-base md:text-lg text-white/60 mt-4 leading-relaxed">
+                    We bring specialized digital expertise and custom-tailored solutions to distinct sectors.
+                </p>
+            </div>
+
+            <!-- Industries Cards Grid (2 cols on mobile, 5 on desktop) -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+
+                <!-- 1. Healthcare -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">medical_services</span>
+                    <h3 class="industry-title">Healthcare</h3>
+                </div>
+
+                <!-- 2. Education -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">school</span>
+                    <h3 class="industry-title">Education</h3>
+                </div>
+
+                <!-- 3. Travel & Tourism -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">explore</span>
+                    <h3 class="industry-title">Travel &amp; Tourism</h3>
+                </div>
+
+                <!-- 4. Real Estate -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">real_estate_agent</span>
+                    <h3 class="industry-title">Real Estate</h3>
+                </div>
+
+                <!-- 5. Construction -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">construction</span>
+                    <h3 class="industry-title">Construction</h3>
+                </div>
+
+                <!-- 6. E-Commerce -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">shopping_bag</span>
+                    <h3 class="industry-title">E-Commerce</h3>
+                </div>
+
+                <!-- 7. Professional Services -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">badge</span>
+                    <h3 class="industry-title">Professional Services</h3>
+                </div>
+
+                <!-- 8. Insurance -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">shield</span>
+                    <h3 class="industry-title">Insurance</h3>
+                </div>
+
+                <!-- 9. Green Energy -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">eco</span>
+                    <h3 class="industry-title">Green Energy</h3>
+                </div>
+
+                <!-- 10. Transportation -->
+                <div class="industry-card reveal">
+                    <span class="material-symbols-outlined industry-icon">local_shipping</span>
+                    <h3 class="industry-title">Transportation</h3>
                 </div>
 
             </div>
