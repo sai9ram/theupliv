@@ -377,52 +377,41 @@
             border-color: rgba(197, 235, 217, 0.3);
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 50px rgba(197, 235, 217, 0.1);
         }
-        .founder-card-photo {
+        .founder-header-area {
             position: relative;
-            width: 100%;
-            height: 360px;
-            overflow: hidden;
-            background: #0a1a11;
-            flex-shrink: 0;
+            padding: 3rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(20, 54, 42, 0.4), transparent);
+            border-bottom: 1px solid rgba(197, 235, 217, 0.08);
         }
-        .founder-card-photo img {
-            position: absolute;
-            inset: 0;
+        .founder-photo-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #6ee7b7, #366758);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.5rem;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: visible;
+        }
+        .founder-card:hover .founder-photo-wrapper {
+            transform: scale(1.06) rotate(2deg);
+        }
+        .founder-photo-circle {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
-            object-position: center 20%;
-            z-index: 0;
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 3px solid #060d09;
+            transition: transform 0.5s ease;
         }
-        .founder-card-photo img.founder-photo-ajay {
-            object-position: center 12%;
-        }
-        .founder-card:hover .founder-card-photo img {
-            transform: scale(1.08);
-        }
-        .founder-card-photo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            background: linear-gradient(
-                to top,
-                rgba(6, 13, 9, 1) 0%,
-                rgba(6, 13, 9, 0.8) 35%,
-                rgba(6, 13, 9, 0.2) 65%,
-                transparent 100%
-            );
-            pointer-events: none;
-        }
-        .founder-card-header--on-photo {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 2;
-            padding: 3rem 2.5rem 1.5rem;
-            pointer-events: none;
+        .founder-card:hover .founder-photo-circle {
+            transform: scale(1.02);
         }
         .founder-name {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -441,7 +430,7 @@
             letter-spacing: 0.02em;
         }
         .founder-card-body {
-            padding: 2rem 2.5rem 2.5rem;
+            padding: 2.25rem 2.5rem 2.5rem;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -534,20 +523,18 @@
             color: rgba(255, 255, 255, 0.8);
             font-style: italic;
         }
-        .founder-socials-overlay {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+        .founder-socials-row {
             display: flex;
             gap: 0.75rem;
-            z-index: 10;
+            margin-top: 1rem;
+            justify-content: center;
         }
         .founder-social-btn {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(6, 13, 9, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(20, 54, 42, 0.4);
+            border: 1px solid rgba(197, 235, 217, 0.15);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
@@ -887,24 +874,24 @@
 
                 <!-- Desetti Sairam -->
                 <article class="founder-card reveal">
-                    <div class="founder-card-photo">
-                        <!-- Social overlay -->
-                        <div class="founder-socials-overlay">
+                    <div class="founder-header-area">
+                        <div class="founder-photo-wrapper">
+                            <img
+                                src="Desetti%20Sairam.jpg"
+                                alt="Desetti Sairam — Founder &amp; Managing Director, UPLIV"
+                                class="founder-photo-circle"
+                                loading="eager"
+                            />
+                        </div>
+                        <h3 class="founder-name">Desetti Sairam</h3>
+                        <p class="founder-role">Founder &amp; Managing Director</p>
+                        <div class="founder-socials-row">
                             <a href="https://linkedin.com/in/sairamdesetti" target="_blank" rel="noopener" class="founder-social-btn" aria-label="Sairam Desetti LinkedIn">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             </a>
                             <a href="mailto:hello@upliv.in" class="founder-social-btn" aria-label="Email Sairam Desetti">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </a>
-                        </div>
-                        <img
-                            src="Desetti%20Sairam.jpg"
-                            alt="Desetti Sairam — Founder &amp; Managing Director, UPLIV"
-                            loading="eager"
-                        />
-                        <div class="founder-card-header founder-card-header--on-photo">
-                            <h3 class="founder-name">Desetti Sairam</h3>
-                            <p class="founder-role">Founder &amp; Managing Director</p>
                         </div>
                     </div>
                     <div class="founder-card-body">
@@ -941,25 +928,24 @@
 
                 <!-- Ramisetty Ajay -->
                 <article class="founder-card reveal">
-                    <div class="founder-card-photo">
-                        <!-- Social overlay -->
-                        <div class="founder-socials-overlay">
+                    <div class="founder-header-area">
+                        <div class="founder-photo-wrapper">
+                            <img
+                                src="Ramisetty%20Ajay.jpg"
+                                alt="Ramisetty Ajay — Co-Founder &amp; Growth Strategist, UPLIV"
+                                class="founder-photo-circle"
+                                loading="eager"
+                            />
+                        </div>
+                        <h3 class="founder-name">Ramisetty Ajay</h3>
+                        <p class="founder-role">Co-Founder &amp; Growth Strategist</p>
+                        <div class="founder-socials-row">
                             <a href="https://linkedin.com/" target="_blank" rel="noopener" class="founder-social-btn" aria-label="Ramisetty Ajay LinkedIn">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             </a>
                             <a href="mailto:hello@upliv.in" class="founder-social-btn" aria-label="Email Ramisetty Ajay">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </a>
-                        </div>
-                        <img
-                            src="Ramisetty%20Ajay.jpg"
-                            alt="Ramisetty Ajay — Co-Founder &amp; Growth Strategist, UPLIV"
-                            class="founder-photo-ajay"
-                            loading="eager"
-                        />
-                        <div class="founder-card-header founder-card-header--on-photo">
-                            <h3 class="founder-name">Ramisetty Ajay</h3>
-                            <p class="founder-role">Co-Founder &amp; Growth Strategist</p>
                         </div>
                     </div>
                     <div class="founder-card-body">
