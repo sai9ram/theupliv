@@ -760,6 +760,15 @@
         .impact-bg {
             background: #060d09;
             position: relative;
+            border-radius: 2rem;
+            margin: 4rem 1.5rem;
+        }
+        @media (min-width: 1024px) {
+            .impact-bg {
+                border-radius: 3rem;
+                margin: 8rem auto;
+                max-width: calc(1280px - 4rem);
+            }
         }
         .impact-bg::before {
             content: '';
