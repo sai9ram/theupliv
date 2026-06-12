@@ -857,66 +857,74 @@
             color: #ffffff;
         }
 
-        /* ── VISION & MISSION ── */
+        /* ── OUR VISION & MISSION ── */
         .vision-bg {
-            background: linear-gradient(180deg, #060d09 0%, #030705 100%);
+            background: #ffffff;
             position: relative;
-            border-top: 1px solid rgba(197, 235, 217, 0.08);
         }
-        .vision-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(0, 255, 159, 0.01) 1px, transparent 1px);
-            background-size: 32px 32px;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .vision-content-card {
-            background: rgba(20, 54, 42, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(197, 235, 217, 0.08);
+        .vision-card {
+            background: linear-gradient(135deg, #14362a, #0b2019);
             border-radius: 2rem;
             padding: 3rem 2.5rem;
             position: relative;
-            z-index: 2;
-            height: 100%;
-        }
-        .mission-list {
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            justify-content: space-between;
+            color: #ffffff;
+            height: 100%;
+            border: 1px solid rgba(110, 231, 183, 0.12);
+            box-shadow: 0 20px 50px rgba(20, 54, 42, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .mission-item {
+        .vision-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 65px rgba(20, 54, 42, 0.25);
+            border-color: rgba(110, 231, 183, 0.25);
+        }
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(110, 231, 183, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .mission-list-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            transition: transform 0.3s ease;
+            gap: 1.25rem;
+            padding: 1.25rem;
+            background: #f8fafc;
+            border: 1px solid rgba(20, 54, 42, 0.05);
+            border-radius: 1.25rem;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .mission-item:hover {
-            transform: translateX(6px);
+        .mission-list-item:hover {
+            background: #ffffff;
+            border-color: rgba(20, 54, 42, 0.15);
+            box-shadow: 0 12px 30px rgba(20, 54, 42, 0.06);
+            transform: translateY(-2px);
         }
         .mission-icon-box {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: rgba(0, 255, 159, 0.08);
-            border: 1px solid rgba(0, 255, 159, 0.2);
+            background: rgba(20, 54, 42, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #00ff9f;
+            color: #366758;
             flex-shrink: 0;
-            margin-top: 2px;
-            box-shadow: 0 0 10px rgba(0, 255, 159, 0.1);
+            transition: all 0.3s ease;
         }
-        .mission-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 500;
+        .mission-list-item:hover .mission-icon-box {
+            background: #14362a;
+            color: #ffffff;
+            transform: scale(1.1);
         }
     </style>
     <script id="tailwind-config">
@@ -1707,68 +1715,99 @@
             </div>
         </div>
     <!-- ══════════════════════════════════════════
-         SECTION 8: OUR VISION — Full Width Premium Block
+         SECTION 8: OUR VISION & MISSION — Full Width Premium Block
     ══════════════════════════════════════════ -->
     <section id="vision-mission" class="vision-bg py-24 md:py-32 px-6 md:px-16 relative overflow-hidden">
         <!-- Background glows -->
-        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#366758]/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-[#c5ebd9]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#366758]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#c5ebd9]/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-[1280px] mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
                 
-                <!-- Left Card: Our Vision -->
-                <div class="vision-content-card flex flex-col justify-center reveal">
-                    <div class="section-badge mb-6" style="background: rgba(110, 231, 183, 0.06); border-color: rgba(110, 231, 183, 0.15); color: #6ee7b7; width: fit-content;">✦ Future Outlook</div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
-                        Our <span class="gradient-text">Vision</span>
-                    </h2>
-                    <p class="font-body text-lg md:text-xl text-white/90 leading-relaxed font-medium">
-                        To become a trusted digital growth partner for businesses while building a practical learning ecosystem that prepares future professionals for real-world careers.
-                    </p>
+                <!-- Left: Vision Card (Spans 5 cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between h-full reveal">
+                    <div class="vision-card">
+                        <div class="space-y-6">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-[#6ee7b7]">
+                                <span class="material-symbols-outlined text-3xl">visibility</span>
+                            </div>
+                            <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                                Our Vision
+                            </h2>
+                            <p class="font-body text-base md:text-lg text-white/80 leading-relaxed">
+                                To become a trusted digital growth partner for businesses while building a practical learning ecosystem that prepares future professionals for real-world careers.
+                            </p>
+                        </div>
+                        <div class="pt-8 border-t border-white/10 mt-8 flex items-center gap-3 text-xs text-[#6ee7b7] font-semibold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-[#6ee7b7] animate-pulse"></span>
+                            Bridging Company & Career Growth
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Right Card: Our Mission -->
-                <div class="vision-content-card flex flex-col justify-center reveal" style="background: rgba(6, 13, 9, 0.3);">
-                    <div class="section-badge mb-6" style="background: rgba(110, 231, 183, 0.06); border-color: rgba(110, 231, 183, 0.15); color: #6ee7b7; width: fit-content;">✦ Execution</div>
-                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight mb-8">
-                        Our <span class="gradient-text">Mission</span>
-                    </h2>
-                    <div class="mission-list">
+                <!-- Right: Mission Details (Spans 7 cols) -->
+                <div class="lg:col-span-7 flex flex-col justify-center space-y-8 reveal">
+                    <div class="space-y-4">
+                        <div class="section-badge" style="background: rgba(20, 54, 42, 0.05); border-color: rgba(20, 54, 42, 0.15); color: #14362a;">✦ Purpose</div>
+                        <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight">
+                            Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Mission</span>
+                        </h2>
+                        <p class="font-body text-base text-on-surface-variant leading-relaxed">
+                            How we plan to create a lasting impact every single day.
+                        </p>
+                    </div>
+
+                    <!-- Mission List -->
+                    <div class="grid grid-cols-1 gap-4">
                         <!-- Item 1 -->
-                        <div class="mission-item">
+                        <div class="mission-list-item">
                             <div class="mission-icon-box">
-                                <span class="material-symbols-outlined text-base font-bold">check</span>
+                                <span class="material-symbols-outlined text-xl">trending_up</span>
                             </div>
-                            <p class="mission-text">Deliver measurable business growth.</p>
+                            <div>
+                                <h3 class="font-heading text-base font-bold text-primary">Deliver measurable business growth.</h3>
+                            </div>
                         </div>
+
                         <!-- Item 2 -->
-                        <div class="mission-item">
+                        <div class="mission-list-item">
                             <div class="mission-icon-box">
-                                <span class="material-symbols-outlined text-base font-bold">check</span>
+                                <span class="material-symbols-outlined text-xl">insights</span>
                             </div>
-                            <p class="mission-text">Build innovative digital solutions.</p>
+                            <div>
+                                <h3 class="font-heading text-base font-bold text-primary">Build innovative digital solutions.</h3>
+                            </div>
                         </div>
+
                         <!-- Item 3 -->
-                        <div class="mission-item">
+                        <div class="mission-list-item">
                             <div class="mission-icon-box">
-                                <span class="material-symbols-outlined text-base font-bold">check</span>
+                                <span class="material-symbols-outlined text-xl">hub</span>
                             </div>
-                            <p class="mission-text">Support businesses through technology and marketing.</p>
+                            <div>
+                                <h3 class="font-heading text-base font-bold text-primary">Support businesses through technology and marketing.</h3>
+                            </div>
                         </div>
+
                         <!-- Item 4 -->
-                        <div class="mission-item">
+                        <div class="mission-list-item">
                             <div class="mission-icon-box">
-                                <span class="material-symbols-outlined text-base font-bold">check</span>
+                                <span class="material-symbols-outlined text-xl">school</span>
                             </div>
-                            <p class="mission-text">Create practical learning opportunities.</p>
+                            <div>
+                                <h3 class="font-heading text-base font-bold text-primary">Create practical learning opportunities.</h3>
+                            </div>
                         </div>
+
                         <!-- Item 5 -->
-                        <div class="mission-item">
+                        <div class="mission-list-item">
                             <div class="mission-icon-box">
-                                <span class="material-symbols-outlined text-base font-bold">check</span>
+                                <span class="material-symbols-outlined text-xl">school_lock</span>
                             </div>
-                            <p class="mission-text">Bridge the gap between education and industry experience.</p>
+                            <div>
+                                <h3 class="font-heading text-base font-bold text-primary">Bridge the gap between education and industry experience.</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
