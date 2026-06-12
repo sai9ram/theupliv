@@ -696,7 +696,7 @@
             background: linear-gradient(135deg, #091a13, #020504);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(110, 231, 183, 0.15);
+            border: 1px solid rgba(0, 255, 159, 0.15);
             border-radius: 1.25rem;
             padding: 2rem 1.5rem;
             display: flex;
@@ -716,7 +716,7 @@
             inset: 0;
             border-radius: 1.25rem;
             padding: 1px;
-            background: linear-gradient(135deg, #6ee7b7, transparent);
+            background: linear-gradient(135deg, #00ff9f, transparent);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -730,18 +730,19 @@
         .industry-card:hover {
             transform: translateY(-6px);
             background: linear-gradient(135deg, #0d281e, #040907);
-            border-color: rgba(110, 231, 183, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(110, 231, 183, 0.08);
+            border-color: rgba(0, 255, 159, 0.35);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 35px rgba(0, 255, 159, 0.25);
         }
         .industry-icon {
             font-size: 2.25rem;
-            color: #6ee7b7;
+            color: #00ff9f;
             margin-bottom: 1rem;
             transition: transform 0.4s ease, color 0.3s ease;
         }
         .industry-card:hover .industry-icon {
             transform: scale(1.15) rotate(3deg);
-            color: #a7f3d0;
+            color: #ffffff;
+            filter: drop-shadow(0 0 8px rgba(0, 255, 159, 0.8));
         }
         .industry-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -751,7 +752,8 @@
             transition: color 0.3s ease;
         }
         .industry-card:hover .industry-title {
-            color: #6ee7b7;
+            color: #00ff9f;
+            text-shadow: 0 0 8px rgba(0, 255, 159, 0.4);
         }
     </style>
     <script id="tailwind-config">
