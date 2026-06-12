@@ -680,23 +680,23 @@
         }
         /* ── INDUSTRIES WE SERVE ── */
         .industries-bg {
-            background: #060d09;
+            background: #ffffff;
             position: relative;
         }
         .industries-bg::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(197, 235, 217, 0.02) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(20, 54, 42, 0.02) 1px, transparent 1px);
             background-size: 20px 20px;
             pointer-events: none;
             z-index: 1;
         }
         .industry-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: #f8fafc;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(197, 235, 217, 0.08);
+            border: 1px solid rgba(20, 54, 42, 0.08);
             border-radius: 1.25rem;
             padding: 2rem 1.5rem;
             display: flex;
@@ -715,7 +715,7 @@
             inset: 0;
             border-radius: 1.25rem;
             padding: 1px;
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.2), transparent);
+            background: linear-gradient(135deg, rgba(20, 54, 42, 0.1), transparent);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -728,28 +728,29 @@
         }
         .industry-card:hover {
             transform: translateY(-6px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(110, 231, 183, 0.25);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(110, 231, 183, 0.05);
+            background: #ffffff;
+            border-color: rgba(20, 54, 42, 0.18);
+            box-shadow: 0 20px 40px rgba(20, 54, 42, 0.06);
         }
         .industry-icon {
             font-size: 2.25rem;
-            color: #6ee7b7;
+            color: #366758;
             margin-bottom: 1rem;
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, color 0.3s ease;
         }
         .industry-card:hover .industry-icon {
             transform: scale(1.15) rotate(3deg);
+            color: #14362a;
         }
         .industry-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #14362a;
             transition: color 0.3s ease;
         }
         .industry-card:hover .industry-title {
-            color: #6ee7b7;
+            color: #366758;
         }
     </style>
     <script id="tailwind-config">
@@ -1428,23 +1429,23 @@
     ══════════════════════════════════════════ -->
     <section id="industries" class="industries-bg py-24 md:py-32 px-6 md:px-16 relative overflow-hidden">
         <!-- Background glows -->
-        <div class="absolute -top-40 right-10 w-96 h-96 bg-[#366758]/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-40 left-10 w-[500px] h-[500px] bg-[#c5ebd9]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-40 right-10 w-96 h-96 bg-[#366758]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 left-10 w-[500px] h-[500px] bg-[#14362a]/3 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-[1280px] mx-auto relative z-10">
             <!-- Section Header -->
             <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20 reveal">
-                <div class="section-badge mb-6">✦ Industries</div>
-                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
-                    Trusted Across <span class="gradient-text">Multiple Industries</span>
+                <div class="section-badge mb-6" style="background: rgba(20, 54, 42, 0.05); border-color: rgba(20, 54, 42, 0.15); color: #14362a;">✦ Industries</div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight">
+                    Trusted Across <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Multiple Industries</span>
                 </h2>
-                <p class="font-body text-base md:text-lg text-white/60 mt-4 leading-relaxed">
+                <p class="font-body text-base md:text-lg text-on-surface-variant mt-4 leading-relaxed">
                     We bring specialized digital expertise and custom-tailored solutions to distinct sectors.
                 </p>
             </div>
 
-            <!-- Industries Cards Grid (2 cols on mobile, 5 on desktop) -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+            <!-- Industries Cards Grid (2 cols on mobile, 3 on desktop) -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
 
                 <!-- 1. Healthcare -->
                 <div class="industry-card reveal">
@@ -1480,30 +1481,6 @@
                 <div class="industry-card reveal">
                     <span class="material-symbols-outlined industry-icon">shopping_bag</span>
                     <h3 class="industry-title">E-Commerce</h3>
-                </div>
-
-                <!-- 7. Professional Services -->
-                <div class="industry-card reveal">
-                    <span class="material-symbols-outlined industry-icon">badge</span>
-                    <h3 class="industry-title">Professional Services</h3>
-                </div>
-
-                <!-- 8. Insurance -->
-                <div class="industry-card reveal">
-                    <span class="material-symbols-outlined industry-icon">shield</span>
-                    <h3 class="industry-title">Insurance</h3>
-                </div>
-
-                <!-- 9. Green Energy -->
-                <div class="industry-card reveal">
-                    <span class="material-symbols-outlined industry-icon">eco</span>
-                    <h3 class="industry-title">Green Energy</h3>
-                </div>
-
-                <!-- 10. Transportation -->
-                <div class="industry-card reveal">
-                    <span class="material-symbols-outlined industry-icon">local_shipping</span>
-                    <h3 class="industry-title">Transportation</h3>
                 </div>
 
             </div>
