@@ -616,14 +616,41 @@
             background: #ffffff;
             position: relative;
         }
+        .scrolly-card-container {
+            height: 65vh;
+            position: relative;
+        }
+        @media (max-width: 1023px) {
+            .scrolly-card-container {
+                height: auto;
+                margin-bottom: 2rem;
+            }
+        }
         .scrolly-item {
-            opacity: 0.3;
+            opacity: 0.4;
             transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             transform: translateY(20px);
         }
         .scrolly-item.active {
             opacity: 1;
             transform: translateY(0);
+        }
+        @media (min-width: 1024px) {
+            .scrolly-item {
+                position: sticky;
+                top: 240px;
+                background: #f8fafc;
+                border: 1px solid rgba(20, 54, 42, 0.08);
+                border-radius: 1.75rem;
+                padding: 3rem;
+                box-shadow: 0 -15px 40px rgba(20, 54, 42, 0.02), 0 20px 50px rgba(0, 0, 0, 0.04);
+            }
+            .scrolly-card-container:nth-child(1) .scrolly-item { z-index: 10; }
+            .scrolly-card-container:nth-child(2) .scrolly-item { z-index: 20; }
+            .scrolly-card-container:nth-child(3) .scrolly-item { z-index: 30; }
+            .scrolly-card-container:nth-child(4) .scrolly-item { z-index: 40; }
+            .scrolly-card-container:nth-child(5) .scrolly-item { z-index: 50; }
+            .scrolly-card-container:nth-child(6) .scrolly-item { z-index: 60; }
         }
         .scrolly-nav-dot {
             width: 12px;
@@ -1256,61 +1283,73 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Scrolling Cards -->
-                <div class="lg:col-span-7 space-y-28 md:space-y-40 lg:pb-[30vh] lg:pt-[20vh]">
+                <!-- Right Column: Scrolling Cards (Stacking overlays) -->
+                <div class="lg:col-span-7 lg:pb-[15vh]">
 
-                    <!-- Item 1 -->
-                    <div class="scrolly-item space-y-4" data-step="1">
-                        <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">01 / Partnership</div>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">More Than a Service Provider</h3>
-                        <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
-                            We become a growth partner. We integrate directly with your team, align with your vision, and invest our energy into the long-term success of your business.
-                        </p>
+                    <!-- Item 1 Container -->
+                    <div class="scrolly-card-container">
+                        <div class="scrolly-item space-y-4" data-step="1">
+                            <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">01 / Partnership</div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">More Than a Service Provider</h3>
+                            <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                We become a growth partner. We integrate directly with your team, align with your vision, and invest our energy into the long-term success of your business.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Item 2 -->
-                    <div class="scrolly-item space-y-4" data-step="2">
-                        <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">02 / Mindset</div>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Strategic Thinking</h3>
-                        <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
-                            We focus on business outcomes, not just deliverables. Every website we build, campaign we run, or automation we implement is designed with your bottom-line revenue goals in mind.
-                        </p>
+                    <!-- Item 2 Container -->
+                    <div class="scrolly-card-container">
+                        <div class="scrolly-item space-y-4" data-step="2">
+                            <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">02 / Mindset</div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Strategic Thinking</h3>
+                            <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                We focus on business outcomes, not just deliverables. Every website we build, campaign we run, or automation we implement is designed with your bottom-line revenue goals in mind.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Item 3 -->
-                    <div class="scrolly-item space-y-4" data-step="3">
-                        <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">03 / Track Record</div>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Industry Experience</h3>
-                        <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
-                            Deep experience across multiple sectors and business models. From local startups to regional enterprises, we know what works in today's digital landscape.
-                        </p>
+                    <!-- Item 3 Container -->
+                    <div class="scrolly-card-container">
+                        <div class="scrolly-item space-y-4" data-step="3">
+                            <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">03 / Track Record</div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Industry Experience</h3>
+                            <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                Deep experience across multiple sectors and business models. From local startups to regional enterprises, we know what works in today's digital landscape.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Item 4 -->
-                    <div class="scrolly-item space-y-4" data-step="4">
-                        <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">04 / Architecture</div>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Scalable Solutions</h3>
-                        <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
-                            Systems designed for long-term growth. We build high-performance web structures and flexible marketing funnels that can effortlessly scale alongside your expanding operations.
-                        </p>
+                    <!-- Item 4 Container -->
+                    <div class="scrolly-card-container">
+                        <div class="scrolly-item space-y-4" data-step="4">
+                            <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">04 / Architecture</div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Scalable Solutions</h3>
+                            <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                Systems designed for long-term growth. We build high-performance web structures and flexible marketing funnels that can effortlessly scale alongside your expanding operations.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Item 5 -->
-                    <div class="scrolly-item space-y-4" data-step="5">
-                        <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">05 / Communication</div>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Transparent Communication</h3>
-                        <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
-                            Clear processes and active collaboration. We keep you informed at every milestone with regular growth reporting, clear dashboards, and zero technical jargon.
-                        </p>
+                    <!-- Item 5 Container -->
+                    <div class="scrolly-card-container">
+                        <div class="scrolly-item space-y-4" data-step="5">
+                            <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">05 / Communication</div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Transparent Communication</h3>
+                            <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                Clear processes and active collaboration. We keep you informed at every milestone with regular growth reporting, clear dashboards, and zero technical jargon.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Item 6 -->
-                    <div class="scrolly-item space-y-4" data-step="6">
-                        <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">06 / Support</div>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Continuous Support</h3>
-                        <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
-                            Partnership beyond project completion. Our team remains active post-launch to provide maintenance support, security updates, and performance optimization suggestions.
-                        </p>
+                    <!-- Item 6 Container -->
+                    <div class="scrolly-card-container">
+                        <div class="scrolly-item space-y-4" data-step="6">
+                            <div class="text-xs uppercase tracking-wider font-extrabold text-secondary font-mono">06 / Support</div>
+                            <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-primary">Continuous Support</h3>
+                            <p class="font-body text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                Partnership beyond project completion. Our team remains active post-launch to provide maintenance support, security updates, and performance optimization suggestions.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
