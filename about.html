@@ -332,36 +332,58 @@
 
         /* ── FOUNDER CARDS ── */
         .founders-bg {
-            background: linear-gradient(160deg, #060d09 0%, #14362a 45%, #0a1a11 100%);
+            background: #060d09;
+            position: relative;
+        }
+        .founders-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(197, 235, 217, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: 1;
         }
         .founder-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1.5px solid rgba(197, 235, 217, 0.15);
-            border-radius: 1.75rem;
+            background: rgba(20, 54, 42, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(197, 235, 217, 0.12);
+            border-radius: 2rem;
             overflow: hidden;
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            transition: transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             display: flex;
             flex-direction: column;
             height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 2rem;
+            padding: 1px;
+            background: linear-gradient(to bottom, rgba(197, 235, 217, 0.25), transparent 60%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
         }
         .founder-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(197, 235, 217, 0.35);
-            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45), 0 0 40px rgba(197, 235, 217, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            border-color: rgba(197, 235, 217, 0.3);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 50px rgba(197, 235, 217, 0.1);
         }
         .founder-card-photo {
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 360px;
             overflow: hidden;
-            background: linear-gradient(135deg, #14362a, #366758);
+            background: #0a1a11;
             flex-shrink: 0;
-        }
-        @media (min-width: 768px) {
-            .founder-card-photo { height: 340px; }
         }
         .founder-card-photo img {
             position: absolute;
@@ -371,13 +393,13 @@
             object-fit: cover;
             object-position: center 20%;
             z-index: 0;
-            transition: transform 0.6s ease;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .founder-card-photo img.founder-photo-ajay {
             object-position: center 12%;
         }
         .founder-card:hover .founder-card-photo img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
         .founder-card-photo::after {
             content: '';
@@ -386,9 +408,9 @@
             z-index: 1;
             background: linear-gradient(
                 to top,
-                rgba(6, 13, 9, 0.97) 0%,
-                rgba(6, 13, 9, 0.75) 28%,
-                rgba(6, 13, 9, 0.2) 55%,
+                rgba(6, 13, 9, 1) 0%,
+                rgba(6, 13, 9, 0.8) 35%,
+                rgba(6, 13, 9, 0.2) 65%,
                 transparent 100%
             );
             pointer-events: none;
@@ -399,99 +421,146 @@
             left: 0;
             right: 0;
             z-index: 2;
-            padding: 2.5rem 2rem 1.5rem;
-            background: linear-gradient(to top, rgba(6, 13, 9, 0.9) 0%, rgba(6, 13, 9, 0.4) 60%, transparent 100%);
+            padding: 3rem 2.5rem 1.5rem;
             pointer-events: none;
         }
         .founder-name {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: #fff;
             line-height: 1.2;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
         }
         .founder-role {
             font-family: 'Inter', sans-serif;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: #c5ebd9;
+            color: #6ee7b7;
             letter-spacing: 0.02em;
         }
         .founder-card-body {
-            padding: 1.75rem 2rem 2rem;
+            padding: 2rem 2.5rem 2.5rem;
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.75rem;
+            background: rgba(6, 13, 9, 0.4);
         }
         .founder-block-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: rgba(197, 235, 217, 0.55);
-            margin-bottom: 0.75rem;
+            color: rgba(197, 235, 217, 0.45);
+            margin-bottom: 0.85rem;
         }
         .founder-bg-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 0.75rem;
         }
         .founder-bg-list li {
             display: flex;
             align-items: flex-start;
-            gap: 0.6rem;
+            gap: 0.75rem;
             font-family: 'Inter', sans-serif;
-            font-size: 0.875rem;
-            line-height: 1.55;
+            font-size: 0.925rem;
+            line-height: 1.6;
             color: rgba(255, 255, 255, 0.75);
         }
         .founder-bg-list li .material-symbols-outlined {
-            font-size: 1rem;
-            color: #c5ebd9;
-            margin-top: 2px;
+            font-size: 1.15rem;
+            color: #6ee7b7;
+            margin-top: 3px;
             flex-shrink: 0;
         }
         .founder-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
         .founder-tag {
-            padding: 0.35rem 0.75rem;
+            padding: 0.4rem 0.9rem;
             border-radius: 100px;
             font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.85);
-            background: rgba(197, 235, 217, 0.1);
-            border: 1px solid rgba(197, 235, 217, 0.2);
+            background: rgba(110, 231, 183, 0.06);
+            border: 1px solid rgba(110, 231, 183, 0.15);
+            transition: all 0.3s ease;
+        }
+        .founder-tag:hover {
+            background: rgba(110, 231, 183, 0.15);
+            border-color: rgba(110, 231, 183, 0.35);
+            color: #fff;
+            transform: translateY(-1px);
         }
         .founder-quote {
             margin-top: auto;
-            padding: 1.25rem 1.5rem;
-            border-radius: 1rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-left: 3px solid #c5ebd9;
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #6ee7b7;
+            position: relative;
+        }
+        .founder-quote::before {
+            content: '“';
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            font-size: 4rem;
+            font-family: serif;
+            color: rgba(110, 231, 183, 0.08);
+            line-height: 1;
         }
         .founder-quote-label {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: rgba(197, 235, 217, 0.6);
-            margin-bottom: 0.5rem;
+            color: rgba(110, 231, 183, 0.6);
+            margin-bottom: 0.6rem;
         }
         .founder-quote p {
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.75;
             color: rgba(255, 255, 255, 0.8);
             font-style: italic;
+        }
+        .founder-socials-overlay {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+        .founder-social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(6, 13, 9, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+        .founder-social-btn:hover {
+            background: #6ee7b7;
+            color: #060d09;
+            border-color: #6ee7b7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(110, 231, 183, 0.35);
         }
     </style>
     <script id="tailwind-config">
@@ -819,6 +888,15 @@
                 <!-- Desetti Sairam -->
                 <article class="founder-card reveal">
                     <div class="founder-card-photo">
+                        <!-- Social overlay -->
+                        <div class="founder-socials-overlay">
+                            <a href="https://linkedin.com/in/sairamdesetti" target="_blank" rel="noopener" class="founder-social-btn" aria-label="Sairam Desetti LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="mailto:hello@upliv.in" class="founder-social-btn" aria-label="Email Sairam Desetti">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </a>
+                        </div>
                         <img
                             src="Desetti%20Sairam.jpg"
                             alt="Desetti Sairam — Founder &amp; Managing Director, UPLIV"
@@ -864,6 +942,15 @@
                 <!-- Ramisetty Ajay -->
                 <article class="founder-card reveal">
                     <div class="founder-card-photo">
+                        <!-- Social overlay -->
+                        <div class="founder-socials-overlay">
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="founder-social-btn" aria-label="Ramisetty Ajay LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="mailto:hello@upliv.in" class="founder-social-btn" aria-label="Email Ramisetty Ajay">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </a>
+                        </div>
                         <img
                             src="Ramisetty%20Ajay.jpg"
                             alt="Ramisetty Ajay — Co-Founder &amp; Growth Strategist, UPLIV"
