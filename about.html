@@ -1857,6 +1857,277 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════
+         SECTION 11: TESTIMONIALS — Bento Grid & Marquee
+    ══════════════════════════════════════════ -->
+    <section id="about-testimonials" class="py-24 md:py-32 px-6 md:px-16 bg-[#f8faf9] relative overflow-hidden border-t border-[#14362a]/10">
+        <style>
+            @keyframes marquee-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            @keyframes marquee-right {
+                0% { transform: translateX(-50%); }
+                100% { transform: translateX(0); }
+            }
+            .animate-marquee-left {
+                display: flex;
+                width: max-content;
+                animation: marquee-left 35s linear infinite;
+            }
+            .animate-marquee-right {
+                display: flex;
+                width: max-content;
+                animation: marquee-right 35s linear infinite;
+            }
+            .animate-marquee-left:hover, .animate-marquee-right:hover {
+                animation-play-state: paused;
+            }
+        </style>
+        
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#14362a]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#366758]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] mx-auto space-y-16 relative z-10">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal">
+                <div class="space-y-4">
+                    <div class="section-badge" style="background: rgba(20, 54, 42, 0.05); border-color: rgba(20, 54, 42, 0.15); color: #14362a;">✦ Client & Student Stories</div>
+                    <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-primary tracking-tight leading-tight">
+                        Voices of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Success</span>
+                    </h2>
+                </div>
+                <p class="font-body text-base md:text-lg text-on-surface-variant max-w-md leading-relaxed font-light">
+                    From local business owners expanding their digital horizons to students landing their dream roles through practical industry exposure.
+                </p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Success Story (Client Spotlight - Large) -->
+                <div class="lg:col-span-2 bg-gradient-to-br from-[#14362a] to-[#0a1a11] text-white rounded-[2rem] p-8 md:p-10 shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[380px] group reveal">
+                    <!-- Subtle Glow -->
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-[80px]"></div>
+                    
+                    <div class="relative z-10 space-y-6">
+                        <div class="flex gap-1">
+                            <span class="material-symbols-outlined text-[#FBBC05] text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[#FBBC05] text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[#FBBC05] text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[#FBBC05] text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[#FBBC05] text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        
+                        <blockquote class="font-heading font-medium text-xl md:text-2xl lg:text-3xl text-white/90 leading-relaxed max-w-2xl">
+                            "UPLIV has been an incredible growth partner. Their performance marketing strategies and high-performance development scaled our booking volume by 300% in under 90 days. Their transparency is unmatched."
+                        </blockquote>
+                    </div>
+
+                    <div class="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6 pt-6 border-t border-white/10 mt-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center font-heading font-bold text-sm text-white">KR</div>
+                            <div>
+                                <cite class="not-italic font-heading font-bold text-base text-white block">K. Raaja</cite>
+                                <span class="font-body text-xs text-white/60">Managing Director, Vijaya Gold Company</span>
+                            </div>
+                        </div>
+                        <div class="text-xs uppercase tracking-widest text-[#6ee7b7] font-mono">BUSINESS GROWTH INQUIRY</div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Student Success (UPLIV Academy Spotlight) -->
+                <div class="bg-white border border-[#14362a]/10 rounded-[2rem] p-8 flex flex-col justify-between shadow-lg hover:border-primary/20 transition-all duration-300 group reveal">
+                    <div class="space-y-4 font-body">
+                        <div class="w-10 h-10 rounded-xl bg-[#14362a]/5 text-[#14362a] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xl">school</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary tracking-tight">Theory Meets Real Practice</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            "The exposure to live client projects and team workflows at UPLIV Academy helped me build actual confidence. I wasn't just learning concepts; I was delivering real value."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-[#14362a]/5 mt-6 flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-[#14362a]/5 flex items-center justify-center font-heading font-bold text-xs text-primary">HR</div>
+                        <div>
+                            <div class="font-heading font-bold text-xs text-primary">Hari Prasad</div>
+                            <div class="font-body text-[10px] text-on-surface-variant font-semibold">Associate Web Developer (Alumnus)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Performance Metric (Left column) -->
+                <div class="bg-white border border-[#14362a]/10 rounded-[2rem] p-8 flex flex-col justify-between shadow-lg hover:border-primary/20 transition-all duration-300 group reveal">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#14362a]/5 text-[#14362a] flex items-center justify-center">
+                            <span class="material-symbols-outlined text-xl">workspace_premium</span>
+                        </div>
+                        <div class="font-heading font-black text-5xl text-primary tracking-tight">95%</div>
+                        <h4 class="font-heading font-bold text-lg text-primary tracking-tight">Career Readiness</h4>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Our academy students land standard industry roles or successfully transition to client-facing positions immediately post-program.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Trust Score (Right columns) -->
+                <div class="lg:col-span-2 bg-white border border-[#14362a]/10 rounded-[2rem] p-8 flex flex-col sm:flex-row items-center justify-between shadow-lg hover:border-primary/20 transition-all duration-300 reveal">
+                    <div class="space-y-4 text-center sm:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 border border-yellow-400/20 rounded-full">
+                            <span class="material-symbols-outlined text-yellow-600 text-sm" style="font-variation-settings: 'FILL' 1;">google</span>
+                            <span class="font-body text-xs font-bold text-yellow-600 uppercase tracking-wider">Top Rated Partners</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl text-primary tracking-tight">4.9/5 Average Client & Student Satisfaction</h4>
+                        <p class="font-body text-sm text-on-surface-variant max-w-md leading-relaxed">
+                            Verified reviews and success logs from clients and students throughout Tirupati, Chittoor, and Nellore.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-center justify-center mt-6 sm:mt-0">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center font-heading font-bold text-[10px] text-primary">JD</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center font-heading font-bold text-[10px] text-primary">AN</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center font-heading font-bold text-[10px] text-primary">KP</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center font-heading font-bold text-[10px] text-primary">SR</div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center font-heading font-bold text-[10px] text-primary">+80</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Infinite Marquees -->
+            <div class="space-y-6 pt-10 border-t border-[#14362a]/10 relative overflow-hidden w-full reveal">
+                <!-- Masking Gradients -->
+                <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8faf9] to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8faf9] to-transparent z-10 pointer-events-none"></div>
+
+                <!-- Row 1: Client Reviews (Left scrolling) -->
+                <div class="flex overflow-hidden">
+                    <div class="animate-marquee-left gap-6 py-2">
+                        
+                        <!-- Client Review 1 -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Tripled our local booking volume in under 3 months. Outstanding design execution."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Ramesh Kumar (Tirupati Taxiwala)</cite>
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Client Review 2 -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"The local search visibility SV Grand Hotel received because of UPLIV is fantastic."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Balaji (SV Grand Hotel)</cite>
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Client Review 3 -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Clear processes, detailed weekly optimization reports, and zero jargon. High value!"</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Dr. Sireesha (Sri Dental Care)</cite>
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate for infinite marquee loop -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Tripled our local booking volume in under 3 months. Outstanding design execution."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Ramesh Kumar (Tirupati Taxiwala)</cite>
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"The local search visibility SV Grand Hotel received because of UPLIV is fantastic."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Balaji (SV Grand Hotel)</cite>
+                                <div class="flex gap-0.5">
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-[#FBBC05] text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Row 2: Student Testimonial Reviews (Right scrolling) -->
+                <div class="flex overflow-hidden">
+                    <div class="animate-marquee-right gap-6 py-2">
+                        
+                        <!-- Student Testimonial 1 -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Learning coding on real production servers changed everything. The founders mentored me step-by-step."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Sandeep K. (Digital Analyst)</cite>
+                                <span class="text-[9px] uppercase tracking-widest text-[#366758] font-bold">ALUMNUS</span>
+                            </div>
+                        </div>
+
+                        <!-- Student Testimonial 2 -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Finally bridged the gap between college theory and enterprise work environments. So thankful!"</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Prathyusha (UI Designer)</cite>
+                                <span class="text-[9px] uppercase tracking-widest text-[#366758] font-bold">ALUMNUS</span>
+                            </div>
+                        </div>
+
+                        <!-- Student Testimonial 3 -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Getting my hands dirty on client marketing campaigns made my profile stand out instantly."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Kiran V. (Growth Specialist)</cite>
+                                <span class="text-[9px] uppercase tracking-widest text-[#366758] font-bold">ALUMNUS</span>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate for infinite marquee loop -->
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Learning coding on real production servers changed everything. The founders mentored me step-by-step."</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Sandeep K. (Digital Analyst)</cite>
+                                <span class="text-[9px] uppercase tracking-widest text-[#366758] font-bold">ALUMNUS</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-[#14362a]/8 p-6 rounded-2xl shadow-sm w-[350px] flex flex-col justify-between shrink-0 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                            <p class="font-body text-sm text-on-surface-variant leading-relaxed italic mb-4">"Finally bridged the gap between college theory and enterprise work environments. So thankful!"</p>
+                            <div class="flex items-center justify-between border-t border-[#14362a]/5 pt-4">
+                                <cite class="not-italic font-heading font-bold text-xs text-primary">Prathyusha (UI Designer)</cite>
+                                <span class="text-[9px] uppercase tracking-widest text-[#366758] font-bold">ALUMNUS</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
 </main>
 
 <!-- Footer -->
