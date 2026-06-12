@@ -611,6 +611,42 @@
             position: relative;
             z-index: 1;
         }
+        /* ── SCROLLYTELLING ── */
+        .scrolly-bg {
+            background: linear-gradient(180deg, #060d09 0%, #14362a 100%);
+            position: relative;
+        }
+        .scrolly-item {
+            opacity: 0.35;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateY(20px);
+        }
+        .scrolly-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scrolly-nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .scrolly-nav-dot.active {
+            background: #6ee7b7;
+            box-shadow: 0 0 16px #6ee7b7;
+            transform: scale(1.3);
+        }
+        .scrolly-indicator-text {
+            color: rgba(255, 255, 255, 0.4);
+            transition: all 0.4s ease;
+        }
+        .scrolly-indicator-text.active {
+            color: #6ee7b7;
+            font-weight: 700;
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -1168,6 +1204,121 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════
+         SECTION 5: WHY BUSINESSES CHOOSE UPLIV — Sticky Scrollytelling
+    ══════════════════════════════════════════ -->
+    <section id="why-choose-us" class="scrolly-bg py-24 md:py-32 px-6 md:px-16 relative overflow-hidden">
+        <!-- Background glows -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#c5ebd9]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#366758]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- Left Column: Sticky Title & Interactive Navigator -->
+                <div class="lg:col-span-5 sticky top-32 space-y-8 flex flex-col justify-center h-auto lg:h-[calc(100vh-240px)]">
+                    <div class="space-y-6">
+                        <div class="section-badge" style="background: rgba(197, 235, 217, 0.08); border-color: rgba(197, 235, 217, 0.2); color: #c5ebd9;">✦ Partnership</div>
+                        <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                            Why Businesses <br><span class="gradient-text">Choose UPLIV</span>
+                        </h2>
+                        <p class="font-body text-base text-white/60 leading-relaxed max-w-sm">
+                            We don't just deliver projects. We build predictable systems and long-term partnerships that drive sustainable growth.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Step Navigator (Glows based on active card) -->
+                    <div class="hidden lg:flex flex-col gap-4 border-l border-white/10 pl-6 mt-4">
+                        <div class="scrolly-indicator-text text-sm font-semibold flex items-center gap-3 transition-all duration-300" data-nav="1">
+                            <span class="scrolly-nav-dot" data-dot="1"></span>
+                            01 · Growth Partner
+                        </div>
+                        <div class="scrolly-indicator-text text-sm font-semibold flex items-center gap-3 transition-all duration-300" data-nav="2">
+                            <span class="scrolly-nav-dot" data-dot="2"></span>
+                            02 · Strategic Outcomes
+                        </div>
+                        <div class="scrolly-indicator-text text-sm font-semibold flex items-center gap-3 transition-all duration-300" data-nav="3">
+                            <span class="scrolly-nav-dot" data-dot="3"></span>
+                            03 · Industry Expertise
+                        </div>
+                        <div class="scrolly-indicator-text text-sm font-semibold flex items-center gap-3 transition-all duration-300" data-nav="4">
+                            <span class="scrolly-nav-dot" data-dot="4"></span>
+                            04 · Scalable Systems
+                        </div>
+                        <div class="scrolly-indicator-text text-sm font-semibold flex items-center gap-3 transition-all duration-300" data-nav="5">
+                            <span class="scrolly-nav-dot" data-dot="5"></span>
+                            05 · Clear Collaboration
+                        </div>
+                        <div class="scrolly-indicator-text text-sm font-semibold flex items-center gap-3 transition-all duration-300" data-nav="6">
+                            <span class="scrolly-nav-dot" data-dot="6"></span>
+                            06 · Continuous Support
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Scrolling Cards -->
+                <div class="lg:col-span-7 space-y-28 md:space-y-40 lg:pb-[30vh] lg:pt-[20vh]">
+
+                    <!-- Item 1 -->
+                    <div class="scrolly-item space-y-4" data-step="1">
+                        <div class="text-xs uppercase tracking-wider font-extrabold text-[#6ee7b7] font-mono">01 / Partnership</div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white">More Than a Service Provider</h3>
+                        <p class="font-body text-white/70 text-base md:text-lg leading-relaxed">
+                            We become a growth partner. We integrate directly with your team, align with your vision, and invest our energy into the long-term success of your business.
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="scrolly-item space-y-4" data-step="2">
+                        <div class="text-xs uppercase tracking-wider font-extrabold text-[#6ee7b7] font-mono">02 / Mindset</div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white">Strategic Thinking</h3>
+                        <p class="font-body text-white/70 text-base md:text-lg leading-relaxed">
+                            We focus on business outcomes, not just deliverables. Every website we build, campaign we run, or automation we implement is designed with your bottom-line revenue goals in mind.
+                        </p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="scrolly-item space-y-4" data-step="3">
+                        <div class="text-xs uppercase tracking-wider font-extrabold text-[#6ee7b7] font-mono">03 / Track Record</div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white">Industry Experience</h3>
+                        <p class="font-body text-white/70 text-base md:text-lg leading-relaxed">
+                            Deep experience across multiple sectors and business models. From local startups to regional enterprises, we know what works in today's digital landscape.
+                        </p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="scrolly-item space-y-4" data-step="4">
+                        <div class="text-xs uppercase tracking-wider font-extrabold text-[#6ee7b7] font-mono">04 / Architecture</div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white">Scalable Solutions</h3>
+                        <p class="font-body text-white/70 text-base md:text-lg leading-relaxed">
+                            Systems designed for long-term growth. We build high-performance web structures and flexible marketing funnels that can effortlessly scale alongside your expanding operations.
+                        </p>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="scrolly-item space-y-4" data-step="5">
+                        <div class="text-xs uppercase tracking-wider font-extrabold text-[#6ee7b7] font-mono">05 / Communication</div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white">Transparent Communication</h3>
+                        <p class="font-body text-white/70 text-base md:text-lg leading-relaxed">
+                            Clear processes and active collaboration. We keep you informed at every milestone with regular growth reporting, clear dashboards, and zero technical jargon.
+                        </p>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="scrolly-item space-y-4" data-step="6">
+                        <div class="text-xs uppercase tracking-wider font-extrabold text-[#6ee7b7] font-mono">06 / Support</div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-white">Continuous Support</h3>
+                        <p class="font-body text-white/70 text-base md:text-lg leading-relaxed">
+                            Partnership beyond project completion. Our team remains active post-launch to provide maintenance support, security updates, and performance optimization suggestions.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <!-- Footer -->
@@ -1285,6 +1436,37 @@
             card.style.setProperty('--y', `${y}px`);
         });
     });
+
+    // Sticky Scrollytelling active state observer
+    const scrollyItems = document.querySelectorAll('.scrolly-item');
+    const navTexts = document.querySelectorAll('.scrolly-indicator-text');
+    const navDots = document.querySelectorAll('.scrolly-nav-dot');
+
+    const scrollyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active classes from all items
+                scrollyItems.forEach(item => item.classList.remove('active'));
+                navTexts.forEach(txt => txt.classList.remove('active'));
+                navDots.forEach(dot => dot.classList.remove('active'));
+
+                // Add active class to intersecting item
+                entry.target.classList.add('active');
+                const step = entry.target.getAttribute('data-step');
+
+                // Activate matching nav elements
+                const activeNav = document.querySelector(`.scrolly-indicator-text[data-nav="${step}"]`);
+                const activeDot = document.querySelector(`.scrolly-nav-dot[data-dot="${step}"]`);
+                if (activeNav) activeNav.classList.add('active');
+                if (activeDot) activeDot.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.6,
+        rootMargin: '-10% 0px -40% 0px'
+    });
+
+    scrollyItems.forEach(item => scrollyObserver.observe(item));
 </script>
 </body>
 </html>
