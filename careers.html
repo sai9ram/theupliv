@@ -300,10 +300,11 @@
             <!-- RIGHT: Team Culture Visual & Employee Experience Cards -->
             <div class="relative lg:pl-6 flex items-center justify-center min-h-[420px] lg:min-h-[520px]">
                 <!-- Glassmorphic Culture Visual Container -->
-                <div class="w-full max-w-md mx-auto aspect-[4/5] rounded-[2.5rem] bg-white/[0.03] border border-white/10 p-8 flex flex-col justify-between shadow-2xl backdrop-blur-md relative overflow-hidden group">
+                <div class="w-full max-w-md mx-auto aspect-[4/5] rounded-[2.5rem] bg-white/[0.03] border border-white/10 p-6 flex flex-col justify-between shadow-2xl backdrop-blur-md relative overflow-hidden group">
                     <div class="absolute -inset-px rounded-[2.5rem] bg-gradient-to-tr from-[#6ee7b7]/10 via-transparent to-transparent pointer-events-none"></div>
-                    
-                    <div class="space-y-6 relative z-10">
+
+                    <!-- Header -->
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between">
                             <span class="text-xs font-mono tracking-widest text-[#6ee7b7] font-semibold">UPLIV WORKPLACE</span>
                             <span class="flex gap-1.5">
@@ -318,7 +319,25 @@
                         </p>
                     </div>
 
-                    <div class="space-y-3 relative z-10">
+                    <!-- Culture Image -->
+                    <div class="relative z-10 flex-1 mx-0 my-4 rounded-2xl overflow-hidden" style="min-height: 140px;">
+                        <img
+                            src="workplace_culture.png"
+                            alt="UPLIV team culture — collaborative workplace in Tirupati"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            style="min-height: 140px;"
+                        />
+                        <!-- Gradient overlay for text legibility -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#060d09]/80 via-transparent to-transparent pointer-events-none"></div>
+                        <!-- Label badge -->
+                        <div class="absolute bottom-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/10">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#6ee7b7] animate-pulse"></span>
+                            <span class="font-body text-[10px] font-semibold text-white/80 tracking-wide">UPLIV Culture</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature Rows -->
+                    <div class="space-y-2.5 relative z-10">
                         <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                             <span class="material-symbols-outlined text-[#6ee7b7] text-lg">psychology</span>
                             <span class="font-body text-xs text-white/80 font-medium">Practical Mentorship-First Approach</span>
