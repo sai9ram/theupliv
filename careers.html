@@ -758,7 +758,282 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════
+         SECTION 4: WHO WE ARE LOOKING FOR — Interactive Role Cards
+    ══════════════════════════════════════════ -->
+    <section id="open-roles" class="py-28 px-6 md:px-16 relative overflow-hidden" style="background:#f4f9f6;">
+
+        <!-- Subtle dot-grid texture -->
+        <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(rgba(20,54,42,0.045) 1px,transparent 1px);background-size:30px 30px;"></div>
+        <!-- Ambient glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full pointer-events-none blur-3xl" style="background:radial-gradient(ellipse,rgba(197,235,217,0.45),transparent 70%);"></div>
+
+        <div class="max-w-[1280px] mx-auto relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-12 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.12);">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#14362a]"></span>
+                    <span class="font-body text-xs font-bold text-[#14362a]/70 uppercase tracking-widest">Who We're Looking For</span>
+                </div>
+                <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-[#14362a] leading-tight tracking-tight mb-4">
+                    Opportunities at UPLIV
+                </h2>
+                <p class="font-body text-base text-[#14362a]/50 max-w-lg mx-auto leading-relaxed">
+                    We're building a team of passionate, driven individuals across marketing, development, design, and growth.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10 reveal" id="role-filter-tabs">
+                <button onclick="filterRoles('all')" data-filter="all" class="role-filter-btn active px-5 py-2 rounded-full font-body text-sm font-semibold transition-all duration-200" style="background:#14362a;color:#fff;border:1px solid #14362a;">All Roles</button>
+                <button onclick="filterRoles('marketing')" data-filter="marketing" class="role-filter-btn px-5 py-2 rounded-full font-body text-sm font-semibold transition-all duration-200" style="background:rgba(20,54,42,0.06);color:#14362a;border:1px solid rgba(20,54,42,0.12);">Marketing</button>
+                <button onclick="filterRoles('development')" data-filter="development" class="role-filter-btn px-5 py-2 rounded-full font-body text-sm font-semibold transition-all duration-200" style="background:rgba(20,54,42,0.06);color:#14362a;border:1px solid rgba(20,54,42,0.12);">Development</button>
+                <button onclick="filterRoles('design')" data-filter="design" class="role-filter-btn px-5 py-2 rounded-full font-body text-sm font-semibold transition-all duration-200" style="background:rgba(20,54,42,0.06);color:#14362a;border:1px solid rgba(20,54,42,0.12);">Design</button>
+                <button onclick="filterRoles('business')" data-filter="business" class="role-filter-btn px-5 py-2 rounded-full font-body text-sm font-semibold transition-all duration-200" style="background:rgba(20,54,42,0.06);color:#14362a;border:1px solid rgba(20,54,42,0.12);">Business</button>
+            </div>
+
+            <!-- Role Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="role-cards-grid">
+
+                <!-- 1. Digital Marketing Executive -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="marketing"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(20,54,42,0.12);border:1.5px solid rgba(20,54,42,0.22);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(197,235,217,0.4);color:#14362a;border:1px solid rgba(20,54,42,0.15);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">campaign</span> Marketing
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(20,54,42,0.06);">
+                                <span class="material-symbols-outlined text-[#14362a]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">Digital Marketing Executive</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">SEO, content, social media, and campaign management.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">SEO</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Social Media</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Campaigns</span>
+                    </div>
+                </div>
+
+                <!-- 2. SEO Executive -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="marketing"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(20,54,42,0.12);border:1.5px solid rgba(20,54,42,0.22);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(197,235,217,0.4);color:#14362a;border:1px solid rgba(20,54,42,0.15);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">search</span> Marketing
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(20,54,42,0.06);">
+                                <span class="material-symbols-outlined text-[#14362a]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">SEO Executive</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Search optimization and organic growth strategies.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">On-Page SEO</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Link Building</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Analytics</span>
+                    </div>
+                </div>
+
+                <!-- 3. Performance Marketing Executive -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="marketing"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(20,54,42,0.12);border:1.5px solid rgba(20,54,42,0.22);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(197,235,217,0.4);color:#14362a;border:1px solid rgba(20,54,42,0.15);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">ads_click</span> Marketing
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(20,54,42,0.06);">
+                                <span class="material-symbols-outlined text-[#14362a]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">Performance Marketing Executive</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Google Ads, Meta Ads, and lead generation.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Google Ads</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Meta Ads</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Lead Gen</span>
+                    </div>
+                </div>
+
+                <!-- 4. Full Stack Developer -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="development"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(129,140,248,0.14);border:1.5px solid rgba(129,140,248,0.35);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(129,140,248,0.12);color:#4f46e5;border:1px solid rgba(129,140,248,0.25);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">code</span> Development
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(129,140,248,0.08);">
+                                <span class="material-symbols-outlined text-[#4f46e5]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">Full Stack Developer</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Build scalable websites and applications.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#4f46e5]" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);">React</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#4f46e5]" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);">Node.js</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#4f46e5]" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);">Databases</span>
+                    </div>
+                </div>
+
+                <!-- 5. Frontend Developer -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="development"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(129,140,248,0.14);border:1.5px solid rgba(129,140,248,0.35);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(129,140,248,0.12);color:#4f46e5;border:1px solid rgba(129,140,248,0.25);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">devices</span> Development
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(129,140,248,0.08);">
+                                <span class="material-symbols-outlined text-[#4f46e5]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">Frontend Developer</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Create modern user experiences.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#4f46e5]" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);">HTML/CSS</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#4f46e5]" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);">JavaScript</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#4f46e5]" style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);">Tailwind</span>
+                    </div>
+                </div>
+
+                <!-- 6. UI/UX Designer -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="design"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(245,158,11,0.14);border:1.5px solid rgba(245,158,11,0.35);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(245,158,11,0.1);color:#b45309;border:1px solid rgba(245,158,11,0.25);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">palette</span> Design
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(245,158,11,0.08);">
+                                <span class="material-symbols-outlined text-[#b45309]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">UI/UX Designer</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Design intuitive digital products.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#b45309]" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);">Figma</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#b45309]" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);">Wireframing</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#b45309]" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);">Prototyping</span>
+                    </div>
+                </div>
+
+                <!-- 7. Content Creator -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="marketing"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(20,54,42,0.12);border:1.5px solid rgba(20,54,42,0.22);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(197,235,217,0.4);color:#14362a;border:1px solid rgba(20,54,42,0.15);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">edit_note</span> Marketing
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(20,54,42,0.06);">
+                                <span class="material-symbols-outlined text-[#14362a]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">Content Creator</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Create engaging content and marketing assets.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Copywriting</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Video</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#14362a]" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.1);">Graphics</span>
+                    </div>
+                </div>
+
+                <!-- 8. Business Development Associate -->
+                <div class="role-card reveal group relative rounded-3xl p-6 flex flex-col justify-between cursor-default transition-all duration-300 hover:-translate-y-1.5"
+                     data-category="business"
+                     style="background:#fff;border:1.5px solid rgba(20,54,42,0.1);box-shadow:0 2px 16px rgba(20,54,42,0.04);min-height:260px;">
+                    <div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style="box-shadow:0 8px 32px rgba(248,113,113,0.14);border:1.5px solid rgba(248,113,113,0.3);border-radius:1.5rem;"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-widest" style="background:rgba(248,113,113,0.1);color:#dc2626;border:1px solid rgba(248,113,113,0.25);">
+                                <span class="material-symbols-outlined" style="font-size:12px;">handshake</span> Business
+                            </span>
+                            <span class="w-8 h-8 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(248,113,113,0.08);">
+                                <span class="material-symbols-outlined text-[#dc2626]" style="font-size:15px;">arrow_outward</span>
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-lg font-extrabold text-[#14362a] mb-2 leading-snug">Business Development Associate</h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed">Help businesses discover growth opportunities.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-5">
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#dc2626]" style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);">Sales</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#dc2626]" style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);">Outreach</span>
+                        <span class="px-2.5 py-1 rounded-full font-body text-[10px] font-semibold text-[#dc2626]" style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);">CRM</span>
+                    </div>
+                </div>
+
+            </div><!-- /Role Cards Grid -->
+
+            <!-- Bottom CTA -->
+            <div class="text-center mt-14 reveal">
+                <p class="font-body text-sm text-[#14362a]/45 mb-4">Don't see your role? We're always open to passionate people.</p>
+                <a href="mailto:careers@theupliv.com" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-heading font-bold text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background:linear-gradient(135deg,#14362a,#1e5040);box-shadow:0 4px 20px rgba(20,54,42,0.25);">
+                    <span class="material-symbols-outlined text-base">mail</span>
+                    Send Us Your Application
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        .role-card { position: relative; }
+        .role-card[data-hidden] { display: none !important; }
+    </style>
+
 </main>
+<script>
+    function filterRoles(category) {
+        // Update tab styles
+        document.querySelectorAll('.role-filter-btn').forEach(btn => {
+            if (btn.dataset.filter === category) {
+                btn.style.background = '#14362a';
+                btn.style.color = '#fff';
+                btn.style.borderColor = '#14362a';
+            } else {
+                btn.style.background = 'rgba(20,54,42,0.06)';
+                btn.style.color = '#14362a';
+                btn.style.borderColor = 'rgba(20,54,42,0.12)';
+            }
+        });
+        // Show/hide cards
+        document.querySelectorAll('.role-card').forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.removeAttribute('data-hidden');
+                card.style.display = '';
+            } else {
+                card.setAttribute('data-hidden', '');
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
 
 <!-- Footer -->
 <footer id="site-footer">
