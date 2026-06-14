@@ -546,6 +546,218 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════
+         SECTION 3: OUR CULTURE — Sticky Scrollytelling
+    ══════════════════════════════════════════ -->
+    <section id="our-culture" style="background:#060d09;border-top:1px solid rgba(0,0,0,0.08);border-bottom:1px solid rgba(0,0,0,0.08);">
+
+        <!-- Section intro header (not sticky) -->
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 pt-28 pb-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6" style="background:rgba(197,235,217,0.06);border-color:rgba(197,235,217,0.15);">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#c5ebd9]"></span>
+                <span class="font-body text-xs font-bold text-[#c5ebd9]/60 uppercase tracking-widest">Our Culture</span>
+            </div>
+            <div class="flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-20">
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-xl">
+                    A Culture Built Around <span style="background:linear-gradient(135deg,#c5ebd9,#6ee7b7,#34d399,#c5ebd9);background-size:300% 300%;animation:gradient-x 4s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Growth</span>
+                </h2>
+                <p class="font-body text-white/50 text-base md:text-lg leading-relaxed max-w-md lg:pb-2">
+                    We believe great careers are built through experience, responsibility, and continuous learning. At UPLIV, team members are encouraged to:
+                </p>
+            </div>
+        </div>
+
+        <!-- Sticky scroll zone -->
+        <div class="max-w-[1280px] mx-auto px-6 md:px-16 relative" id="culture-scroll-zone">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+
+                <!-- LEFT: Sticky Panel -->
+                <div class="hidden lg:block lg:w-[38%] lg:sticky lg:top-[120px] self-start pb-40" id="culture-sticky-left">
+                    <div class="space-y-2" id="culture-nav">
+                        <div class="culture-nav-item group flex items-center gap-5 py-3 px-4 rounded-2xl cursor-default transition-all duration-300 border border-transparent" data-nav="0">
+                            <span class="font-mono text-xs text-white/20 w-6 shrink-0 group-[.active]:text-[#c5ebd9] transition-colors duration-300">01</span>
+                            <span class="font-heading text-sm font-bold text-white/25 group-[.active]:text-white transition-colors duration-300 leading-snug">Learn</span>
+                        </div>
+                        <div class="culture-nav-item group flex items-center gap-5 py-3 px-4 rounded-2xl cursor-default transition-all duration-300 border border-transparent" data-nav="1">
+                            <span class="font-mono text-xs text-white/20 w-6 shrink-0 group-[.active]:text-[#c5ebd9] transition-colors duration-300">02</span>
+                            <span class="font-heading text-sm font-bold text-white/25 group-[.active]:text-white transition-colors duration-300 leading-snug">Build</span>
+                        </div>
+                        <div class="culture-nav-item group flex items-center gap-5 py-3 px-4 rounded-2xl cursor-default transition-all duration-300 border border-transparent" data-nav="2">
+                            <span class="font-mono text-xs text-white/20 w-6 shrink-0 group-[.active]:text-[#c5ebd9] transition-colors duration-300">03</span>
+                            <span class="font-heading text-sm font-bold text-white/25 group-[.active]:text-white transition-colors duration-300 leading-snug">Collaborate</span>
+                        </div>
+                        <div class="culture-nav-item group flex items-center gap-5 py-3 px-4 rounded-2xl cursor-default transition-all duration-300 border border-transparent" data-nav="3">
+                            <span class="font-mono text-xs text-white/20 w-6 shrink-0 group-[.active]:text-[#c5ebd9] transition-colors duration-300">04</span>
+                            <span class="font-heading text-sm font-bold text-white/25 group-[.active]:text-white transition-colors duration-300 leading-snug">Innovate</span>
+                        </div>
+                        <div class="culture-nav-item group flex items-center gap-5 py-3 px-4 rounded-2xl cursor-default transition-all duration-300 border border-transparent" data-nav="4">
+                            <span class="font-mono text-xs text-white/20 w-6 shrink-0 group-[.active]:text-[#c5ebd9] transition-colors duration-300">05</span>
+                            <span class="font-heading text-sm font-bold text-white/25 group-[.active]:text-white transition-colors duration-300 leading-snug">Grow</span>
+                        </div>
+                    </div>
+                    <!-- Progress bar -->
+                    <div class="mt-10 relative h-1 w-full rounded-full overflow-hidden" style="background:rgba(197,235,217,0.08);">
+                        <div id="culture-progress-bar" class="absolute left-0 top-0 h-full rounded-full transition-all duration-500" style="width:0%;background:linear-gradient(90deg,#c5ebd9,#6ee7b7);"></div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Scroll-driven stacking cards -->
+                <div class="w-full lg:w-[62%] relative" id="culture-scene">
+
+                    <!-- DESKTOP: Sticky stage -->
+                    <div id="culture-stage" class="hidden lg:block"
+                         style="position:sticky;top:120px;height:540px;z-index:10;overflow:hidden;border-radius:22px;">
+
+                        <!-- CARD 1: Learn -->
+                        <div class="culture-card" data-card="0"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:2px solid rgba(197,235,217,0.55);background:linear-gradient(180deg,#14362a 0%,#000000 100%);
+                                    box-shadow:0 8px 40px 0 rgba(197,235,217,0.12);
+                                    z-index:50;opacity:1;transform:scale(1) translateY(0);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#c5ebd9;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(197,235,217,0.1);border:1px solid rgba(197,235,217,0.2);"><span class="material-symbols-outlined text-white">auto_stories</span></div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">01</span>
+                                </div>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#c5ebd9]" style="font-size:11px;margin-bottom:6px;">Learn</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Stay curious and keep improving.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">We create an environment where curiosity is celebrated. Every project, every client challenge, every feedback loop is a chance to expand your knowledge and sharpen your craft.</p>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Skill Workshops</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Daily Mentorship</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Industry Tools</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#c5ebd9;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Peer Learning</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2: Build -->
+                        <div class="culture-card" data-card="1"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:2px solid rgba(129,140,248,0.55);background:linear-gradient(180deg,#14362a 0%,#000000 100%);
+                                    z-index:40;opacity:0;transform:translateY(100%);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#818cf8;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.2);"><span class="material-symbols-outlined text-white">construction</span></div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">02</span>
+                                </div>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#818cf8]" style="font-size:11px;margin-bottom:6px;">Build</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Create solutions that solve real problems.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">You won't just learn concepts — you'll build things that matter. From marketing funnels to web products, your work ships to real clients and makes a measurable difference.</p>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Live Projects</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Real Deliverables</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Portfolio Work</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#818cf8;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Client Impact</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3: Collaborate -->
+                        <div class="culture-card" data-card="2"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:2px solid rgba(52,211,153,0.55);background:linear-gradient(180deg,#14362a 0%,#000000 100%);
+                                    z-index:30;opacity:0;transform:translateY(100%);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#34d399;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);"><span class="material-symbols-outlined text-white">groups</span></div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">03</span>
+                                </div>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#34d399]" style="font-size:11px;margin-bottom:6px;">Collaborate</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Work closely with teammates and clients.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">Collaboration is at the heart of everything we do. You'll join a tight-knit team where diverse perspectives drive better outcomes — for us and for every client we serve.</p>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Cross-Team Work</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Client Meetings</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Open Feedback</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#34d399;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Shared Wins</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4: Innovate -->
+                        <div class="culture-card" data-card="3"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:2px solid rgba(245,158,11,0.55);background:linear-gradient(180deg,#14362a 0%,#000000 100%);
+                                    z-index:20;opacity:0;transform:translateY(100%);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#f59e0b;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);"><span class="material-symbols-outlined text-white">lightbulb</span></div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">04</span>
+                                </div>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#f59e0b]" style="font-size:11px;margin-bottom:6px;">Innovate</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Explore new ideas and technologies.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">We reward bold thinking. Whether it's an AI workflow, a creative campaign angle, or a novel design approach — we encourage you to experiment, iterate, and push boundaries.</p>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">AI Exploration</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">New Tech Stack</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Creative Freedom</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f59e0b;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">R&D Time</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 5: Grow -->
+                        <div class="culture-card" data-card="4"
+                             style="position:absolute;inset:0;border-radius:20px;padding:36px 40px;overflow:hidden;
+                                    border:2px solid rgba(248,113,113,0.55);background:linear-gradient(180deg,#14362a 0%,#000000 100%);
+                                    z-index:10;opacity:0;transform:translateY(100%);
+                                    transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s ease,border-color .3s ease;">
+                            <div style="position:absolute;top:-40px;right:-40px;width:192px;height:192px;border-radius:9999px;filter:blur(64px);opacity:.2;background:#f87171;pointer-events:none;"></div>
+                            <div style="position:relative;z-index:10;height:100%;display:flex;flex-direction:column;gap:18px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;">
+                                    <div style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.2);"><span class="material-symbols-outlined text-white">trending_up</span></div>
+                                    <span class="font-mono font-black tracking-tight" style="font-size:60px;color:rgba(255,255,255,0.05);">05</span>
+                                </div>
+                                <div>
+                                    <p class="font-body font-bold uppercase tracking-widest text-[#f87171]" style="font-size:11px;margin-bottom:6px;">Grow</p>
+                                    <h3 class="font-heading font-extrabold text-white leading-tight" style="font-size:24px;margin-bottom:8px;">Develop professionally and personally.</h3>
+                                    <p class="font-body text-white/55 leading-relaxed" style="font-size:14px;">At UPLIV, growth is not an annual event — it's a daily commitment. We invest in our people through mentorship, stretch assignments, and clear paths from intern to leadership.</p>
+                                </div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Career Milestones</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Leadership Path</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Personal Branding</span></div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);"><span style="color:#f87171;font-size:12px;">✓</span><span class="font-heading font-bold text-white/80" style="font-size:12px;">Recognition</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /culture-stage -->
+
+                    <!-- Scroll proxy: 5 cards × 80vh scroll travel (desktop only) -->
+                    <div id="culture-proxy" class="hidden lg:block" style="height:400vh;"></div>
+
+                    <!-- MOBILE: simple stacked cards -->
+                    <div class="lg:hidden space-y-5 pb-10">
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(197,235,217,0.04);border-color:rgba(197,235,217,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#c5ebd9] mb-2">📖 Learn</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Stay curious and keep improving.</h3><p class="font-body text-white/60 text-sm leading-relaxed">Every project and client challenge is a chance to expand your knowledge and sharpen your craft.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(129,140,248,0.04);border-color:rgba(129,140,248,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#818cf8] mb-2">🔨 Build</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Create solutions that solve real problems.</h3><p class="font-body text-white/60 text-sm leading-relaxed">You'll build things that matter — your work ships to real clients and makes a measurable difference.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(52,211,153,0.04);border-color:rgba(52,211,153,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#34d399] mb-2">🤝 Collaborate</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Work closely with teammates and clients.</h3><p class="font-body text-white/60 text-sm leading-relaxed">Join a tight-knit team where diverse perspectives drive better outcomes for every client we serve.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(245,158,11,0.04);border-color:rgba(245,158,11,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#f59e0b] mb-2">💡 Innovate</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Explore new ideas and technologies.</h3><p class="font-body text-white/60 text-sm leading-relaxed">We reward bold thinking — experiment, iterate, and push boundaries on every project.</p></div>
+                        <div class="rounded-[18px] p-6 border" style="background:rgba(248,113,113,0.04);border-color:rgba(248,113,113,0.3);"><p class="font-body text-xs font-bold uppercase tracking-widest text-[#f87171] mb-2">🚀 Grow</p><h3 class="font-heading text-lg font-extrabold text-white mb-2">Develop professionally and personally.</h3><p class="font-body text-white/60 text-sm leading-relaxed">Growth is a daily commitment — from intern to leadership with mentorship and stretch assignments.</p></div>
+                    </div>
+
+                </div><!-- /culture-scene -->
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <!-- Footer -->
@@ -652,6 +864,91 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Section 3: Our Culture — Scroll-proxy stacking animation ──
+    const cultureCards    = document.querySelectorAll('.culture-card');
+    const cultureNavItems = document.querySelectorAll('.culture-nav-item');
+    const cultureProgressBar = document.getElementById('culture-progress-bar');
+    const cultureScene    = document.getElementById('culture-scene');
+    const cultureProxy    = document.getElementById('culture-proxy');
+
+    const CN = cultureCards.length;
+    const cultureAccents = [
+        { border:'rgba(197,235,217,0.8)', glow:'rgba(197,235,217,0.18)' },
+        { border:'rgba(129,140,248,0.8)', glow:'rgba(129,140,248,0.18)' },
+        { border:'rgba(52,211,153,0.8)',  glow:'rgba(52,211,153,0.18)'  },
+        { border:'rgba(245,158,11,0.8)',  glow:'rgba(245,158,11,0.18)'  },
+        { border:'rgba(248,113,113,0.8)', glow:'rgba(248,113,113,0.18)' }
+    ];
+
+    function getCultureProgress() {
+        if (!cultureScene || !cultureProxy) return 0;
+        const sceneTop    = cultureScene.getBoundingClientRect().top + window.scrollY;
+        const scrollStart = sceneTop - 120;
+        const scrollEnd   = scrollStart + cultureProxy.offsetHeight;
+        return Math.max(0, Math.min(1, (window.scrollY - scrollStart) / (scrollEnd - scrollStart)));
+    }
+
+    function animateCultureCards() {
+        if (!cultureCards.length || !cultureProxy) return;
+        const progress  = getCultureProgress();
+        const rawIdx    = progress * CN;
+        const activeIdx = Math.min(Math.floor(rawIdx), CN - 1);
+        const sub       = rawIdx - activeIdx;
+
+        cultureCards.forEach((card, i) => {
+            if (i < activeIdx) {
+                const depth = activeIdx - i;
+                const scale = Math.max(0.88, 1 - depth * 0.04);
+                card.style.opacity     = '1';
+                card.style.transform   = `scale(${scale})`;
+                card.style.borderColor = cultureAccents[i].border;
+                card.style.boxShadow   = 'none';
+                card.style.zIndex      = String(40 - depth * 10);
+            } else if (i === activeIdx) {
+                const scale = 1 - sub * 0.04;
+                card.style.opacity     = '1';
+                card.style.transform   = `scale(${scale})`;
+                card.style.borderColor = cultureAccents[i].border;
+                card.style.boxShadow   = `0 0 60px 0 ${cultureAccents[i].glow}`;
+                card.style.zIndex      = '50';
+            } else if (i === activeIdx + 1) {
+                card.style.opacity     = '1';
+                card.style.transform   = `translateY(${(1 - sub) * 100}%)`;
+                card.style.borderColor = cultureAccents[i].border;
+                card.style.boxShadow   = `0 0 60px 0 ${cultureAccents[i].glow}`;
+                card.style.zIndex      = '55';
+            } else {
+                card.style.opacity     = '1';
+                card.style.transform   = 'translateY(100%)';
+                card.style.borderColor = cultureAccents[i].border;
+                card.style.boxShadow   = 'none';
+                card.style.zIndex      = String(50 - (i - activeIdx) * 5);
+            }
+        });
+
+        cultureNavItems.forEach((item, i) => {
+            if (i === activeIdx) {
+                item.classList.add('active');
+                item.style.background  = 'rgba(255,255,255,0.05)';
+                item.style.borderColor = 'rgba(197,235,217,0.25)';
+            } else {
+                item.classList.remove('active');
+                item.style.background  = 'transparent';
+                item.style.borderColor = 'transparent';
+            }
+        });
+
+        if (cultureProgressBar) {
+            cultureProgressBar.style.width = ((activeIdx + 1) / CN * 100) + '%';
+        }
+    }
+
+    if (cultureCards.length && cultureProxy) {
+        window.addEventListener('scroll', animateCultureCards, { passive: true });
+        window.addEventListener('resize', animateCultureCards);
+        animateCultureCards();
+    }
 </script>
 </body>
 </html>
