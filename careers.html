@@ -1732,6 +1732,148 @@
         });
     </script>
 
+    <!-- ══════════════════════════════════════════
+         SECTION 10: FAQ — Glassmorphism Accordion
+    ══════════════════════════════════════════ -->
+    <section id="faq" class="py-24 px-6 md:px-16 relative overflow-hidden" style="background:#f4f9f6; border-top: 1px solid rgba(20,54,42,0.06);">
+        <!-- Background glows to emphasize glassmorphism -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full pointer-events-none blur-3xl" style="background:radial-gradient(circle, rgba(197,235,217,0.3) 0%, rgba(129,140,248,0.08) 50%, transparent 100%);"></div>
+
+        <div class="max-w-[800px] mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(20,54,42,0.06); border:1px solid rgba(20,54,42,0.12);">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#14362a]"></span>
+                    <span class="font-body text-xs font-bold text-[#14362a]/70 uppercase tracking-widest">Common Inquiries</span>
+                </div>
+                <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-[#14362a] leading-tight tracking-tight mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="font-body text-base text-[#14362a]/60 leading-relaxed">
+                    Have questions about joining the UPLIV team? Find quick answers below.
+                </p>
+            </div>
+
+            <!-- Glassmorphism Accordion -->
+            <div class="space-y-4">
+                
+                <!-- Q1 -->
+                <div class="faq-item reveal rounded-2xl border transition-all duration-300"
+                     style="background:rgba(255,255,255,0.7); border-color:rgba(20,54,42,0.08); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-heading text-base md:text-lg font-extrabold text-[#14362a]">Do you hire freshers?</span>
+                        <span class="material-symbols-outlined text-[#14362a]/40 transition-transform duration-300" style="font-size:22px;">expand_more</span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 border-t border-dashed font-body text-sm text-[#14362a]/65 leading-relaxed" style="border-color:rgba(20,54,42,0.06);">
+                            Yes! We are always looking for passionate freshers with high learning agility, logical capabilities, and strong commitment. We prioritize drive and potential over years on a CV.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item reveal rounded-2xl border transition-all duration-300"
+                     style="background:rgba(255,255,255,0.7); border-color:rgba(20,54,42,0.08); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-heading text-base md:text-lg font-extrabold text-[#14362a]">Do you offer internships?</span>
+                        <span class="material-symbols-outlined text-[#14362a]/40 transition-transform duration-300" style="font-size:22px;">expand_more</span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 border-t border-dashed font-body text-sm text-[#14362a]/65 leading-relaxed" style="border-color:rgba(20,54,42,0.06);">
+                            Absolutely. We provide structured internship programs in Tirupati designed for students, fresh graduates, and career switchers to acquire hands-on project exposure.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item reveal rounded-2xl border transition-all duration-300"
+                     style="background:rgba(255,255,255,0.7); border-color:rgba(20,54,42,0.08); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-heading text-base md:text-lg font-extrabold text-[#14362a]">Do I need prior experience?</span>
+                        <span class="material-symbols-outlined text-[#14362a]/40 transition-transform duration-300" style="font-size:22px;">expand_more</span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 border-t border-dashed font-body text-sm text-[#14362a]/65 leading-relaxed" style="border-color:rgba(20,54,42,0.06);">
+                            No. While prior experience is beneficial, we focus deeply on curiosity, work ethic, and core domain knowledge. We evaluate skills through interactive assessments.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item reveal rounded-2xl border transition-all duration-300"
+                     style="background:rgba(255,255,255,0.7); border-color:rgba(20,54,42,0.08); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-heading text-base md:text-lg font-extrabold text-[#14362a]">Can students apply?</span>
+                        <span class="material-symbols-outlined text-[#14362a]/40 transition-transform duration-300" style="font-size:22px;">expand_more</span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 border-t border-dashed font-body text-sm text-[#14362a]/65 leading-relaxed" style="border-color:rgba(20,54,42,0.06);">
+                            Yes. Students can apply for our active internship cycles or project-based support assignments, tailored to align with final-year academic requirements.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item reveal rounded-2xl border transition-all duration-300"
+                     style="background:rgba(255,255,255,0.7); border-color:rgba(20,54,42,0.08); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-heading text-base md:text-lg font-extrabold text-[#14362a]">What skills are required?</span>
+                        <span class="material-symbols-outlined text-[#14362a]/40 transition-transform duration-300" style="font-size:22px;">expand_more</span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 border-t border-dashed font-body text-sm text-[#14362a]/65 leading-relaxed" style="border-color:rgba(20,54,42,0.06);">
+                            It varies by domain. For development roles, we look for core HTML/CSS, React, and logic capabilities. For marketing roles, execution familiarity with search engines, Meta Ads, and SEO is key.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="faq-item reveal rounded-2xl border transition-all duration-300"
+                     style="background:rgba(255,255,255,0.7); border-color:rgba(20,54,42,0.08); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-heading text-base md:text-lg font-extrabold text-[#14362a]">Do you provide training?</span>
+                        <span class="material-symbols-outlined text-[#14362a]/40 transition-transform duration-300" style="font-size:22px;">expand_more</span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="p-6 pt-0 border-t border-dashed font-body text-sm text-[#14362a]/65 leading-relaxed" style="border-color:rgba(20,54,42,0.06);">
+                            Yes. All new joiners undergo a structured onboarding process with active mentorship. Additionally, UPLIV Academy participants get specialized pathways to apply theory to practice.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        function toggleFaq(button) {
+            const item = button.closest('.faq-item');
+            const content = item.querySelector('.faq-content');
+            const icon = button.querySelector('.material-symbols-outlined');
+            
+            // Check if active
+            const isOpen = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.style.boxShadow = '';
+                i.style.borderColor = 'rgba(20,54,42,0.08)';
+                i.querySelector('.faq-content').style.maxHeight = '0px';
+                i.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+            });
+            
+            if (!isOpen) {
+                item.classList.add('active');
+                item.style.boxShadow = '0 10px 30px rgba(20,54,42,0.05)';
+                item.style.borderColor = 'rgba(20,54,42,0.18)';
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+
 </main>
 <script>
     function filterRoles(category) {
