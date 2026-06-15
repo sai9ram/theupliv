@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blog & Insights | UPLIV Digital Marketing, AI & Web Dev Guides</title>
+    <meta name="description" content="Discover practical digital marketing guides, SEO strategies, web development tips, AI automation insights, and career growth resources from UPLIV Tirupati."/>
+    <link rel="icon" type="image/png" href="Logo.png"/>
+    <link rel="canonical" href="https://www.theupliv.com/blog"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-glass {
+            background: rgba(20, 54, 42, 0.45);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes gradient-x {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-up { animation: fadeInUp 0.7s ease forwards; }
+        .hero-bg {
+            background: linear-gradient(135deg, #14362a 0%, #060d09 60%, #0a1a11 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #c5ebd9, #6ee7b7, #34d399, #c5ebd9);
+            background-size: 300% 300%;
+            animation: gradient-x 4s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(197, 235, 217, 0.08);
+            border: 1px solid rgba(197, 235, 217, 0.2);
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #c5ebd9;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        #site-footer {
+            background: #080f0c;
+            position: relative;
+            overflow: hidden;
+        }
+        #site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 235, 217, 0.4), transparent);
+        }
+        .footer-col-title {
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: rgba(197, 235, 217, 0.4);
+            margin-bottom: 1.25rem;
+        }
+        .footer-link {
+            display: block;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            transition: color 0.2s, transform 0.2s;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        .footer-link:hover { color: #c5ebd9; transform: translateX(4px); }
+        .footer-social {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 235, 217, 0.15);
+            background: rgba(197, 235, 217, 0.05);
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.25s;
+        }
+        .footer-social:hover {
+            background: rgba(197, 235, 217, 0.12);
+            border-color: rgba(197, 235, 217, 0.4);
+            color: #c5ebd9;
+            transform: translateY(-3px);
+        }
+        .newsletter-input {
+            width: 100%;
+            background: rgba(197, 235, 217, 0.06);
+            border: 1px solid rgba(197, 235, 217, 0.15);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-size: 0.875rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .newsletter-input::placeholder { color: rgba(255, 255, 255, 0.25); }
+        .newsletter-input:focus { border-color: rgba(197, 235, 217, 0.4); }
+        .newsletter-btn {
+            margin-top: 0.625rem;
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(197, 235, 217, 0.1);
+            border: 1px solid rgba(197, 235, 217, 0.25);
+            border-radius: 12px;
+            color: #c5ebd9;
+            font-weight: 700;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .newsletter-btn:hover {
+            background: rgba(197, 235, 217, 0.18);
+            border-color: rgba(197, 235, 217, 0.5);
+            transform: translateY(-2px);
+        }
+        .footer-copyright-bar {
+            border-top: 1px solid rgba(197, 235, 217, 0.06);
+            padding: 1.25rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        /* Filter tabs */
+        .filter-btn {
+            background: rgba(20,54,42,0.05);
+            border: 1px solid rgba(20,54,42,0.12);
+            color: rgba(20,54,42,0.6);
+        }
+        .filter-btn:hover {
+            background: rgba(20,54,42,0.1);
+            border-color: rgba(20,54,42,0.25);
+            color: #14362a;
+        }
+        .active-filter {
+            background: #14362a !important;
+            border-color: #14362a !important;
+            color: #c5ebd9 !important;
+        }
+        /* Post card hidden state */
+        .post-card.hidden-card {
+            display: none;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#b9eeda",
+                        "secondary": "#366758",
+                        "primary": "#14362a",
+                        "primary-fixed": "#c5ebd9",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#414844",
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "margin-mobile": "24px",
+                    },
+                    fontFamily: {
+                        "heading": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-center px-margin-mobile md:px-gutter pt-4">
+    <div class="nav-glass flex w-full max-w-5xl justify-between items-center h-20 px-5 md:px-8 rounded-2xl transition-all duration-300 ease-in-out">
+        <a href="index.html" class="flex items-center gap-3 text-on-primary shrink-0">
+            <img src="Logo.png" alt="UPLIV" class="h-14 w-auto object-contain max-h-full" loading="eager"
+                onerror="this.style.display='none'; const fb=this.parentElement.querySelector('.logo-fallback'); if (fb) fb.style.display='block';"/>
+            <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg" class="logo-fallback hidden h-14 w-auto max-h-full" role="img" aria-label="UPLIV logo">
+                <g fill="currentColor"><circle cx="20" cy="20" r="14"></circle></g>
+                <text x="44" y="25" fill="currentColor" font-family="Plus Jakarta Sans, Inter, sans-serif" font-size="22" font-weight="800">UPLIV</text>
+            </svg>
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="service.html">Services</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="projects.html">Projects</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="about.html">About</a>
+            <a class="font-body text-base font-medium text-[#c5ebd9] border-b border-[#c5ebd9]/40 transition-colors" href="blog.html">Blog</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="academy.html">Academy</a>
+            <a class="font-body text-base font-medium text-on-primary/90 hover:text-secondary-fixed transition-colors" href="careers.html">Careers</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="index.html#cta-section" class="hidden md:block px-6 py-2.5 bg-secondary-fixed text-primary font-body font-semibold text-sm rounded-lg hover:opacity-90 transition-opacity">
+                Contact
+            </a>
+            <button class="md:hidden text-on-primary/90" id="mobile-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-40 hidden flex-col justify-between p-6 bg-primary/95 backdrop-blur-xl transition-all duration-300 md:hidden" id="mobile-menu">
+    <div class="flex justify-end pt-4">
+        <button class="text-on-primary" id="mobile-menu-close">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col gap-8 text-center text-2xl font-semibold">
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="service.html">Services</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="projects.html">Projects</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="about.html">About</a>
+        <a class="text-[#c5ebd9] py-2" href="blog.html">Blog</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="academy.html">Academy</a>
+        <a class="text-on-primary/90 hover:text-secondary-fixed py-2" href="careers.html">Careers</a>
+    </div>
+    <div class="pb-8">
+        <a href="index.html#cta-section" class="block w-full py-4 text-center bg-secondary-fixed text-primary font-bold rounded-xl shadow-lg">
+            Book Free Consultation
+        </a>
+    </div>
+</div>
+
+<main>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 1: BLOG HERO — Simple Premium Hero
+    ══════════════════════════════════════════ -->
+    <section class="hero-bg min-h-[80vh] pt-40 pb-24 px-6 md:px-16 relative overflow-hidden flex flex-col justify-center">
+        <!-- Background glows -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#14362a]/45 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#366758]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] mx-auto w-full relative z-10 text-center text-white animate-fade-up">
+            <div class="section-badge mb-6">✦ Insights & Guides</div>
+
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
+                UPLIV Insights
+            </h1>
+
+            <p class="font-heading text-lg md:text-2xl text-[#c5ebd9] max-w-2xl mx-auto mb-10 leading-relaxed font-semibold">
+                Digital Marketing, AI, Business Growth & Career Insights
+            </p>
+
+            <div class="flex justify-center">
+                <a href="#articles-section" class="px-8 py-4 bg-[#c5ebd9] text-[#14362a] font-body font-bold text-base rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-200 shadow-lg flex items-center justify-center gap-2">
+                    Browse Articles
+                    <span class="material-symbols-outlined text-xl">explore</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 2: CONTENT & TOPICS
+    ══════════════════════════════════════════ -->
+    <section id="articles-section" class="py-24 px-6 md:px-16 relative overflow-hidden" style="background:#ffffff;">
+        <div class="max-w-[1280px] mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- Left: Why read/Details (7 Cols) -->
+                <div class="lg:col-span-7 reveal text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(20,54,42,0.06); border:1px solid rgba(20,54,42,0.12);">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#14362a]"></span>
+                        <span class="font-body text-xs font-bold text-[#14362a]/70 uppercase tracking-widest">Growth Resources</span>
+                    </div>
+
+                    <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-[#14362a] leading-tight tracking-tight mb-6">
+                        Insights That Help You Grow
+                    </h2>
+
+                    <p class="font-body text-base md:text-lg text-[#14362a]/65 mb-6 leading-relaxed">
+                        Discover practical guides, digital marketing strategies, website development tips, AI automation insights, and career-focused resources designed for business owners, marketers, students, and professionals.
+                    </p>
+
+                    <p class="font-body text-base text-[#14362a]/55 leading-relaxed mb-10">
+                        Whether you're looking to grow your business online or build your career in digital marketing, you'll find actionable insights here.
+                    </p>
+
+                    <a href="#latest-posts" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-heading font-bold text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background:linear-gradient(135deg,#14362a,#1e5040);box-shadow:0 4px 20px rgba(20,54,42,0.25);">
+                        Explore Latest Articles
+                        <span class="material-symbols-outlined text-base">arrow_downward</span>
+                    </a>
+                </div>
+
+                <!-- Right: Popular Topics list (5 Cols) -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="rounded-3xl p-6 md:p-8" style="background:rgba(20,54,42,0.02); border:1px solid rgba(20,54,42,0.08); backdrop-filter:blur(8px);">
+                        <h3 class="font-heading text-base font-extrabold text-[#14362a] uppercase tracking-wider mb-6">Popular Topics</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- 1. SEO -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">SEO</span>
+                            </div>
+
+                            <!-- 2. Digital Marketing -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">Digital Marketing</span>
+                            </div>
+
+                            <!-- 3. Google Ads -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">Google Ads</span>
+                            </div>
+
+                            <!-- 4. AI Tools -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">AI Tools</span>
+                            </div>
+
+                            <!-- 5. Website Development -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">Website Development</span>
+                            </div>
+
+                            <!-- 6. Career Growth -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">Career Growth</span>
+                            </div>
+
+                            <!-- 7. Social Media Marketing -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">Social Media Marketing</span>
+                            </div>
+
+                            <!-- 8. Business Growth -->
+                            <div class="flex items-center gap-3 p-4 rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02]" style="border-color:rgba(20,54,42,0.06);">
+                                <span class="text-xs">🏷</span>
+                                <span class="font-body text-sm font-semibold text-[#14362a]">Business Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3: LATEST ARTICLES — Filterable Card Grid
+    ══════════════════════════════════════════ -->
+    <section id="latest-posts" class="py-24 px-6 md:px-16 relative overflow-hidden" style="background:linear-gradient(180deg,#f4faf7 0%,#ffffff 100%);">
+
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(rgba(20,54,42,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
+
+        <div class="max-w-[1280px] mx-auto relative z-10">
+
+            <!-- Section Header -->
+            <div class="text-center mb-14 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(20,54,42,0.06);border:1px solid rgba(20,54,42,0.12);">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#14362a]"></span>
+                    <span class="font-body text-xs font-bold text-[#14362a]/70 uppercase tracking-widest">Latest Articles</span>
+                </div>
+                <h2 class="font-heading text-3xl md:text-5xl font-extrabold text-[#14362a] leading-tight tracking-tight mb-4">
+                    Fresh Insights, Every Week
+                </h2>
+                <p class="font-body text-base md:text-lg text-[#14362a]/55 max-w-2xl mx-auto">
+                    Practical guides and strategies from our team — built for business owners, marketers & students in Tirupati and beyond.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal" id="filter-tabs">
+                <button onclick="filterPosts('all', this)" class="filter-btn active-filter px-5 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-200" data-filter="all">All</button>
+                <button onclick="filterPosts('seo', this)" class="filter-btn px-5 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-200" data-filter="seo">SEO</button>
+                <button onclick="filterPosts('digital-marketing', this)" class="filter-btn px-5 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-200" data-filter="digital-marketing">Digital Marketing</button>
+                <button onclick="filterPosts('ai-tools', this)" class="filter-btn px-5 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-200" data-filter="ai-tools">AI Tools</button>
+                <button onclick="filterPosts('web-dev', this)" class="filter-btn px-5 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-200" data-filter="web-dev">Web Development</button>
+                <button onclick="filterPosts('career', this)" class="filter-btn px-5 py-2.5 rounded-full font-body text-sm font-semibold transition-all duration-200" data-filter="career">Career Growth</button>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="posts-grid">
+
+                <!-- Card 1: SEO -->
+                <article class="post-card group rounded-3xl overflow-hidden reveal transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="seo" style="background:#fff;border:1px solid rgba(20,54,42,0.08);box-shadow:0 4px 24px rgba(20,54,42,0.06);">
+                    <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#14362a 0%,#1e5040 50%,#2d7a5e 100%);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🔍</div>
+                                <div class="font-heading text-xs font-bold uppercase tracking-widest text-[#c5ebd9]/70">SEO Guide</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold font-body" style="background:rgba(197,235,217,0.2);color:#c5ebd9;border:1px solid rgba(197,235,217,0.3);">SEO</span>
+                        </div>
+                        <div class="absolute inset-0" style="background:radial-gradient(ellipse at bottom right,rgba(110,231,183,0.15),transparent 60%);"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">June 2025</span>
+                            <span class="w-1 h-1 rounded-full bg-[#14362a]/20"></span>
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">5 min read</span>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-[#14362a] leading-snug mb-3 group-hover:text-[#366758] transition-colors">
+                            10 SEO Strategies That Actually Work for Local Businesses in 2025
+                        </h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed mb-5">
+                            A practical breakdown of SEO tactics that help Tirupati businesses rank higher on Google and attract local customers.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-1.5 font-body text-sm font-bold text-[#14362a] hover:text-[#366758] transition-colors group/link">
+                            Read Article
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Digital Marketing -->
+                <article class="post-card group rounded-3xl overflow-hidden reveal transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="digital-marketing" style="background:#fff;border:1px solid rgba(20,54,42,0.08);box-shadow:0 4px 24px rgba(20,54,42,0.06);">
+                    <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#0a2e50 0%,#0e3d70 50%,#1565b0 100%);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">📣</div>
+                                <div class="font-heading text-xs font-bold uppercase tracking-widest text-blue-200/70">Marketing</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold font-body" style="background:rgba(147,197,253,0.2);color:#93c5fd;border:1px solid rgba(147,197,253,0.3);">Digital Marketing</span>
+                        </div>
+                        <div class="absolute inset-0" style="background:radial-gradient(ellipse at bottom right,rgba(59,130,246,0.2),transparent 60%);"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">May 2025</span>
+                            <span class="w-1 h-1 rounded-full bg-[#14362a]/20"></span>
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">7 min read</span>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-[#14362a] leading-snug mb-3 group-hover:text-[#366758] transition-colors">
+                            How to Build a Digital Marketing Strategy for Small Businesses
+                        </h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed mb-5">
+                            Step-by-step framework to create a marketing plan that generates consistent leads without a massive budget.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-1.5 font-body text-sm font-bold text-[#14362a] hover:text-[#366758] transition-colors group/link">
+                            Read Article
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: AI Tools -->
+                <article class="post-card group rounded-3xl overflow-hidden reveal transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="ai-tools" style="background:#fff;border:1px solid rgba(20,54,42,0.08);box-shadow:0 4px 24px rgba(20,54,42,0.06);">
+                    <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#2d1b69 0%,#4c1d95 50%,#7c3aed 100%);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🤖</div>
+                                <div class="font-heading text-xs font-bold uppercase tracking-widest text-purple-200/70">AI Automation</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold font-body" style="background:rgba(196,181,253,0.2);color:#c4b5fd;border:1px solid rgba(196,181,253,0.3);">AI Tools</span>
+                        </div>
+                        <div class="absolute inset-0" style="background:radial-gradient(ellipse at bottom right,rgba(139,92,246,0.2),transparent 60%);"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">May 2025</span>
+                            <span class="w-1 h-1 rounded-full bg-[#14362a]/20"></span>
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">6 min read</span>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-[#14362a] leading-snug mb-3 group-hover:text-[#366758] transition-colors">
+                            5 AI Tools Every Business Owner Should Be Using Right Now
+                        </h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed mb-5">
+                            Save hours every week with these practical AI automation tools — no technical skills required to get started.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-1.5 font-body text-sm font-bold text-[#14362a] hover:text-[#366758] transition-colors group/link">
+                            Read Article
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 4: Web Development -->
+                <article class="post-card group rounded-3xl overflow-hidden reveal transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="web-dev" style="background:#fff;border:1px solid rgba(20,54,42,0.08);box-shadow:0 4px 24px rgba(20,54,42,0.06);">
+                    <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#1a2f1a 0%,#2d5a2d 50%,#3d8b3d 100%);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">💻</div>
+                                <div class="font-heading text-xs font-bold uppercase tracking-widest text-green-200/70">Web Dev</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold font-body" style="background:rgba(134,239,172,0.2);color:#86efac;border:1px solid rgba(134,239,172,0.3);">Web Development</span>
+                        </div>
+                        <div class="absolute inset-0" style="background:radial-gradient(ellipse at bottom right,rgba(74,222,128,0.15),transparent 60%);"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">April 2025</span>
+                            <span class="w-1 h-1 rounded-full bg-[#14362a]/20"></span>
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">8 min read</span>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-[#14362a] leading-snug mb-3 group-hover:text-[#366758] transition-colors">
+                            Why Your Business Website is Losing Customers (And How to Fix It)
+                        </h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed mb-5">
+                            Common website mistakes that drive visitors away — and the exact changes you can make today to improve conversions.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-1.5 font-body text-sm font-bold text-[#14362a] hover:text-[#366758] transition-colors group/link">
+                            Read Article
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 5: Career Growth -->
+                <article class="post-card group rounded-3xl overflow-hidden reveal transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="career" style="background:#fff;border:1px solid rgba(20,54,42,0.08);box-shadow:0 4px 24px rgba(20,54,42,0.06);">
+                    <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#4a1942 0%,#7b2d76 50%,#b44aad 100%);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">🚀</div>
+                                <div class="font-heading text-xs font-bold uppercase tracking-widest text-pink-200/70">Career Growth</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold font-body" style="background:rgba(249,168,212,0.2);color:#f9a8d4;border:1px solid rgba(249,168,212,0.3);">Career Growth</span>
+                        </div>
+                        <div class="absolute inset-0" style="background:radial-gradient(ellipse at bottom right,rgba(236,72,153,0.2),transparent 60%);"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">April 2025</span>
+                            <span class="w-1 h-1 rounded-full bg-[#14362a]/20"></span>
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">4 min read</span>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-[#14362a] leading-snug mb-3 group-hover:text-[#366758] transition-colors">
+                            How to Start a Digital Marketing Career with Zero Experience
+                        </h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed mb-5">
+                            A beginner's roadmap to breaking into digital marketing — the skills you need, the tools to learn, and how to land your first role.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-1.5 font-body text-sm font-bold text-[#14362a] hover:text-[#366758] transition-colors group/link">
+                            Read Article
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 6: Digital Marketing / Google Ads -->
+                <article class="post-card group rounded-3xl overflow-hidden reveal transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="digital-marketing" style="background:#fff;border:1px solid rgba(20,54,42,0.08);box-shadow:0 4px 24px rgba(20,54,42,0.06);">
+                    <div class="relative h-48 overflow-hidden" style="background:linear-gradient(135deg,#4a2800 0%,#7a4500 50%,#c26f00 100%);">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-2">📊</div>
+                                <div class="font-heading text-xs font-bold uppercase tracking-widest text-orange-200/70">Google Ads</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold font-body" style="background:rgba(253,186,116,0.2);color:#fdba74;border:1px solid rgba(253,186,116,0.3);">Google Ads</span>
+                        </div>
+                        <div class="absolute inset-0" style="background:radial-gradient(ellipse at bottom right,rgba(249,115,22,0.2),transparent 60%);"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">March 2025</span>
+                            <span class="w-1 h-1 rounded-full bg-[#14362a]/20"></span>
+                            <span class="font-body text-xs text-[#14362a]/40 font-medium">6 min read</span>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-[#14362a] leading-snug mb-3 group-hover:text-[#366758] transition-colors">
+                            Google Ads on a Small Budget: Getting Maximum ROI in 2025
+                        </h3>
+                        <p class="font-body text-sm text-[#14362a]/55 leading-relaxed mb-5">
+                            Proven bidding strategies and campaign structures that help small businesses compete with big brands on Google Ads.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-1.5 font-body text-sm font-bold text-[#14362a] hover:text-[#366758] transition-colors group/link">
+                            Read Article
+                            <span class="material-symbols-outlined text-base transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </article>
+
+            </div><!-- /posts-grid -->
+
+            <!-- Load More CTA -->
+            <div class="flex justify-center mt-14 reveal">
+                <button class="px-8 py-4 rounded-2xl font-heading font-bold text-sm text-[#14362a] border-2 border-[#14362a]/20 hover:border-[#14362a]/50 hover:bg-[#14362a]/5 transition-all duration-300 flex items-center gap-2" onclick="this.innerHTML='✦ More articles coming soon!'">
+                    Load More Articles
+                    <span class="material-symbols-outlined text-base">expand_more</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 4: NEWSLETTER CTA — Premium Full Width
+    ══════════════════════════════════════════ -->
+    <section class="relative overflow-hidden py-24 px-6 md:px-16" style="background:linear-gradient(135deg,#0a1a11 0%,#14362a 60%,#1e5040 100%);">
+        <!-- Ambient glows -->
+        <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(110,231,183,0.12),transparent 70%);"></div>
+        <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(52,211,153,0.08),transparent 70%);"></div>
+        <!-- Grid overlay -->
+        <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(rgba(197,235,217,0.04) 1px,transparent 1px);background-size:28px 28px;"></div>
+
+        <div class="max-w-[860px] mx-auto relative z-10 text-center reveal">
+
+            <div class="section-badge mb-8 justify-center">✦ Stay Informed</div>
+
+            <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                Get Insights Delivered
+                <span class="gradient-text block">To Your Inbox</span>
+            </h2>
+
+            <p class="font-body text-base md:text-lg text-white/55 max-w-xl mx-auto mb-12 leading-relaxed">
+                Join 500+ business owners and marketers who get weekly digital growth strategies, SEO tips, and AI updates from UPLIV.
+            </p>
+
+            <!-- Email Subscribe Form -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto mb-10">
+                <input
+                    id="blog-newsletter-input"
+                    type="email"
+                    placeholder="Enter your email address"
+                    class="flex-1 px-5 py-4 rounded-2xl font-body text-sm text-white outline-none transition-all duration-200"
+                    style="background:rgba(255,255,255,0.08);border:1px solid rgba(197,235,217,0.2);backdrop-filter:blur(8px);"
+                    onfocus="this.style.borderColor='rgba(197,235,217,0.5)'"
+                    onblur="this.style.borderColor='rgba(197,235,217,0.2)'"
+                />
+                <button
+                    id="blog-subscribe-btn"
+                    onclick="(function(){
+                        const inp=document.getElementById('blog-newsletter-input');
+                        const btn=document.getElementById('blog-subscribe-btn');
+                        const v=inp.value.trim();
+                        if(!v||!v.includes('@')){inp.style.borderColor='rgba(239,68,68,0.6)';return;}
+                        btn.textContent='✓ Subscribed!';
+                        btn.style.background='rgba(52,211,153,0.2)';
+                        btn.style.borderColor='rgba(52,211,153,0.4)';
+                        btn.style.color='#6ee7b7';
+                        inp.value='';
+                    })()"
+                    class="px-7 py-4 rounded-2xl font-heading font-bold text-sm transition-all duration-200 hover:scale-105 hover:shadow-xl shrink-0"
+                    style="background:rgba(197,235,217,0.15);border:1px solid rgba(197,235,217,0.3);color:#c5ebd9;"
+                >
+                    Subscribe Free →
+                </button>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-white/30">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm" style="color:rgba(197,235,217,0.4);">verified</span>
+                    <span class="font-body text-xs">No spam, ever</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm" style="color:rgba(197,235,217,0.4);">schedule</span>
+                    <span class="font-body text-xs">Weekly digest</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm" style="color:rgba(197,235,217,0.4);">unsubscribe</span>
+                    <span class="font-body text-xs">Unsubscribe anytime</span>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="my-14 border-t border-white/10"></div>
+
+            <!-- Secondary CTAs -->
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                <a href="careers.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-heading font-bold text-sm text-[#14362a] hover:scale-105 hover:shadow-xl transition-all duration-200" style="background:#c5ebd9;">
+                    View Open Positions
+                    <span class="material-symbols-outlined text-base">work</span>
+                </a>
+                <a href="index.html#cta-section" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-heading font-bold text-sm text-[#c5ebd9] transition-all duration-200 hover:scale-105" style="background:rgba(197,235,217,0.1);border:1px solid rgba(197,235,217,0.2);">
+                    Talk to Our Team
+                    <span class="material-symbols-outlined text-base">chat</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="site-footer">
+    <div style="position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(197,235,217,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:300px;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(20,54,42,0.25),transparent);z-index:0;pointer-events:none;"></div>
+
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" style="padding-top:5rem;padding-bottom:3rem;">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+                    <img src="Logo.png" alt="UPLIV" style="height:48px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
+                    <div style="display:none;align-items:center;gap:0.5rem;">
+                        <div style="width:32px;height:32px;background:linear-gradient(135deg,#c5ebd9,#366758);border-radius:8px;"></div>
+                        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:-0.02em;">UPLIV</span>
+                    </div>
+                </div>
+                <p style="font-size:0.875rem;color:rgba(255,255,255,0.4);line-height:1.7;max-width:280px;">
+                    Premier performance marketing &amp; web development agency serving Tirupati, Chittoor, and all of Andhra Pradesh.
+                </p>
+                <div style="display:flex;gap:0.625rem;margin-top:1.5rem;">
+                    <a href="#" class="footer-social" aria-label="Instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="footer-social" aria-label="LinkedIn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="footer-social" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Services</div>
+                <a href="service.html" class="footer-link">Web Development</a>
+                <a href="service.html" class="footer-link">Performance Marketing</a>
+                <a href="service.html" class="footer-link">SEO Services</a>
+                <a href="service.html" class="footer-link">Social Media Management</a>
+                <a href="service.html" class="footer-link">UI/UX Design</a>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Company</div>
+                <a href="about.html" class="footer-link">About Us</a>
+                <a href="projects.html" class="footer-link">Case Studies</a>
+                <a href="index.html#testimonials" class="footer-link">Testimonials</a>
+                <a href="index.html#faq" class="footer-link">FAQ</a>
+                <a href="academy.html" class="footer-link">Academy</a>
+            </div>
+
+            <div>
+                <div class="footer-col-title">Stay in the loop</div>
+                <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:1rem;">Get weekly digital growth tips &amp; local business insights.</p>
+                <input type="email" placeholder="your@email.com" class="newsletter-input" id="footer-email-input"/>
+                <button class="newsletter-btn" onclick="(function(b,i){const v=i.value.trim();if(!v||!v.includes('@')){i.style.borderColor='rgba(239,68,68,0.5)';return;}b.textContent='✓ Subscribed!';b.style.background='rgba(34,197,94,0.15)';b.style.color='#4ade80';})(this,document.getElementById('footer-email-input'))">
+                    Subscribe →
+                </button>
+                <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem;">
+                    <a href="mailto:hello@upliv.in" class="footer-link" style="font-size:0.8rem;margin-bottom:0;">✉ hello@upliv.in</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright-bar">
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">
+                © 2026 <span style="color:rgba(197,235,217,0.5);font-weight:600;">UPliv IT Solutions LLP</span>. All Rights Reserved. Proudly serving Tirupati &amp; beyond.
+            </p>
+            <div style="display:flex;gap:1.5rem;">
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);">Privacy Policy</a>
+                <a href="#" style="font-size:0.72rem;color:rgba(255,255,255,0.2);">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+    }
+
+    if (menuClose && mobileMenu) {
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+    }
+
+    // Scroll reveal observer
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Filter posts by category
+    function filterPosts(category, clickedBtn) {
+        // Update active tab
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active-filter');
+        });
+        clickedBtn.classList.add('active-filter');
+
+        // Show/hide cards with smooth animation
+        const cards = document.querySelectorAll('.post-card');
+        cards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            const match = category === 'all' || cardCat === category;
+            if (match) {
+                card.classList.remove('hidden-card');
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 50);
+            } else {
+                card.style.transition = 'opacity 0.25s ease';
+                card.style.opacity = '0';
+                setTimeout(() => card.classList.add('hidden-card'), 250);
+            }
+        });
+    }
+    // Make filterPosts globally accessible
+    window.filterPosts = filterPosts;
+</script>
+
+</body>
+</html>
