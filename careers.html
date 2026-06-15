@@ -1521,6 +1521,217 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════
+         SECTION 9: LOCATIONS — Map + Location Cards
+    ══════════════════════════════════════════ -->
+    <section id="locations" class="py-24 px-6 md:px-16 relative overflow-hidden" style="background:#ffffff; border-top: 1px solid rgba(20,54,42,0.06);">
+        <!-- Ambient background glow -->
+        <div class="absolute -right-40 top-0 w-[500px] h-[500px] rounded-full pointer-events-none blur-3xl" style="background:radial-gradient(circle, rgba(129,140,248,0.06) 0%, transparent 70%);"></div>
+        <div class="absolute -left-20 bottom-10 w-[500px] h-[500px] rounded-full pointer-events-none blur-3xl" style="background:radial-gradient(circle, rgba(197,235,217,0.2) 0%, transparent 70%);"></div>
+
+        <div class="max-w-[1280px] mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background:rgba(20,54,42,0.06); border:1px solid rgba(20,54,42,0.12);">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#14362a]"></span>
+                    <span class="font-body text-xs font-bold text-[#14362a]/70 uppercase tracking-widest">Where We Operate</span>
+                </div>
+                <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-[#14362a] leading-tight tracking-tight mb-4">
+                    Career Opportunities Across Andhra Pradesh
+                </h2>
+                <p class="font-body text-base text-[#14362a]/60 max-w-xl mx-auto leading-relaxed">
+                    Both onsite and remote opportunities may be available depending on role requirements.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left: Location Cards list (5 Cols) -->
+                <div class="lg:col-span-5 reveal flex flex-col gap-4">
+                    <h3 class="font-heading text-xs font-bold uppercase tracking-widest text-[#14362a]/55 mb-2">Serving talent from:</h3>
+
+                    <!-- Tirupati -->
+                    <div class="location-card group flex items-center justify-between p-5 rounded-2xl border cursor-pointer transition-all duration-300 hover:-translate-x-1"
+                         data-location="tirupati"
+                         style="background:#ffffff; border-color:rgba(20,54,42,0.08); box-shadow:0 4px 20px rgba(20,54,42,0.02);">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#14362a] group-hover:text-white" style="background:rgba(20,54,42,0.05); color:#14362a;">
+                                <span class="material-symbols-outlined" style="font-size:20px;">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-extrabold text-[#14362a] mb-0.5">Tirupati</h4>
+                                <p class="font-body text-[11px] text-[#14362a]/50">Main Headquarters & Collaborative Hub</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[#14362a]/30 group-hover:text-[#14362a] transition-colors duration-300" style="font-size:18px;">arrow_forward_ios</span>
+                    </div>
+
+                    <!-- Chittoor -->
+                    <div class="location-card group flex items-center justify-between p-5 rounded-2xl border cursor-pointer transition-all duration-300 hover:-translate-x-1"
+                         data-location="chittoor"
+                         style="background:#ffffff; border-color:rgba(20,54,42,0.08); box-shadow:0 4px 20px rgba(20,54,42,0.02);">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#14362a] group-hover:text-white" style="background:rgba(20,54,42,0.05); color:#14362a;">
+                                <span class="material-symbols-outlined" style="font-size:20px;">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-extrabold text-[#14362a] mb-0.5">Chittoor</h4>
+                                <p class="font-body text-[11px] text-[#14362a]/50">Local talent and regional partnerships</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[#14362a]/30 group-hover:text-[#14362a] transition-colors duration-300" style="font-size:18px;">arrow_forward_ios</span>
+                    </div>
+
+                    <!-- Puttur -->
+                    <div class="location-card group flex items-center justify-between p-5 rounded-2xl border cursor-pointer transition-all duration-300 hover:-translate-x-1"
+                         data-location="puttur"
+                         style="background:#ffffff; border-color:rgba(20,54,42,0.08); box-shadow:0 4px 20px rgba(20,54,42,0.02);">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#14362a] group-hover:text-white" style="background:rgba(20,54,42,0.05); color:#14362a;">
+                                <span class="material-symbols-outlined" style="font-size:20px;">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-extrabold text-[#14362a] mb-0.5">Puttur</h4>
+                                <p class="font-body text-[11px] text-[#14362a]/50">Strategic academy integrations</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[#14362a]/30 group-hover:text-[#14362a] transition-colors duration-300" style="font-size:18px;">arrow_forward_ios</span>
+                    </div>
+
+                    <!-- Srikalahasti -->
+                    <div class="location-card group flex items-center justify-between p-5 rounded-2xl border cursor-pointer transition-all duration-300 hover:-translate-x-1"
+                         data-location="srikalahasti"
+                         style="background:#ffffff; border-color:rgba(20,54,42,0.08); box-shadow:0 4px 20px rgba(20,54,42,0.02);">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#14362a] group-hover:text-white" style="background:rgba(20,54,42,0.05); color:#14362a;">
+                                <span class="material-symbols-outlined" style="font-size:20px;">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-extrabold text-[#14362a] mb-0.5">Srikalahasti</h4>
+                                <p class="font-body text-[11px] text-[#14362a]/50">Community reach and design circles</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[#14362a]/30 group-hover:text-[#14362a] transition-colors duration-300" style="font-size:18px;">arrow_forward_ios</span>
+                    </div>
+
+                    <!-- Kadapa -->
+                    <div class="location-card group flex items-center justify-between p-5 rounded-2xl border cursor-pointer transition-all duration-300 hover:-translate-x-1"
+                         data-location="kadapa"
+                         style="background:#ffffff; border-color:rgba(20,54,42,0.08); box-shadow:0 4px 20px rgba(20,54,42,0.02);">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#14362a] group-hover:text-white" style="background:rgba(20,54,42,0.05); color:#14362a;">
+                                <span class="material-symbols-outlined" style="font-size:20px;">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-base font-extrabold text-[#14362a] mb-0.5">Kadapa</h4>
+                                <p class="font-body text-[11px] text-[#14362a]/50">Regional developer community support</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[#14362a]/30 group-hover:text-[#14362a] transition-colors duration-300" style="font-size:18px;">arrow_forward_ios</span>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Stylized Vector Map (7 Cols) -->
+                <div class="lg:col-span-7 reveal flex justify-center">
+                    <div class="relative w-full max-w-[500px] aspect-[4/3] rounded-[32px] p-6 border flex items-center justify-center overflow-hidden"
+                         style="background:#14362a; border-color:rgba(197,235,217,0.15); box-shadow:0 20px 50px rgba(20,54,42,0.12);">
+                        
+                        <!-- Map Grid Detail Overlay -->
+                        <div class="absolute inset-0 pointer-events-none" style="background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:20px 20px;"></div>
+                        
+                        <!-- Stylized Andhra Pradesh Contour SVG representation -->
+                        <svg class="w-full h-full text-white/10" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Semi-abstract shape representing Rayalaseema & coastal AP region -->
+                            <path d="M 280,20 C 310,50 360,110 370,160 C 380,200 330,220 310,240 C 290,260 250,290 200,280 C 160,270 120,240 100,220 C 80,200 50,190 60,160 C 70,130 90,110 120,100 C 150,90 200,110 220,100 C 240,90 250,50 280,20 Z" style="fill:rgba(197,235,217,0.03); stroke:rgba(197,235,217,0.12);" />
+                        </svg>
+
+                        <!-- Map Interactive Hotspots -->
+                        
+                        <!-- Tirupati Hotspot -->
+                        <div class="absolute map-hotspot pointer-events-none transition-all duration-300" data-location="tirupati" style="top:62%; left:52%;">
+                            <div class="relative flex items-center justify-center">
+                                <div class="absolute w-12 h-12 rounded-full bg-emerald-400/20 animate-ping"></div>
+                                <div class="absolute w-8 h-8 rounded-full bg-emerald-400/40 animate-pulse"></div>
+                                <div class="w-4 h-4 rounded-full bg-emerald-400 border-2 border-white shadow-md"></div>
+                            </div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-6 bg-white/95 border border-emerald-500/20 text-[#14362a] font-heading font-extrabold text-[10px] px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap">Tirupati</div>
+                        </div>
+
+                        <!-- Chittoor Hotspot -->
+                        <div class="absolute map-hotspot pointer-events-none transition-all duration-300 opacity-50" data-location="chittoor" style="top:74%; left:42%;">
+                            <div class="relative flex items-center justify-center">
+                                <div class="w-3.5 h-3.5 rounded-full bg-[#818cf8] border-2 border-white shadow-md"></div>
+                            </div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-5 bg-white/95 border text-[#14362a] font-heading font-extrabold text-[9px] px-2 py-0.5 rounded-md shadow-lg whitespace-nowrap">Chittoor</div>
+                        </div>
+
+                        <!-- Puttur Hotspot -->
+                        <div class="absolute map-hotspot pointer-events-none transition-all duration-300 opacity-50" data-location="puttur" style="top:72%; left:65%;">
+                            <div class="relative flex items-center justify-center">
+                                <div class="w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-white shadow-md"></div>
+                            </div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-5 bg-white/95 border text-[#14362a] font-heading font-extrabold text-[9px] px-2 py-0.5 rounded-md shadow-lg whitespace-nowrap">Puttur</div>
+                        </div>
+
+                        <!-- Srikalahasti Hotspot -->
+                        <div class="absolute map-hotspot pointer-events-none transition-all duration-300 opacity-50" data-location="srikalahasti" style="top:52%; left:64%;">
+                            <div class="relative flex items-center justify-center">
+                                <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-white shadow-md"></div>
+                            </div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-5 bg-white/95 border text-[#14362a] font-heading font-extrabold text-[9px] px-2 py-0.5 rounded-md shadow-lg whitespace-nowrap">Srikalahasti</div>
+                        </div>
+
+                        <!-- Kadapa Hotspot -->
+                        <div class="absolute map-hotspot pointer-events-none transition-all duration-300 opacity-50" data-location="kadapa" style="top:38%; left:36%;">
+                            <div class="relative flex items-center justify-center">
+                                <div class="w-3.5 h-3.5 rounded-full bg-[#f87171] border-2 border-white shadow-md"></div>
+                            </div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-5 bg-white/95 border text-[#14362a] font-heading font-extrabold text-[9px] px-2 py-0.5 rounded-md shadow-lg whitespace-nowrap">Kadapa</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Script -->
+    <script>
+        document.querySelectorAll('.location-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const targetLoc = card.dataset.location;
+                document.querySelectorAll('.map-hotspot').forEach(spot => {
+                    if (spot.dataset.location === targetLoc) {
+                        spot.style.opacity = '1';
+                        spot.style.transform = 'scale(1.25)';
+                        const innerNode = spot.querySelector('.w-3.5');
+                        if (innerNode) {
+                            innerNode.style.boxShadow = '0 0 16px rgba(255,255,255,0.8)';
+                        }
+                    } else {
+                        spot.style.opacity = '0.35';
+                        spot.style.transform = 'scale(0.9)';
+                    }
+                });
+            });
+            card.addEventListener('mouseleave', () => {
+                document.querySelectorAll('.map-hotspot').forEach(spot => {
+                    spot.style.transform = '';
+                    if (spot.dataset.location === 'tirupati') {
+                        spot.style.opacity = '1';
+                    } else {
+                        spot.style.opacity = '0.5';
+                    }
+                    const innerNode = spot.querySelector('.w-3.5');
+                    if (innerNode) {
+                        innerNode.style.boxShadow = '';
+                    }
+                });
+            });
+        });
+    </script>
+
 </main>
 <script>
     function filterRoles(category) {
