@@ -731,29 +731,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="absolute top-[30%] left-[40%] w-[30%] h-[30%] bg-emerald-500/10 rounded-full blur-[100px] -z-0 pointer-events-none"></div>
 
     <!-- Section Header -->
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-10 relative z-10">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-8 relative z-10">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-full border border-white/10 mb-6">
-            <span class="w-2 h-2 rounded-full bg-white/60 animate-pulse"></span>
-            <span class="font-body text-xs font-semibold text-white/60 uppercase tracking-widest">Case Studies</span>
+            <span class="w-2 h-2 rounded-full bg-[#c5ebd9] animate-pulse"></span>
+            <span class="font-body text-xs font-semibold text-[#c5ebd9]/80 uppercase tracking-widest">Case Studies</span>
         </div>
-        <div class="flex flex-col md:flex-row justify-between items-end gap-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-2xl">
                 Featured Projects<br/>&amp; Success Stories
             </h2>
-            <p class="font-body text-white/50 text-lg max-w-sm text-left md:text-right leading-relaxed">Real businesses. Real growth.<br/>Real results.</p>
-        </div>
-        <!-- Slider Controls Row -->
-        <div class="flex items-center gap-4 mt-10">
-            <div class="h-px flex-1 bg-white/10 relative overflow-hidden rounded-full">
-                <div id="slider-progress-bar" class="absolute left-0 top-0 h-full bg-white rounded-full transition-all duration-700 ease-out" style="width:50%"></div>
+            <div class="flex flex-col items-start md:items-end gap-3">
+                <p class="font-body text-white/60 text-lg max-w-sm text-left md:text-right leading-relaxed">Real businesses. Real growth. Real results.</p>
+                <a href="projects.html" class="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-widest text-[#c5ebd9] hover:text-white transition-colors">
+                    Explore Full Portfolio <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
-            <button id="slider-prev" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all" aria-label="Previous">
+        </div>
+
+        <!-- Project Selector Pills -->
+        <div class="flex flex-wrap gap-2 mt-8" id="cs-project-pills">
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/20 bg-white text-[#02180f]" data-slide="0">Sri Captures</button>
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white" data-slide="1">Swayamvara Weddings</button>
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white" data-slide="2">Aira Paints</button>
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white" data-slide="3">Vijaya Gold</button>
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white" data-slide="4">Fortunes High School</button>
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white" data-slide="5">Aakar Constructions</button>
+            <button type="button" class="cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white" data-slide="6">Vaibhavam By Varun</button>
+        </div>
+
+        <!-- Slider Controls Row -->
+        <div class="flex items-center gap-4 mt-6">
+            <div class="h-1 flex-1 bg-white/10 relative overflow-hidden rounded-full">
+                <div id="slider-progress-bar" class="absolute left-0 top-0 h-full bg-gradient-to-r from-[#c5ebd9] to-emerald-400 rounded-full transition-all duration-700 ease-out" style="width:14.28%"></div>
+            </div>
+            <button id="slider-prev" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/60 hover:bg-white/10 transition-all" aria-label="Previous">
                 <span class="material-symbols-outlined text-[20px]">arrow_back</span>
             </button>
-            <button id="slider-next" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all" aria-label="Next">
+            <button id="slider-next" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/60 hover:bg-white/10 transition-all" aria-label="Next">
                 <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
             </button>
-            <div id="slider-counter" class="font-heading font-bold text-white/30 text-sm tracking-widest uppercase min-w-[60px]">01 / 02</div>
+            <div id="slider-counter" class="font-heading font-bold text-[#c5ebd9]/70 text-sm tracking-widest uppercase min-w-[65px] text-right">01 / 07</div>
         </div>
     </div>
 
@@ -761,165 +778,463 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="cs-slider-wrapper" class="relative overflow-hidden">
         <div id="cs-slider-track" class="flex" style="transition: transform 0.8s cubic-bezier(0.77,0,0.175,1);">
 
-            <!-- Slide 1: Vijaya Gold Company -->
-            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-end" style="min-height:80vh;">
+            <!-- Slide 1: Sri Captures -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
                 <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                    <div class="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.08)_0%,_transparent_75%)]"></div>
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(236,72,153,0.12)_0%,_transparent_65%)]"></div>
                 </div>
-                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20 pt-16 w-full">
-                    <div class="flex flex-col lg:flex-row justify-between items-end gap-10">
-                        <div class="flex-1">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
-                                <span class="material-symbols-outlined text-white text-[14px]">local_mall</span>
-                                <span class="font-body text-xs font-bold text-white uppercase tracking-widest">FMCG &amp; Retail</span>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-pink-500/15 backdrop-blur-md rounded-full border border-pink-400/30">
+                                    <span class="material-symbols-outlined text-pink-300 text-[15px]">photo_camera</span>
+                                    <span class="font-body text-xs font-bold text-pink-200 uppercase tracking-widest">Wedding Photography &amp; Films</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
                             </div>
-                            <h3 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-6">Vijaya<br/>Gold</h3>
-                            <div class="flex flex-col gap-3 max-w-lg">
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Establishing strong, trustworthy digital brand presence to connect directly with retail buyers.</p>
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Solution:</span> Complete brand visibility suite + targeted local campaigns + SEO infrastructure.</p>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Sri Captures</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Showcasing luxury wedding photography and 4K cinematic films without slowing down mobile load times.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Editorial visual portfolio + fast-loading media galleries + direct consultation booking funnel.</p>
                             </div>
-                            <a href="https://www.vijayagold.com/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-body font-bold text-sm rounded-xl hover:bg-white/90 hover:scale-105 transition-all mt-6 shadow-lg shadow-white/5">
-                                Visit Live Site
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </a>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">4K</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Film Showcase</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">3.5X</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Client Inquiries</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">98</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Speed Score</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://www.sricaptures.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex flex-wrap lg:flex-nowrap gap-3 shrink-0">
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">3X</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Online Leads</div>
-                            </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">4.8★</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Brand Rating</div>
-                            </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">#1</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Local Ranking</div>
-                            </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://www.sricaptures.com" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://www.sricaptures.com</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://www.sricaptures.com?w=1200" alt="Sri Captures Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Sri+Captures';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2: Fortunes High School -->
-            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-end" style="min-height:80vh;">
+            <!-- Slide 2: Swayamvara Weddings -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
                 <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                    <div class="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.08)_0%,_transparent_75%)]"></div>
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(244,63,94,0.12)_0%,_transparent_65%)]"></div>
                 </div>
-                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20 pt-16 w-full">
-                    <div class="flex flex-col lg:flex-row justify-between items-end gap-10">
-                        <div class="flex-1">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
-                                <span class="material-symbols-outlined text-white text-[14px]">school</span>
-                                <span class="font-body text-xs font-bold text-white uppercase tracking-widest">Education &amp; Academics</span>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-rose-500/15 backdrop-blur-md rounded-full border border-rose-400/30">
+                                    <span class="material-symbols-outlined text-rose-300 text-[15px]">movie</span>
+                                    <span class="font-body text-xs font-bold text-rose-200 uppercase tracking-widest">Candid Photography &amp; Cinema</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
                             </div>
-                            <h3 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-6">Fortunes<br/>High School</h3>
-                            <div class="flex flex-col gap-3 max-w-lg">
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Low engagement on digital portals and manual student admission enquiry setups.</p>
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Solution:</span> Responsive educational hub + local search optimization + interactive admission flow.</p>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Swayamvara Weddings</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Standing out in Hyderabad's competitive wedding studio market and capturing high-intent couple bookings.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Documentary-style showcase website + curated pre-wedding &amp; 4K film galleries + local SEO optimization.</p>
                             </div>
-                            <a href="https://fortuneshighschool.com/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-body font-bold text-sm rounded-xl hover:bg-white/90 hover:scale-105 transition-all mt-6 shadow-lg shadow-white/5">
-                                Visit Live Site
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </a>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">4X</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Studio Bookings</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">100+</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Weddings Shot</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">#1</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Brand Recall</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://www.swayamvaraweddings.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex flex-wrap lg:flex-nowrap gap-3 shrink-0">
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">200+</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Admissions / Yr</div>
-                            </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">5X</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Engagement</div>
-                            </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">100%</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Online Queries</div>
-                            </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://www.swayamvaraweddings.in" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://www.swayamvaraweddings.in</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://www.swayamvaraweddings.in?w=1200" alt="Swayamvara Weddings Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Swayamvara+Weddings';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 3: Aakar Constructions -->
-            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-end" style="min-height:80vh;">
+            <!-- Slide 3: Aira Paints -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
                 <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                    <div class="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.08)_0%,_transparent_75%)]"></div>
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(16,185,129,0.16)_0%,_transparent_65%)]"></div>
                 </div>
-                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20 pt-16 w-full">
-                    <div class="flex flex-col lg:flex-row justify-between items-end gap-10">
-                        <div class="flex-1">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
-                                <span class="material-symbols-outlined text-white text-[14px]">apartment</span>
-                                <span class="font-body text-xs font-bold text-white uppercase tracking-widest">Real Estate &amp; Construction</span>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-emerald-500/15 backdrop-blur-md rounded-full border border-emerald-400/30">
+                                    <span class="material-symbols-outlined text-emerald-300 text-[15px]">format_paint</span>
+                                    <span class="font-body text-xs font-bold text-emerald-200 uppercase tracking-widest">Manufacturing &amp; Eco Coatings</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
                             </div>
-                            <h3 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-6">Aakar<br/>Constructions</h3>
-                            <div class="flex flex-col gap-3 max-w-lg">
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Highlighting high-value architecture portfolios through dynamic, fast-loading visual systems.</p>
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Solution:</span> Premium immersive portfolio build + optimized conversion forms + SEO scaling.</p>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Aira Paints</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Presenting polymer-based, low-VOC architectural coatings to builders, architects, and dealers digitally.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Modern product catalog + climate-resilience storytelling + B2B dealer inquiry &amp; lead pipeline.</p>
                             </div>
-                            <a href="https://www.aakarconstruction.in/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-body font-bold text-sm rounded-xl hover:bg-white/90 hover:scale-105 transition-all mt-6 shadow-lg shadow-white/5">
-                                Visit Live Site
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </a>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">100%</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Eco Formulated</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">3X</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Dealer Leads</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">B2B</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Brand Authority</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://www.airapaints.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex flex-wrap lg:flex-nowrap gap-3 shrink-0">
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">15+</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Premium Projects</div>
-                            </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">4X</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Lead Velocity</div>
-                            </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">80%</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Direct Inquiries</div>
-                            </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://www.airapaints.com" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://www.airapaints.com</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://www.airapaints.com?w=1200" alt="Aira Paints Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Aira+Paints';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 4: Vaibhavam By Varun -->
-            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-end" style="min-height:80vh;">
+            <!-- Slide 4: Vijaya Gold Company -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
                 <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                    <div class="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.08)_0%,_transparent_75%)]"></div>
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(234,179,8,0.12)_0%,_transparent_65%)]"></div>
                 </div>
-                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20 pt-16 w-full">
-                    <div class="flex flex-col lg:flex-row justify-between items-end gap-10">
-                        <div class="flex-1">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
-                                <span class="material-symbols-outlined text-white text-[14px]">celebration</span>
-                                <span class="font-body text-xs font-bold text-white uppercase tracking-widest">Events &amp; Hospitality</span>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-amber-500/15 backdrop-blur-md rounded-full border border-amber-400/30">
+                                    <span class="material-symbols-outlined text-amber-300 text-[15px]">local_mall</span>
+                                    <span class="font-body text-xs font-bold text-amber-200 uppercase tracking-widest">FMCG &amp; Retail</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
                             </div>
-                            <h3 class="font-heading text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-6">Vaibhavam<br/>By Varun</h3>
-                            <div class="flex flex-col gap-3 max-w-lg">
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Connecting with high-value event planners and luxury seekers digitally.</p>
-                                <p class="font-body text-white/55 text-base leading-relaxed"><span class="text-white font-bold">Solution:</span> Image-first grand showcase website paired with hyper-local brand storytelling.</p>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Vijaya Gold</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Establishing strong, trustworthy digital brand presence to connect directly with retail buyers.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Complete brand visibility suite + targeted local campaigns + SEO infrastructure.</p>
                             </div>
-                            <a href="https://www.vaibhavambyvarun.in/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-body font-bold text-sm rounded-xl hover:bg-white/90 hover:scale-105 transition-all mt-6 shadow-lg shadow-white/5">
-                                Visit Live Site
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">3X</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Online Leads</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">4.8★</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Brand Rating</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">#1</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Local Ranking</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://www.vijayagold.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://www.vijayagold.com/" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://www.vijayagold.com</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://www.vijayagold.com?w=1200" alt="Vijaya Gold Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Vijaya+Gold';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
                             </a>
                         </div>
-                        <div class="flex flex-wrap lg:flex-nowrap gap-3 shrink-0">
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">50+</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Elite Events</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Fortunes High School -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
+                <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(139,92,246,0.14)_0%,_transparent_65%)]"></div>
+                </div>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-violet-500/15 backdrop-blur-md rounded-full border border-violet-400/30">
+                                    <span class="material-symbols-outlined text-violet-300 text-[15px]">school</span>
+                                    <span class="font-body text-xs font-bold text-violet-200 uppercase tracking-widest">Education &amp; Academics</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
                             </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">300%</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Booking Boost</div>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Fortunes High School</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Low engagement on digital portals and manual student admission enquiry setups.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Responsive educational hub + local search optimization + interactive admission flow.</p>
                             </div>
-                            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 text-center min-w-[100px]">
-                                <div class="font-heading text-3xl md:text-4xl font-black text-white mb-1">#1</div>
-                                <div class="font-body text-[10px] text-white/50 uppercase tracking-widest">Event Brand</div>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">200+</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Admissions / Yr</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">5X</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Engagement</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">100%</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Online Queries</div>
+                                </div>
                             </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://fortuneshighschool.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://fortuneshighschool.com/" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://fortuneshighschool.com</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://fortuneshighschool.com?w=1200" alt="Fortunes High School Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Fortunes+High+School';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Aakar Constructions -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
+                <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(249,115,22,0.12)_0%,_transparent_65%)]"></div>
+                </div>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-500/15 backdrop-blur-md rounded-full border border-orange-400/30">
+                                    <span class="material-symbols-outlined text-orange-300 text-[15px]">apartment</span>
+                                    <span class="font-body text-xs font-bold text-orange-200 uppercase tracking-widest">Real Estate &amp; Construction</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
+                            </div>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Aakar Constructions</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Highlighting high-value architecture portfolios through dynamic, fast-loading visual systems.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Premium immersive portfolio build + optimized conversion forms + SEO scaling.</p>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">15+</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Premium Projects</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">4X</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Lead Velocity</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">80%</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Direct Inquiries</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://www.aakarconstruction.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://www.aakarconstruction.in/" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://www.aakarconstruction.in</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://www.aakarconstruction.in?w=1200" alt="Aakar Constructions Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Aakar+Constructions';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Vaibhavam By Varun -->
+            <div class="cs-slide flex-shrink-0 w-full relative flex flex-col justify-center py-8 lg:py-14">
+                <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                    <div class="absolute inset-0 bg-white/[0.02] border-y border-white/5 cs-slide-bg" style="transition: transform 0.8s ease;"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,_rgba(16,185,129,0.12)_0%,_transparent_65%)]"></div>
+                </div>
+                <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-teal-500/15 backdrop-blur-md rounded-full border border-teal-400/30">
+                                    <span class="material-symbols-outlined text-teal-300 text-[15px]">celebration</span>
+                                    <span class="font-body text-xs font-bold text-teal-200 uppercase tracking-widest">Events &amp; Hospitality</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-body text-emerald-300/80">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Live Production
+                                </span>
+                            </div>
+                            <h3 class="font-heading text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.05]">Vaibhavam By Varun</h3>
+                            <div class="space-y-3 border-l-2 border-[#c5ebd9]/30 pl-4">
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-white font-bold">Challenge:</span> Connecting with high-value event planners and luxury seekers digitally.</p>
+                                <p class="font-body text-white/70 text-base leading-relaxed"><span class="text-[#c5ebd9] font-bold">Solution:</span> Image-first grand showcase website paired with hyper-local brand storytelling.</p>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3 pt-2">
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">50+</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Elite Events</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">300%</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Booking Boost</div>
+                                </div>
+                                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                                    <div class="font-heading text-2xl md:text-3xl font-black text-[#c5ebd9] mb-1">#1</div>
+                                    <div class="font-body text-[10px] text-white/55 uppercase tracking-widest">Event Brand</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <a href="https://www.vaibhavambyvarun.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#02180f] font-body font-bold text-sm rounded-xl hover:bg-[#c5ebd9] hover:scale-105 transition-all shadow-lg shadow-black/25">
+                                    Visit Live Site
+                                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                                <a href="projects.html" class="inline-flex items-center gap-2 px-5 py-3.5 bg-white/5 border border-white/15 text-white font-body font-semibold text-sm rounded-xl hover:bg-white/10 transition-all">
+                                    All Projects
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <a href="https://www.vaibhavambyvarun.in/" target="_blank" rel="noopener noreferrer" class="block group relative rounded-2xl overflow-hidden border border-white/15 bg-[#061c14] shadow-[0_30px_80px_rgba(0,0,0,0.6)] hover:border-[#c5ebd9]/40 transition-all duration-500">
+                                <div class="flex items-center gap-2 px-4 py-3 bg-black/50 border-b border-white/10">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                                    <div class="ml-3 flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-white/60 truncate">https://www.vaibhavambyvarun.in</div>
+                                    <span class="material-symbols-outlined text-white/40 group-hover:text-[#c5ebd9] text-sm transition-colors">open_in_new</span>
+                                </div>
+                                <div class="relative aspect-[16/10] overflow-hidden bg-[#0a2319]">
+                                    <img src="https://s.wordpress.com/mshots/v1/https://www.vaibhavambyvarun.in?w=1200" alt="Vaibhavam By Varun Website Preview" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x750/043321/c5ebd9?text=Vaibhavam+By+Varun';"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -927,20 +1242,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         </div><!-- end track -->
     </div><!-- end wrapper -->
-    <div class="h-16"></div>
+    <div class="h-12"></div>
 
 </section>
 
 <script>
 (function() {
+    var section = document.getElementById('projects');
     var track = document.getElementById('cs-slider-track');
     var slides = document.querySelectorAll('.cs-slide');
+    var pills = document.querySelectorAll('.cs-pill');
     var prevBtn = document.getElementById('slider-prev');
     var nextBtn = document.getElementById('slider-next');
     var counter = document.getElementById('slider-counter');
     var progressBar = document.getElementById('slider-progress-bar');
     var total = slides.length;
     var current = 0;
+    var autoTimer = null;
 
     function updateSlider() {
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
@@ -948,6 +1266,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         progressBar.style.width = pct + '%';
         var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
         counter.textContent = pad(current + 1) + ' / ' + pad(total);
+
+        // Update active pill styling
+        pills.forEach(function(pill, i) {
+            if (i === current) {
+                pill.className = 'cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/20 bg-white text-[#02180f] shadow-lg shadow-white/10';
+            } else {
+                pill.className = 'cs-pill px-4 py-2 rounded-full text-xs font-heading font-bold tracking-wide transition-all border border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white';
+            }
+        });
 
         // Parallax: zoom out active bg, reset others
         slides.forEach(function(slide, i) {
@@ -959,43 +1286,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var activeContent = slides[current].querySelector('.relative.z-10');
         if (activeContent) {
             activeContent.style.opacity = '0';
-            activeContent.style.transform = 'translateY(30px)';
+            activeContent.style.transform = 'translateY(24px)';
             setTimeout(function() {
-                activeContent.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+                activeContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 activeContent.style.opacity = '1';
                 activeContent.style.transform = 'translateY(0)';
-            }, 200);
+            }, 150);
         }
     }
+
+    function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(function() {
+            current = (current + 1) % total;
+            updateSlider();
+        }, 6000);
+    }
+
+    function stopAuto() {
+        if (autoTimer) {
+            clearInterval(autoTimer);
+            autoTimer = null;
+        }
+    }
+
+    pills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+            current = parseInt(pill.getAttribute('data-slide'), 10) || 0;
+            updateSlider();
+            startAuto();
+        });
+    });
 
     prevBtn.addEventListener('click', function() {
         current = (current - 1 + total) % total;
         updateSlider();
+        startAuto();
     });
 
     nextBtn.addEventListener('click', function() {
         current = (current + 1) % total;
         updateSlider();
+        startAuto();
     });
 
     // Touch/swipe support
     var touchStartX = 0;
-    track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; stopAuto(); }, {passive:true});
     track.addEventListener('touchend', function(e){
         var diff = touchStartX - e.changedTouches[0].clientX;
         if (Math.abs(diff) > 50) {
             current = diff > 0 ? (current + 1) % total : (current - 1 + total) % total;
             updateSlider();
         }
+        startAuto();
     }, {passive:true});
 
-    // Auto-advance every 5 seconds
-    setInterval(function() {
-        current = (current + 1) % total;
-        updateSlider();
-    }, 5000);
+    if (section) {
+        section.addEventListener('mouseenter', stopAuto);
+        section.addEventListener('mouseleave', startAuto);
+    }
 
     updateSlider();
+    startAuto();
 })();
 </script>
 <!-- Working Process -->
